@@ -184,7 +184,8 @@ namespace Valve.VR.InteractionSystem
 
 			CheckForSpawnPoint();
 
-			Invoke( "ShowTeleportHint", 5.0f );
+			//show to have teleport hint at start
+			//Invoke( "ShowTeleportHint", 5.0f );
 		}
 
 
