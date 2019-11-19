@@ -8,7 +8,8 @@ namespace Valve.VR.InteractionSystem.Sample
 {
     public class ButtonPapillodex : MonoBehaviour
     {
-        public Canvas m_PapillodexCanvas;
+        private Canvas m_PapillodexCanvas;
+        public GameObject m_Papillodex;
         private bool CanvasOpen = false;
         public void OnButtonDown(Hand fromHand)
         {
@@ -18,11 +19,11 @@ namespace Valve.VR.InteractionSystem.Sample
 
             if(CanvasOpen == true)
             {
-                m_PapillodexCanvas.enabled = true;
+                m_Papillodex.SetActive(true);
             }
             else
             {
-                m_PapillodexCanvas.enabled = false;
+                m_Papillodex.SetActive(false);
             }
         }
 

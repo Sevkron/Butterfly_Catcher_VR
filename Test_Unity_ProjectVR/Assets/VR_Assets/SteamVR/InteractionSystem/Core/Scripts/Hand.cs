@@ -12,6 +12,8 @@ using System.Collections.ObjectModel;
 using UnityEngine.Events;
 using System.Threading;
 
+
+
 namespace Valve.VR.InteractionSystem
 {
     //-------------------------------------------------------------------------
@@ -20,6 +22,7 @@ namespace Valve.VR.InteractionSystem
     //-------------------------------------------------------------------------
     public class Hand : MonoBehaviour
     {
+        
         // The flags used to determine how an object is attached to the hand.
         [Flags]
         public enum AttachmentFlags
@@ -50,6 +53,8 @@ namespace Valve.VR.InteractionSystem
         public SteamVR_Action_Boolean grabGripAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabGrip");
 
         public SteamVR_Action_Vibration hapticAction = SteamVR_Input.GetAction<SteamVR_Action_Vibration>("Haptic");
+
+        public SteamVR_Action_Boolean pause = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Pause");
 
         public SteamVR_Action_Boolean uiInteractAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("InteractUI");
 
@@ -86,6 +91,8 @@ namespace Valve.VR.InteractionSystem
         public bool showDebugText = false;
         public bool spewDebugText = false;
         public bool showDebugInteractables = false;
+        public Canvas m_PauseMenuCanvas;
+        private bool isPaused = false;
 
         public struct AttachedObject
         {
@@ -1096,7 +1103,7 @@ namespace Valve.VR.InteractionSystem
         }
 
 
-        //-------------------------------------------------
+        //Pause menu Update
         protected virtual void Update()
         {
             UpdateNoSteamVRFallback();
@@ -1110,6 +1117,11 @@ namespace Valve.VR.InteractionSystem
             if (hoveringInteractable)
             {
                 hoveringInteractable.SendMessage("HandHoverUpdate", this, SendMessageOptions.DontRequireReceiver);
+            }
+
+            if(SteamVR_Input.GetStateDown("Pause", handType))
+            {
+                PauseAction();   
             }
         }
 
@@ -1615,6 +1627,22 @@ namespace Valve.VR.InteractionSystem
                 return GrabTypes.Grip;
 
             return GrabTypes.None;
+        }
+
+        //Pause Menu
+        public void PauseAction()
+        {
+            if(isPaused == false)
+            {
+            m_PauseMenuCanvas.enabled = true;
+            Time.timeScale = 0;
+            isPaused = !isPaused;
+            }else{
+                m_PauseMenuCanvas.enabled = false;
+                Time.timeScale = 1;
+                isPaused = !isPaused;
+            }
+            Debug.Log("Pause Game");
         }
 
 
