@@ -14,6 +14,7 @@ namespace Valve.VR.InteractionSystem.Sample
         public void OnButtonDown(Hand fromHand)
         {
             fromHand.TriggerHapticPulse(1000);
+            fromHand.otherHand.useControllerHoverComponent = false;
             CanvasOpen = !CanvasOpen;
             Debug.Log("Pressed");
 
