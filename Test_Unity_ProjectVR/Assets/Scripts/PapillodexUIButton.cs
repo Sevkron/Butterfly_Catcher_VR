@@ -33,6 +33,9 @@ public class PapillodexUIButton : MonoBehaviour
         }
         void OnEnable()
         {
+            if(m_CurrentPanel != m_MainMenuPanel){
+                
+            }
             m_CurrentPanel.SetActive(false);
             m_CurrentPanel = m_MainMenuPanel;
             m_CurrentPanel.SetActive(true);
