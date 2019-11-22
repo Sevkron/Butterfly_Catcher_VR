@@ -50369,7 +50369,22 @@ PrefabInstance:
     - target: {fileID: 7535417196130558217, guid: e5079166eff7c604aaf2b036de513c42,
         type: 3}
       propertyPath: sounds.Array.data[0].volume
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535417196130558217, guid: e5079166eff7c604aaf2b036de513c42,
+        type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c1233ab5f74755246be0fa0eb73e3efe, type: 3}
+    - target: {fileID: 7535417196130558217, guid: e5079166eff7c604aaf2b036de513c42,
+        type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: MusicMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535417196130558217, guid: e5079166eff7c604aaf2b036de513c42,
+        type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 571975803508493822, guid: e5079166eff7c604aaf2b036de513c42,
         type: 3}
