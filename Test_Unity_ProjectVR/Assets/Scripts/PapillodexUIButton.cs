@@ -9,6 +9,7 @@ namespace Valve.VR.InteractionSystem.Sample
 {
 public class PapillodexUIButton : MonoBehaviour
 {
+        public GameObject[] m_Panels;
         public GameObject m_CaughtIndexPanel;
         public GameObject m_ReproductionIndexPanel;
 //---------------------------------------
@@ -25,10 +26,16 @@ public class PapillodexUIButton : MonoBehaviour
         public GameObject m_CurrentPanel;
         public GameObject m_PreviousPanel;
         //public GameObject m_PreviousPanel;
-
-        void Start()
+        void Awake()
         {
+            m_PreviousPanel = m_MainMenuPanel;
             m_CurrentPanel = m_MainMenuPanel;
+        }
+        void OnEnable()
+        {
+            m_CurrentPanel.SetActive(false);
+            m_CurrentPanel = m_MainMenuPanel;
+            m_CurrentPanel.SetActive(true);
         }
         public void OnButtonDownHome(Hand fromHand)
         {
