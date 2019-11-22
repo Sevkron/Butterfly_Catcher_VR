@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: 2e56a0f5d78366e4e8322392727744af
 SpeedTreeImporter:
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_LOD0
+    second: {fileID: 2100000, guid: fe912924d8516484b8e2f7c7df2a6fc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_LOD1
+    second: {fileID: 2100000, guid: f1fb1daab14b7734da96242fa95e7e33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_LOD2
+    second: {fileID: 2100000, guid: 8ee0f899abfb0f7418a3d6c9e9511e13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StGreenPine_LOD0
+    second: {fileID: 2100000, guid: f4a0e1cfca4cf1348ba827c102a309b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StGreenPine_LOD1
+    second: {fileID: 2100000, guid: 05fbb25de54b53c43b0e8cc53bd06b97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StGreenPine_LOD2
+    second: {fileID: 2100000, guid: f71ead111caa949429ab11035c20869b, type: 2}
   serializedVersion: 6
   mainColor: {r: 1, g: 1, b: 1, a: 1}
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
