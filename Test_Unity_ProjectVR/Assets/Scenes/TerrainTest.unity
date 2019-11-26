@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: e612640c38b750f4bbbba3ff051d2c9b
+  m_OcclusionCullingData: {fileID: 36300000, guid: 95ec2b94afc4dff4982ec0bcac9d1bd2,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -1899,9 +1900,9 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
+    m_Resolution: 0
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.171
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
