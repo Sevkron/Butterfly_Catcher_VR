@@ -27,6 +27,7 @@ public class PapillodexUIButton : MonoBehaviour
         public GameObject m_PreviousPanel;
         public GameObject m_QuitPanel;
         public GameObject m_OptionsPanel;
+        public GameObject m_ClockPanel;
         //public GameObject m_PreviousPanel;
         void Awake()
         {
