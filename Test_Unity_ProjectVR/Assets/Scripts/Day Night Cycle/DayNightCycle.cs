@@ -168,7 +168,13 @@ public class DayNightCycle : MonoBehaviour
         }
         else
         {
-            clockTextMeshPro.text = hour.ToString() + " : " + minute.ToString();
+            if(minute >= 10)
+            {
+                clockTextMeshPro.text = hour.ToString() + " : " + minute.ToString();
+            }
+            else{
+                clockTextMeshPro.text = hour.ToString() + " : 0" + minute.ToString();
+            }
         }
     }
 

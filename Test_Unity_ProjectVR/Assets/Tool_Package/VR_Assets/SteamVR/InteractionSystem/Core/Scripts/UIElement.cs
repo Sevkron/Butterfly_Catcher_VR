@@ -19,6 +19,10 @@ namespace Valve.VR.InteractionSystem
 
         protected Hand currentHand;
 
+		public Image m_hoverImage;
+		public Image m_onClickImage;
+		public Image m_Normal;
+
 		//-------------------------------------------------
 		protected virtual void Awake()
 		{
