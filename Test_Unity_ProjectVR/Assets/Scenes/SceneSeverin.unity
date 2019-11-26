@@ -2098,42 +2098,32 @@ PrefabInstance:
     - target: {fileID: 8983487373308021521, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
       propertyPath: m_text
-      value: '00 : 00'
+      value: '-'
       objectReference: {fileID: 0}
     - target: {fileID: 8983487373308021521, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8983487373308021521, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983487373308021521, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8983487373308021521, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983487373308021521, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8983487373308021521, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_textAlignment
-      value: 516
-      objectReference: {fileID: 0}
-    - target: {fileID: 8983487373308021521, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_margin.z
-      value: 26.178598
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5290904455421617974, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
@@ -2205,53 +2195,7 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1451666168406024494, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743729162159767808, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743729162159767811, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743729162159767811, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743729162159767811, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743729162159767812, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 91.8355
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743729162159767812, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 1.6939825
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743729162159767812, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_Center.y
-      value: -0.07451731
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743729162159767812, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -45.417877
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1203790232674217678, guid: a4be3d10e4aae774388480655e3ec7b8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4be3d10e4aae774388480655e3ec7b8, type: 3}
 --- !u!1 &491031358
 GameObject:
@@ -7371,7 +7315,7 @@ MonoBehaviour:
   ignoreTransforms: []
   children:
   - gameObject: {fileID: 1672649360}
-    gameObjectHash: 29216
+    gameObjectHash: 333880
     member: {fileID: 1672649361}
     renderer: {fileID: 0}
     renderHash: 0
@@ -7403,10 +7347,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 28658
+    gameObjectHash: 333410
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 28666
+    renderHash: 333418
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7435,10 +7379,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 28670
+    gameObjectHash: 333422
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 28676
+    renderHash: 333428
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7468,10 +7412,10 @@ MonoBehaviour:
     terrainCulled: 0
   renderers:
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 28658
+    gameObjectHash: 333410
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 28666
+    renderHash: 333418
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7500,10 +7444,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 28670
+    gameObjectHash: 333422
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 28676
+    renderHash: 333428
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7536,10 +7480,10 @@ MonoBehaviour:
   shadowLights: []
   shadowCasters:
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 28658
+    gameObjectHash: 333410
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 28666
+    renderHash: 333418
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7568,10 +7512,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 28670
+    gameObjectHash: 333422
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 28676
+    renderHash: 333428
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
