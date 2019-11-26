@@ -23,9 +23,9 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField]
     private bool use24Clock = true;
     [SerializeField]
-    private Text clockText;
+    private TextMeshProUGUI clockTextMeshPro;
     [SerializeField]
-    public TextMeshProUGUI clockTextMeshPro;
+    private Image clockFill;
     [SerializeField]
     [Range(0f, 1f)]
     private float _timeOfDay;
@@ -159,17 +159,21 @@ public class DayNightCycle : MonoBehaviour
 
     private void UpdateClock()
     {
+        string minuteText;
         float time = elapsedTime / (targetDayLength * 60);
         float hour = Mathf.FloorToInt( time * 24);
         float minute = Mathf.FloorToInt (((time * 24) - hour)*60);
-        if(clockTextMeshPro == null)
+        if(minute < 10)
         {
-            clockText.text = hour.ToString() + " : " + minute.ToString();
+            minuteText = "0" + minute.ToString();
         }
         else
         {
-            clockTextMeshPro.text = hour.ToString() + " : " + minute.ToString();
+            minuteText = "" + minute.ToString();
         }
+        clockTextMeshPro.text = hour.ToString() + " : " + minuteText;
+
+        clockFill.fillAmount = timeOfDay;
     }
 
     //rotates the sun daily 
