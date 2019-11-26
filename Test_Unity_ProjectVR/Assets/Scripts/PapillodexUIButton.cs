@@ -25,6 +25,9 @@ public class PapillodexUIButton : MonoBehaviour
         public GameObject m_MainMenuPanel;
         public GameObject m_CurrentPanel;
         public GameObject m_PreviousPanel;
+        public GameObject m_QuitPanel;
+        public GameObject m_OptionsPanel;
+        public GameObject m_ClockPanel;
         //public GameObject m_PreviousPanel;
         void Awake()
         {
@@ -49,6 +52,15 @@ public class PapillodexUIButton : MonoBehaviour
             m_CurrentPanel = m_MainMenuPanel;
         }
 
+        public void OnButtonDownOptions(Hand fromHand)
+        {
+            Feedback(fromHand);
+            m_CurrentPanel.SetActive(false);
+            m_MainMenuPanel.SetActive(true);
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_MainMenuPanel;
+        }
+
         public void OnButtonDownBack(Hand fromHand)
         {
             Feedback(fromHand);
@@ -56,6 +68,22 @@ public class PapillodexUIButton : MonoBehaviour
             m_PreviousPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_PreviousPanel;
+        }
+
+        public void OnButtonDownQuit1(Hand fromHand)
+        {
+            Feedback(fromHand);
+            m_CurrentPanel.SetActive(false);
+            m_QuitPanel.SetActive(true);
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_QuitPanel;
+        }
+
+        public void OnButtonDownQuit2(Hand fromHand)
+        {
+            Feedback(fromHand);
+            Debug.Log("Quitting App");
+            Application.Quit();
         }
 //---------------------------------------
         public void OnButtonDownCaughtIndex(Hand fromHand)
