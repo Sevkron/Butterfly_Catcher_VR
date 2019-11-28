@@ -27,6 +27,7 @@ public class PapillodexUIButton : MonoBehaviour
         public GameObject m_PreviousPanel;
         public GameObject m_QuitPanel;
         public GameObject m_OptionsPanel;
+        public GameObject m_ClockOtherPanel;
         //public GameObject m_PreviousPanel;
         void Awake()
         {
@@ -39,6 +40,7 @@ public class PapillodexUIButton : MonoBehaviour
                 
             }
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(false);
             m_CurrentPanel = m_MainMenuPanel;
             m_CurrentPanel.SetActive(true);
         }
@@ -46,6 +48,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(false);
             m_MainMenuPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_MainMenuPanel;
@@ -55,15 +58,17 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
-            m_MainMenuPanel.SetActive(true);
+            m_ClockOtherPanel.SetActive(false);
+            m_OptionsPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
-            m_CurrentPanel = m_MainMenuPanel;
+            m_CurrentPanel = m_OptionsPanel;
         }
 
         public void OnButtonDownBack(Hand fromHand)
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(false);
             m_PreviousPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_PreviousPanel;
@@ -73,6 +78,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(false);
             m_QuitPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_QuitPanel;
@@ -89,6 +95,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(true);
             m_CaughtIndexPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_CaughtIndexPanel;
@@ -98,6 +105,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(true);
             m_ReproductionIndexPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_ReproductionIndexPanel;
@@ -107,6 +115,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(true);
             m_CompletedMissionsPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_CompletedMissionsPanel;
@@ -116,6 +125,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(true);
             m_CurrentMissionsPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_CurrentMissionsPanel;
@@ -125,6 +135,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(true);
             m_ButterflyProgressionPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_ButterflyProgressionPanel;
@@ -134,6 +145,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(true);
             m_VivariumStatsPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_VivariumStatsPanel;
@@ -143,6 +155,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(true);
             m_ButterflyInventoryPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_ButterflyInventoryPanel;
@@ -152,6 +165,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             m_CurrentPanel.SetActive(false);
+            m_ClockOtherPanel.SetActive(true);
             m_OtherInventoryPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_OtherInventoryPanel;

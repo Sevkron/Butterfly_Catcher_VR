@@ -23,9 +23,9 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField]
     private bool use24Clock = true;
     [SerializeField]
-    private Text clockText;
+    private TextMeshProUGUI[] clockTextMeshPro;
     [SerializeField]
-    public TextMeshProUGUI clockTextMeshPro;
+    private Image[] clockFill;
     [SerializeField]
     [Range(0f, 1f)]
     private float _timeOfDay;
@@ -97,6 +97,7 @@ public class DayNightCycle : MonoBehaviour
     private void Start()
     {
         NormalTimeCurve();
+
     }
 
 
@@ -118,7 +119,7 @@ public class DayNightCycle : MonoBehaviour
     private void UpdateTimeScale()
     {
         _timeScale = 24 / (_targetDayLength / 60);
-        _timeScale *= timeCurve.Evaluate(timeOfDay); //change timescale based on time curve
+        _timeScale *= timeCurve.Evaluate(elapsedTime / (targetDayLength * 60)); //change timescale based on time curve
         _timeScale /= timeCurveNormalization; //keeps day length at target value
     }
 
@@ -159,16 +160,39 @@ public class DayNightCycle : MonoBehaviour
 
     private void UpdateClock()
     {
+        string minuteText;
+        string hourText;
         float time = elapsedTime / (targetDayLength * 60);
         float hour = Mathf.FloorToInt( time * 24);
         float minute = Mathf.FloorToInt (((time * 24) - hour)*60);
-        if(clockTextMeshPro == null)
+
+        
+        if(minute < 10)
         {
-            clockText.text = hour.ToString() + " : " + minute.ToString();
+            minuteText = "0" + minute.ToString();
         }
         else
         {
-            clockTextMeshPro.text = hour.ToString() + " : " + minute.ToString();
+            minuteText = "" + minute.ToString();
+        }
+
+        if (hour < 10)
+        {
+            hourText = "0" + hour.ToString();
+        }
+        else
+        {
+            hourText = "" + hour.ToString();
+        }
+
+        for(int i = 0; i < clockTextMeshPro.Length; i++)
+        {
+            clockTextMeshPro[i].text = hourText + " : " + minuteText;
+        }
+
+        for(int i = 0; i < clockFill.Length; i++)
+        {
+            clockFill[i].fillAmount = timeOfDay;
         }
     }
 
