@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using BehaviorDesigner.Runtime;
 
 public class DayNightCycle : MonoBehaviour
 {
@@ -26,6 +27,16 @@ public class DayNightCycle : MonoBehaviour
     private TextMeshProUGUI[] clockTextMeshPro;
     [SerializeField]
     private Image[] clockFill;
+
+    [SerializeField]
+    private float _hourPeriod;
+    public float hourPeriod
+    {
+        get
+        {
+            return _hourPeriod;
+        }
+    }
     [SerializeField]
     [Range(0f, 1f)]
     private float _timeOfDay;
@@ -97,7 +108,6 @@ public class DayNightCycle : MonoBehaviour
     private void Start()
     {
         NormalTimeCurve();
-
     }
 
 
@@ -165,8 +175,8 @@ public class DayNightCycle : MonoBehaviour
         float time = elapsedTime / (targetDayLength * 60);
         float hour = Mathf.FloorToInt( time * 24);
         float minute = Mathf.FloorToInt (((time * 24) - hour)*60);
+        _hourPeriod = hour;
 
-        
         if(minute < 10)
         {
             minuteText = "0" + minute.ToString();
