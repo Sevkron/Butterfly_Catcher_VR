@@ -584,7 +584,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
@@ -594,8 +594,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 0a90fc5d8a1bdde41afd97be793d5b28,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 266f93036f5d6a44e8aa5a2e72ed7d8d, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1676,7 +1677,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
@@ -1686,8 +1687,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: c4e447e9b98b51345953ac79cdae61a7,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 4947fac3d26c2334689ea51dec50dd9f, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -2819,7 +2821,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
@@ -2829,8 +2831,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: be2357100ce83904598653b98f872219,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 353dc8c8a4ae71f48ac628fbdf720894, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -5502,6 +5505,20 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 2217435920520462071}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 342e3908b9b7bad4c95b44869688f108,
+        type: 3}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ade6feadfa8eee4488eb85569733bd63,
+        type: 3}
     - target: {fileID: 1231585919, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5684,6 +5701,20 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 315654363842542924}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f51726babbc1bec43bf9cdf631dbaf86,
+        type: 3}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6f03e1286d3c3d045862af9e3c8196f3,
+        type: 3}
     - target: {fileID: 1231585919, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5866,6 +5897,20 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 2217435921386835757}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f923cdd77400548449a3962f5f31c27d,
+        type: 3}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0bcf8fee350fae74991dd62799763994,
+        type: 3}
     - target: {fileID: 1231585919, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -6065,6 +6110,20 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 8217711102654769717}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ccaf6e5395dcbf04eb616c85da101e00,
+        type: 3}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 48364affc3fd15741a3dc2e9240be5ea,
+        type: 3}
     - target: {fileID: 1231585919, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_Enabled
       value: 0
