@@ -2677,10 +2677,10 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: -0.0048282743, z: -0.05819929}
-    m_Extent: {x: 0.11466897, y: 0.119496986, z: 0.055784214}
+    m_Center: {x: 0, y: 0, z: 0.000000011175871}
+    m_Extent: {x: 0.11466897, y: 0.114668705, z: 0.11398351}
   m_DirtyAABB: 0
---- !u!64 &7201310374388735044
+--- !u!64 &5918965641777320237
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2691,7 +2691,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300008, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
 --- !u!136 &2113300443
@@ -2925,19 +2925,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2300004, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4a43c41673ee4ad4bac9a843f3f31f56, type: 2}
     - target: {fileID: 2300006, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a43c41673ee4ad4bac9a843f3f31f56, type: 2}
-    - target: {fileID: 2300008, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
+    - target: {fileID: 2300004, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a43c41673ee4ad4bac9a843f3f31f56, type: 2}
-    - target: {fileID: 2300010, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
+    - target: {fileID: 2300014, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a43c41673ee4ad4bac9a843f3f31f56, type: 2}
@@ -2945,7 +2941,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a43c41673ee4ad4bac9a843f3f31f56, type: 2}
-    - target: {fileID: 2300014, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
+    - target: {fileID: 2300010, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4a43c41673ee4ad4bac9a843f3f31f56, type: 2}
+    - target: {fileID: 2300008, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a43c41673ee4ad4bac9a843f3f31f56, type: 2}
