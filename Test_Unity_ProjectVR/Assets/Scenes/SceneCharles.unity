@@ -212,36 +212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &651526736
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 651526737}
-  m_Layer: 0
-  m_Name: Net_Handposed
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &651526737
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651526736}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.041123815, y: -0.023177117, z: 0.014724862}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665146141
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,10 +540,24 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.x
       value: 0.11466897
       objectReference: {fileID: 0}
+    - target: {fileID: 399539667, guid: 6b4250a905b2b4a4a927a8f50fd65a3a, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.11398351
+      objectReference: {fileID: 0}
     - target: {fileID: 191542842535772817, guid: 6b4250a905b2b4a4a927a8f50fd65a3a,
         type: 3}
       propertyPath: m_Name
       value: NetCloth
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250988647965667960, guid: 6b4250a905b2b4a4a927a8f50fd65a3a,
+        type: 3}
+      propertyPath: previewPoseSelection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250988647965667960, guid: 6b4250a905b2b4a4a927a8f50fd65a3a,
+        type: 3}
+      propertyPath: showLeftPreview
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b4250a905b2b4a4a927a8f50fd65a3a, type: 3}
