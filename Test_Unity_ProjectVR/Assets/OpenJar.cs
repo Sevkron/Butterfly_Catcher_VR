@@ -11,11 +11,13 @@ namespace Valve.VR.InteractionSystem.Sample
         public Interactable interactable;
         //public new SkinnedMeshRenderer renderer;
 
+        public Animator animator;
+
         public bool affectMaterial = false;
 
-        public SteamVR_Action_Single gripSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("Squeeze");
+        public SteamVR_Action_Single gripSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
 
-        public SteamVR_Action_Single pinchSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("Squeeze");
+        public SteamVR_Action_Single pinchSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
 
 
         private new Rigidbody rigidbody;
@@ -27,6 +29,9 @@ namespace Valve.VR.InteractionSystem.Sample
 
             if (interactable == null)
                 interactable = GetComponent<Interactable>();
+
+            if (animator == null)
+                animator = GetComponentInChildren<Animator>();
 
             //if (renderer == null)
               //  renderer = GetComponent<SkinnedMeshRenderer>();
@@ -41,8 +46,10 @@ namespace Valve.VR.InteractionSystem.Sample
             {
                 grip = gripSqueeze.GetAxis(interactable.attachedToHand.handType);
                 pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
+                animator.SetFloat("PushTrigger", pinch);
             }
 
+            
             /*renderer.SetBlendShapeWeight(0, Mathf.Lerp(renderer.GetBlendShapeWeight(0), grip * 100, Time.deltaTime * 10));
 
             if (renderer.sharedMesh.blendShapeCount > 1) // make sure there's a pinch blend shape
