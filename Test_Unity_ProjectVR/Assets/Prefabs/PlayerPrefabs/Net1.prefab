@@ -2680,8 +2680,8 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0000000033589913, y: 0, z: 0}
     m_Extent: {x: 0.11467034, y: 0.114668705, z: 0.11398485}
   m_DirtyAABB: 0
---- !u!64 &5918965641777320237
-MeshCollider:
+--- !u!65 &1203288932064469377
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2690,10 +2690,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300008, guid: e56de044a6cb54d4c80390a50df18eac, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.24826133, y: 0.033406127, z: 0.021915244}
+  m_Center: {x: 0, y: 0.13565753, z: 0}
 --- !u!136 &2113300443
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2721,6 +2720,7 @@ GameObject:
   - component: {fileID: 863695559}
   - component: {fileID: 863695561}
   - component: {fileID: 2250988647965667960}
+  - component: {fileID: 742108199059675644}
   m_Layer: 0
   m_Name: Net1
   m_TagString: Untagged
@@ -2833,9 +2833,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateActionSetOnAttach:
     actionSetPath: 
-  hideHandOnAttach: 1
-  hideSkeletonOnAttach: 1
-  hideControllerOnAttach: 0
+  hideHandOnAttach: 0
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 1
   handAnimationOnPickup: 0
   setRangeOfMotionOnPickup: -1
   useHandObjectAttachmentPoint: 1
@@ -2900,8 +2900,51 @@ MonoBehaviour:
   previewLeftInstance: {fileID: 0}
   previewRightInstance: {fileID: 0}
   previewPoseSelection: 1
-  blendingBehaviours: []
+  blendingBehaviours:
+  - name: PushOnNet
+    enabled: 1
+    influence: 1
+    pose: 1
+    value: 0
+    action_single:
+      actionPath: /actions/default/in/Squeeze
+      needsReinit: 0
+    action_bool:
+      actionPath: 
+      needsReinit: 0
+    smoothingSpeed: 1
+    type: 1
+    useMask: 0
+    mask:
+      palm: 1
+      thumb: 1
+      index: 1
+      middle: 1
+      ring: 1
+      pinky: 1
+      values: 010101010101
+    previewEnabled: 1
   scale: 1
+--- !u!114 &742108199059675644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4661544334557336532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1f1aca5b0f1e54dabeca363a310cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
+  affectMaterial: 0
+  gripSqueeze:
+    actionPath: /actions/default/in/Squeeze
+    needsReinit: 0
+  pinchSqueeze:
+    actionPath: /actions/default/in/Squeeze
+    needsReinit: 0
 --- !u!1001 &191542842535740471
 PrefabInstance:
   m_ObjectHideFlags: 0
