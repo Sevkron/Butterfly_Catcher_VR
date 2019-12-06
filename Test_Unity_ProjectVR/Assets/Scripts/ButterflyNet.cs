@@ -11,6 +11,7 @@ public class ButterflyNet : MonoBehaviour
     public GameObject exitedButterfly;
     public BehaviorTree butterflyBehaviorTree;
     public Transform netTransform;
+    public bool IsCaptured = true;
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,8 +19,8 @@ public class ButterflyNet : MonoBehaviour
         {
             butterflyBehaviorTree = exitedButterfly.GetComponent<BehaviorTree>();
             exitedButterfly.GetComponent<NavMeshAgent>().enabled = false;
-            butterflyBehaviorTree.SetVariableValue("Transform", this.transform);
-            butterflyBehaviorTree.SendEvent<object>("CapturedInNet", netTransform.position);
+            //butterflyBehaviorTree.SetVariableValue("Transform", this.transform);
+            butterflyBehaviorTree.SendEvent<object>("CapturedInNet", IsCaptured);
             Debug.Log("Butterfly received");
         }
     }
