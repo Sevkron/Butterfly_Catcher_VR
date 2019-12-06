@@ -13,6 +13,8 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public Animator animator;
 
+        public GameObject triggerCollider;
+
         public bool affectMaterial = false;
 
         public SteamVR_Action_Single gripSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
@@ -47,22 +49,15 @@ namespace Valve.VR.InteractionSystem.Sample
                 grip = gripSqueeze.GetAxis(interactable.attachedToHand.handType);
                 pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
                 animator.SetFloat("PushTrigger", pinch);
-            }
-
-            
-            /*renderer.SetBlendShapeWeight(0, Mathf.Lerp(renderer.GetBlendShapeWeight(0), grip * 100, Time.deltaTime * 10));
-
-            if (renderer.sharedMesh.blendShapeCount > 1) // make sure there's a pinch blend shape
-                renderer.SetBlendShapeWeight(1, Mathf.Lerp(renderer.GetBlendShapeWeight(1), pinch * 100, Time.deltaTime * 10));
-
-            if (affectMaterial)
-            {
-                renderer.material.SetFloat("_Deform", Mathf.Pow(grip * 1f, 0.5f));
-                if (renderer.material.HasProperty("_PinchDeform"))
-                {
-                    renderer.material.SetFloat("_PinchDeform", Mathf.Pow(pinch * 1f, 0.5f));
+                if(pinch > 0.5){
+                    triggerCollider.SetActive(true);
+                }else{
+                    triggerCollider.SetActive(false);
                 }
-            }*/
+            }else
+            {
+                animator.SetFloat("PushTrigger", 0);
+            }
         }
     }
 }
