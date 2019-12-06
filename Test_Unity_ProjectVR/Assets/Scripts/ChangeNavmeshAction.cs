@@ -17,7 +17,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Basic.UnityGameObject
         public override TaskStatus OnUpdate()
         {
             storeValue.Value = GetDefaultGameObject(targetGameObject.Value).GetComponent(type.Value);
-            targetGameObject.GetComponent<NavMeshAgent>().enabled = false;
+            //targetGameObject.GetComponent<NavMeshAgent>().enabled = false;
             return TaskStatus.Success;
         }
 
