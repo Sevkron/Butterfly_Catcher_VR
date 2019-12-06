@@ -472,7 +472,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432368216850310402}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -2211,6 +2211,7 @@ GameObject:
   - component: {fileID: 2217435920555195342}
   - component: {fileID: 2217435920555195343}
   - component: {fileID: 2217435920555195340}
+  - component: {fileID: 8532826207577004706}
   m_Layer: 5
   m_Name: PapillodexCanvas
   m_TagString: Untagged
@@ -2366,6 +2367,102 @@ MonoBehaviour:
   m_QuitPanel: {fileID: 6117478691538096274}
   m_OptionsPanel: {fileID: 1451666168406024494}
   m_ClockOtherPanel: {fileID: 6796982099026450531}
+--- !u!82 &8532826207577004706
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2217435920555195338}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2217435920560146828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +2838,36 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &7786046856364780721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2217435920825952031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2217435920555195338}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &2217435920830263611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,7 +2885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2217435920830263610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3223,7 +3350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2217435921425697382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4173,7 +4300,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4364224068113930144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -6498,6 +6625,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2217435920555195341}
     m_Modifications:
+    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: m_Name
+      value: PapillodexUIHomeButton
+      objectReference: {fileID: 0}
     - target: {fileID: 967995134451883953, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6568,11 +6700,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 284.0841
       objectReference: {fileID: 0}
-    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: m_Name
-      value: PapillodexUIHomeButton
-      objectReference: {fileID: 0}
     - target: {fileID: 967995136527891227, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6597,6 +6724,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.9120991
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2217435920555195340}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonDownHome
       objectReference: {fileID: 0}
     - target: {fileID: 974988247604250957, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
@@ -6628,27 +6770,13 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.037005
       objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2217435920555195340}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonDownHome
-      objectReference: {fileID: 0}
     - target: {fileID: 950402376036636523, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1378919554, guid: 1964751b565aced46a950e4fe24759b1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1964751b565aced46a950e4fe24759b1, type: 3}
 --- !u!4 &1061963811024176931 stripped
 Transform:
@@ -6663,6 +6791,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2217435920555195341}
     m_Modifications:
+    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: m_Name
+      value: PapillodexUIOptionsButton
+      objectReference: {fileID: 0}
     - target: {fileID: 967995134451883953, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6733,11 +6866,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 292.49298
       objectReference: {fileID: 0}
-    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: m_Name
-      value: PapillodexUIOptionsButton
-      objectReference: {fileID: 0}
     - target: {fileID: 967995136527891227, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6762,6 +6890,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.9120991
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2217435920555195340}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonDownOptions
       objectReference: {fileID: 0}
     - target: {fileID: 974988247604250957, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
@@ -6793,26 +6936,6 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.0450604
       objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2217435920555195340}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonDownOptions
-      objectReference: {fileID: 0}
-    - target: {fileID: 950402376036636523, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 974988246488268387, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_Size.y
@@ -6843,7 +6966,13 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.0486312
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 950402376036636523, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1378919554, guid: 1964751b565aced46a950e4fe24759b1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1964751b565aced46a950e4fe24759b1, type: 3}
 --- !u!4 &597791424485953449 stripped
 Transform:
@@ -6858,6 +6987,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2123422843367404778}
     m_Modifications:
+    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: m_Name
+      value: QuitYesButton
+      objectReference: {fileID: 0}
     - target: {fileID: 967995134451883953, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6928,11 +7062,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 284.08408
       objectReference: {fileID: 0}
-    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: m_Name
-      value: QuitYesButton
-      objectReference: {fileID: 0}
     - target: {fileID: 967995136527891227, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6952,6 +7081,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2217435920555195340}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonDownQuit2
       objectReference: {fileID: 0}
     - target: {fileID: 974988247604250957, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
@@ -6973,21 +7117,6 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.0000000021282125
       objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2217435920555195340}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonDownQuit2
-      objectReference: {fileID: 0}
     - target: {fileID: 950402376036636523, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_Enabled
@@ -7008,6 +7137,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2217435920830263610}
     m_Modifications:
+    - target: {fileID: 1185722347225690490, guid: 303efcef54e504943bb0cdf202907522,
+        type: 3}
+      propertyPath: m_Name
+      value: PapillodexIndexUIButton
+      objectReference: {fileID: 0}
     - target: {fileID: 1187033085203434710, guid: 303efcef54e504943bb0cdf202907522,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7077,11 +7211,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 609.1541
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185722347225690490, guid: 303efcef54e504943bb0cdf202907522,
-        type: 3}
-      propertyPath: m_Name
-      value: PapillodexIndexUIButton
       objectReference: {fileID: 0}
     - target: {fileID: 1231585914, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7185,15 +7314,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3519841874207946136, guid: 303efcef54e504943bb0cdf202907522, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 303efcef54e504943bb0cdf202907522, type: 3}
---- !u!4 &1061963811742373419 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1187033085203434710, guid: 303efcef54e504943bb0cdf202907522,
-    type: 3}
-  m_PrefabInstance: {fileID: 2217435920323746557}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2217435921521711239 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1231585914, guid: 303efcef54e504943bb0cdf202907522,
+    type: 3}
+  m_PrefabInstance: {fileID: 2217435920323746557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1061963811742373419 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1187033085203434710, guid: 303efcef54e504943bb0cdf202907522,
     type: 3}
   m_PrefabInstance: {fileID: 2217435920323746557}
   m_PrefabAsset: {fileID: 0}
@@ -7204,6 +7333,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2217435920830263610}
     m_Modifications:
+    - target: {fileID: 1185722347225690490, guid: 303efcef54e504943bb0cdf202907522,
+        type: 3}
+      propertyPath: m_Name
+      value: PapillodexMissionsUIButton (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1187033085203434710, guid: 303efcef54e504943bb0cdf202907522,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7273,11 +7407,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 609.1541
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185722347225690490, guid: 303efcef54e504943bb0cdf202907522,
-        type: 3}
-      propertyPath: m_Name
-      value: PapillodexMissionsUIButton (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1231585914, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7381,15 +7510,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3519841874207946136, guid: 303efcef54e504943bb0cdf202907522, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 303efcef54e504943bb0cdf202907522, type: 3}
---- !u!4 &1061963812489918224 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1187033085203434710, guid: 303efcef54e504943bb0cdf202907522,
-    type: 3}
-  m_PrefabInstance: {fileID: 2217435920941464518}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2217435921857427900 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1231585914, guid: 303efcef54e504943bb0cdf202907522,
+    type: 3}
+  m_PrefabInstance: {fileID: 2217435920941464518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1061963812489918224 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1187033085203434710, guid: 303efcef54e504943bb0cdf202907522,
     type: 3}
   m_PrefabInstance: {fileID: 2217435920941464518}
   m_PrefabAsset: {fileID: 0}
@@ -7400,6 +7529,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2217435920830263610}
     m_Modifications:
+    - target: {fileID: 1185722347225690490, guid: 303efcef54e504943bb0cdf202907522,
+        type: 3}
+      propertyPath: m_Name
+      value: PapillodexInventoryUIButton
+      objectReference: {fileID: 0}
     - target: {fileID: 1187033085203434710, guid: 303efcef54e504943bb0cdf202907522,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7469,11 +7603,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 609.1541
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185722347225690490, guid: 303efcef54e504943bb0cdf202907522,
-        type: 3}
-      propertyPath: m_Name
-      value: PapillodexInventoryUIButton
       objectReference: {fileID: 0}
     - target: {fileID: 1231585914, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7598,6 +7727,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2217435920830263610}
     m_Modifications:
+    - target: {fileID: 1185722347225690490, guid: 303efcef54e504943bb0cdf202907522,
+        type: 3}
+      propertyPath: m_Name
+      value: PapillodexVivariumStatsUIButton (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1187033085203434710, guid: 303efcef54e504943bb0cdf202907522,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7668,10 +7802,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 609.1541
       objectReference: {fileID: 0}
-    - target: {fileID: 1185722347225690490, guid: 303efcef54e504943bb0cdf202907522,
+    - target: {fileID: 1187033087287797884, guid: 303efcef54e504943bb0cdf202907522,
         type: 3}
-      propertyPath: m_Name
-      value: PapillodexVivariumStatsUIButton (2)
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187033087287797884, guid: 303efcef54e504943bb0cdf202907522,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187033087287797884, guid: 303efcef54e504943bb0cdf202907522,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.044
       objectReference: {fileID: 0}
     - target: {fileID: 1231585914, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7747,6 +7891,10 @@ PrefabInstance:
       value: -14.069356
       objectReference: {fileID: 0}
     - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 8217711102654769717}
@@ -7764,6 +7912,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 48364affc3fd15741a3dc2e9240be5ea,
         type: 3}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231585918, guid: 303efcef54e504943bb0cdf202907522, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1231585919, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7771,21 +7927,6 @@ PrefabInstance:
     - target: {fileID: 1931539314, guid: 303efcef54e504943bb0cdf202907522, type: 3}
       propertyPath: m_Text
       value: Vivarium Stats
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187033087287797884, guid: 303efcef54e504943bb0cdf202907522,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187033087287797884, guid: 303efcef54e504943bb0cdf202907522,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187033087287797884, guid: 303efcef54e504943bb0cdf202907522,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.044
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3519841874207946136, guid: 303efcef54e504943bb0cdf202907522, type: 3}
@@ -7802,6 +7943,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2217435922023916902}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2217435920825952031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1231585913, guid: 303efcef54e504943bb0cdf202907522,
+    type: 3}
+  m_PrefabInstance: {fileID: 2217435922023916902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3146437345488942832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7809,6 +7956,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2123422843367404778}
     m_Modifications:
+    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: m_Name
+      value: QuitNoButton
+      objectReference: {fileID: 0}
     - target: {fileID: 967995134451883953, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7879,11 +8031,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 284.08408
       objectReference: {fileID: 0}
-    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: m_Name
-      value: QuitNoButton
-      objectReference: {fileID: 0}
     - target: {fileID: 967995136527891227, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7903,6 +8050,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2217435920555195340}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonDownHome
       objectReference: {fileID: 0}
     - target: {fileID: 974988247604250957, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
@@ -7924,21 +8086,6 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.0000000021282125
       objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2217435920555195340}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonDownHome
-      objectReference: {fileID: 0}
     - target: {fileID: 950402376036636523, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_Enabled
@@ -7959,6 +8106,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2217435920555195341}
     m_Modifications:
+    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: m_Name
+      value: PapillodexUIQuitButton
+      objectReference: {fileID: 0}
     - target: {fileID: 967995134451883953, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8029,11 +8181,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 284.0841
       objectReference: {fileID: 0}
-    - target: {fileID: 964537840539099677, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: m_Name
-      value: PapillodexUIQuitButton
-      objectReference: {fileID: 0}
     - target: {fileID: 967995136527891227, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8058,6 +8205,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.9120991
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2217435920555195340}
+    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
+        type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonDownQuit1
       objectReference: {fileID: 0}
     - target: {fileID: 974988247604250957, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
@@ -8089,27 +8251,13 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 2.0434418
       objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonUp.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2217435920555195340}
-    - target: {fileID: 933430291011755103, guid: 1964751b565aced46a950e4fe24759b1,
-        type: 3}
-      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonDownQuit1
-      objectReference: {fileID: 0}
     - target: {fileID: 950402376036636523, guid: 1964751b565aced46a950e4fe24759b1,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1378919554, guid: 1964751b565aced46a950e4fe24759b1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1964751b565aced46a950e4fe24759b1, type: 3}
 --- !u!4 &4141604646347789990 stripped
 Transform:

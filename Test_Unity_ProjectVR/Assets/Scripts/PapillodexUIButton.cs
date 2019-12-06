@@ -177,5 +177,10 @@ public class PapillodexUIButton : MonoBehaviour
             fromHand.otherHand.useControllerHoverComponent = false;
             Debug.Log("Pressed");
         }
+
+        public void HoverSound()
+        {
+            FindObjectOfType<AudioManager>().Play("CanvasSoundHover");
+        }
     }
 }

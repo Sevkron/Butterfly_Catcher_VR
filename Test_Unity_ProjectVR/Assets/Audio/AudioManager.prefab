@@ -45,10 +45,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: test
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0.1
+  - name: ClickButtonPapillodex
+    clip: {fileID: 8300000, guid: 30a82d807b3e207428399eb7d8578093, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CanvasButtonHover
+    clip: {fileID: 8300000, guid: a51562307e4625847abb2e8251716d64, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CanvasButtonClick
+    clip: {fileID: 8300000, guid: 0df6640901eb7084faf6558517c7377f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CanvasButtonReturn
+    clip: {fileID: 8300000, guid: a7ce5393379dfb948bdbf84d15051668, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CanvasActivate
+    clip: {fileID: 8300000, guid: fe83b5613c058c246b3f1ffe9c5a9634, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CanvasDeactivate
+    clip: {fileID: 8300000, guid: 7781d698a79295f46804f1afa18cb645, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!82 &571975803508493822
@@ -107,7 +137,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
