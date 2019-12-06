@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 11450526}
   - component: {fileID: 9215702}
   - component: {fileID: 12440092}
+  - component: {fileID: 3906348936271817065}
   m_Layer: 0
   m_Name: VRCamera
   m_TagString: MainCamera
@@ -643,6 +644,27 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125964}
   m_Enabled: 1
+--- !u!114 &3906348936271817065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a448bd631279e2d4c8c94b7a7e97776c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MultiCameraCulling: 1
+  SimpleCulling: 1
+  GizmoDistance: 10
+  GizmoMaterial: {fileID: 2100000, guid: 3a9a1641ce75b6248bdc679c60b90a02, type: 2}
+  CullInEditor: 1
+  CullShadows: 1
+  cullingProxy: {fileID: 0}
+  NumWorkerThreads: 0
+  LWRP_Fix: 0
 --- !u!1 &129006
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,6 +3331,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7811258074633774182}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3576076670655498053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6757632676821803811, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+    type: 3}
+  m_PrefabInstance: {fileID: 7811258074633774182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5726660386618336880 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2530467267160654358, guid: f1a4db7fdd62eac47854ce31d14b1c51,
@@ -3321,9 +3349,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f113aa3a9cb2f604d801d44eefff13d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3576076670655498053 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6757632676821803811, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-    type: 3}
-  m_PrefabInstance: {fileID: 7811258074633774182}
-  m_PrefabAsset: {fileID: 0}
