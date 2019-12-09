@@ -30,6 +30,7 @@ namespace Valve.VR
         private Color targetColor = new Color(0, 0, 0, 0);  // default target color: black and fully transparent
         private Color deltaColor = new Color(0, 0, 0, 0);   // the delta-color is basically the "speed / second" at which the current color should change
         private bool fadeOverlay = false;
+        public float duration;
 
         static public void Start(Color newColor, float duration, bool fadeOverlay = false)
         {

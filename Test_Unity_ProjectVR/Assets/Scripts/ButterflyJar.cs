@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BehaviorDesigner.Runtime;
+using UnityEngine.AI;
 
 public class ButterflyJar : MonoBehaviour
 {
+    public BehaviorTree butterflyBehaviorTree;
+    //public GameObject jar;
     // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(other.gameObject.CompareTag("Butterfly"))
+        {
+            butterflyBehaviorTree = other.gameObject.GetComponent<BehaviorTree>();
+            other.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
+        }
     }
 }

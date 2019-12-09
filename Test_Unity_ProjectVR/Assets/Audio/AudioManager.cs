@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
-        Play("MusicMenu");
+        Play("MusicPlaine");
     }
     public void Play (string name)
     {
@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.Play();
+        s.source.PlayOneShot(s.source.clip);
 
         /*A mettre dans le sript quand on veut lancer le son
          

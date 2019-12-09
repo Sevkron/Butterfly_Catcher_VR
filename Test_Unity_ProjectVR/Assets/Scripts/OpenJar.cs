@@ -12,8 +12,8 @@ namespace Valve.VR.InteractionSystem.Sample
         //public new SkinnedMeshRenderer renderer;
 
         public Animator animator;
-
-        public GameObject triggerCollider;
+         
+        public SphereCollider sphereCollider; 
 
         public bool affectMaterial = false;
 
@@ -50,9 +50,9 @@ namespace Valve.VR.InteractionSystem.Sample
                 pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
                 animator.SetFloat("PushTrigger", pinch);
                 if(pinch > 0.5){
-                    triggerCollider.SetActive(true);
+                    sphereCollider.enabled = true;
                 }else{
-                    triggerCollider.SetActive(false);
+                    sphereCollider.enabled = false;
                 }
             }else
             {

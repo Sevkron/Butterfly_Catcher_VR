@@ -28,7 +28,7 @@ namespace Valve.VR.InteractionSystem.Sample
             else
             {
                 FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");
-                StartCoroutine(closeEnum(5.0f));
+                FindObjectOfType<AudioManager>().Play("CanvasDeactivate");
                 m_Papillodex.SetActive(false);
             }
         }
@@ -37,15 +37,5 @@ namespace Valve.VR.InteractionSystem.Sample
         {
 
         }
-
-        public IEnumerator closeEnum(float WaitTime)
-        {
-            audioSource = GetComponent<AudioSource>();
-            //AudioClip = audioSource.GetComponent<>();
-            FindObjectOfType<AudioManager>().Play("CanvasDeactivate");
-            yield return null;
-        }
-
-
     }
 }

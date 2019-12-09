@@ -30,6 +30,19 @@ Transform:
   m_Father: {fileID: 8757134039729908181}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8757710164304161981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8757710162987435857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19829658, y: 0.7356241, z: 0.19829516}
+  m_Center: {x: 0.00000023841858, y: 0.36745894, z: 0}
 --- !u!1 &8757710163995067072
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +59,7 @@ GameObject:
   - component: {fileID: 8757710163995066682}
   m_Layer: 0
   m_Name: Daisy
-  m_TagString: Untagged
+  m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,19 +281,6 @@ Transform:
   m_Father: {fileID: 8757134039729908181}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8757710164304161981
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8757710162987435857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.19829658, y: 0.7356241, z: 0.19829516}
-  m_Center: {x: 0.00000023841858, y: 0.36745894, z: 0}
 --- !u!1001 &8757710162987558993
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6722254369331552627}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &191542842535772801
 GameObject:
@@ -2962,8 +2962,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.11467033, y: 0.114668705, z: 0.11398484}
+    m_Center: {x: 0.000000059604645, y: -0.00630486, z: -0.04801231}
+    m_Extent: {x: 0.1146702, y: 0.12097359, z: 0.10207315}
   m_DirtyAABB: 0
 --- !u!1 &191542842535772819
 GameObject:
@@ -3067,7 +3067,7 @@ Transform:
   - {fileID: 191542842535616165}
   - {fileID: 4563740743828625818}
   m_Father: {fileID: 6722254369331552627}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &191542842526298455
 Animator:
@@ -3437,8 +3437,8 @@ Transform:
   m_LocalPosition: {x: -1.4761238, y: -0.24517712, z: -0.17627513}
   m_LocalScale: {x: 1.8782759, y: 1.878276, z: 1.878276}
   m_Children:
-  - {fileID: 191542842535616183}
   - {fileID: 2035023945}
+  - {fileID: 191542842535616183}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3586,19 +3586,19 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - HoldNet (MAIN)
-  - HandPressButtonOnNet
+  - HoldNet
   overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
     type: 3}
   overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
     type: 3}
   skeletonMainPose: {fileID: 11400000, guid: e02b93c0227223c4ab11df09c7e0ba64, type: 2}
   skeletonAdditionalPoses:
-  - {fileID: 11400000, guid: 309b533ffb201f446b582f70e67c5724, type: 2}
+  - {fileID: 11400000, guid: e02b93c0227223c4ab11df09c7e0ba64, type: 2}
   showLeftPreview: 0
   showRightPreview: 0
   previewLeftInstance: {fileID: 0}
   previewRightInstance: {fileID: 0}
-  previewPoseSelection: 1
+  previewPoseSelection: 0
   blendingBehaviours:
   - name: PushOnNet
     enabled: 1
@@ -3649,11 +3649,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50be852a6df883446adeacceecedf2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstCollider: {fileID: 0}
-  secondCollider: {fileID: 0}
+  firstCollider: {fileID: 684206596}
+  secondCollider: {fileID: 6854788910655608174}
   exitedButterfly: {fileID: 0}
   butterflyBehaviorTree: {fileID: 0}
   netTransform: {fileID: 2035023945}
+  IsCaptured: 1
 --- !u!1 &5007847823337207488
 GameObject:
   m_ObjectHideFlags: 0

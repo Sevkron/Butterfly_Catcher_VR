@@ -1336,7 +1336,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.05
-  far clip plane: 300
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1367,6 +1367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad1e469d4e3e04489f9a36419f1a4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 0
 --- !u!92 &8546761915513257934
 Behaviour:
   m_ObjectHideFlags: 0
@@ -3143,6 +3144,41 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.009889987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.0020049117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.008487615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.0000000073609683
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.0006621892
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.000000015031162
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530467267160654358, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+        type: 3}
+      propertyPath: m_Papillodex
+      value: 
+      objectReference: {fileID: 7519279188494753108}
     - target: {fileID: 8569975700219473528, guid: f1a4db7fdd62eac47854ce31d14b1c51,
         type: 3}
       propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.size
@@ -3187,41 +3223,6 @@ PrefabInstance:
         type: 3}
       propertyPath: handFollowTransform
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2530467267160654358, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-        type: 3}
-      propertyPath: m_Papillodex
-      value: 
-      objectReference: {fileID: 7519279188494753108}
-    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.009889987
-      objectReference: {fileID: 0}
-    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.0020049117
-      objectReference: {fileID: 0}
-    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.008487615
-      objectReference: {fileID: 0}
-    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-        type: 3}
-      propertyPath: m_Center.x
-      value: -0.0000000073609683
-      objectReference: {fileID: 0}
-    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-        type: 3}
-      propertyPath: m_Center.y
-      value: -0.0006621892
-      objectReference: {fileID: 0}
-    - target: {fileID: 4284803353138131380, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.000000015031162
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1a4db7fdd62eac47854ce31d14b1c51, type: 3}
@@ -3371,6 +3372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PapillodexCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217435920555195338, guid: a4be3d10e4aae774388480655e3ec7b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2217435920555195341, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}

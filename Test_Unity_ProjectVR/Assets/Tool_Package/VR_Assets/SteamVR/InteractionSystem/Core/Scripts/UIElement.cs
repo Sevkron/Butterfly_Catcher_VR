@@ -16,6 +16,7 @@ namespace Valve.VR.InteractionSystem
 	public class UIElement : MonoBehaviour
 	{
 		public CustomEvents.UnityEventHand onHandClick;
+		public BoxCollider buttonPress;
 
         protected Hand currentHand;
 
@@ -27,6 +28,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				button.onClick.AddListener( OnButtonClick );
 			}
+			buttonPress = gameObject.GetComponent<BoxCollider>();
 		}
 
 
@@ -35,6 +37,8 @@ namespace Valve.VR.InteractionSystem
 		{
 			currentHand = hand;
 			InputModule.instance.HoverBegin( gameObject );
+			InputModule.instance.Submit( gameObject );
+			Debug.Log("Wrong button press");
 			//ControllerButtonHints.ShowButtonHint( hand, hand.uiInteractAction);
 		}
 
@@ -55,9 +59,18 @@ namespace Valve.VR.InteractionSystem
 			{
 				InputModule.instance.Submit( gameObject );
 				ControllerButtonHints.HideButtonHint( hand, hand.uiInteractAction);
+				Debug.Log("Wrong button press");
 			}
 		}
 
+		void OnTriggerEnter(Collider other)
+		{
+			if(other.gameObject == currentHand)
+			{
+				InputModule.instance.Submit( gameObject );
+				Debug.Log("Pressed button");
+			}
+		}
 
         //-------------------------------------------------
         protected virtual void OnButtonClick()

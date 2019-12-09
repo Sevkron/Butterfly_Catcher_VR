@@ -175,7 +175,7 @@ public class PapillodexUIButton : MonoBehaviour
         {
             fromHand.TriggerHapticPulse(1000);
             fromHand.otherHand.useControllerHoverComponent = false;
-            Debug.Log("Pressed");
+            //Debug.Log("Pressed");
         }
 
         public void HoverSound()
