@@ -12,6 +12,16 @@ namespace Valve.VR.InteractionSystem.Sample
         public GameObject m_Papillodex;
         private bool CanvasOpen = false;
         private AudioSource audioSource;
+        public Hand leftHand;
+        public Hand rightHand;
+
+        void Awake()
+        {
+            if(leftHand == null || rightHand == null)
+            {
+                Debug.Log("Setup Hands");
+            }
+        }
         public void OnButtonDown(Hand fromHand)
         {
             fromHand.TriggerHapticPulse(1000);
@@ -24,12 +34,16 @@ namespace Valve.VR.InteractionSystem.Sample
                 m_Papillodex.SetActive(true);
                 FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");
                 FindObjectOfType<AudioManager>().Play("CanvasActivate");
+                leftHand.useHoverSphere = false;
+                rightHand.useHoverSphere = false;
             }
             else
             {
                 FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");
                 FindObjectOfType<AudioManager>().Play("CanvasDeactivate");
                 m_Papillodex.SetActive(false);
+                leftHand.useHoverSphere = true;
+                rightHand.useHoverSphere = true;
             }
         }
 

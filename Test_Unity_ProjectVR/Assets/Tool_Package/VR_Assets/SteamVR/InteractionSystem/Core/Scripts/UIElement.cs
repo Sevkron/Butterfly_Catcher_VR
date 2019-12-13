@@ -17,7 +17,7 @@ namespace Valve.VR.InteractionSystem
 	{
 		public CustomEvents.UnityEventHand onHandClick;
 		public BoxCollider buttonPress;
-
+		public BoxCollider buttonHover;
         protected Hand currentHand;
 
 		//-------------------------------------------------
@@ -59,15 +59,23 @@ namespace Valve.VR.InteractionSystem
 			{
 				InputModule.instance.Submit( gameObject );
 				ControllerButtonHints.HideButtonHint( hand, hand.uiInteractAction);
-				Debug.Log("Wrong button press");
+				Debug.Log("Hand Hover Update");
 			}
 		}
 
-		void OnTriggerStay(Collider other)
+		void OnTriggerEnter(Collider other)
 		{
 			if(other.gameObject == currentHand)
 			{
-				InputModule.instance.Submit( gameObject );
+				InputModule.instance.HoverBegin( gameObject );
+				Debug.Log("Pressed button");
+			}
+		}
+		void OnTriggerExit(Collider other)
+		{
+			if(other.gameObject == currentHand)
+			{
+				InputModule.instance.HoverEnd( gameObject );
 				Debug.Log("Pressed button");
 			}
 		}

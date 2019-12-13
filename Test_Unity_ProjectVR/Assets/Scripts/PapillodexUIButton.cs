@@ -47,6 +47,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownHome(Hand fromHand)
         {
             Feedback(fromHand);
+            FindObjectOfType<AudioManager>().Play("CanvasButtonReturn");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(false);
             m_MainMenuPanel.SetActive(true);
@@ -57,6 +58,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownOptions(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(false);
             m_OptionsPanel.SetActive(true);
@@ -67,6 +69,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownBack(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonReturn");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(false);
             m_PreviousPanel.SetActive(true);
@@ -77,6 +80,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownQuit1(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(false);
             m_QuitPanel.SetActive(true);
@@ -87,6 +91,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownQuit2(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             Debug.Log("Quitting App");
             Application.Quit();
         }
@@ -94,6 +99,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownCaughtIndex(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_CaughtIndexPanel.SetActive(true);
@@ -104,6 +110,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownReproductionIndex(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_ReproductionIndexPanel.SetActive(true);
@@ -114,6 +121,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownCompletedMissions(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_CompletedMissionsPanel.SetActive(true);
@@ -124,6 +132,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownCurrentMissions(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_CurrentMissionsPanel.SetActive(true);
@@ -134,6 +143,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownButterflyProgression(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_ButterflyProgressionPanel.SetActive(true);
@@ -144,6 +154,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownVivariumStats(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_VivariumStatsPanel.SetActive(true);
@@ -154,6 +165,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownButterflyInventory(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_ButterflyInventoryPanel.SetActive(true);
@@ -164,6 +176,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownOtherInventory(Hand fromHand)
         {
             Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_OtherInventoryPanel.SetActive(true);
@@ -178,9 +191,9 @@ public class PapillodexUIButton : MonoBehaviour
             //Debug.Log("Pressed");
         }
 
-        public void HoverSound()
+        public void SoundFeedback(string sound)
         {
-            FindObjectOfType<AudioManager>().Play("CanvasSoundHover");
+            FindObjectOfType<AudioManager>().Play(sound);
         }
     }
 }
