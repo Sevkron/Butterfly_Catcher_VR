@@ -71,6 +71,7 @@ namespace Valve.VR.InteractionSystem
         public bool useFingerJointHover = true;
         public SteamVR_Skeleton_JointIndexEnum fingerJointHover = SteamVR_Skeleton_JointIndexEnum.indexTip;
         public float fingerJointHoverRadius = 0.025f;
+        //public LayerMask hoverFingerLayerMask = -1;
 
         [Tooltip("A transform on the hand to center attached objects on")]
         public Transform objectAttachmentPoint;
