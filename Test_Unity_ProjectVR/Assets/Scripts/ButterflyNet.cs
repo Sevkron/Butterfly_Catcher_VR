@@ -19,6 +19,7 @@ public class ButterflyNet : MonoBehaviour
         {
             butterflyBehaviorTree = exitedButterfly.GetComponent<BehaviorTree>();
             exitedButterfly.GetComponent<NavMeshAgent>().enabled = false;
+            Destroy(exitedButterfly.GetComponent<Rigidbody>());
             butterflyBehaviorTree.SetVariableValue("Transform", this.transform);
             butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
             Debug.Log("Butterfly received");
