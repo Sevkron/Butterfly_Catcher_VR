@@ -6,38 +6,43 @@ SpeedTreeImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_LOD0
-    second: {fileID: 2100000, guid: c54f8a34b39dfca41882a198f07f5ea2, type: 2}
+    second: {fileID: 2100000, guid: bd2b57ffdd8aa904ebb7d8864cd0c87c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_LOD1
-    second: {fileID: 2100000, guid: 80837ccacc8604641accdd9086768f22, type: 2}
+    second: {fileID: 2100000, guid: 11c377efababc9a4e93423d492056ac0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_LOD2
-    second: {fileID: 2100000, guid: 6875a50860783274b8687e8deff618f7, type: 2}
+    second: {fileID: 2100000, guid: b3275b6b165d63c41ab99f40ae45e13d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sakura3_Billboard_LOD3
+    second: {fileID: 2100000, guid: ac4a30f851bce2f46917fc89edc16034, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sakura3_LOD0
-    second: {fileID: 2100000, guid: 56b64794f637ffb4bbdb17a9588cb9cd, type: 2}
+    second: {fileID: 2100000, guid: cadb6a96d8017cf4c889f0a89d2e7d9f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sakura3_LOD1
-    second: {fileID: 2100000, guid: 09873fc28be5fd0428aa62adf850f12f, type: 2}
+    second: {fileID: 2100000, guid: 684bace3c16869746a622f25ef2f3b32, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sakura3_LOD2
-    second: {fileID: 2100000, guid: 67f48744d9750fa438124afdfee42eb9, type: 2}
+    second: {fileID: 2100000, guid: 704cc85a7e5fb434b946f3e6b3a94e0d, type: 2}
   serializedVersion: 6
   mainColor: {r: 1, g: 1, b: 1, a: 1}
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
   alphaTestRef: 0.33
   bestWindQuality: 4
-  hasBillboard: 0
+  hasBillboard: 1
   lODSettings:
   - height: 0.5
     castShadows: 1
@@ -57,7 +62,7 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 1
     windQuality: 4
-  - height: 0.01
+  - height: 0.125
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
@@ -66,6 +71,15 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 1
     windQuality: 4
+  - height: 0.01
+    castShadows: 1
+    receiveShadows: 1
+    useLightProbes: 0
+    reflectionProbeUsage: 0
+    enableBump: 1
+    enableHue: 1
+    enableSubsurface: 1
+    windQuality: 1
   enableSmoothLODTransition: 1
   animateCrossFading: 1
   billboardTransitionCrossFadeWidth: 0.25

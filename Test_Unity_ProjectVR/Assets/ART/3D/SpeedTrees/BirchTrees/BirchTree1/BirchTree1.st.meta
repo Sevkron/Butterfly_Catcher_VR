@@ -5,6 +5,11 @@ SpeedTreeImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BirchTree1_Billboard_LOD3
+    second: {fileID: 2100000, guid: ffbac0b168e11b94eb0dcf8c96f16a4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: BirchTree1_LOD0
     second: {fileID: 2100000, guid: 3ac48157a5e1c8746af0eff7301dcbdd, type: 2}
   - first:
@@ -37,7 +42,7 @@ SpeedTreeImporter:
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
   alphaTestRef: 0.33
   bestWindQuality: 4
-  hasBillboard: 0
+  hasBillboard: 1
   lODSettings:
   - height: 0.5
     castShadows: 1
@@ -57,7 +62,7 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 1
     windQuality: 4
-  - height: 0.01
+  - height: 0.125
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
@@ -66,6 +71,15 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 1
     windQuality: 4
+  - height: 0.01
+    castShadows: 1
+    receiveShadows: 1
+    useLightProbes: 0
+    reflectionProbeUsage: 0
+    enableBump: 1
+    enableHue: 1
+    enableSubsurface: 1
+    windQuality: 1
   enableSmoothLODTransition: 1
   animateCrossFading: 1
   billboardTransitionCrossFadeWidth: 0.25

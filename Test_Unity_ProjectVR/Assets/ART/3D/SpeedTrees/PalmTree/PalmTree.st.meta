@@ -5,39 +5,44 @@ SpeedTreeImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: PalmTree_Billboard_LOD3
+    second: {fileID: 2100000, guid: 10084be502afe7145ab473f0d3e5304e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: PalmTree_LOD0
-    second: {fileID: 2100000, guid: c5ae058bb3d36ab4190402c889ec83c7, type: 2}
+    second: {fileID: 2100000, guid: 63f0dd67945a3044f9e73b09c59958eb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: PalmTree_LOD1
-    second: {fileID: 2100000, guid: b4f31931e78171f40b747730a78310c3, type: 2}
+    second: {fileID: 2100000, guid: a57e977f6fda32042a93ae0a17e0aec5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: PalmTree_LOD2
-    second: {fileID: 2100000, guid: 3c868393d80b14645a05f24cbc0e349a, type: 2}
+    second: {fileID: 2100000, guid: c399baf04d946eb41bc8d94f64ab6af6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sample_Material__LOD0
-    second: {fileID: 2100000, guid: 069d78dadc7d0ed48bcd66f9098dc8d8, type: 2}
+    second: {fileID: 2100000, guid: d910278d443d02947b4522ed5c567d67, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sample_Material__LOD1
-    second: {fileID: 2100000, guid: 35fe5a4cdcbbbbd4388d0395be43144b, type: 2}
+    second: {fileID: 2100000, guid: d94088476211ba24eb83db052ac74443, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sample_Material__LOD2
-    second: {fileID: 2100000, guid: 130746adf116c2442a68da68e81410e3, type: 2}
+    second: {fileID: 2100000, guid: 5ccd1829f74ef7542954edf98eee9d95, type: 2}
   serializedVersion: 6
   mainColor: {r: 1, g: 1, b: 1, a: 1}
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
   alphaTestRef: 0.33
   bestWindQuality: 4
-  hasBillboard: 0
+  hasBillboard: 1
   lODSettings:
   - height: 0.5
     castShadows: 1
@@ -57,7 +62,7 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 1
     windQuality: 4
-  - height: 0.01
+  - height: 0.125
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
@@ -66,6 +71,15 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 1
     windQuality: 4
+  - height: 0.01
+    castShadows: 1
+    receiveShadows: 1
+    useLightProbes: 0
+    reflectionProbeUsage: 0
+    enableBump: 1
+    enableHue: 1
+    enableSubsurface: 1
+    windQuality: 1
   enableSmoothLODTransition: 1
   animateCrossFading: 1
   billboardTransitionCrossFadeWidth: 0.25
