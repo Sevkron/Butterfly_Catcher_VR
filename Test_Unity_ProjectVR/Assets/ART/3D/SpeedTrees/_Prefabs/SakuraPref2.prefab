@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824500165010742313}
-  m_LocalRotation: {x: -0, y: 0.000000030908623, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.04088525, y: 3.085053, z: -0.00000013485194}
+  m_LocalRotation: {x: -0.071218915, y: 0.0713093, z: 0.7910373, w: 0.6034094}
+  m_LocalPosition: {x: -0.16, y: 2.3, z: -0.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4110988456864742499}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.465, y: -1.5560001, z: 105.483}
 --- !u!136 &6459719020302773205
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41,10 +41,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.54864
+  m_Radius: 0.22572945
   m_Height: 5.2120805
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.0000000042916763, y: 0.28413117, z: -0.038779512}
 --- !u!1 &1090398077817154357
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 098149cb50dd3fa4bb7943b7408c9e2d, type: 2}
+  - {fileID: 2100000, guid: e125494d51bccc54b97268de6b99bedb, type: 2}
   - {fileID: 2100000, guid: ef48a02e824152f428582ab818026b5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -144,7 +144,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4110988456864742499}
   - component: {fileID: 3566486614797281959}
-  - component: {fileID: 3201269470646769471}
   m_Layer: 0
   m_Name: SakuraPref2
   m_TagString: Untagged
@@ -193,7 +192,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4209607765063108618}
-  - screenRelativeHeight: 0.125
+  - screenRelativeHeight: 0.15046822
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3234554528908460733}
@@ -202,22 +201,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 7820631406589245891}
   m_Enabled: 1
---- !u!54 &3201269470646769471
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105198167037677168}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5653154844834464856
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9768d370c9a1004aba05a44360817e2, type: 2}
+  - {fileID: 2100000, guid: e125494d51bccc54b97268de6b99bedb, type: 2}
   - {fileID: 2100000, guid: 8132a678728837f4bb3cf46d0b89d965, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -453,7 +436,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 527bd569b6da6444087dda305d526477, type: 2}
+  - {fileID: 2100000, guid: e125494d51bccc54b97268de6b99bedb, type: 2}
   - {fileID: 2100000, guid: 4031d40b34144cc45a6bbbeb46353f6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
