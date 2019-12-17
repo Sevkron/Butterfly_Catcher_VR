@@ -569,6 +569,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Papillodex: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
 --- !u!1 &6599845073543406726
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +692,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300004, guid: 1b71d2896040217449fe6cacd5a12407, type: 3}
 --- !u!114 &793851019850504981

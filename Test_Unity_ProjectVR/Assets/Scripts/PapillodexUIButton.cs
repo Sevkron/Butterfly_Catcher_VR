@@ -184,6 +184,12 @@ public class PapillodexUIButton : MonoBehaviour
             m_CurrentPanel = m_OtherInventoryPanel;
         }
 //---------------------------------------
+
+        public void RecenterCam(Hand fromHand)
+        {
+            UnityEngine.XR.InputTracking.Recenter();
+            Debug.Log("Camera Recentered");
+        }
         public void Feedback(Hand fromHand)
         {
             fromHand.TriggerHapticPulse(1000);
