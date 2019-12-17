@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8760634289676923695
 Transform:
@@ -106,7 +106,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1810210108553912940
 Transform:
@@ -188,13 +188,12 @@ GameObject:
   m_Component:
   - component: {fileID: 9125145674804274404}
   - component: {fileID: 8561511333981106720}
-  - component: {fileID: 7765080985174396856}
   m_Layer: 0
   m_Name: LGreenPine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9125145674804274404
 Transform:
@@ -228,11 +227,11 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.5
+  - screenRelativeHeight: 0.31199488
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3844689346304886906}
-  - screenRelativeHeight: 0.25
+  - screenRelativeHeight: 0.1282111
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 121686963730917301}
@@ -241,22 +240,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5374909249895524576}
   m_Enabled: 1
---- !u!54 &7765080985174396856
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5258056451790755575}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5539175841784038574
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +255,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1508418045580394439
 Transform:
@@ -319,7 +302,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1653359946943070394
 Transform:
