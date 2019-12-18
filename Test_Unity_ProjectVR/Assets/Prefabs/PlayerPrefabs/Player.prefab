@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerCamera: {fileID: 8546761915522370836}
+  offset: {x: 0, y: 0, z: 0}
+  m_beltHeight: 0.6
+  player: {fileID: 8546761915515491782}
 --- !u!1 &6673614100571697952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,6 +1051,7 @@ MonoBehaviour:
     actionPath: /actions/default/in/HeadsetOnHead
     needsReinit: 0
   allowToggleTo2D: 1
+  endForward: {x: 0, y: 0, z: 0}
 --- !u!1 &8546761915522354042
 GameObject:
   m_ObjectHideFlags: 0

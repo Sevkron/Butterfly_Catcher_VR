@@ -42,6 +42,8 @@ namespace Valve.VR.InteractionSystem
 
 		public bool allowToggleTo2D = true;
 
+		public Vector3 endForward;
+
 
 		//-------------------------------------------------
 		// Singleton instance of the Player. Only one can exist at a time.
@@ -320,7 +322,7 @@ namespace Valve.VR.InteractionSystem
 			Vector3 bodyDirection = bodyDirectionGuess;
 			Vector3 bodyDirectionTangent = Vector3.Cross( trackingOriginTransform.up, bodyDirection );
 			Vector3 startForward = feetPositionGuess + trackingOriginTransform.up * eyeHeight * 0.75f;
-			Vector3 endForward = startForward + bodyDirection * 0.33f;
+			endForward = startForward + bodyDirection * 0.33f;
 			Gizmos.DrawLine( startForward, endForward );
 			Gizmos.DrawLine( endForward, endForward - 0.033f * ( bodyDirection + bodyDirectionTangent ) );
 			Gizmos.DrawLine( endForward, endForward - 0.033f * ( bodyDirection - bodyDirectionTangent ) );
