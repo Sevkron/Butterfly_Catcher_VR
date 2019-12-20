@@ -17,7 +17,7 @@ namespace Valve.VR.InteractionSystem
         void Start()
         {
             cameraTransform = m_playerCamera.transform;
-            m_beltHeight = transform.position.y;
+            m_beltHeight = 0.6f;
             
         }
         // Start is called before the first frame updat
