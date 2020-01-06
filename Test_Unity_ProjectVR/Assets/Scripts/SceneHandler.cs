@@ -18,7 +18,7 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
-        if (e.target.name == "Cube")
+        if (e.target.name == "Cliff_F")
         {
             Debug.Log("Cube was clicked");
         } else if (e.target.name == "Button")
@@ -29,7 +29,7 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerInside(object sender, PointerEventArgs e)
     {
-        if (e.target.name == "Cube")
+        if (e.target.name == "Cliff_F")
         {
             Debug.Log("Cube was entered");
         }
@@ -41,7 +41,7 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerOutside(object sender, PointerEventArgs e)
     {
-        if (e.target.name == "Cube")
+        if (e.target.name == "Cliff_F")
         {
             Debug.Log("Cube was exited");
         }
