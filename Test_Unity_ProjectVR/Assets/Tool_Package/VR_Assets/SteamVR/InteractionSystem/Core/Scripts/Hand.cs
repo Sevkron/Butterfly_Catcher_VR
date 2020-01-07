@@ -60,9 +60,11 @@ namespace Valve.VR.InteractionSystem
 
         public SteamVR_Action_Boolean switchMovementMode = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("SwitchMovementAction");
 
-        public bool useHoverSphere = true;
-        public Transform hoverSphereTransform;
-        public float hoverSphereRadius = 0.05f;
+        public bool useHoverCapsule = true;
+        public Transform hoverCapsuleTransform1;
+        public Transform hoverCapsuleTransform2;
+        public float hoverCapsuleLength = 10.0f;
+        public float hoverCapsuleRadius = 0.05f;
         public LayerMask hoverLayerMask = -1;
         public float hoverUpdateInterval = 0.1f;
 
@@ -786,8 +788,12 @@ namespace Valve.VR.InteractionSystem
         {
             inputFocusAction = SteamVR_Events.InputFocusAction(OnInputFocus);
 
-            if (hoverSphereTransform == null)
-                hoverSphereTransform = this.transform;
+            if (hoverCapsuleTransform1 == null)
+                hoverCapsuleTransform1 = this.transform;
+
+            if (hoverCapsuleTransform2 == null)
+                hoverCapsuleTransform2 = this.transform;
+                hoverCapsuleTransform2.position = hoverCapsuleTransform2.position + new Vector3 (hoverCapsuleTransform2.position.x, hoverCapsuleLength, hoverCapsuleTransform2.position.z);
 
             if (objectAttachmentPoint == null)
                 objectAttachmentPoint = this.transform;
@@ -876,29 +882,29 @@ namespace Valve.VR.InteractionSystem
             float closestDistance = float.MaxValue;
             Interactable closestInteractable = null;
 
-            if (useHoverSphere)
+            if (useHoverCapsule)
             {
-                float scaledHoverRadius = hoverSphereRadius * Mathf.Abs(SteamVR_Utils.GetLossyScale(hoverSphereTransform));
-                CheckHoveringForTransform(hoverSphereTransform.position, scaledHoverRadius, ref closestDistance, ref closestInteractable, Color.green);
+                float scaledHoverRadius = hoverCapsuleRadius * Mathf.Abs(SteamVR_Utils.GetLossyScale(hoverCapsuleTransform1));
+                CheckHoveringForTransform(hoverCapsuleTransform1.position, hoverCapsuleTransform2.position, scaledHoverRadius, ref closestDistance, ref closestInteractable, Color.green);
             }
 
             if (useControllerHoverComponent && mainRenderModel != null && mainRenderModel.IsControllerVisibile())
             {
                 float scaledHoverRadius = controllerHoverRadius * Mathf.Abs(SteamVR_Utils.GetLossyScale(this.transform));
-                CheckHoveringForTransform(mainRenderModel.GetControllerPosition(controllerHoverComponent), scaledHoverRadius / 2f, ref closestDistance, ref closestInteractable, Color.blue);
+                CheckHoveringForTransform(mainRenderModel.GetControllerPosition(controllerHoverComponent), mainRenderModel.GetControllerPosition(controllerHoverComponent), scaledHoverRadius / 2f, ref closestDistance, ref closestInteractable, Color.blue);
             }
 
             if (useFingerJointHover && mainRenderModel != null && mainRenderModel.IsHandVisibile())
             {
                 float scaledHoverRadius = fingerJointHoverRadius * Mathf.Abs(SteamVR_Utils.GetLossyScale(this.transform));
-                CheckHoveringForTransform(mainRenderModel.GetBonePosition((int)fingerJointHover), scaledHoverRadius / 2f, ref closestDistance, ref closestInteractable, Color.yellow);
+                CheckHoveringForTransform(mainRenderModel.GetBonePosition((int)fingerJointHover), mainRenderModel.GetBonePosition((int)fingerJointHover), scaledHoverRadius / 2f, ref closestDistance, ref closestInteractable, Color.yellow);
             }
 
             // Hover on this one
             hoveringInteractable = closestInteractable;
         }
 
-        protected virtual bool CheckHoveringForTransform(Vector3 hoverPosition, float hoverRadius, ref float closestDistance, ref Interactable closestInteractable, Color debugColor)
+        protected virtual bool CheckHoveringForTransform(Vector3 hoverPosition1, Vector3 hoverPosition2, float hoverRadius, ref float closestDistance, ref Interactable closestInteractable, Color debugColor)
         {
             bool foundCloser = false;
 
@@ -908,7 +914,9 @@ namespace Valve.VR.InteractionSystem
                 overlappingColliders[i] = null;
             }
 
-            int numColliding = Physics.OverlapSphereNonAlloc(hoverPosition, hoverRadius, overlappingColliders, hoverLayerMask.value);
+            //Check if there aren't too many objects being interacted with
+            //int numColliding = Physics.OverlapSphereNonAlloc(hoverPosition, hoverRadius, overlappingColliders, hoverLayerMask.value);
+            int numColliding = Physics.OverlapCapsuleNonAlloc(hoverPosition1, hoverPosition2, hoverRadius, overlappingColliders, hoverLayerMask.value);
 
             if (numColliding >= ColliderArraySize)
                 Debug.LogWarning("<b>[SteamVR Interaction]</b> This hand is overlapping the max number of colliders: " + ColliderArraySize + ". Some collisions may be missed. Increase ColliderArraySize on Hand.cs");
@@ -955,7 +963,7 @@ namespace Valve.VR.InteractionSystem
                     continue;
 
                 // Best candidate so far...
-                float distance = Vector3.Distance(contacting.transform.position, hoverPosition);
+                float distance = Vector3.Distance(contacting.transform.position, hoverPosition1);
                 //float distance = Vector3.Distance(collider.bounds.center, hoverPosition);
                 bool lowerPriority = false;
                 if (closestInteractable != null)
@@ -974,7 +982,7 @@ namespace Valve.VR.InteractionSystem
 
             if (showDebugInteractables && foundCloser)
             {
-                Debug.DrawLine(hoverPosition, closestInteractable.transform.position, debugColor, .05f, false);
+                Debug.DrawLine(hoverPosition1, closestInteractable.transform.position, debugColor, .05f, false);
             }
 
             if (iActualColliderCount > 0 && iActualColliderCount != prevOverlappingColliders)
@@ -1374,11 +1382,11 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void OnDrawGizmos()
         {
-            if (useHoverSphere && hoverSphereTransform != null)
+            if (useHoverCapsule && hoverCapsuleTransform1 != null)
             {
                 Gizmos.color = Color.green;
-                float scaledHoverRadius = hoverSphereRadius * Mathf.Abs(SteamVR_Utils.GetLossyScale(hoverSphereTransform));
-                Gizmos.DrawWireSphere(hoverSphereTransform.position, scaledHoverRadius / 2);
+                float scaledHoverRadius = hoverCapsuleRadius * Mathf.Abs(SteamVR_Utils.GetLossyScale(hoverCapsuleTransform1));
+                Gizmos.DrawWireSphere(hoverCapsuleTransform1.position, scaledHoverRadius / 2);
             }
 
             if (useControllerHoverComponent && mainRenderModel != null && mainRenderModel.IsControllerVisibile())

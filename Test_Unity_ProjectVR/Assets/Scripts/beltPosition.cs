@@ -26,7 +26,7 @@ namespace Valve.VR.InteractionSystem
             Vector3 directionPlayer = new Vector3(player.endForward.x, transform.position.y, player.endForward.z);
             transform.LookAt(directionPlayer);
             transform.position = new Vector3(player.hmdTransform.position.x, player.hmdTransform.position.y - m_beltHeight, player.hmdTransform.position.z);
-            Debug.Log(player.eyeHeight);
+            //Debug.Log(player.eyeHeight);
             
 
 
