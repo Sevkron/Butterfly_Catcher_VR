@@ -33,7 +33,7 @@ public class SnapshotTransition : MonoBehaviour
 
         IEnumerator WaitToCutSong()
         {
-            yield return new WaitForSeconds(transitionTime*2);
+            yield return new WaitForSeconds(transitionTime/2);
             if (timeToReach[0] == 1)
             {
                 plaineAmbiance.Play();
