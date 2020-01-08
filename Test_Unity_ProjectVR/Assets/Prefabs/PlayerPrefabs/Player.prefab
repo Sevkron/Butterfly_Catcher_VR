@@ -1840,9 +1840,11 @@ MonoBehaviour:
   switchMovementMode:
     actionPath: /actions/default/in/SwitchMovementModes
     needsReinit: 0
-  useHoverSphere: 1
-  hoverSphereTransform: {fileID: 8543899485456617536}
-  hoverSphereRadius: 0.075
+  useHoverCapsule: 1
+  hoverCapsuleTransform1: {fileID: 0}
+  hoverCapsuleTransform2: {fileID: 0}
+  hoverCapsuleLength: 10
+  hoverCapsuleRadius: 10
   hoverLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2073,9 +2075,11 @@ MonoBehaviour:
   switchMovementMode:
     actionPath: /actions//in/SwitchMovementAction
     needsReinit: 1
-  useHoverSphere: 1
-  hoverSphereTransform: {fileID: 0}
-  hoverSphereRadius: 0.05
+  useHoverCapsule: 1
+  hoverCapsuleTransform1: {fileID: 0}
+  hoverCapsuleTransform2: {fileID: 0}
+  hoverCapsuleLength: 10
+  hoverCapsuleRadius: 0.05
   hoverLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2184,9 +2188,11 @@ MonoBehaviour:
   switchMovementMode:
     actionPath: /actions/default/in/SwitchMovementModes
     needsReinit: 0
-  useHoverSphere: 1
-  hoverSphereTransform: {fileID: 6673614100571590782}
-  hoverSphereRadius: 0.075
+  useHoverCapsule: 1
+  hoverCapsuleTransform1: {fileID: 0}
+  hoverCapsuleTransform2: {fileID: 0}
+  hoverCapsuleLength: 10
+  hoverCapsuleRadius: 10
   hoverLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295

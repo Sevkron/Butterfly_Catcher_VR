@@ -1040,10 +1040,10 @@ namespace Valve.VR.InteractionSystem
 				return false;
 			}
 
-			if ( hand.hoveringInteractable != null )
+			/*if ( hand.hoveringInteractable != null )
 			{
 				return false;
-			}
+			}*/
 
 			if ( hand.noSteamVRFallbackCamera == null )
 			{

@@ -63,8 +63,8 @@ namespace Valve.VR.InteractionSystem
         public bool useHoverCapsule = true;
         public Transform hoverCapsuleTransform1;
         public Transform hoverCapsuleTransform2;
-        public float hoverCapsuleLength = 10.0f;
-        public float hoverCapsuleRadius = 0.05f;
+        public float hoverCapsuleLength;
+        public float hoverCapsuleRadius;
         public LayerMask hoverLayerMask = -1;
         public float hoverUpdateInterval = 0.1f;
 
@@ -885,7 +885,8 @@ namespace Valve.VR.InteractionSystem
             if (useHoverCapsule)
             {
                 float scaledHoverRadius = hoverCapsuleRadius * Mathf.Abs(SteamVR_Utils.GetLossyScale(hoverCapsuleTransform1));
-                CheckHoveringForTransform(hoverCapsuleTransform1.position, hoverCapsuleTransform2.position, scaledHoverRadius, ref closestDistance, ref closestInteractable, Color.green);
+                CheckHoveringForTransform(hoverCapsuleTransform1.position, new Vector3 (hoverCapsuleTransform2.position.x, hoverCapsuleTransform1.position.y + hoverCapsuleLength, hoverCapsuleTransform2.position.z), scaledHoverRadius, ref closestDistance, ref closestInteractable, Color.green);
+                Debug.Log("transform 1 =" + hoverCapsuleTransform1.position + "and transform 2 =" + hoverCapsuleTransform2.position);
             }
 
             if (useControllerHoverComponent && mainRenderModel != null && mainRenderModel.IsControllerVisibile())
