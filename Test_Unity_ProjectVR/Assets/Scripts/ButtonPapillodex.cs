@@ -34,16 +34,16 @@ namespace Valve.VR.InteractionSystem.Sample
                 m_Papillodex.SetActive(true);
                 FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");
                 FindObjectOfType<AudioManager>().Play("CanvasActivate");
-                leftHand.useHoverSphere = false;
-                rightHand.useHoverSphere = false;
+                leftHand.useHoverCapsule = false;
+                rightHand.useHoverCapsule = false;
             }
             else
             {
                 FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");
                 FindObjectOfType<AudioManager>().Play("CanvasDeactivate");
                 m_Papillodex.SetActive(false);
-                leftHand.useHoverSphere = true;
-                rightHand.useHoverSphere = true;
+                leftHand.useHoverCapsule = true;
+                rightHand.useHoverCapsule = true;
             }
         }
 
