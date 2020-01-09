@@ -332,8 +332,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.00000047683716, y: -0.00000035762787, z: -0.00000023841858}
-    m_Extent: {x: 0.114670426, y: 0.14203224, z: 0.14151272}
+    m_Center: {x: 0, y: -0.000000059604645, z: 0.000000029802322}
+    m_Extent: {x: 0.11467033, y: 0.114668705, z: 0.11398484}
   m_DirtyAABB: 0
 --- !u!64 &7522226131418265319
 MeshCollider:
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   showRightPreview: 0
   previewLeftInstance: {fileID: 0}
   previewRightInstance: {fileID: 0}
-  previewPoseSelection: 0
+  previewPoseSelection: 1
   blendingBehaviours:
   - name: PushOnNet
     enabled: 1

@@ -9,7 +9,7 @@ namespace Valve.VR.Extras
         public SteamVR_Behaviour_Pose pose;
 
         //public SteamVR_Action_Boolean interactWithUI = SteamVR_Input.__actions_default_in_InteractUI;
-        public SteamVR_Action_Boolean interactWithUI = SteamVR_Input.GetBooleanAction("InteractUI");
+        public SteamVR_Action_Boolean grabGrip = SteamVR_Input.GetBooleanAction("GrabGrip");
 
         public bool active = true;
         public Color color;
@@ -34,8 +34,8 @@ namespace Valve.VR.Extras
             if (pose == null)
                 Debug.LogError("No SteamVR_Behaviour_Pose component found on this object", this);
 
-            if (interactWithUI == null)
-                Debug.LogError("No ui interaction action has been set on this component.", this);
+            if (grabGrip == null)
+                Debug.LogError("No grab interaction action has been set on this component.", this);
 
 
             holder = new GameObject();
@@ -132,7 +132,7 @@ namespace Valve.VR.Extras
                 dist = hit.distance;
             }
 
-            if (bHit && interactWithUI.GetStateUp(pose.inputSource))
+            if (bHit && grabGrip.GetStateUp(pose.inputSource))
             {
                 PointerEventArgs argsClick = new PointerEventArgs();
                 argsClick.fromInputSource = pose.inputSource;
@@ -142,7 +142,7 @@ namespace Valve.VR.Extras
                 OnPointerClick(argsClick);
             }
 
-            if (interactWithUI != null && interactWithUI.GetState(pose.inputSource))
+            if (grabGrip != null && grabGrip.GetState(pose.inputSource))
             {
                 pointer.transform.localScale = new Vector3(thickness * 5f, thickness * 5f, dist);
                 pointer.GetComponent<MeshRenderer>().material.color = clickColor;

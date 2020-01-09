@@ -60,6 +60,8 @@ namespace Valve.VR.InteractionSystem
 
         public SteamVR_Action_Boolean switchMovementMode = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("SwitchMovementAction");
 
+        public bool useLaserPointer;
+
         public bool useHoverCapsule = true;
         public Transform hoverCapsuleTransform1;
         public Transform hoverCapsuleTransform2;
@@ -86,6 +88,7 @@ namespace Valve.VR.InteractionSystem
         private float noSteamVRFallbackInteractorDistance = -1.0f;
 
         public GameObject renderModelPrefab;
+        public GameObject papillodex;
         [HideInInspector]
         public List<RenderModel> renderModels = new List<RenderModel>();
         [HideInInspector]
@@ -183,6 +186,7 @@ namespace Valve.VR.InteractionSystem
                     {
                         if (spewDebugText)
                             HandDebugLog("HoverEnd " + _hoveringInteractable.gameObject);
+                            
                         _hoveringInteractable.SendMessage("OnHandHoverEnd", this, SendMessageOptions.DontRequireReceiver);
 
                         //Note: The _hoveringInteractable can change after sending the OnHandHoverEnd message so we need to check it again before broadcasting this message
@@ -320,6 +324,9 @@ namespace Valve.VR.InteractionSystem
         {
             if (mainRenderModel != null)
                 mainRenderModel.SetVisibility(visible);
+
+            if (papillodex != null)
+                papillodex.SetActive(visible);
         }
 
         public void SetSkeletonRangeOfMotion(EVRSkeletalMotionRange newRangeOfMotion, float blendOverSeconds = 0.1f)
@@ -886,7 +893,8 @@ namespace Valve.VR.InteractionSystem
             {
                 float scaledHoverRadius = hoverCapsuleRadius * Mathf.Abs(SteamVR_Utils.GetLossyScale(hoverCapsuleTransform1));
                 CheckHoveringForTransform(hoverCapsuleTransform1.position, new Vector3 (hoverCapsuleTransform2.position.x, hoverCapsuleTransform1.position.y + hoverCapsuleLength, hoverCapsuleTransform2.position.z), scaledHoverRadius, ref closestDistance, ref closestInteractable, Color.green);
-                Debug.Log("transform 1 =" + hoverCapsuleTransform1.position + "and transform 2 =" + hoverCapsuleTransform2.position);
+                
+                //Debug.Log("transform 1 =" + hoverCapsuleTransform1.position + "and transform 2 =" + hoverCapsuleTransform2.position);
             }
 
             if (useControllerHoverComponent && mainRenderModel != null && mainRenderModel.IsControllerVisibile())
@@ -1698,7 +1706,13 @@ namespace Valve.VR.InteractionSystem
 
             this.BroadcastMessage("SetInputSource", handType, SendMessageOptions.DontRequireReceiver); // let child objects know we've initialized
             this.BroadcastMessage("OnHandInitialized", deviceIndex, SendMessageOptions.DontRequireReceiver); // let child objects know we've initialized
-        }
+
+            if(handType.ToString() == "LeftHand")
+                papillodex = transform.Find("Papillodex").gameObject;
+            else
+                papillodex = null;
+            Debug.Log(handType.ToString() + "");
+            }
 
         public void SetRenderModel(GameObject prefab)
         {
