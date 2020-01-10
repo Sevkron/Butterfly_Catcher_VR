@@ -1385,7 +1385,9 @@ namespace Valve.VR.InteractionSystem
                 applicationLostFocusObject.SetActive(true);
                 AttachObject(applicationLostFocusObject, GrabTypes.Scripted, AttachmentFlags.ParentToHand);
                 BroadcastMessage("OnParentHandInputFocusLost", SendMessageOptions.DontRequireReceiver);
+                
             }
+            Debug.Log("OnInputFocus Hand.cs hasFocus =" + hasFocus);
         }
 
         //-------------------------------------------------
