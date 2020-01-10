@@ -188,11 +188,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sapho paps
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 8ece0f4041c25954188e68990e01e916,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e3a4669fdfee36141b380fdf86e7d181, type: 2}
     - target: {fileID: -4216859302048453862, guid: 8ece0f4041c25954188e68990e01e916,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -269,6 +264,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9201074675897105215, guid: 8ece0f4041c25954188e68990e01e916,
         type: 3}
+    - target: {fileID: -6057140222963153312, guid: 8ece0f4041c25954188e68990e01e916,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e3a4669fdfee36141b380fdf86e7d181, type: 2}
     m_RemovedComponents:
     - {fileID: -6057140222963153312, guid: 8ece0f4041c25954188e68990e01e916, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ece0f4041c25954188e68990e01e916, type: 3}
