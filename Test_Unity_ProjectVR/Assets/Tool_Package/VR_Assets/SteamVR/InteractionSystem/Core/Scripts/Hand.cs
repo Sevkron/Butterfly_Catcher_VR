@@ -144,7 +144,7 @@ namespace Valve.VR.InteractionSystem
         private int prevOverlappingColliders = 0;
 
         private const int ColliderArraySize = 32;
-        private Collider[] overlappingColliders;
+        public Collider[] overlappingColliders;
 
         private Player playerInstance;
 
@@ -924,8 +924,8 @@ namespace Valve.VR.InteractionSystem
             }
 
             //Check if there aren't too many objects being interacted with
-            //int numColliding = Physics.OverlapSphereNonAlloc(hoverPosition, hoverRadius, overlappingColliders, hoverLayerMask.value);
-            int numColliding = Physics.OverlapCapsuleNonAlloc(hoverPosition1, hoverPosition2, hoverRadius, overlappingColliders, hoverLayerMask.value);
+            int numColliding = Physics.OverlapSphereNonAlloc(hoverPosition1, hoverRadius, overlappingColliders, hoverLayerMask.value);
+            //int numColliding = Physics.OverlapCapsuleNonAlloc(hoverPosition1, hoverPosition2, hoverRadius, overlappingColliders, hoverLayerMask.value);
 
             if (numColliding >= ColliderArraySize)
                 Debug.LogWarning("<b>[SteamVR Interaction]</b> This hand is overlapping the max number of colliders: " + ColliderArraySize + ". Some collisions may be missed. Increase ColliderArraySize on Hand.cs");
