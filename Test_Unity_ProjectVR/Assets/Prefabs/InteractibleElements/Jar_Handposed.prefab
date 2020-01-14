@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 749791670}
   - component: {fileID: 749791672}
   - component: {fileID: 749791671}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TriggerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 2690389301748311044}
   - component: {fileID: 1226718612}
   - component: {fileID: 6597156892826140689}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jar_Handposed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,9 +294,6 @@ MonoBehaviour:
   animator: {fileID: 9126860661171318280}
   sphereCollider: {fileID: 749791672}
   affectMaterial: 0
-  gripSqueeze:
-    actionPath: /actions/default/in/SqueezeTrigger
-    needsReinit: 0
   pinchSqueeze:
     actionPath: /actions/default/in/SqueezeTrigger
     needsReinit: 0
@@ -323,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8696787774598193206}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +353,7 @@ GameObject:
   - component: {fileID: 9126860661162017248}
   - component: {fileID: 9126860661164917196}
   - component: {fileID: 9126860661163918092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9126860661162017250}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +462,7 @@ GameObject:
   - component: {fileID: 9126860661164917198}
   - component: {fileID: 9126860661163918094}
   - component: {fileID: 1091968094}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +552,7 @@ GameObject:
   - component: {fileID: 9126860661162017254}
   - component: {fileID: 9126860661164917184}
   - component: {fileID: 9126860661163918080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9126860661162017256}
   - component: {fileID: 9126860661171318280}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fiole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9126860661162017258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +716,7 @@ GameObject:
   - component: {fileID: 9126860661164917192}
   - component: {fileID: 9126860661163918088}
   - component: {fileID: 1892514088}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +807,7 @@ GameObject:
   - component: {fileID: 9126860661162017262}
   - component: {fileID: 9126860661164917194}
   - component: {fileID: 9126860661163918090}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pCylinder6
   m_TagString: Untagged
   m_Icon: {fileID: 0}

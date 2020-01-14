@@ -7,12 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bush2_LOD2
+  m_Name: Material_LOD0
   m_Shader: {fileID: 14002, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: EFFECT_BUMP EFFECT_HUE_VARIATION _WINDQUALITY_BEST
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 1
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 0381075857d813d4e976c953c16f4f44, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ExtraTex:
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9e42db492ba1fcd42aa0739cabb41bb5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8489a489c6255354d905ac5967625b98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SubsurfaceTex:
@@ -44,7 +44,7 @@ Material:
     - _NormalMapKwToggle: 1
     - _SubsurfaceIndirect: 0.25
     - _SubsurfaceKwToggle: 0
-    - _TwoSided: 0
+    - _TwoSided: 2
     - _WindQuality: 4
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
