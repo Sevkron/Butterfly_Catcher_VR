@@ -10,41 +10,50 @@ namespace Valve.VR.InteractionSystem{
         public Color clickColor = Color.green;
         public GameObject holder;
         public GameObject pointer;
+        public Transform raycastDirection;
+        public float radiusSphereCast;
 
-        public float maxDistance = 10f;
-        bool isActive = false;
+        public float maxDistance = 100f;
+        public bool isActive = true;
         public bool addRigidBody = false;
 
     // Start is called before the first frame update
         void Start()
         {
-            holder = new GameObject();
-            holder.transform.parent = this.transform;
-            holder.transform.localPosition = Vector3.zero;
-            holder.transform.localRotation = Quaternion.identity;
+            if(raycastDirection == null)
+                raycastDirection = GetComponentInParent<Hand>().objectAttachmentPoint;
 
-            pointer = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            pointer.transform.parent = holder.transform;
-            pointer.transform.localScale = new Vector3(thickness, thickness, maxDistance);
-            pointer.transform.localPosition = new Vector3(0f, 0f, 50f);
-            pointer.transform.localRotation = Quaternion.identity;
-            BoxCollider collider = pointer.GetComponent<BoxCollider>();
-            if (addRigidBody)
+            if(isActive)
             {
-                if (collider)
+                holder = new GameObject();
+                holder.transform.parent = this.transform;
+                holder.transform.localPosition = Vector3.zero;
+                holder.transform.localRotation = Quaternion.identity;
+
+                pointer = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                pointer.transform.parent = holder.transform;
+                pointer.transform.localScale = new Vector3(thickness, thickness, maxDistance);
+                pointer.transform.localPosition = new Vector3(0f, 0f, 50f);
+                pointer.transform.localRotation = Quaternion.identity;
+                //pointer.transform.localRotation = Quaternion.Euler(pointer.transform.localRotation.x + 90, pointer.transform.localRotation.y, pointer.transform.localRotation.z);
+                BoxCollider collider = pointer.GetComponent<BoxCollider>();
+            
+                if (addRigidBody)
                 {
-                   collider.isTrigger = true;
+                    if (collider)
+                    {
+                        collider.isTrigger = true;
+                    }
+                    Rigidbody rigidBody = pointer.AddComponent<Rigidbody>();
+                    rigidBody.isKinematic = true;
+
                 }
-
-                Rigidbody rigidBody = pointer.AddComponent<Rigidbody>();
-                rigidBody.isKinematic = true;
-
-            }
-            else
-            {
-                if (collider)
+                else
                 {
-                    Object.Destroy(collider);
+                    if (collider)
+                    {
+                        Object.Destroy(collider);
+                    }
                 }
             }
             Material newMaterial = new Material(Shader.Find("Unlit/Color"));
@@ -55,25 +64,39 @@ namespace Valve.VR.InteractionSystem{
     // Update is called once per frame
         void Update()
         {
-            Ray raycast = new Ray(transform.position, transform.forward);
-            RaycastHit priorityHit;
-            bool bHit = Physics.Raycast(raycast, out priorityHit, maxDistance);
-
             RaycastHit hit;
-            float distanceToObstacle = 0;
+            RaycastHit priorityHit;
+//new version
+            //Ray priorityRaycast = new Ray(transform.position, transform.forward);
+            Ray priorityRaycast = new Ray(transform.position, new Vector3(transform.position.x - 1, transform.position.y, transform.position.z));
+            GameObject selectedGameObject;
 
-            if(Physics.SphereCast(transform.position, 0.1f, transform.forward, out hit, maxDistance))
+            if(Physics.Raycast(priorityRaycast, out priorityHit, maxDistance) && priorityHit.transform.gameObject.GetComponent<Interactable>() != null)
             {
-                if(hit.transform.gameObject.GetComponent<Interactable>() != null && hit.transform.gameObject == priorityHit.transform.gameObject)
-                {
-                    this.GetComponentInParent<Hand>().hoveringInteractable = hit.transform.gameObject.GetComponent<Interactable>();
-                    pointer.SetActive(true);
-                }
-                else if(priorityHit.transform.gameObject.GetComponent<Interactable>() != null)
-                    this.GetComponentInParent<Hand>().hoveringInteractable = priorityHit.transform.gameObject.GetComponent<Interactable>();
+                selectedGameObject = priorityHit.transform.gameObject;
+                GrabUpdate(true, maxDistance);
+                this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
+            }
+            else if(Physics.SphereCast(transform.position, radiusSphereCast, new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), out hit, maxDistance) && hit.transform.gameObject.GetComponent<Interactable>() != null)
+            {
+                selectedGameObject = hit.transform.gameObject;
+                GrabUpdate(true, maxDistance);
+                this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
             }
             else
-                pointer.SetActive(false);
+            {
+                GrabUpdate(false, maxDistance);
+            }
+        }
+
+        public void GrabUpdate(bool set, float distance)
+        {
+            if(isActive)
+            {
+                pointer.SetActive(set);
+                pointer.transform.localScale = new Vector3(thickness, thickness, distance);
+            }
+            
         }
     }
 }
