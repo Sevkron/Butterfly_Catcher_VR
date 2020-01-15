@@ -1780,7 +1780,7 @@ GameObject:
   - component: {fileID: 8546761915515475664}
   - component: {fileID: 8577440592044705422}
   - component: {fileID: 8577440591883890210}
-  - component: {fileID: 1385550638}
+  - component: {fileID: 625277568}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -1871,7 +1871,6 @@ MonoBehaviour:
   spewDebugText: 0
   showDebugInteractables: 0
   m_PauseMenuCanvas: {fileID: 8546761915275489315}
-  overlappingColliders: []
 --- !u!114 &8577440592044705422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,7 +1933,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   hand: {fileID: 0}
---- !u!114 &1385550638
+--- !u!114 &625277568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1943,18 +1942,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 8546761915522585214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b531ec384b7c5248847ef9d7d12ad2f, type: 3}
+  m_Script: {fileID: 11500000, guid: b2f511c1adaa1e94ebe7ca97bbcabd17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0.9248905, b: 1, a: 0}
-  thickness: 0.005
+  pose: {fileID: 0}
+  grabGrip:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  active: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  thickness: 0.002
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
-  radiusSphereCast: 0.5
-  maxDistance: 100
-  isActive: 1
   addRigidBody: 0
+  reference: {fileID: 0}
 --- !u!1 &8546761915522590832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,7 +2131,6 @@ MonoBehaviour:
   spewDebugText: 0
   showDebugInteractables: 0
   m_PauseMenuCanvas: {fileID: 0}
-  overlappingColliders: []
 --- !u!54 &8546761915527752858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2158,7 +2159,6 @@ GameObject:
   - component: {fileID: 8546761915515295310}
   - component: {fileID: 8577440591654345484}
   - component: {fileID: 8577440610069782020}
-  - component: {fileID: 1362188045}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -2247,7 +2247,6 @@ MonoBehaviour:
   spewDebugText: 0
   showDebugInteractables: 0
   m_PauseMenuCanvas: {fileID: 0}
-  overlappingColliders: []
 --- !u!114 &8577440591654345484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2321,27 +2320,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 567
   hand: {fileID: 0}
---- !u!114 &1362188045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8546761915522601548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b531ec384b7c5248847ef9d7d12ad2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0, g: 0.84622765, b: 1, a: 0}
-  thickness: 0.002
-  clickColor: {r: 0, g: 1, b: 0, a: 1}
-  holder: {fileID: 0}
-  pointer: {fileID: 0}
-  radiusSphereCast: 0.5
-  maxDistance: 100
-  isActive: 1
-  addRigidBody: 0
 --- !u!1 &8547760813560887732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,14 +3305,9 @@ PrefabInstance:
       propertyPath: handFollowTransform
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 793851019850504981, guid: f1a4db7fdd62eac47854ce31d14b1c51, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1a4db7fdd62eac47854ce31d14b1c51, type: 3}
---- !u!1 &7740849243166131246 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6599845073543406726, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-    type: 3}
-  m_PrefabInstance: {fileID: 3529231663415320744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1433376054083527358 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2530467267160654358, guid: f1a4db7fdd62eac47854ce31d14b1c51,
@@ -3356,6 +3329,12 @@ GameObject:
 --- !u!4 &5013566849268399510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8460466012540591422, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+    type: 3}
+  m_PrefabInstance: {fileID: 3529231663415320744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7740849243166131246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6599845073543406726, guid: f1a4db7fdd62eac47854ce31d14b1c51,
     type: 3}
   m_PrefabInstance: {fileID: 3529231663415320744}
   m_PrefabAsset: {fileID: 0}

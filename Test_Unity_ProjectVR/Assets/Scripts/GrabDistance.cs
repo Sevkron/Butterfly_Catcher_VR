@@ -7,7 +7,7 @@ namespace Valve.VR.InteractionSystem{
     {
         public Color color;
         public float thickness = 0.002f;
-        public Color clickColor = Color.green;
+        //public Color clickColor = Color.green;
         public GameObject holder;
         public GameObject pointer;
         public Transform raycastDirection;
@@ -21,21 +21,23 @@ namespace Valve.VR.InteractionSystem{
         void Start()
         {
             if(raycastDirection == null)
-                raycastDirection = GetComponentInParent<Hand>().objectAttachmentPoint;
+                raycastDirection = this.transform;
 
             if(isActive)
             {
                 holder = new GameObject();
                 holder.transform.parent = this.transform;
-                holder.transform.localPosition = Vector3.zero;
-                holder.transform.localRotation = Quaternion.identity;
+                holder.transform.localPosition = raycastDirection.transform.localPosition;
+                //holder.transform.localPosition = Vector3.zero;
+                //holder.transform.localRotation = Quaternion.identity;
+                holder.transform.localRotation = raycastDirection.transform.localRotation;
 
                 pointer = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 pointer.transform.parent = holder.transform;
                 pointer.transform.localScale = new Vector3(thickness, thickness, maxDistance);
                 pointer.transform.localPosition = new Vector3(0f, 0f, 50f);
                 pointer.transform.localRotation = Quaternion.identity;
-                //pointer.transform.localRotation = Quaternion.Euler(pointer.transform.localRotation.x + 90, pointer.transform.localRotation.y, pointer.transform.localRotation.z);
+                
                 BoxCollider collider = pointer.GetComponent<BoxCollider>();
             
                 if (addRigidBody)
@@ -67,8 +69,8 @@ namespace Valve.VR.InteractionSystem{
             RaycastHit hit;
             RaycastHit priorityHit;
 //new version
-            //Ray priorityRaycast = new Ray(transform.position, transform.forward);
-            Ray priorityRaycast = new Ray(transform.position, new Vector3(transform.position.x - 1, transform.position.y, transform.position.z));
+            Ray priorityRaycast = new Ray(raycastDirection.transform.position, raycastDirection.transform.forward);
+
             GameObject selectedGameObject;
 
             if(Physics.Raycast(priorityRaycast, out priorityHit, maxDistance) && priorityHit.transform.gameObject.GetComponent<Interactable>() != null)
@@ -77,7 +79,7 @@ namespace Valve.VR.InteractionSystem{
                 GrabUpdate(true, maxDistance);
                 this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
             }
-            else if(Physics.SphereCast(transform.position, radiusSphereCast, new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), out hit, maxDistance) && hit.transform.gameObject.GetComponent<Interactable>() != null)
+            else if(Physics.SphereCast(raycastDirection.transform.position, radiusSphereCast, raycastDirection.transform.forward, out hit, maxDistance) && hit.transform.gameObject.GetComponent<Interactable>() != null)
             {
                 selectedGameObject = hit.transform.gameObject;
                 GrabUpdate(true, maxDistance);
