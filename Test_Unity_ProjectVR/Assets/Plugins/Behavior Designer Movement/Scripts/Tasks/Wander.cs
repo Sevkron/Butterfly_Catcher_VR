@@ -47,6 +47,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
             return TaskStatus.Running;
         }
 
+
+
+
         private bool TrySetTarget()
         {
             var direction = transform.forward;
