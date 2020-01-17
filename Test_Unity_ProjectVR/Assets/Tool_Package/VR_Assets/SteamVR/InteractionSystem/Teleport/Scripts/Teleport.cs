@@ -7,6 +7,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -71,6 +74,9 @@ namespace Valve.VR.InteractionSystem
 		private Hand pointerHand = null;
 		private Player player = null;
 		private TeleportArc teleportArc = null;
+
+		public Text distanceText;
+		private float distanceFromPlayer;
 
 		private bool visible = false;
 
@@ -411,6 +417,9 @@ namespace Valve.VR.InteractionSystem
 				}
 
 				pointerEnd = hitInfo.point;
+
+				distanceFromPlayer = Vector3.Distance( hitInfo.point, player.hmdTransform.position );
+				distanceText.text = distanceFromPlayer + "meters";
 			}
 			else //Hit neither
 			{
@@ -437,7 +446,7 @@ namespace Valve.VR.InteractionSystem
 				invalidReticleTransform.rotation = Quaternion.Slerp( invalidReticleTransform.rotation, invalidReticleTargetRotation, 0.1f );
 
 				//Scale the invalid reticle based on the distance from the player
-				float distanceFromPlayer = Vector3.Distance( hitInfo.point, player.hmdTransform.position );
+				distanceFromPlayer = Vector3.Distance( hitInfo.point, player.hmdTransform.position );
 				float invalidReticleCurrentScale = Util.RemapNumberClamped( distanceFromPlayer, invalidReticleMinScaleDistance, invalidReticleMaxScaleDistance, invalidReticleMinScale, invalidReticleMaxScale );
 				invalidReticleScale.x = invalidReticleCurrentScale;
 				invalidReticleScale.y = invalidReticleCurrentScale;
@@ -685,6 +694,7 @@ namespace Valve.VR.InteractionSystem
 
 				teleportPointerObject.SetActive( false );
 				teleportArc.Show();
+				
 
 				foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
 				{
