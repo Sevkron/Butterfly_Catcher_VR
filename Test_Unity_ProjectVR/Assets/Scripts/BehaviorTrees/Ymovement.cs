@@ -12,7 +12,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public bool n_newchange;
         private float n_baseoffset;
         private float n_newbaseoffset;
-        public float t = 0.005f;
+        public float t = 0.1f;
+        private float translationVel;
+        //public flaot
 
         public override void OnStart()
         {
@@ -23,7 +25,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
 
         public override TaskStatus OnUpdate()
         {  
-            if (n_newchange == true)
+            /*if (n_newchange == true)
             {
                 n_newchange = false;
 
@@ -43,8 +45,11 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
                 }
                 n_newchange = true;
             }
-            return TaskStatus.Running;
+            return TaskStatus.Running;*/
 
+            float yPos = Mathf.SmoothDamp(n_baseoffset, Random.Range(0.4f, 2.5f), ref translationVel, t);
+            navMeshAgent.baseOffset = yPos;
+            return TaskStatus.Running;
 
 
         }

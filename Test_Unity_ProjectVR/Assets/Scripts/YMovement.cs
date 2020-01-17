@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmoothDampExample : MonoBehaviour
+public class YMovement : MonoBehaviour
 {
     public float smoothTime = .1f;
     public float translation;
@@ -18,6 +18,9 @@ public class SmoothDampExample : MonoBehaviour
     private void Update()
     {
         float yPos = Mathf.SmoothDamp(transform.localPosition.y, Random.Range(-translation, translation), ref translationVel, smoothTime);
-        transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
+        //transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
+
+        float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(-translation, translation), ref translationVel, smoothTime);
+        transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
     }
 }
