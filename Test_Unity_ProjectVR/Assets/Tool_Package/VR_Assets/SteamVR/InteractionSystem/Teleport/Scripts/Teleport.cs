@@ -9,7 +9,6 @@ using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using TMPro;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -75,8 +74,7 @@ namespace Valve.VR.InteractionSystem
 		private Player player = null;
 		private TeleportArc teleportArc = null;
 
-		public Text distanceText;
-		private float distanceFromPlayer;
+		public float distanceFromPlayer;
 
 		private bool visible = false;
 
@@ -419,7 +417,7 @@ namespace Valve.VR.InteractionSystem
 				pointerEnd = hitInfo.point;
 
 				distanceFromPlayer = Vector3.Distance( hitInfo.point, player.hmdTransform.position );
-				distanceText.text = distanceFromPlayer + "meters";
+
 			}
 			else //Hit neither
 			{
