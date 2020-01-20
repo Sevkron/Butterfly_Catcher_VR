@@ -7,17 +7,19 @@ namespace Valve.VR.InteractionSystem
 {
     public class TeleportUI : MonoBehaviour
 {
-        private TextMeshPro distanceText;
+        private TextMeshProUGUI[] distanceText;
+        //private TMP_Text textDistance;
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
-        
+            distanceText = GetComponentsInChildren<TextMeshProUGUI>();
         }
 
         // Update is called once per frame
         void Update()
         {
             float distanceFromPlayer = GetComponentInParent<Teleport>().distanceFromPlayer;
+            distanceText[0].text = distanceFromPlayer + " meters";
         }
     }
 }
