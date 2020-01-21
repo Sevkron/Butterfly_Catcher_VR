@@ -12,6 +12,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public SharedGameObject target;
         [Tooltip("If target is null then use the target position")]
         public SharedVector3 targetPosition;
+        [Tooltip("return Vector3 target")]
+        public SharedVector3 Vector3target;
+
 
         public override void OnStart()
         {
@@ -37,9 +40,12 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         private Vector3 Target()
         {
             if (target.Value != null) {
+
+
                 return target.Value.transform.position;
             }
             return targetPosition.Value;
+
         }
 
         public override void OnReset()

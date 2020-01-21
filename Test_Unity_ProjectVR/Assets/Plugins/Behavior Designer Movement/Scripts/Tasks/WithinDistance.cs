@@ -49,7 +49,12 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
                 if (!string.IsNullOrEmpty(targetTag.Value)) {
                     var gameObjects = GameObject.FindGameObjectsWithTag(targetTag.Value);
                     for (int i = 0; i < gameObjects.Length; ++i) {
-                        objects.Add(gameObjects[i]);
+
+                        //if (gameObjects[i] != this.gameObject)
+                        {
+                            objects.Add(gameObjects[i]);
+                        }
+                        
                     }
                 } else {
                     var colliders = Physics.OverlapSphere(transform.position, magnitude.Value, objectLayerMask.value);
