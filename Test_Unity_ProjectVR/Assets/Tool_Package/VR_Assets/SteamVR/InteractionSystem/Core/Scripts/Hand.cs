@@ -100,6 +100,7 @@ namespace Valve.VR.InteractionSystem
         public bool spewDebugText = false;
         public bool showDebugInteractables = false;
         public Canvas m_PauseMenuCanvas;
+        public Canvas m_DistanceCanvas;
         private bool isPaused = false;
 
         public struct AttachedObject
