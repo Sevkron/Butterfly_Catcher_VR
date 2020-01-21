@@ -8,53 +8,34 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
   
     public class Ymovement : NavMeshMovement
     {
-
-        public bool n_newchange;
-        private float n_baseoffset;
-        private float n_newbaseoffset;
-        public float t = 0.1f;
+        public float ysmoothTime = .3f;
+        public float xsmoothTime = 0.5f;
+        public float ymini = -1;
+        public float ymax = 2.5f;
+        public float xmini = -1;
+        public float xmax = 1.5f;
         private float translationVel;
-        //public flaot
 
-        public override void OnStart()
+
+        [HideInInspector] public new Transform transform;
+
+        public override void OnAwake()
         {
-            n_baseoffset = navMeshAgent.baseOffset;
-            n_newchange = true;
-            //Debug.Log(n_baseoffset);
+            transform = GetComponent<Transform>();
         }
 
         public override TaskStatus OnUpdate()
-        {  
-            /*if (n_newchange == true)
-            {
-                n_newchange = false;
+        {
+            float yPos = Mathf.SmoothDamp(transform.localPosition.y, Random.Range(ymini, ymax), ref translationVel, ysmoothTime);
+            //transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
 
-                n_newbaseoffset = Random.Range(0.4f, 4f);
-                Debug.Log(n_newbaseoffset);
+            float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(xmini, xmax), ref translationVel, xsmoothTime);
+            transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
 
-                float n_oldbaseoffset = navMeshAgent.baseOffset;
-
-                if (n_newbaseoffset != n_baseoffset)
-                {
-                    if( n_newbaseoffset > n_oldbaseoffset)
-                    navMeshAgent.baseOffset = Mathf.SmoothStep(n_oldbaseoffset, n_newbaseoffset, t * Time.deltaTime);
-
-                    else if (n_newbaseoffset < n_oldbaseoffset)
-                        navMeshAgent.baseOffset = Mathf.SmoothStep(n_newbaseoffset, n_oldbaseoffset, t * Time.deltaTime);
-
-                }
-                n_newchange = true;
-            }
-            return TaskStatus.Running;*/
-
-            float yPos = Mathf.SmoothDamp(n_baseoffset, Random.Range(0.4f, 2.5f), ref translationVel, t);
-            navMeshAgent.baseOffset = yPos;
             return TaskStatus.Running;
-
-
         }
-
-
-       
+        
     }
+
 }
+

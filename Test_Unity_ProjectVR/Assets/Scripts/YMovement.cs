@@ -12,22 +12,37 @@ public class YMovement : MonoBehaviour
     public float xmax = 1.5f;
     private float translationVel;
 
-    
+    public bool isWander;
+    public Vector3 destinationVector3;
+
     [HideInInspector] public new Transform transform;
 
     private void Awake()
     {
         transform = GetComponent<Transform>();
+        isWander = true;
     }
 
     private void Update()
     {
-        float yPos = Mathf.SmoothDamp(transform.localPosition.y, Random.Range(ymini, ymax), ref translationVel, ysmoothTime);
-        //transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
+        if (isWander)
+        {
+            float yPos = Mathf.SmoothDamp(transform.localPosition.y, Random.Range(ymini, ymax), ref translationVel, ysmoothTime);
+            //transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
 
-        float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(xmini , xmax), ref translationVel, xsmoothTime);
-        transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
+            float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(xmini, xmax), ref translationVel, xsmoothTime);
+            transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
 
-        //transform.LookAt(- transform.localPosition);
+            //transform.LookAt(- transform.localPosition);
+        }
+      
+    }
+
+    public void GoToHeight(Vector3 destinationVector3)
+    {
+        if (isWander == false)
+        {
+            transform.Translate(destinationVector3);
+        }
     }
 }
