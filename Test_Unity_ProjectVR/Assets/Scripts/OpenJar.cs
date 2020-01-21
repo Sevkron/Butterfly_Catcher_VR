@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BehaviorDesigner.Runtime;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
@@ -15,6 +16,10 @@ namespace Valve.VR.InteractionSystem.Sample
         public SphereCollider sphereCollider; 
 
         public bool affectMaterial = false;
+
+        public bool JarOpen;
+
+        public bool hasButterfly;
 
         //public SteamVR_Action_Single gripSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
 
@@ -37,14 +42,31 @@ namespace Valve.VR.InteractionSystem.Sample
                 pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
                 animator.SetFloat("PushTrigger", pinch);
                 if(pinch > 0.5){
-                    sphereCollider.enabled = true;
-                }else{
+                    if (hasButterfly == false)
+                    {
+                        sphereCollider.enabled = true;
+                         JarOpen = true;
+                    }               
+                    else if (hasButterfly == true)
+                    {
+                        sphereCollider.enabled = false;
+                        JarOpen = true;
+                    }
+                       
+                }
+                else{
                     sphereCollider.enabled = false;
+                    JarOpen = false;
                 }
             }else
             {
                 animator.SetFloat("PushTrigger", 0);
             }
+        }
+
+        public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior)
+        {
+
         }
     }
 }
