@@ -14,6 +14,7 @@ public class YMovement : MonoBehaviour
 
     public bool isWander;
     public Vector3 destinationVector3;
+    //protected Seek ScriptSeek;
 
     [HideInInspector] public new Transform transform;
 
@@ -21,6 +22,7 @@ public class YMovement : MonoBehaviour
     {
         transform = GetComponent<Transform>();
         isWander = true;
+        //ScriptSeek = GetComponent.NavMeshMovement.Seek<Seek>();
     }
 
     private void Update()

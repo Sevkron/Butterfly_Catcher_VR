@@ -21,6 +21,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
             base.OnStart();
 
             SetDestination(Target());
+
         }
 
         // Seek the destination. Return success once the agent has reached the destination.
@@ -40,7 +41,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         private Vector3 Target()
         {
             if (target.Value != null) {
-
 
                 return target.Value.transform.position;
             }
