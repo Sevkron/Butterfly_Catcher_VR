@@ -7,15 +7,16 @@ using UnityEngine.AI;
 public class ButterflyJar : MonoBehaviour
 {
     public BehaviorTree butterflyBehaviorTree;
-    
+
 
     //public GameObject jar;
-    // Start is called before the first frame update
-    
+    public bool hasButterfly;
+    public GameObject ButterflyinJar;
+
 
     private void Start()
     {
-        //hasButterfly = 
+        
     }
     void OnTriggerEnter(Collider other)
     {
@@ -23,11 +24,12 @@ public class ButterflyJar : MonoBehaviour
         {
             butterflyBehaviorTree = other.gameObject.GetComponent<BehaviorTree>();
             other.gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            Destroy(other.gameObject.GetComponent<Rigidbody>());
+            //Destroy(other.gameObject.GetComponent<Rigidbody>());
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
-            //hasButterfly = true;
+            ButterflyinJar = other.gameObject;
+            hasButterfly = true;
         }
 
-        //if (PapinJar & Jaropen)
+        
     }
 }

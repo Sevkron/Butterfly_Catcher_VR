@@ -4,6 +4,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using UnityEngine.AI;
 
 namespace Valve.VR.InteractionSystem.Sample
 {
@@ -19,7 +20,15 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public bool JarOpen;
 
-        public bool hasButterfly;
+        public BehaviorTree butterflyBehaviorTree;
+
+        public GameObject ExitPoint;
+
+        private ButterflyJar JarScript;
+
+        private Vector3 ExitVector3;
+
+        //public bool hasButterfly;
 
         //public SteamVR_Action_Single gripSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
 
@@ -32,22 +41,30 @@ namespace Valve.VR.InteractionSystem.Sample
 
             if (animator == null)
                 animator = GetComponentInChildren<Animator>();
+
+            JarScript = GetComponent<ButterflyJar>();
+
+            ExitVector3 = new Vector3(ExitPoint.transform.position.x , ExitPoint.transform.position.y , ExitPoint.transform.position.z);
+
+           
         }
 
         private void Update()
         {
             if (interactable.attachedToHand)
             {
+               
                 float pinch = 0;
                 pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
                 animator.SetFloat("PushTrigger", pinch);
                 if(pinch > 0.5){
-                    if (hasButterfly == false)
+
+                    if (JarScript.hasButterfly == false)
                     {
                         sphereCollider.enabled = true;
                          JarOpen = true;
                     }               
-                    else if (hasButterfly == true)
+                    else if (JarScript.hasButterfly == true)
                     {
                         sphereCollider.enabled = false;
                         JarOpen = true;
@@ -64,9 +81,23 @@ namespace Valve.VR.InteractionSystem.Sample
             }
         }
 
-        public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior)
+        public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
         {
+            if (JarOpen == true & hasButterfly == true )
+            {
+                //& wait for 3sec then:
 
+                //translate butterfly out of the jar
+                JarScript.ButterflyinJar.transform.Translate(ExitVector3 * Time.deltaTime);
+
+                butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
+                JarScript.ButterflyinJar.GetComponent<NavMeshAgent>().enabled = true;
+                //Destroy(other.gameObject.GetComponent<Rigidbody>());
+                butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
+
+
+
+            }
         }
     }
 }
