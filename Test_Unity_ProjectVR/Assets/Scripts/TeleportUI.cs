@@ -7,20 +7,29 @@ namespace Valve.VR.InteractionSystem
 {
     public class TeleportUI : MonoBehaviour
 {
-        private TextMeshProUGUI[] distanceText;
-        private GameObject teleportGO;
-        private Teleport teleportScript;
+        public TextMeshProUGUI[] distanceText;
+        public GameObject teleportGO;
+        public Teleport teleportScript;
         public Camera m_Camera;
         private GameObject CameraGO;
         //private TMP_Text textDistance;
         // Start is called before the first frame update
         void Awake()
         {
-            distanceText = GetComponentsInChildren<TextMeshProUGUI>();
-            teleportGO = GameObject.Find("Teleporting");
-            teleportScript = teleportGO.GetComponent<Teleport>();
-            CameraGO = GameObject.FindGameObjectWithTag("MainCamera");
-            m_Camera = CameraGO.GetComponent<Camera>();
+            if(distanceText == null)
+                distanceText = GetComponentsInChildren<TextMeshProUGUI>();
+
+            if(teleportScript == null)
+            {
+                teleportGO = GameObject.Find("Teleporting");
+                teleportScript = teleportGO.GetComponent<Teleport>();
+            }
+
+            if(m_Camera == null)
+            {
+                CameraGO = GameObject.FindGameObjectWithTag("MainCamera");
+                m_Camera = CameraGO.GetComponent<Camera>();
+            }
         }
 
         // Update is called once per frame
@@ -39,7 +48,6 @@ namespace Valve.VR.InteractionSystem
         {
             transform.LookAt(transform.position + m_Camera.transform.rotation * Vector3.forward,
             m_Camera.transform.rotation * Vector3.up);
-    
         }
     }
 }

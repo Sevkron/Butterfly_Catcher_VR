@@ -207,7 +207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1132895202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -300,7 +300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21c18a813382f2449ecb23705b1060a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Camera: {fileID: 0}
+  distanceText:
+  - {fileID: 347839645}
+  teleportGO: {fileID: 0}
+  teleportScript: {fileID: 0}
+  m_Camera: {fileID: 8546761915522818000}
 --- !u!1 &1402423670
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,13 +518,13 @@ MonoBehaviour:
   m_margin: {x: 0.06342969, y: -0.13527729, z: -0.07323046, w: -0.19569317}
   m_textInfo:
     textComponent: {fileID: 2158017396483227453}
-    characterCount: 13
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 2
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1177,7 +1181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8259044674942673481
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1270,7 +1274,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21c18a813382f2449ecb23705b1060a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Camera: {fileID: 0}
+  distanceText:
+  - {fileID: 2158017396483227453}
+  teleportGO: {fileID: 0}
+  teleportScript: {fileID: 0}
+  m_Camera: {fileID: 8546761915522818000}
 --- !u!82 &4545210272898452269
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2475,6 +2483,7 @@ MonoBehaviour:
   spewDebugText: 0
   showDebugInteractables: 0
   m_PauseMenuCanvas: {fileID: 8546761915275489315}
+  m_DistanceCanvas: {fileID: 8724699503207206746}
   overlappingColliders: []
 --- !u!114 &8577440592044705422
 MonoBehaviour:
@@ -2733,6 +2742,7 @@ MonoBehaviour:
   spewDebugText: 0
   showDebugInteractables: 0
   m_PauseMenuCanvas: {fileID: 0}
+  m_DistanceCanvas: {fileID: 0}
   overlappingColliders: []
 --- !u!54 &8546761915527752858
 Rigidbody:
@@ -2853,6 +2863,7 @@ MonoBehaviour:
   spewDebugText: 0
   showDebugInteractables: 0
   m_PauseMenuCanvas: {fileID: 0}
+  m_DistanceCanvas: {fileID: 1132895206}
   overlappingColliders: []
 --- !u!114 &8577440591654345484
 MonoBehaviour:

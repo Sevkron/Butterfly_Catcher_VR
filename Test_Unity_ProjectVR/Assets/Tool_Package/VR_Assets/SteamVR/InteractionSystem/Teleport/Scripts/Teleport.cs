@@ -257,7 +257,6 @@ namespace Valve.VR.InteractionSystem
 
 				if ( WasTeleportButtonPressed( hand ) )
 				{
-					//hand.m_DistanceCanvas.gameObject.SetActive(true);
 					Debug.Log("Pressed");
 					newPointerHand = hand;
 					
@@ -666,7 +665,8 @@ namespace Valve.VR.InteractionSystem
 
 			teleportArc.Hide();
 
-			pointerHand.m_DistanceCanvas.gameObject.SetActive(false);
+			//reactivate later
+			//pointerHand.m_DistanceCanvas.gameObject.SetActive(false);
 
 			foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
 			{
@@ -708,7 +708,9 @@ namespace Valve.VR.InteractionSystem
 
 				teleportPointerObject.SetActive( false );
 				teleportArc.Show();
-				newPointerHand.m_DistanceCanvas.gameObject.SetActive(true);
+
+				//reactivate later
+				//newPointerHand.m_DistanceCanvas.gameObject.SetActive(true);
 				
 
 				foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
@@ -843,7 +845,7 @@ namespace Valve.VR.InteractionSystem
 				{
 					//Pointing at an unlocked teleport marker
 					teleportingToMarker = pointedAtTeleportMarker;
-					pointerHand.m_DistanceCanvas.gameObject.SetActive(false);
+					//pointerHand.m_DistanceCanvas.gameObject.SetActive(false);
 					Debug.Log("released");
 					InitiateTeleportFade();
 

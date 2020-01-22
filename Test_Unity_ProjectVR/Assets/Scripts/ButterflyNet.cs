@@ -17,9 +17,12 @@ public class ButterflyNet : MonoBehaviour
     {
         if(other.gameObject == exitedButterfly)
         {
-            butterflyBehaviorTree = exitedButterfly.GetComponent<BehaviorTree>();
-            exitedButterfly.GetComponent<NavMeshAgent>().enabled = false;
-            //Destroy(exitedButterfly.GetComponent<Rigidbody>()); //Voir si necessaire
+            butterflyBehaviorTree = exitedButterfly.GetComponentInParent<BehaviorTree>();
+            // To do in a better way soon
+            exitedButterfly.GetComponent<YMovement>().enabled = false;
+
+            exitedButterfly.GetComponentInParent<NavMeshAgent>().enabled = false;
+            Destroy(exitedButterfly.GetComponent<Rigidbody>()); //Necessaire
             butterflyBehaviorTree.SetVariableValue("Transform", this.transform);
             butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
             //Debug.Log("Butterfly received");

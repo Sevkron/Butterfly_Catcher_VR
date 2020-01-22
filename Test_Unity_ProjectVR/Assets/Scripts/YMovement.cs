@@ -25,7 +25,7 @@ public class YMovement : MonoBehaviour
         //ScriptSeek = GetComponent.NavMeshMovement.Seek<Seek>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isWander)
         {

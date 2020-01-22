@@ -34,7 +34,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public SteamVR_Action_Single pinchSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
 
-        private void Start()
+        private void Awake()
         {
             if (interactable == null)
                 interactable = GetComponent<Interactable>();
@@ -42,7 +42,7 @@ namespace Valve.VR.InteractionSystem.Sample
             if (animator == null)
                 animator = GetComponentInChildren<Animator>();
 
-            JarScript = GetComponent<ButterflyJar>();
+            JarScript = GetComponentInChildren<ButterflyJar>();
 
             ExitVector3 = new Vector3(ExitPoint.transform.position.x , ExitPoint.transform.position.y , ExitPoint.transform.position.z);
 
@@ -62,13 +62,13 @@ namespace Valve.VR.InteractionSystem.Sample
                     if (JarScript.hasButterfly == false)
                     {
                         sphereCollider.enabled = true;
-                         JarOpen = true;
+                        Debug.Log("collider on" + JarOpen);
                     }               
                     else if (JarScript.hasButterfly == true)
                     {
                         sphereCollider.enabled = false;
-                        JarOpen = true;
                     }
+                    JarOpen = true;
                        
                 }
                 else{
@@ -81,7 +81,7 @@ namespace Valve.VR.InteractionSystem.Sample
             }
         }
 
-        public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
+        /*public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
         {
             if (JarOpen == true & hasButterfly == true )
             {
@@ -98,6 +98,6 @@ namespace Valve.VR.InteractionSystem.Sample
 
 
             }
-        }
+        }*/
     }
 }

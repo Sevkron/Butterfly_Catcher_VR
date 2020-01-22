@@ -22,9 +22,9 @@ public class ButterflyJar : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Butterfly"))
         {
-            butterflyBehaviorTree = other.gameObject.GetComponent<BehaviorTree>();
-            other.gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            //Destroy(other.gameObject.GetComponent<Rigidbody>());
+            butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
+            other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
+            Destroy(other.gameObject.GetComponent<Rigidbody>());
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
             ButterflyinJar = other.gameObject;
             hasButterfly = true;
