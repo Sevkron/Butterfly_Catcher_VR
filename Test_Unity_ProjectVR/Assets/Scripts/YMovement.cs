@@ -42,9 +42,15 @@ public class YMovement : MonoBehaviour
 
     public void GoToHeight(Vector3 destinationVector3)
     {
-        if (isWander == false)
-        {
-            transform.Translate(destinationVector3);
-        }
+        isWander = false;
+        transform.Translate(destinationVector3);
+    }
+
+    public void GoToDefaultPos()
+    {
+        isWander = false;
+        transform.localRotation = Quaternion.identity;
+        transform.localPosition = transform.parent.transform.position;
+        enabled = false;
     }
 }

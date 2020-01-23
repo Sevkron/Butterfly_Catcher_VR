@@ -24,6 +24,7 @@ public class ButterflyJar : MonoBehaviour
         {
             butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
             other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
+            other.gameObject.GetComponent<YMovement>().GoToDefaultPos();
             Destroy(other.gameObject.GetComponent<Rigidbody>());
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
             ButterflyinJar = other.gameObject;

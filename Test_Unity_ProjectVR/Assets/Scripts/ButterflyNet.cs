@@ -19,7 +19,10 @@ public class ButterflyNet : MonoBehaviour
         {
             butterflyBehaviorTree = exitedButterfly.GetComponentInParent<BehaviorTree>();
             // To do in a better way soon
-            exitedButterfly.GetComponent<YMovement>().enabled = false;
+            //exitedButterfly.GetComponent<YMovement>().enabled = false;
+
+            //A better Way
+            exitedButterfly.GetComponent<YMovement>().GoToDefaultPos();
 
             exitedButterfly.GetComponentInParent<NavMeshAgent>().enabled = false;
             Destroy(exitedButterfly.GetComponent<Rigidbody>()); //Necessaire
