@@ -50,7 +50,7 @@ public class YMovement : MonoBehaviour
     {
         isWander = false;
         transform.localRotation = Quaternion.identity;
-        transform.localPosition = transform.parent.transform.position;
-        enabled = false;
+        transform.localPosition = new Vector3(0, 0, 0);
+        //enabled = false;
     }
 }
