@@ -69,7 +69,7 @@ namespace Valve.VR.InteractionSystem.Sample
                         sphereCollider.enabled = false;
                     }
                     JarOpen = true;
-                       
+                    JarUpdate();
                 }
                 else{
                     sphereCollider.enabled = false;
@@ -81,7 +81,7 @@ namespace Valve.VR.InteractionSystem.Sample
             }
         }
 
-        /*public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
+        public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
         {
             if (JarOpen == true & hasButterfly == true )
             {
@@ -95,9 +95,7 @@ namespace Valve.VR.InteractionSystem.Sample
                 //Destroy(other.gameObject.GetComponent<Rigidbody>());
                 butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
 
-
-
             }
-        }*/
+        }
     }
 }
