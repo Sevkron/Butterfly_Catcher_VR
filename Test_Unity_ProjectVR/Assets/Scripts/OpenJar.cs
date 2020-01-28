@@ -69,7 +69,7 @@ namespace Valve.VR.InteractionSystem.Sample
                         sphereCollider.enabled = false;
                     }
                     JarOpen = true;
-                    JarUpdate();
+                       
                 }
                 else{
                     sphereCollider.enabled = false;
@@ -81,7 +81,26 @@ namespace Valve.VR.InteractionSystem.Sample
             }
         }
 
-        public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
+        public void OnJarOpen()
+        {
+            bool canExecuteAction = JarOpen && JarScript.hasButterfly;
+            if (!canExecuteAction)
+                return;
+
+            StartCoroutine(Delay());
+            IEnumerator Delay()
+            {
+                yield return new WaitForSeconds(2);
+
+                //faire le dotween ici
+
+                butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
+                JarScript.ButterflyinJar.GetComponent<NavMeshAgent>().enabled = true;
+                //add rigidbody back
+                butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
+            }
+        }
+        /*public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
         {
             if (JarOpen == true & hasButterfly == true )
             {
@@ -95,7 +114,9 @@ namespace Valve.VR.InteractionSystem.Sample
                 //Destroy(other.gameObject.GetComponent<Rigidbody>());
                 butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
 
+
+
             }
-        }
+        }*/
     }
 }
