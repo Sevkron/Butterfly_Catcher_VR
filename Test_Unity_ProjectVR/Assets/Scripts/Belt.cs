@@ -9,10 +9,11 @@ public class Belt : MonoBehaviour
     public float height = 0.5f;
 
     private Transform head = null;
+    public GameObject m_playercamera;
 
     void Start()
     {
-        head = SteamVR_Render.Top().head;   
+        head = m_playercamera.transform;  
     }
 
     // Update is called once per frame
