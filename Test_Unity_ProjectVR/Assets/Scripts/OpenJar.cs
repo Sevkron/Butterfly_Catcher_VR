@@ -5,6 +5,7 @@ using BehaviorDesigner.Runtime;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 using UnityEngine.AI;
+using DG.Tweening;
 
 namespace Valve.VR.InteractionSystem.Sample
 {
@@ -67,8 +68,9 @@ namespace Valve.VR.InteractionSystem.Sample
                     else if (JarScript.hasButterfly == true)
                     {
                         sphereCollider.enabled = false;
+                        OnJarOpen();
                     }
-                    JarOpen = true;
+                    //JarOpen = true;
                        
                 }
                 else{
@@ -83,20 +85,21 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public void OnJarOpen()
         {
-            bool canExecuteAction = JarOpen && JarScript.hasButterfly;
+           /* bool canExecuteAction = JarOpen && JarScript.hasButterfly;
             if (!canExecuteAction)
-                return;
+                return;*/
 
             StartCoroutine(Delay());
             IEnumerator Delay()
             {
                 yield return new WaitForSeconds(2);
 
-                //faire le dotween ici
-
+                JarScript.ButterflyinJar.gameObject.transform.DOMove(ExitVector3, 1, true);
+;
                 butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
                 JarScript.ButterflyinJar.GetComponent<NavMeshAgent>().enabled = true;
-                //add rigidbody back
+                JarScript.ButterflyinJar.AddComponent<Rigidbody>();
+                //JarScript.ButterflyinJar.Rigidbody.mass =
                 butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
             }
         }
