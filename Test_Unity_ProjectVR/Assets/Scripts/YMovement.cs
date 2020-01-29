@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class YMovement : MonoBehaviour
 {
@@ -17,10 +18,14 @@ public class YMovement : MonoBehaviour
     //protected Seek ScriptSeek;
 
     [HideInInspector] public new Transform transform;
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public NavMeshAgent navMeshAgent;
 
     private void Awake()
     {
         transform = GetComponent<Transform>();
+        navMeshAgent = GetComponentInParent<NavMeshAgent>();
+        animator = GetComponentInParent<Animator>();
         isWander = true;
         //ScriptSeek = GetComponent.NavMeshMovement.Seek<Seek>();
     }
@@ -35,6 +40,13 @@ public class YMovement : MonoBehaviour
             float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(xmini, xmax), ref translationVel, xsmoothTime);
             transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
 
+            float min = 0.1f;
+            float max = 2f;
+            float i;
+            float normalizedFloat; 
+
+            animator.speed = navMeshAgent.speed;
+            //Debug.Log(navMeshAgent.speed);
             //transform.LookAt(- transform.localPosition);
         }
       

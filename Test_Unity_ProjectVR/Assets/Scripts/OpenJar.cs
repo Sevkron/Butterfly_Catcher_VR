@@ -29,6 +29,9 @@ namespace Valve.VR.InteractionSystem.Sample
 
         private Vector3 ExitVector3;
 
+        private Coroutine currentCoroutine;
+        private bool pressOnce;
+
         //public bool hasButterfly;
 
         //public SteamVR_Action_Single gripSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
@@ -45,6 +48,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
             JarScript = GetComponentInChildren<ButterflyJar>();
 
+
             ExitVector3 = new Vector3(ExitPoint.transform.position.x , ExitPoint.transform.position.y , ExitPoint.transform.position.z);
 
            
@@ -54,12 +58,11 @@ namespace Valve.VR.InteractionSystem.Sample
         {
             if (interactable.attachedToHand)
             {
-               
                 float pinch = 0;
                 pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
                 animator.SetFloat("PushTrigger", pinch);
-                if(pinch > 0.5){
-
+                if(pinch > 0.5)
+                {
                     if (JarScript.hasButterfly == false)
                     {
                         sphereCollider.enabled = true;
@@ -67,8 +70,13 @@ namespace Valve.VR.InteractionSystem.Sample
                     }               
                     else if (JarScript.hasButterfly == true)
                     {
-                        sphereCollider.enabled = false;
-                        OnJarOpen();
+                        if(pressOnce == false)
+                        {
+                            sphereCollider.enabled = false;
+                            currentCoroutine = StartCoroutine(Delay());
+                            Debug.Log("Delay start once");
+                            pressOnce = true;
+                        }
                     }
                     //JarOpen = true;
                        
@@ -76,6 +84,12 @@ namespace Valve.VR.InteractionSystem.Sample
                 else{
                     sphereCollider.enabled = false;
                     JarOpen = false;
+                    if(pressOnce == true)
+                    {
+                        StopCoroutine(currentCoroutine);
+                        Debug.Log("Stop Delay Coroutine");
+                        pressOnce = false;
+                    }
                 }
             }else
             {
@@ -83,28 +97,44 @@ namespace Valve.VR.InteractionSystem.Sample
             }
         }
 
-        public void OnJarOpen()
-        {
+        //public void OnJarOpen()
+        //{
            /* bool canExecuteAction = JarOpen && JarScript.hasButterfly;
             if (!canExecuteAction)
                 return;*/
 
-            StartCoroutine(Delay());
-            IEnumerator Delay()
+            //StartCoroutine(Delay());
+           /* IEnumerator Delay()
             {
                 yield return new WaitForSeconds(2);
 
                 JarScript.ButterflyinJar.gameObject.transform.DOMove(ExitVector3, 1, true);
 
                 JarScript.ButterflyinJar.transform.SetParent(null, true);
-;
+
                 butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
                 JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
                 JarScript.ButterflyinJar.AddComponent<Rigidbody>();
                 //JarScript.ButterflyinJar.Rigidbody.mass =
                 butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
+            }*/
+        //}
+         IEnumerator Delay()
+            {
+                Debug.Log("Start Delay Coroutine");
+                yield return new WaitForSeconds(2);
+
+                JarScript.ButterflyinJar.gameObject.transform.parent.DOMove(ExitVector3, 1, false);
+
+                JarScript.ButterflyinJar.transform.parent.SetParent(null);
+
+                butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
+                JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
+                JarScript.ButterflyinJar.AddComponent<Rigidbody>();
+                JarScript.hasButterfly = false;
+                //JarScript.ButterflyinJar.Rigidbody.mass =
+                butterflyBehaviorTree.SendEvent<object>("IsFreeJar", false);
             }
-        }
         /*public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
         {
             if (JarOpen == true & hasButterfly == true )
