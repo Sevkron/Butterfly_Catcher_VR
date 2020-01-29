@@ -95,9 +95,11 @@ namespace Valve.VR.InteractionSystem.Sample
                 yield return new WaitForSeconds(2);
 
                 JarScript.ButterflyinJar.gameObject.transform.DOMove(ExitVector3, 1, true);
+
+                JarScript.ButterflyinJar.transform.SetParent(null, true);
 ;
                 butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
-                JarScript.ButterflyinJar.GetComponent<NavMeshAgent>().enabled = true;
+                JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
                 JarScript.ButterflyinJar.AddComponent<Rigidbody>();
                 //JarScript.ButterflyinJar.Rigidbody.mass =
                 butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
