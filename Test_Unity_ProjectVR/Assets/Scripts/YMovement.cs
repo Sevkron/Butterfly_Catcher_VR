@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class YMovement : MonoBehaviour
 {
+    [Tooltip("Must be set on integer between 0 and 3")]
+    public int difficultyLevel;
+
     public float ysmoothTime = .3f;
     public float xsmoothTime = 0.5f;
     public float ymini =  - 1 ;
@@ -40,10 +43,10 @@ public class YMovement : MonoBehaviour
             float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(xmini, xmax), ref translationVel, xsmoothTime);
             transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
 
-            float min = 0.1f;
+            /*float min = 0.1f;
             float max = 2f;
             float i;
-            float normalizedFloat; 
+            float normalizedFloat; */
 
             animator.speed = navMeshAgent.speed;
             //Debug.Log(navMeshAgent.speed);
