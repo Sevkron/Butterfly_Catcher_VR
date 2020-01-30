@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 6865510189822338420, guid: f73fe07554c777a46aec29f0b7c7418e,
         type: 3}
       propertyPath: difficultyLevel
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f73fe07554c777a46aec29f0b7c7418e, type: 3}
@@ -3547,6 +3547,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8158341629020756206, guid: 808394c149cfe7247a3ed2db268dfb27,
+        type: 3}
+      propertyPath: sphDifficulty1.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158341629020756206, guid: 808394c149cfe7247a3ed2db268dfb27,
+        type: 3}
+      propertyPath: sphDifficulty1.Array.data[0]
+      value: 
+      objectReference: {fileID: 6202426686115269964, guid: 7b64ebd3d461e4148a90a9fde8fb2bd9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808394c149cfe7247a3ed2db268dfb27, type: 3}
 --- !u!1 &814727856
@@ -9699,8 +9710,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636746277227746692, guid: 7b64ebd3d461e4148a90a9fde8fb2bd9,
         type: 3}
-      propertyPath: sphMinigame.Array.size
-      value: 2
+      propertyPath: timer
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b64ebd3d461e4148a90a9fde8fb2bd9, type: 3}

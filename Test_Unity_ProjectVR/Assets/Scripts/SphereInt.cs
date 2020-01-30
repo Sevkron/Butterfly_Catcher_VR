@@ -5,10 +5,12 @@ using DG.Tweening;
 
 public class SphereInt : MonoBehaviour
 {
+    IEnumerator delay;
+    private bool activeOnce;
     // Start is called before the first frame update
     void Start()
     {
-        
+        activeOnce = true;
     }
 
     // Update is called once per frame
@@ -19,9 +21,21 @@ public class SphereInt : MonoBehaviour
 
     public bool StartTimer(float timer)
     {
-        GetComponent<SphereCollider>().enabled = true;
+        //Debug.Log("Started Timer");
+        if(activeOnce == true)
+        {
+            GetComponent<SphereCollider>().enabled = true;
+            activeOnce = false;
+            StartCoroutine(Delay(timer));
+            return true;
+        }
+        return false;
+    }
+
+    IEnumerator Delay(float timer)
+    {
         transform.DOScale(new Vector3(0,0,0), timer);
         Debug.Log("Done");
-        return true;
+        yield return new WaitForSeconds(timer); 
     }
 }

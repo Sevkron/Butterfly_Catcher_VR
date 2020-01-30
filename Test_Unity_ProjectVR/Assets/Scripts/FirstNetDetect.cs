@@ -7,7 +7,7 @@ public class FirstNetDetect : MonoBehaviour
     public ButterflyNet butterflyNet;
     private IEnumerator butterflyCounter;
     public float m_timeToCatch;
-    public GameObject detectedButterfly;
+    //public GameObject detectedButterfly;
     void Start()
     {
         if(butterflyNet == null)

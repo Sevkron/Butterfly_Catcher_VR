@@ -37,11 +37,11 @@ public class CaptureMinigamePool : MonoBehaviour
             break;
         }
 
-        int i = Random.Range(0, sphDifficulty.Length + 1);
+        int i = Random.Range(0, sphDifficulty.Length);
 
         if(sphDifficulty[i] == null)
             Debug.Log("No sphere minigame at asked difficulty level :" + i.ToString());
         else
-            Instantiate(sphDifficulty[i]);
+            Instantiate(sphDifficulty[i], transform.parent, false);
     }
 }

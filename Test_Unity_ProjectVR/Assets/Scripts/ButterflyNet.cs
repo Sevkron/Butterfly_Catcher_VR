@@ -16,7 +16,7 @@ public class ButterflyNet : MonoBehaviour
 
     void Awake()
     {
-        if(captureMinigamePool = null)
+        if(captureMinigamePool == null)
             captureMinigamePool = GameObject.Find("CaptureMinigamePool").GetComponent<CaptureMinigamePool>();
             Debug.Log("Please set capture minigame pool");
     }
@@ -28,12 +28,13 @@ public class ButterflyNet : MonoBehaviour
             if(exitedGameObject.CompareTag("Butterfly"))
             {
                 //Old Method
-                /*butterflyBehaviorTree = exitedGameObject.GetComponentInParent<BehaviorTree>();
+                butterflyBehaviorTree = exitedGameObject.GetComponentInParent<BehaviorTree>();
                 exitedGameObject.GetComponent<YMovement>().GoToDefaultPos();
                 exitedGameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
                 Destroy(exitedGameObject.GetComponent<Rigidbody>()); //Necessaire
-                butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);*/
-                captureMinigamePool.SpawnSph(exitedGameObject.GetComponent<YMovement>().difficultyLevel);
+                butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
+                int i = exitedGameObject.GetComponent<YMovement>().difficultyLevel;
+                captureMinigamePool.SpawnSph(i);
 
             }else
             {
