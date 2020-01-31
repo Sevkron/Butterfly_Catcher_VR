@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphMinigame:
-  - {fileID: 815137686988746776}
-  - {fileID: 9104862191168093533}
-  timer: 15
+  - {fileID: 3062351058537210593}
+  - {fileID: 6875497532910006180}
+  timer: 5
 --- !u!1001 &1077838355209350604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,6 +116,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7245132691778631001, guid: f6403381dc61b554d8ce26fbdcc241a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6403381dc61b554d8ce26fbdcc241a4, type: 3}
 --- !u!4 &33577829497019567 stripped
@@ -124,9 +129,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1077838355209350604}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &815137686988746776 stripped
+--- !u!114 &3062351058537210593 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 412839324606012884, guid: f6403381dc61b554d8ce26fbdcc241a4,
+  m_CorrespondingSourceObject: {fileID: 2633172387984412461, guid: f6403381dc61b554d8ce26fbdcc241a4,
     type: 3}
   m_PrefabInstance: {fileID: 1077838355209350604}
   m_PrefabAsset: {fileID: 0}
@@ -203,6 +208,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7245132691778631001, guid: f6403381dc61b554d8ce26fbdcc241a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6403381dc61b554d8ce26fbdcc241a4, type: 3}
 --- !u!4 &8458409223002624490 stripped
@@ -211,9 +221,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8926210061278208137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9104862191168093533 stripped
+--- !u!114 &6875497532910006180 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 412839324606012884, guid: f6403381dc61b554d8ce26fbdcc241a4,
+  m_CorrespondingSourceObject: {fileID: 2633172387984412461, guid: f6403381dc61b554d8ce26fbdcc241a4,
     type: 3}
   m_PrefabInstance: {fileID: 8926210061278208137}
   m_PrefabAsset: {fileID: 0}

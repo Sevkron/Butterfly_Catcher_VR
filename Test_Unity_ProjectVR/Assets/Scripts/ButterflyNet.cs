@@ -38,7 +38,7 @@ public class ButterflyNet : MonoBehaviour
 
             }else
             {
-                Destroy(exitedGameObject);
+                exitedGameObject.GetComponent<SphereInt>().Caught();
             }
         }
     }

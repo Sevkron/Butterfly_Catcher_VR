@@ -10,10 +10,15 @@ public class CaptureMinigamePool : MonoBehaviour
     public GameObject[] sphDifficulty3;
 
     private GameObject[] sphDifficulty;
-    // Start is called before the first frame update
-    void Awake()
+
+    public bool testSphereSpawn;
+    public int difficultyLevel;
+    //test Sphere spawn
+    void Update()
     {
-        
+        if(testSphereSpawn)
+            SpawnSph(difficultyLevel);
+            testSphereSpawn = false;
     }
 
     public void SpawnSph(int difficulty)
@@ -42,6 +47,6 @@ public class CaptureMinigamePool : MonoBehaviour
         if(sphDifficulty[i] == null)
             Debug.Log("No sphere minigame at asked difficulty level :" + i.ToString());
         else
-            Instantiate(sphDifficulty[i], transform.parent, false);
+            Instantiate(sphDifficulty[i], transform, false);
     }
 }

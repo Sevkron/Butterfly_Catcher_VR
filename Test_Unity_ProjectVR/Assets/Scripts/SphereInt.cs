@@ -5,37 +5,35 @@ using DG.Tweening;
 
 public class SphereInt : MonoBehaviour
 {
-    IEnumerator delay;
-    private bool activeOnce;
-    // Start is called before the first frame update
-    void Start()
+    Coroutine delay;
+    Tween myTween;
+    private bool activeOnce = true;
+    
+    public void StartTimer(float timer)
     {
-        activeOnce = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public bool StartTimer(float timer)
-    {
-        //Debug.Log("Started Timer");
         if(activeOnce == true)
         {
+            Debug.Log("Started Timer");
+            transform.GetChild(0).gameObject.SetActive(true);
             GetComponent<SphereCollider>().enabled = true;
             activeOnce = false;
-            StartCoroutine(Delay(timer));
-            return true;
+            delay = StartCoroutine(Delay(timer));
         }
-        return false;
+
     }
 
-    IEnumerator Delay(float timer)
+    public IEnumerator Delay(float timer)
     {
-        transform.DOScale(new Vector3(0,0,0), timer);
-        Debug.Log("Done");
-        yield return new WaitForSeconds(timer); 
+        myTween = transform.GetChild(0).transform.DOScale(new Vector3(0,0,0), timer);
+        yield return myTween.WaitForCompletion();
+        transform.parent.GetComponent<SphMinigame>().MinigameFail();
+    }
+
+    public void Caught()
+    {
+        myTween.Kill(false);
+        StopCoroutine(delay);
+        transform.parent.GetComponent<SphMinigame>().CaughtSuccess();
+        Destroy(this.gameObject);
     }
 }

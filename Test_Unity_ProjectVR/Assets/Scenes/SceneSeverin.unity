@@ -3547,17 +3547,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8158341629020756206, guid: 808394c149cfe7247a3ed2db268dfb27,
-        type: 3}
-      propertyPath: sphDifficulty1.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158341629020756206, guid: 808394c149cfe7247a3ed2db268dfb27,
-        type: 3}
-      propertyPath: sphDifficulty1.Array.data[0]
-      value: 
-      objectReference: {fileID: 6202426686115269964, guid: 7b64ebd3d461e4148a90a9fde8fb2bd9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808394c149cfe7247a3ed2db268dfb27, type: 3}
 --- !u!1 &814727856
@@ -7303,7 +7292,7 @@ MonoBehaviour:
   ignoreTransforms: []
   children:
   - gameObject: {fileID: 1672649360}
-    gameObjectHash: 36970
+    gameObjectHash: 37002
     member: {fileID: 1672649361}
     renderer: {fileID: 0}
     renderHash: 0
@@ -7335,10 +7324,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 36384
+    gameObjectHash: 36414
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 36392
+    renderHash: 36422
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7367,10 +7356,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 36396
+    gameObjectHash: 36426
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 36402
+    renderHash: 36432
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7400,10 +7389,10 @@ MonoBehaviour:
     terrainCulled: 0
   renderers:
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 36384
+    gameObjectHash: 36414
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 36392
+    renderHash: 36422
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7432,10 +7421,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 36396
+    gameObjectHash: 36426
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 36402
+    renderHash: 36432
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7468,10 +7457,10 @@ MonoBehaviour:
   shadowLights: []
   shadowCasters:
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 36384
+    gameObjectHash: 36414
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 36392
+    renderHash: 36422
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7500,10 +7489,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 36396
+    gameObjectHash: 36426
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 36402
+    renderHash: 36432
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -9653,6 +9642,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capture0_0
       objectReference: {fileID: 0}
+    - target: {fileID: 6202426686115269964, guid: 7b64ebd3d461e4148a90a9fde8fb2bd9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2915965676091044243, guid: 7b64ebd3d461e4148a90a9fde8fb2bd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9707,11 +9701,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6636746277227746692, guid: 7b64ebd3d461e4148a90a9fde8fb2bd9,
-        type: 3}
-      propertyPath: timer
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b64ebd3d461e4148a90a9fde8fb2bd9, type: 3}
