@@ -25,7 +25,7 @@ public class ButterflyNet : MonoBehaviour
     {
         if(other.gameObject == exitedGameObject )
         {
-            if(exitedGameObject.CompareTag("Butterfly"))
+            if(exitedGameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
             {
                 //Old Method
                 butterflyBehaviorTree = exitedGameObject.GetComponentInParent<BehaviorTree>();
@@ -33,9 +33,7 @@ public class ButterflyNet : MonoBehaviour
                 exitedGameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
                 Destroy(exitedGameObject.GetComponent<Rigidbody>()); //Necessaire
                 butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
-                int i = exitedGameObject.GetComponent<YMovement>().difficultyLevel;
-                captureMinigamePool.SpawnSph(i);
-
+                captureMinigamePool.SpawnSph(exitedGameObject);
             }else
             {
                 exitedGameObject.GetComponent<SphereInt>().Caught();

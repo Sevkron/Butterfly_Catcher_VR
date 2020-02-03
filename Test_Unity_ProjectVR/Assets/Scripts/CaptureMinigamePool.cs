@@ -13,16 +13,24 @@ public class CaptureMinigamePool : MonoBehaviour
 
     public bool testSphereSpawn;
     public int difficultyLevel;
+    public GameObject currentButterfly;
+
+    public ParticleSystem CapWinVFX;
+
+    public bool isNotInMinigame = true;
     //test Sphere spawn
     void Update()
     {
         if(testSphereSpawn)
-            SpawnSph(difficultyLevel);
+            SpawnSph(null);
             testSphereSpawn = false;
     }
 
-    public void SpawnSph(int difficulty)
+    public void SpawnSph(GameObject butterfly)
     {
+        isNotInMinigame = false;
+        int difficulty = butterfly.GetComponent<YMovement>().difficultyLevel;
+        currentButterfly = butterfly;
         switch(difficulty)
         {
             case 0:
@@ -48,5 +56,17 @@ public class CaptureMinigamePool : MonoBehaviour
             Debug.Log("No sphere minigame at asked difficulty level :" + i.ToString());
         else
             Instantiate(sphDifficulty[i], transform, false);
+    }
+
+    public void FreeButterfly()
+    {
+        isNotInMinigame = true;
+        Destroy(currentButterfly.transform.parent.gameObject);
+    }
+
+    public void CaughtButterfly()
+    {
+        isNotInMinigame = true;
+        CapWinVFX.Play();
     }
 }
