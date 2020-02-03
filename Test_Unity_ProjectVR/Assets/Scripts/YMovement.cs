@@ -38,12 +38,12 @@ public class YMovement : MonoBehaviour
         if (isWander)
         {
             float yPos = Mathf.SmoothDamp(transform.localPosition.y, Random.Range(ymini, ymax), ref translationVel, ysmoothTime);
-           //transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
 
             float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(xmini, xmax), ref translationVel, xsmoothTime);
-            //transform.localPosition = new Vector3(xPos, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = new Vector3(xPos, transform.localPosition.y, transform.localPosition.z);
 
-            transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
+            //transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
 
             /*float min = 0.1f;
             float max = 2f;
