@@ -20,15 +20,17 @@ public class ButterflyJar : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Butterfly"))
+        if(other.gameObject.CompareTag("Butterfly") && hasButterfly == false)
         {
+            ButterflyinJar = other.gameObject;
             hasButterfly = true;
-            butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
-            other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
-            other.gameObject.GetComponent<YMovement>().GoToDefaultPos();
+            butterflyBehaviorTree = ButterflyinJar.GetComponentInParent<BehaviorTree>();
+            ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = false;
+            ButterflyinJar.GetComponent<YMovement>().GoToDefaultPos();
+            ButterflyinJar.GetComponent<SphereCollider>().enabled = false;
             Destroy(other.gameObject.GetComponent<Rigidbody>());
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
-            ButterflyinJar = other.gameObject;
+            
         }
 
         
