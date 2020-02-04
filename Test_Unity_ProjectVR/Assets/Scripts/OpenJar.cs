@@ -97,28 +97,8 @@ namespace Valve.VR.InteractionSystem.Sample
             }
         }
 
-        //public void OnJarOpen()
-        //{
-           /* bool canExecuteAction = JarOpen && JarScript.hasButterfly;
-            if (!canExecuteAction)
-                return;*/
-
-            //StartCoroutine(Delay());
-           /* IEnumerator Delay()
-            {
-                yield return new WaitForSeconds(2);
-
-                JarScript.ButterflyinJar.gameObject.transform.DOMove(ExitVector3, 1, true);
-
-                JarScript.ButterflyinJar.transform.SetParent(null, true);
-
-                butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
-                JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
-                JarScript.ButterflyinJar.AddComponent<Rigidbody>();
-                //JarScript.ButterflyinJar.Rigidbody.mass =
-                butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
-            }*/
-        //}
+      
+        // a mettre dans Ymovement
          IEnumerator Delay()
             {
                 Debug.Log("Start Delay Coroutine");
@@ -127,7 +107,7 @@ namespace Valve.VR.InteractionSystem.Sample
                 JarScript.ButterflyinJar.gameObject.transform.parent.DOMove(ExitVector3, 1, false);
 
                 JarScript.ButterflyinJar.transform.parent.SetParent(null);
-
+                //ajouter le collider
                 butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
                 JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
                 JarScript.ButterflyinJar.AddComponent<Rigidbody>();
@@ -135,23 +115,6 @@ namespace Valve.VR.InteractionSystem.Sample
                 //JarScript.ButterflyinJar.Rigidbody.mass =
                 butterflyBehaviorTree.SendEvent<object>("IsFreeJar", false);
             }
-        /*public void JarUpdate(bool hasButterfly, BehaviorTree butterflyBehavior, bool Jaropen)
-        {
-            if (JarOpen == true & hasButterfly == true )
-            {
-                //& wait for 3sec then:
-
-                //translate butterfly out of the jar
-                JarScript.ButterflyinJar.transform.Translate(ExitVector3 * Time.deltaTime);
-
-                butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
-                JarScript.ButterflyinJar.GetComponent<NavMeshAgent>().enabled = true;
-                //Destroy(other.gameObject.GetComponent<Rigidbody>());
-                butterflyBehaviorTree.SendEvent<object>("IsFreeJar", JarScript.ButterflyinJar);
-
-
-
-            }
-        }*/
+      
     }
 }
