@@ -12,7 +12,8 @@ public class ButterflyJar : MonoBehaviour
     //public GameObject jar;
     public bool hasButterfly;
     public GameObject ButterflyinJar;
-
+    
+    public float scale = 0.2f;
 
     private void Start()
     {
@@ -22,7 +23,6 @@ public class ButterflyJar : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Butterfly") && hasButterfly == false)
         {
-            float scale = 0.4f;
             ButterflyinJar = other.gameObject;
             hasButterfly = true;
             butterflyBehaviorTree = ButterflyinJar.GetComponentInParent<BehaviorTree>();

@@ -35,6 +35,7 @@ public class CaptureMinigamePool : MonoBehaviour
         {
             case 0:
             sphDifficulty = sphDifficulty0;
+            Debug.Log("spawn sphere difficulty 0");
             break;
             case 1:
             sphDifficulty = sphDifficulty1;
@@ -49,6 +50,7 @@ public class CaptureMinigamePool : MonoBehaviour
             sphDifficulty = sphDifficulty0;
             break;
         }
+        //T'es le meilleur !
 
         int i = Random.Range(0, sphDifficulty.Length);
 

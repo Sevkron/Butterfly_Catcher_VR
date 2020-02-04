@@ -14,6 +14,8 @@ public class ButterflyNet : MonoBehaviour
     public bool IsCaptured = true;
     public CaptureMinigamePool captureMinigamePool;
 
+    public float scale = 0.7f;
+
     void Awake()
     {
         if(captureMinigamePool == null)
@@ -34,6 +36,8 @@ public class ButterflyNet : MonoBehaviour
                 Destroy(exitedGameObject.GetComponent<Rigidbody>()); //Necessaire
                 butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
                 captureMinigamePool.SpawnSph(exitedGameObject);
+                exitedGameObject.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
+
             }else
             {
                 exitedGameObject.GetComponent<SphereInt>().Caught();
