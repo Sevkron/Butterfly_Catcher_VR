@@ -49,8 +49,13 @@ MonoBehaviour:
   - {fileID: 6202426686115269964, guid: 72be82d7f082ef94e873df3c778efe9c, type: 3}
   sphDifficulty1:
   - {fileID: 6202426686115269964, guid: 05fd1da92c77a6540965da18ea9a29b6, type: 3}
-  sphDifficulty2: []
-  sphDifficulty3: []
+  - {fileID: 6202426686115269964, guid: 25e34121e952e5343bcdf89fbb52c707, type: 3}
+  - {fileID: 6202426686115269964, guid: 06fe2fa53df8bed40ab075ab9f0869e8, type: 3}
+  sphDifficulty2:
+  - {fileID: 6202426686115269964, guid: b6aa5b421e3546f4daac640ad43d2e1a, type: 3}
+  - {fileID: 6202426686115269964, guid: 9dee359a04755dd4bbecfa8417c46123, type: 3}
+  sphDifficulty3:
+  - {fileID: 6202426686115269964, guid: 95d054ca8ded109468227b8ed899ca33, type: 3}
   testSphereSpawn: 0
   difficultyLevel: 0
   currentButterfly: {fileID: 0}
@@ -63,11 +68,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8337326259327527682}
     m_Modifications:
-    - target: {fileID: 5778563584909945835, guid: f0ab5564c33a94440be7a898a26fcce1,
-        type: 3}
-      propertyPath: m_Name
-      value: PS_DrawCaptureRewardFinal
-      objectReference: {fileID: 0}
     - target: {fileID: 3860267996156582517, guid: f0ab5564c33a94440be7a898a26fcce1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -122,6 +122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778563584909945835, guid: f0ab5564c33a94440be7a898a26fcce1,
+        type: 3}
+      propertyPath: m_Name
+      value: PS_DrawCaptureRewardFinal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ab5564c33a94440be7a898a26fcce1, type: 3}
