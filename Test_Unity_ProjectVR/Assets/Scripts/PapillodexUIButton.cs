@@ -105,6 +105,7 @@ public class PapillodexUIButton : MonoBehaviour
             m_CaughtIndexPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_CaughtIndexPanel;
+
         }
 
         public void OnButtonDownReproductionIndex(Hand fromHand)
