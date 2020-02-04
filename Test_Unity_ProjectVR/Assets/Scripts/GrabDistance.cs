@@ -12,8 +12,8 @@ namespace Valve.VR.InteractionSystem{
         public GameObject pointer;
         public Transform raycastDirection;
         public float radiusSphereCast;
-        public float maxDistance = 100f;
-        public bool isActive;
+        public float maxDistance = 5.0f;
+        public bool isActive = true;
         public bool addRigidBody = false;
 
     // Start is called before the first frame update
@@ -68,13 +68,13 @@ namespace Valve.VR.InteractionSystem{
 
             GameObject selectedGameObject;
 
-            if(Physics.Raycast(priorityRaycast, out priorityHit, maxDistance) && priorityHit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject != null)
+            if(Physics.Raycast(priorityRaycast, out priorityHit, maxDistance) && priorityHit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
             {
                 selectedGameObject = priorityHit.transform.gameObject;
                 GrabUpdate(true, maxDistance);
                 this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
             }
-            else if(Physics.SphereCast(raycastDirection.transform.position, radiusSphereCast, raycastDirection.transform.forward, out hit, maxDistance) && hit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject != null)
+            else if(Physics.SphereCast(raycastDirection.transform.position, radiusSphereCast, raycastDirection.transform.forward, out hit, maxDistance) && hit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
             {
                 selectedGameObject = hit.transform.gameObject;
                 GrabUpdate(true, maxDistance);
@@ -82,7 +82,7 @@ namespace Valve.VR.InteractionSystem{
             }
             else
             {
-                GrabUpdate(false, maxDistance);
+                pointer.SetActive(false);
             }
         }
 

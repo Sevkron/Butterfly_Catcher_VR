@@ -29,13 +29,17 @@ namespace Valve.VR.InteractionSystem.Sample
             CanvasOpen = !CanvasOpen;
             Debug.Log("Pressed");
 
-            if(CanvasOpen == true)
+            if(CanvasOpen == false)
             {
                 m_Papillodex.SetActive(true);
                 FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");
                 FindObjectOfType<AudioManager>().Play("CanvasActivate");
                 leftHand.useHoverCapsule = false;
                 rightHand.useHoverCapsule = false;
+                leftHand.GetComponent<GrabDistance>().GrabUpdate(false, 0);
+                rightHand.GetComponent<GrabDistance>().GrabUpdate(false, 0);
+                leftHand.GetComponent<GrabDistance>().enabled = false;
+                rightHand.GetComponent<GrabDistance>().enabled = false;
             }
             else
             {
@@ -44,6 +48,8 @@ namespace Valve.VR.InteractionSystem.Sample
                 m_Papillodex.SetActive(false);
                 leftHand.useHoverCapsule = true;
                 rightHand.useHoverCapsule = true;
+                leftHand.GetComponent<GrabDistance>().enabled = true;
+                rightHand.GetComponent<GrabDistance>().enabled = true;
             }
         }
 

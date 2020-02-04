@@ -61,7 +61,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Reflection:
         m_Texture: {fileID: 8900000, guid: b1afef72902d16343a2bad62afdb5533, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _RefractionmapEdgeB:
         m_Texture: {fileID: 223006684, guid: 557c5daa3682e654fb1b3bcb0f2981ce, type: 3}
@@ -88,16 +88,16 @@ Material:
     - _Parallax: 0.02
     - _RefractionAmount: 0.2
     - _RimDistance: 0
-    - _RimSize: 3.05
-    - _Rimfalloff: 0.79
+    - _RimSize: 1.1
+    - _Rimfalloff: 0.14
     - _Rimtiling: 0.79
     - _SrcBlend: 1
     - _SurfaceHighlight: 0.101
     - _SurfaceHightlighttiling: 0.25
     - _Surfacehightlightsize: 0
     - _TesselationEdgeLengt: 0.15
-    - _Tiling: 0.06
-    - _Transparency: 0.22
+    - _Tiling: 0.03
+    - _Transparency: 0.654
     - _UVSec: 0
     - _UseIntersectionHighlight: 1
     - _Wavesspeed: 0.37
@@ -109,5 +109,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 0.5019608}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _WaterColor: {r: 0.21323532, g: 0.67444223, b: 1, a: 1}
+    - _RimColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+    - _WaterColor: {r: 0.15566039, g: 0.6513424, b: 1, a: 1}

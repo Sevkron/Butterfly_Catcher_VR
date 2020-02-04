@@ -8,21 +8,36 @@ public class ButterflyNet : MonoBehaviour
 {
     public BoxCollider firstCollider;
     public SphereCollider secondCollider;
-    public GameObject exitedButterfly;
+    public GameObject exitedGameObject;
     public BehaviorTree butterflyBehaviorTree;
     public Transform netTransform;
     public bool IsCaptured = true;
+    public CaptureMinigamePool captureMinigamePool;
+
+    void Awake()
+    {
+        if(captureMinigamePool == null)
+            captureMinigamePool = GameObject.Find("CaptureMinigamePool").GetComponent<CaptureMinigamePool>();
+            Debug.Log("Please set capture minigame pool");
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == exitedButterfly)
+        if(other.gameObject == exitedGameObject )
         {
-            butterflyBehaviorTree = exitedButterfly.GetComponent<BehaviorTree>();
-            exitedButterfly.GetComponent<NavMeshAgent>().enabled = false;
-            Destroy(exitedButterfly.GetComponent<Rigidbody>());
-            butterflyBehaviorTree.SetVariableValue("Transform", this.transform);
-            butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
-            Debug.Log("Butterfly received");
+            if(exitedGameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
+            {
+                //Old Method
+                butterflyBehaviorTree = exitedGameObject.GetComponentInParent<BehaviorTree>();
+                exitedGameObject.GetComponent<YMovement>().GoToDefaultPos();
+                exitedGameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
+                Destroy(exitedGameObject.GetComponent<Rigidbody>()); //Necessaire
+                butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
+                captureMinigamePool.SpawnSph(exitedGameObject);
+            }else
+            {
+                exitedGameObject.GetComponent<SphereInt>().Caught();
+            }
         }
     }
 }
