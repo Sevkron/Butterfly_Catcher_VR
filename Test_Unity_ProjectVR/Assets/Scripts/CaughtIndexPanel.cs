@@ -27,6 +27,9 @@ public class CaughtIndexPanel : MonoBehaviour
 
     public void RegisterNewButterfly()
     {
+        if(newButterflySpecies != null)
+        {
 
+        }
     }
 }
