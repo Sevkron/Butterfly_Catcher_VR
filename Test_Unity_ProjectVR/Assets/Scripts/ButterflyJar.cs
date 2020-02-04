@@ -22,6 +22,7 @@ public class ButterflyJar : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Butterfly") && hasButterfly == false)
         {
+            float scale = 0.4f;
             ButterflyinJar = other.gameObject;
             hasButterfly = true;
             butterflyBehaviorTree = ButterflyinJar.GetComponentInParent<BehaviorTree>();
@@ -30,6 +31,7 @@ public class ButterflyJar : MonoBehaviour
             ButterflyinJar.GetComponent<SphereCollider>().enabled = false;
             Destroy(other.gameObject.GetComponent<Rigidbody>());
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
+            ButterflyinJar.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
             
         }
 
