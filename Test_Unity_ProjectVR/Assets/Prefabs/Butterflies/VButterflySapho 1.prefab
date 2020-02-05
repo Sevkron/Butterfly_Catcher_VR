@@ -152,11 +152,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009359003019215998}
     m_Modifications:
-    - target: {fileID: 455837894010994895, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: m_Name
-      value: Sapho paps pivot point modif
-      objectReference: {fileID: 0}
     - target: {fileID: 3461069084490658524, guid: c9ab2799751443a4188e567bfe9edfd6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -227,6 +222,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 455837894010994895, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: m_Name
+      value: Sapho paps pivot point modif
+      objectReference: {fileID: 0}
     - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
         type: 3}
       propertyPath: ysmoothTime
@@ -237,7 +237,8 @@ PrefabInstance:
       propertyPath: xsmoothTime
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5131653573049926718, guid: c9ab2799751443a4188e567bfe9edfd6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c9ab2799751443a4188e567bfe9edfd6, type: 3}
 --- !u!4 &6864956680779069120 stripped
 Transform:
@@ -252,11 +253,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6864956680779069120}
     m_Modifications:
-    - target: {fileID: 5720252652646898877, guid: b9a77244cef709b46823d6ff8be3a082,
-        type: 3}
-      propertyPath: m_Name
-      value: PS_SignPapillon
-      objectReference: {fileID: 0}
     - target: {fileID: 6523228563465255942, guid: b9a77244cef709b46823d6ff8be3a082,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -326,6 +322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.019230014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720252652646898877, guid: b9a77244cef709b46823d6ff8be3a082,
+        type: 3}
+      propertyPath: m_Name
+      value: PS_SignPapillon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a77244cef709b46823d6ff8be3a082, type: 3}
