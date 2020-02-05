@@ -587,7 +587,7 @@ Transform:
   m_GameObject: {fileID: 5309277975858202565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -30.23, y: -34.39, z: 8.82}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_Children:
   - {fileID: 3505605101175816002}
   - {fileID: 4968498745985782263}
@@ -1039,11 +1039,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9220277910659904982}
     m_Modifications:
-    - target: {fileID: 5720252652646898877, guid: b9a77244cef709b46823d6ff8be3a082,
-        type: 3}
-      propertyPath: m_Name
-      value: PS_SignPapillon
-      objectReference: {fileID: 0}
     - target: {fileID: 6523228563465255942, guid: b9a77244cef709b46823d6ff8be3a082,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1098,6 +1093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720252652646898877, guid: b9a77244cef709b46823d6ff8be3a082,
+        type: 3}
+      propertyPath: m_Name
+      value: PS_SignPapillon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a77244cef709b46823d6ff8be3a082, type: 3}
