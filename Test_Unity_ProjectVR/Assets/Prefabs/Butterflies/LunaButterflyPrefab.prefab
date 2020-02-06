@@ -119,6 +119,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2995186516998423763}
     m_Modifications:
+    - target: {fileID: 2761650357208032134, guid: aa363d7af7115bc43a3dd05debb33a67,
+        type: 3}
+      propertyPath: m_Name
+      value: luna paps
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761650357208032134, guid: aa363d7af7115bc43a3dd05debb33a67,
+        type: 3}
+      propertyPath: m_TagString
+      value: Butterfly
+      objectReference: {fileID: 0}
     - target: {fileID: 1155177182115516821, guid: aa363d7af7115bc43a3dd05debb33a67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -189,17 +199,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2761650357208032134, guid: aa363d7af7115bc43a3dd05debb33a67,
-        type: 3}
-      propertyPath: m_Name
-      value: luna paps
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761650357208032134, guid: aa363d7af7115bc43a3dd05debb33a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Butterfly
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2248501177244926393, guid: aa363d7af7115bc43a3dd05debb33a67, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa363d7af7115bc43a3dd05debb33a67, type: 3}
 --- !u!4 &3068870073294967861 stripped
 Transform:
