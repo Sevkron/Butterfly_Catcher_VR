@@ -74,11 +74,11 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Depth: 11.3
+    - _Depth: 2
     - _Depthdarkness: 0.345
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FlowSpeed: 0.3
+    - _FlowSpeed: -0.3
     - _Fresnelexponent: 4
     - _Glossiness: 0.214
     - _HighlightPanning: 0
@@ -88,16 +88,16 @@ Material:
     - _Parallax: 0.02
     - _RefractionAmount: 0.2
     - _RimDistance: 0
-    - _RimSize: 4
-    - _Rimfalloff: 0.42
+    - _RimSize: 1.44
+    - _Rimfalloff: 0.16
     - _Rimtiling: 0.79
     - _SrcBlend: 1
     - _SurfaceHighlight: 0.101
     - _SurfaceHightlighttiling: 0.25
     - _Surfacehightlightsize: 0
     - _TesselationEdgeLengt: 0.15
-    - _Tiling: 0.1
-    - _Transparency: 0.262
+    - _Tiling: 0.01
+    - _Transparency: 0.13
     - _UVSec: 0
     - _UseIntersectionHighlight: 1
     - _Wavesspeed: 0.37
@@ -109,5 +109,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 0.5019608}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
     - _WaterColor: {r: 0.21323532, g: 0.67444223, b: 1, a: 1}
