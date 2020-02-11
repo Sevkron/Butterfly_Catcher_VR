@@ -7,16 +7,34 @@ using UnityEngine.AI;
 public class ButterflyJar : MonoBehaviour
 {
     public BehaviorTree butterflyBehaviorTree;
+
+
     //public GameObject jar;
-    // Start is called before the first frame update
+    public bool hasButterfly;
+    public GameObject ButterflyinJar;
+    
+    public float scale = 0.2f;
+
+    private void Start()
+    {
+        
+    }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Butterfly"))
+        if(other.gameObject.CompareTag("Butterfly") && hasButterfly == false)
         {
-            butterflyBehaviorTree = other.gameObject.GetComponent<BehaviorTree>();
-            other.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            ButterflyinJar = other.gameObject;
+            hasButterfly = true;
+            butterflyBehaviorTree = ButterflyinJar.GetComponentInParent<BehaviorTree>();
+            ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = false;
+            ButterflyinJar.GetComponent<YMovement>().GoToDefaultPos();
+            ButterflyinJar.GetComponent<SphereCollider>().enabled = false;
             Destroy(other.gameObject.GetComponent<Rigidbody>());
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
+            ButterflyinJar.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
+            
         }
+
+        
     }
 }

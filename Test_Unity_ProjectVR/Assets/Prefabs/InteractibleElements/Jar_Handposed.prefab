@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749791669}
-  m_LocalRotation: {x: -0.50000006, y: 0.50000024, z: 0.49999994, w: 0.49999988}
-  m_LocalPosition: {x: 0.0289, y: -0.0378, z: -0.0296}
+  m_LocalRotation: {x: -0.48099482, y: 0.3955367, z: -0.49696374, w: -0.60433584}
+  m_LocalPosition: {x: 0.0133, y: -0.0096, z: 0.0036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1434227543113735984}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: -282.96698, y: 0, z: 78.86301}
 --- !u!135 &749791672
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -43,8 +43,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.032546055
-  m_Center: {x: -0.024395604, y: 0.021825815, z: 0.07585563}
+  m_Radius: 0.034859437
+  m_Center: {x: 0.0007989111, y: 0.017139053, z: -0.044205554}
 --- !u!114 &749791671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +58,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   butterflyBehaviorTree: {fileID: 0}
+  hasButterfly: 0
+  ButterflyinJar: {fileID: 0}
+--- !u!1 &1275519261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1275519262}
+  m_Layer: 10
+  m_Name: ExitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1275519262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275519261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.0837, z: -0.0088}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1434227543113735984}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434227543113735991
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +125,7 @@ Transform:
   m_Children:
   - {fileID: 8696787774598193206}
   - {fileID: 749791670}
+  - {fileID: 1275519262}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -1105.971, z: 0}
@@ -105,7 +138,7 @@ Rigidbody:
   m_GameObject: {fileID: 1434227543113735991}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -294,6 +327,9 @@ MonoBehaviour:
   animator: {fileID: 9126860661171318280}
   sphereCollider: {fileID: 749791672}
   affectMaterial: 0
+  JarOpen: 0
+  butterflyBehaviorTree: {fileID: 0}
+  ExitPoint: {fileID: 1275519261}
   pinchSqueeze:
     actionPath: /actions/default/in/SqueezeTrigger
     needsReinit: 0

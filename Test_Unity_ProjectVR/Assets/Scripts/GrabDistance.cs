@@ -12,7 +12,7 @@ namespace Valve.VR.InteractionSystem{
         public GameObject pointer;
         public Transform raycastDirection;
         public float radiusSphereCast;
-        public float maxDistance = 100f;
+        public float maxDistance = 5.0f;
         public bool isActive = true;
         public bool addRigidBody = false;
 
@@ -82,7 +82,7 @@ namespace Valve.VR.InteractionSystem{
             }
             else
             {
-                GrabUpdate(false, maxDistance);
+                pointer.SetActive(false);
             }
         }
 

@@ -29,7 +29,7 @@ namespace Valve.VR.InteractionSystem.Sample
             CanvasOpen = !CanvasOpen;
             Debug.Log("Pressed");
 
-            if(CanvasOpen == true)
+            if(CanvasOpen == false)
             {
                 m_Papillodex.SetActive(true);
                 FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");

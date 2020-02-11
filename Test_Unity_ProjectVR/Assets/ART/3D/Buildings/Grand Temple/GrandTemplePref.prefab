@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 3508141347790920348}
   - component: {fileID: 6458472085215072420}
   - component: {fileID: 6106344633369025766}
+  - component: {fileID: 8420142536595387489}
   m_Layer: 0
   m_Name: Temple_LOD_0
   m_TagString: Untagged
@@ -154,6 +155,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8420142536595387489
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038363885978422023}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2512237695645822418, guid: 559e3d3e89c551544a4c6dd6b3c09ac8, type: 3}
 --- !u!1 &5164281243527902921
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,15 +217,15 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.4977177
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6106344633369025766}
-  - screenRelativeHeight: 0.3
+  - screenRelativeHeight: 0.2476541
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3877537633468814518}
-  - screenRelativeHeight: 0.1
+  - screenRelativeHeight: 0.005110098
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2788095619550413939}

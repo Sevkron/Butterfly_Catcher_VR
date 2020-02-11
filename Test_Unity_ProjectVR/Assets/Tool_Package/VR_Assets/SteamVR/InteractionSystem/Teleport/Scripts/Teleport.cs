@@ -173,6 +173,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void Start()
         {
+
             teleportMarkers = GameObject.FindObjectsOfType<TeleportMarkerBase>();
 
 			HidePointer();
@@ -256,7 +257,9 @@ namespace Valve.VR.InteractionSystem
 
 				if ( WasTeleportButtonPressed( hand ) )
 				{
+					Debug.Log("Pressed");
 					newPointerHand = hand;
+					
 				}
 			}
 
@@ -336,11 +339,16 @@ namespace Valve.VR.InteractionSystem
 
 			//Trace to see if the pointer hit anything
 			RaycastHit hitInfo;
+			
 			teleportArc.SetArcData( pointerStart, arcVelocity, true, pointerAtBadAngle );
-			if ( teleportArc.DrawArc( out hitInfo ) )
+			if ( teleportArc.DrawArc( out hitInfo )  )
 			{
-				hitSomething = true;
-				hitTeleportMarker = hitInfo.collider.GetComponentInParent<TeleportMarkerBase>();
+				if(Vector3.Distance( hitInfo.point, player.hmdTransform.position) < arcDistance )
+				{
+					hitSomething = true;
+					distanceFromPlayer = Vector3.Distance( hitInfo.point, player.feetPositionGuess);
+					hitTeleportMarker = hitInfo.collider.GetComponentInParent<TeleportMarkerBase>();
+				}
 			}
 
 			if ( pointerAtBadAngle )
@@ -352,6 +360,7 @@ namespace Valve.VR.InteractionSystem
 
 			if ( hitTeleportMarker != null ) //Hit a teleport marker
 			{
+				
 				if ( hitTeleportMarker.locked )
 				{
 					teleportArc.SetColor( pointerLockedColor );
@@ -373,6 +382,8 @@ namespace Valve.VR.InteractionSystem
 					pointerLineRenderer.endColor = pointerValidColor;
 #endif
 					destinationReticleTransform.gameObject.SetActive( hitTeleportMarker.showReticle );
+
+					
 				}
 
 				offsetReticleTransform.gameObject.SetActive( true );
@@ -389,6 +400,9 @@ namespace Valve.VR.InteractionSystem
 					if ( teleportArea != null && !teleportArea.locked && playAreaPreviewTransform != null )
 					{
 						Vector3 offsetToUse = playerFeetOffset;
+
+						//for the distance UI
+					
 
 						//Adjust the actual offset to prevent the play area marker from moving too much
 						if ( !movedFeetFarEnough )
@@ -415,8 +429,6 @@ namespace Valve.VR.InteractionSystem
 				}
 
 				pointerEnd = hitInfo.point;
-
-				distanceFromPlayer = Vector3.Distance( hitInfo.point, player.hmdTransform.position );
 
 			}
 			else //Hit neither
@@ -653,6 +665,9 @@ namespace Valve.VR.InteractionSystem
 
 			teleportArc.Hide();
 
+			//reactivate later
+			//pointerHand.m_DistanceCanvas.gameObject.SetActive(false);
+
 			foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
 			{
 				if ( teleportMarker != null && teleportMarker.markerActive && teleportMarker.gameObject != null )
@@ -681,6 +696,7 @@ namespace Valve.VR.InteractionSystem
 
 
 		//-------------------------------------------------
+		//make pointer teleport appear
 		private void ShowPointer( Hand newPointerHand, Hand oldPointerHand )
 		{
 			if ( !visible )
@@ -692,6 +708,9 @@ namespace Valve.VR.InteractionSystem
 
 				teleportPointerObject.SetActive( false );
 				teleportArc.Show();
+
+				//reactivate later
+				//newPointerHand.m_DistanceCanvas.gameObject.SetActive(true);
 				
 
 				foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
@@ -821,10 +840,13 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( visible && !teleporting )
 			{
+
 				if ( pointedAtTeleportMarker != null && pointedAtTeleportMarker.locked == false )
 				{
 					//Pointing at an unlocked teleport marker
 					teleportingToMarker = pointedAtTeleportMarker;
+					//pointerHand.m_DistanceCanvas.gameObject.SetActive(false);
+					Debug.Log("released");
 					InitiateTeleportFade();
 
 					CancelTeleportHint();

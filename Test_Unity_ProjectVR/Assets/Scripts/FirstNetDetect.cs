@@ -7,7 +7,7 @@ public class FirstNetDetect : MonoBehaviour
     public ButterflyNet butterflyNet;
     private IEnumerator butterflyCounter;
     public float m_timeToCatch;
-    public GameObject detectedButterfly;
+    //public GameObject detectedButterfly;
     void Start()
     {
         if(butterflyNet == null)
@@ -25,16 +25,19 @@ public class FirstNetDetect : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Butterfly"))
         {
-            butterflyNet.exitedButterfly = other.gameObject;
+            butterflyNet.exitedGameObject = other.gameObject;
             Debug.Log("Butterfly Exit");
             StartCoroutine(butterflyCounter);
+        }else if(other.gameObject.CompareTag("Sphere"))
+        {
+            butterflyNet.exitedGameObject = other.gameObject;
         }
     }
 
     private IEnumerator ButterflyCounter(float timer)
     {
         yield return new WaitForSeconds(timer);
-        butterflyNet.exitedButterfly = null;
+        butterflyNet.exitedGameObject = null;
         Debug.Log("Butterfly forgotten");
     }
 }
