@@ -563,6 +563,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3518195110278001523, guid: e5079166eff7c604aaf2b036de513c42,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
     - target: {fileID: 1489920803858765918, guid: e5079166eff7c604aaf2b036de513c42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -618,18 +623,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3518195110278001523, guid: e5079166eff7c604aaf2b036de513c42,
-        type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
     - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
       propertyPath: snapshots.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
       propertyPath: timeToReach.Array.size
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
+      propertyPath: timeToReachCapture.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
       propertyPath: transitionTime
@@ -663,11 +667,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
       propertyPath: timeToReach.Array.data[0]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
       propertyPath: timeToReach.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
+      propertyPath: timeToReachCapture.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
+      propertyPath: timeToReachCapture.Array.data[0]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
+      propertyPath: snapshots.Array.data[4]
+      value: 
+      objectReference: {fileID: 24500006, guid: 0d35e43ba0df5ba4c8fdd2d2976d8556,
+        type: 2}
+    - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
+      propertyPath: snapshots.Array.data[0]
+      value: 
+      objectReference: {fileID: 2970617532662364513, guid: 0d35e43ba0df5ba4c8fdd2d2976d8556,
+        type: 2}
+    - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
+      propertyPath: snapshots.Array.data[1]
+      value: 
+      objectReference: {fileID: -6226921312904696422, guid: 0d35e43ba0df5ba4c8fdd2d2976d8556,
+        type: 2}
+    - target: {fileID: 371306148, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
+      propertyPath: timeToReach.Array.data[4]
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
