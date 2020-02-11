@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
+using DG.Tweening;
 public class SnapshotTransition : MonoBehaviour
 {
     public AudioMixer audioMixer;
@@ -51,28 +51,61 @@ public class SnapshotTransition : MonoBehaviour
         }
         if (Input.GetKeyDown("y")) // EntrerDansPhaseCapture
         {
-            
-            for (int i =0; i < 5 ; i++)
-            {
-                if (timeToReach[i] == 1)
-                {
-                    print("i = " + i);
-                    tamponI = i;
-                    timeToReach[i] = 0;
-                }
 
-          
-            }
-            timeToReachTampon = 0;
-            timeToReach[4] = 1;
-            audioMixer.TransitionToSnapshots(snapshots, timeToReach, transitionTime);
+            audioMixer.DOSetFloat("VolMusic", -80, 3);
+            audioMixer.DOSetFloat("VolCaptureMusic", 0, 3);
+
+
+            /* for (int i =0; i < 5 ; i++)
+             {
+                 if (timeToReach[i] == 1)
+                 {
+                     tamponI = i;
+                     timeToReach[i] = 0;
+                 }
+             }
+
+             timeToReachTampon = 0;
+             timeToReach[4] = 1;
+             /*audioMixer.SetFloat("AmbiancePlaineVol", -80);
+             audioMixer.SetFloat("AmbianceJaponVol", -80);
+             audioMixer.SetFloat("AmbianceGrotteVol", -80);
+             audioMixer.SetFloat("AmbianceClairiereVol", -80);
+             audioMixer.TransitionToSnapshots(snapshots, timeToReach, transitionTime);
+
+
+             if (tamponI == 0)
+             {
+                 print("TamponI = " + tamponI);
+                 audioMixer.SetFloat("AmbiancePlaineVol",0);
+             }else if (tamponI == 1)
+             {
+                 print("TamponI = " + tamponI);
+                 audioMixer.SetFloat("AmbianceJaponVol", 0);
+             }else if (tamponI == 2)
+             {
+                 print("TamponI = " + tamponI);
+                 audioMixer.SetFloat("AmbianceGrotteVol", 0);
+             }else if (tamponI == 3)
+             {
+                 print("TamponI = " + tamponI);
+                 audioMixer.SetFloat("AmbianceClairiereVol", 0);
+             }*/
+
+
         }
+
+
         if (Input.GetKeyDown("u")) // SortirDePhaseCapture
         {
-            timeToReachTampon = 0;
+            audioMixer.DOSetFloat("VolMusic", 0, 3);
+            audioMixer.DOSetFloat("VolCaptureMusic", -80, 3);
+
+            /*timeToReachTampon = 0;
             timeToReach[tamponI] = 1;
             timeToReach[4] = 0;
-            
+            audioMixer.TransitionToSnapshots(snapshots, timeToReach, transitionTime);
+            */
         }
 
 
