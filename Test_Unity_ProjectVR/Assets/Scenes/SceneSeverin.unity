@@ -3641,6 +3641,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8158341629020756206, guid: 808394c149cfe7247a3ed2db268dfb27,
+        type: 3}
+      propertyPath: testSphereSpawn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808394c149cfe7247a3ed2db268dfb27, type: 3}
 --- !u!1 &814727856
@@ -6205,22 +6210,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
-      propertyPath: pointerValidColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
-      propertyPath: pointerValidColor.g
-      value: 0.9604411
-      objectReference: {fileID: 0}
-    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
-      propertyPath: pointerValidColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
-      propertyPath: showPlayAreaMarker
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
 --- !u!1 &1343268723
@@ -7386,7 +7375,7 @@ MonoBehaviour:
   ignoreTransforms: []
   children:
   - gameObject: {fileID: 1672649360}
-    gameObjectHash: 40472
+    gameObjectHash: 154852
     member: {fileID: 1672649361}
     renderer: {fileID: 0}
     renderHash: 0
@@ -7418,10 +7407,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 39884
+    gameObjectHash: 154264
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 39892
+    renderHash: 154272
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7450,10 +7439,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 39896
+    gameObjectHash: 154276
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 39902
+    renderHash: 154282
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7483,10 +7472,10 @@ MonoBehaviour:
     terrainCulled: 0
   renderers:
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 39884
+    gameObjectHash: 154264
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 39892
+    renderHash: 154272
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7515,10 +7504,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 39896
+    gameObjectHash: 154276
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 39902
+    renderHash: 154282
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7551,10 +7540,10 @@ MonoBehaviour:
   shadowLights: []
   shadowCasters:
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 39884
+    gameObjectHash: 154264
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 39892
+    renderHash: 154272
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7583,10 +7572,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 39896
+    gameObjectHash: 154276
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 39902
+    renderHash: 154282
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -9586,16 +9575,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2177755003636136816, guid: 5084ee611d35c61408b39faa2039b7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 2177755003636136816, guid: 5084ee611d35c61408b39faa2039b7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.043
-      objectReference: {fileID: 0}
     - target: {fileID: 2177755003713973370, guid: 5084ee611d35c61408b39faa2039b7f6,
         type: 3}
       propertyPath: skeletonAdditionalPoses.Array.size
@@ -9646,6 +9625,16 @@ PrefabInstance:
         type: 3}
       propertyPath: previewPoseSelection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177755003636136816, guid: 5084ee611d35c61408b39faa2039b7f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.032
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177755003636136816, guid: 5084ee611d35c61408b39faa2039b7f6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.043
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5084ee611d35c61408b39faa2039b7f6, type: 3}

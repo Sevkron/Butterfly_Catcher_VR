@@ -27,21 +27,24 @@ public class ButterflyNet : MonoBehaviour
     {
         if(other.gameObject == exitedGameObject )
         {
-            if(exitedGameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
+            //var caughtButterfly = other.gameObject;
+            if(other.gameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
             {
                 //Old Method
-                butterflyBehaviorTree = exitedGameObject.GetComponentInParent<BehaviorTree>();
-                exitedGameObject.GetComponent<YMovement>().GoToDefaultPos();
-                exitedGameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
-                Destroy(exitedGameObject.GetComponent<Rigidbody>()); //Necessaire
+                butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
+                other.gameObject.GetComponent<YMovement>().GoToDefaultPos();
+                other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
+                Destroy(other.gameObject.GetComponent<Rigidbody>()); //Necessaire
                 butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
-                captureMinigamePool.SpawnSph(exitedGameObject);
-                exitedGameObject.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
+                captureMinigamePool.SpawnSph(other.gameObject);
+                other.gameObject.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
 
             }else
             {
-                exitedGameObject.GetComponent<SphereInt>().Caught();
+                other.gameObject.GetComponent<SphereInt>().Caught();
             }
         }
+        else
+            Debug.Log("Didn't go through first collider");
     }
 }
