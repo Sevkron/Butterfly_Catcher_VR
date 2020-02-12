@@ -13728,16 +13728,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2217435920555195338, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_Name
-      value: PapillodexCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2217435920555195338, guid: a4be3d10e4aae774388480655e3ec7b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2217435920555195341, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13842,6 +13832,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217435920555195338, guid: a4be3d10e4aae774388480655e3ec7b8,
+        type: 3}
+      propertyPath: m_Name
+      value: PapillodexCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217435920555195338, guid: a4be3d10e4aae774388480655e3ec7b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2217435920367679334, guid: a4be3d10e4aae774388480655e3ec7b8,
         type: 3}
@@ -16711,14 +16711,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 55.064034
       objectReference: {fileID: 0}
-    - target: {fileID: 2300010, guid: cce5865e2533b764883b42f2466d3e84, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: db3bf6537201aff4ab6c1f79064757f7, type: 2}
-    - target: {fileID: 2300012, guid: cce5865e2533b764883b42f2466d3e84, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: db3bf6537201aff4ab6c1f79064757f7, type: 2}
     - target: {fileID: 400010, guid: cce5865e2533b764883b42f2466d3e84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
@@ -16771,6 +16763,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -4.612
       objectReference: {fileID: 0}
+    - target: {fileID: 2300010, guid: cce5865e2533b764883b42f2466d3e84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db3bf6537201aff4ab6c1f79064757f7, type: 2}
+    - target: {fileID: 2300012, guid: cce5865e2533b764883b42f2466d3e84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db3bf6537201aff4ab6c1f79064757f7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce5865e2533b764883b42f2466d3e84, type: 3}
 --- !u!1001 &2023053826
