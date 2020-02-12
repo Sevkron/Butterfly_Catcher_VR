@@ -25,7 +25,7 @@ public class YMovement : MonoBehaviour
     public BehaviorTree butterflyBehaviorTree;
     //protected Seek ScriptSeek;
     NavMeshHit hit;
-    public GameObject cube;
+    public GameObject Paps;
 
     [HideInInspector] public new Transform transform;
     [HideInInspector] public Animator animator;
@@ -86,12 +86,12 @@ public class YMovement : MonoBehaviour
         Debug.Log("Start Delay Coroutine");
         yield return new WaitForSeconds(2);
 
-        Destroy(JarScript.ButterflyinJar);
+        Destroy(JarScript.ButterflyinJar.transform.parent);
 
         Vector3 point;
         if (RandomPoint(transform.position, range, out point))
         {
-            Instantiate(cube, hit.position, Quaternion.identity);
+            Instantiate(Paps, new Vector3(hit.position.x, 1.2f, hit.position.z), Quaternion.identity);
             Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
         }
 
