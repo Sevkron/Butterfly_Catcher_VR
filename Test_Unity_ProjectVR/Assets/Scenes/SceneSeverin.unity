@@ -6206,6 +6206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporting
       objectReference: {fileID: 0}
+    - target: {fileID: 153878, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 475244, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7415,7 +7419,7 @@ MonoBehaviour:
   ignoreTransforms: []
   children:
   - gameObject: {fileID: 1672649360}
-    gameObjectHash: 58724
+    gameObjectHash: 40512
     member: {fileID: 1672649361}
     renderer: {fileID: 0}
     renderHash: 0
@@ -7447,10 +7451,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 58136
+    gameObjectHash: 39924
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 58144
+    renderHash: 39932
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7479,10 +7483,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 58148
+    gameObjectHash: 39936
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 58154
+    renderHash: 39942
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7512,10 +7516,10 @@ MonoBehaviour:
     terrainCulled: 0
   renderers:
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 58136
+    gameObjectHash: 39924
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 58144
+    renderHash: 39932
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7544,10 +7548,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 58148
+    gameObjectHash: 39936
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 58154
+    renderHash: 39942
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7580,10 +7584,10 @@ MonoBehaviour:
   shadowLights: []
   shadowCasters:
   - gameObject: {fileID: 461934047}
-    gameObjectHash: 58136
+    gameObjectHash: 39924
     member: {fileID: 1672649361}
     renderer: {fileID: 461934051}
-    renderHash: 58144
+    renderHash: 39932
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
@@ -7612,10 +7616,10 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 464046032}
-    gameObjectHash: 58148
+    gameObjectHash: 39936
     member: {fileID: 1672649361}
     renderer: {fileID: 464046035}
-    renderHash: 58154
+    renderHash: 39942
     light: {fileID: 0}
     lightHash: 0
     terrain: {fileID: 0}
