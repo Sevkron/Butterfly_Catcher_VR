@@ -90,7 +90,7 @@ namespace Valve.VR.InteractionSystem.Sample
                     JarOpen = false;
                     if(pressOnce == true)
                     {
-                        StopCoroutine(currentCoroutine);
+                        JarScript.StopCoroutine();
                         Debug.Log("Stop Delay Coroutine");
                         pressOnce = false;
                     }

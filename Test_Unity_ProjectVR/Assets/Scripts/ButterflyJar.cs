@@ -40,6 +40,12 @@ public class ButterflyJar : MonoBehaviour
 
     public void FreeButterfly()
     {
-        yMoveScript.Delay();
+        StartCoroutine(yMoveScript.Delay());
+        Debug.Log("Delay start");
+    }
+
+    public void StopCoroutine()
+    {
+        StopCoroutine(yMoveScript.Delay());
     }
 }

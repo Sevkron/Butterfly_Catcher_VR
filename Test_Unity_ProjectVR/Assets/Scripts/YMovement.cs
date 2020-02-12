@@ -86,7 +86,7 @@ public class YMovement : MonoBehaviour
         Debug.Log("Start Delay Coroutine");
         yield return new WaitForSeconds(2);
 
-        Destroy(JarScript.ButterflyinJar.transform.parent);
+        
 
         Vector3 point;
         if (RandomPoint(transform.position, range, out point))
@@ -95,17 +95,18 @@ public class YMovement : MonoBehaviour
             Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
         }
 
-        JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
+        //JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
         
 
-        JarScript.ButterflyinJar.transform.parent.SetParent(null);
+        //JarScript.ButterflyinJar.transform.parent.SetParent(null);
         //ajouter le collider
-        butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
+        //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
       
 
         JarScript.hasButterfly = false;
         
-        butterflyBehaviorTree.SendEvent<object>("IsFreeJar", false);
+        //butterflyBehaviorTree.SendEvent<object>("IsFreeJar", false);
+        Destroy(JarScript.ButterflyinJar.transform.parent.gameObject);
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
