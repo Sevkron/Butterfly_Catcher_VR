@@ -16,13 +16,15 @@ public class SphereInt : MonoBehaviour
     public ParticleSystem CapFailVFX;
     public ParticleSystem CapSuccessVFX;
     public ParticleSystem CapSpawnVFX;
+    private bool isLastSphere;
 
     void Start()
     {
         m_sphMinigame = transform.parent.GetComponent<SphMinigame>();
     }
-    public void StartTimer(float timer)
+    public void StartTimer(float timer, bool isFinal)
     {
+        isLastSphere = isFinal;
         if(activeOnce == true)
         {
             //Debug.Log("Started Timer");
@@ -48,7 +50,19 @@ public class SphereInt : MonoBehaviour
         myTween.Kill(false);
         StopCoroutine(delay);
         GetComponent<SphereCollider>().enabled = false;
-        VFXDelay = StartCoroutine(VFXTime(CapSuccessVFX));
+        CapSuccessVFX.Play();
+        if(isLastSphere == false)
+        {
+            m_sphMinigame.CaughtSuccess();
+        }else
+        {
+            VFXDelay = StartCoroutine(VFXTime(CapSuccessVFX));
+        }
+    }
+
+    public void FinalCaught()
+    {
+        VFXDelay = StartCoroutine(VFXTime(CapFailVFX));
     }
 
     public IEnumerator VFXTime(ParticleSystem particleSystem)
@@ -58,15 +72,13 @@ public class SphereInt : MonoBehaviour
         particleSystem.Play();
         Debug.Log("Started VFXTimer");
         yield return new WaitForSeconds(f);
-
-        if(particleSystem == CapSuccessVFX)
-        {
-            m_sphMinigame.CaughtSuccess();
-            Destroy(this.gameObject);
-        }
-        else if(particleSystem == CapFailVFX)
+        
+        if(particleSystem == CapFailVFX)
         {
             m_sphMinigame.MinigameFail();
+        }else if(particleSystem == CapSuccessVFX)
+        {
+            m_sphMinigame.CaughtSuccess();
         }
     }
 }

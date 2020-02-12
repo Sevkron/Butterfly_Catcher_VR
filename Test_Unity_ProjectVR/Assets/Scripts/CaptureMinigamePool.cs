@@ -28,12 +28,6 @@ public class CaptureMinigamePool : MonoBehaviour
         if(testSphereSpawn)
             SpawnSph(null);
             testSphereSpawn = false;
-
-        Vector3 instantiatePos = headTransform.position;
-        instantiatePos.x = headTransform.position.x;
-        instantiatePos.y = Mathf.Lerp(beltTransform.position.y, instantiatePos.y, 0.5f);
-        instantiatePos.z = headTransform.forward.z;
-        spawnPoint.position = instantiatePos;
     }
 
     public void SpawnSph(GameObject butterfly)
@@ -65,12 +59,14 @@ public class CaptureMinigamePool : MonoBehaviour
         //T'es le meilleur !
 
         int i = Random.Range(0, sphDifficulty.Length);
+        //Debug.Log("Array list is of : " + sphDifficulty.Length);
+        //Debug.Log("Spawn minigame number" + i);
 
         if(sphDifficulty[i] == null)
             Debug.Log("No sphere minigame at asked difficulty level :" + i.ToString());
         else
             //Instantiate(sphDifficulty[i], transform, false);
-            Instantiate(sphDifficulty[i], spawnPoint.position, Quaternion.identity, transform);
+            Instantiate(sphDifficulty[i], spawnPoint.position, spawnPoint.rotation, null);
     }
 
     public void FreeButterfly()
