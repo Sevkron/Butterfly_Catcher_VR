@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4228595235138250080}
   m_Layer: 0
   m_Name: CeylonRoseButterflyPrefab
-  m_TagString: Butterfly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,6 +178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168638989044526132, guid: 87269916fc4eb0c49a1e3700a3e6d295,
+        type: 3}
+      propertyPath: difficultyLevel
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87269916fc4eb0c49a1e3700a3e6d295, type: 3}
