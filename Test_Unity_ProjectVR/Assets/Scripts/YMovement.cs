@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
 
 public class YMovement : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class YMovement : MonoBehaviour
     //protected Seek ScriptSeek;
     NavMeshHit hit;
     public GameObject Paps;
+    public float BaseOffset;
+
+    public bool Idle;
+
 
     [HideInInspector] public new Transform transform;
     [HideInInspector] public Animator animator;
@@ -39,6 +44,7 @@ public class YMovement : MonoBehaviour
         isWander = true;
         
         JarScript = GetComponentInChildren<ButterflyJar>();
+        BaseOffset = transform.parent.GetComponent<NavMeshAgent>().baseOffset;
     }
 
     private void FixedUpdate()
@@ -91,22 +97,30 @@ public class YMovement : MonoBehaviour
         Vector3 point;
         if (RandomPoint(transform.position, range, out point))
         {
-            Instantiate(Paps, new Vector3(hit.position.x, 1.2f, hit.position.z), Quaternion.identity);
+            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z),1);
+            //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
             Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
+
+            Idle = false;
         }
 
-        //JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
-        
+        JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
+        //JarScript.ButterflyinJar
 
-        //JarScript.ButterflyinJar.transform.parent.SetParent(null);
+        JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
+        isWander = true;
+
+
+
+
         //ajouter le collider
         //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
-      
+
 
         JarScript.hasButterfly = false;
         
         //butterflyBehaviorTree.SendEvent<object>("IsFreeJar", false);
-        Destroy(JarScript.ButterflyinJar.transform.parent.gameObject);
+        //Destroy(JarScript.ButterflyinJar.transform.parent.gameObject);
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
