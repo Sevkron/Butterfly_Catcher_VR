@@ -888,7 +888,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4841041591814758695}
-  - component: {fileID: 6036031985219781092}
   - component: {fileID: 8570283174059806907}
   - component: {fileID: 5168638989044526132}
   m_Layer: 0
@@ -907,7 +906,7 @@ Transform:
   m_GameObject: {fileID: 8463825509532586804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.62, y: 0.62, z: 0.62}
+  m_LocalScale: {x: 0.64, y: 0.64, z: 0.64}
   m_Children:
   - {fileID: 8349334858716029253}
   - {fileID: 594779296074782330}
@@ -919,22 +918,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6036031985219781092
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8463825509532586804}
-  serializedVersion: 2
-  m_Mass: 2
-  m_Drag: 1
-  m_AngularDrag: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!135 &8570283174059806907
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -969,6 +952,8 @@ MonoBehaviour:
   xmax: 6
   isWander: 0
   destinationVector3: {x: 0, y: 0, z: 0}
+  butterflyBehaviorTree: {fileID: 0}
+  Paps: {fileID: 0}
   transform: {fileID: 0}
   animator: {fileID: 0}
   navMeshAgent: {fileID: 0}
@@ -1039,6 +1024,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4841041591814758695}
     m_Modifications:
+    - target: {fileID: 5720252652646898877, guid: b9a77244cef709b46823d6ff8be3a082,
+        type: 3}
+      propertyPath: m_Name
+      value: PS_SignPapillon
+      objectReference: {fileID: 0}
     - target: {fileID: 6523228563465255942, guid: b9a77244cef709b46823d6ff8be3a082,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1093,11 +1083,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5720252652646898877, guid: b9a77244cef709b46823d6ff8be3a082,
-        type: 3}
-      propertyPath: m_Name
-      value: PS_SignPapillon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a77244cef709b46823d6ff8be3a082, type: 3}

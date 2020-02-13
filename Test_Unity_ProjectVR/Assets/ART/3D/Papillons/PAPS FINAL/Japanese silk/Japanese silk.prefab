@@ -102,7 +102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4599966016961124847}
-  - component: {fileID: 3092073878544777547}
   - component: {fileID: 3756308592129567405}
   - component: {fileID: 2643249930121781065}
   m_Layer: 0
@@ -121,7 +120,7 @@ Transform:
   m_GameObject: {fileID: 688212229748747260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -26.580154, y: -37.12, z: 9.65}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children:
   - {fileID: 188826441430483800}
   - {fileID: 2391503583036796616}
@@ -133,22 +132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3092073878544777547
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688212229748747260}
-  serializedVersion: 2
-  m_Mass: 2
-  m_Drag: 1
-  m_AngularDrag: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!135 &3756308592129567405
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -183,6 +166,8 @@ MonoBehaviour:
   xmax: 6
   isWander: 0
   destinationVector3: {x: 0, y: 0, z: 0}
+  butterflyBehaviorTree: {fileID: 0}
+  Paps: {fileID: 0}
   transform: {fileID: 0}
   animator: {fileID: 0}
   navMeshAgent: {fileID: 0}
