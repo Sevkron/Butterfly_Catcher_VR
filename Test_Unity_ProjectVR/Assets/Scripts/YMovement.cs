@@ -28,8 +28,9 @@ public class YMovement : MonoBehaviour
     NavMeshHit hit;
     public GameObject Paps;
     public float BaseOffset;
+    public SharedBool SharedIsIdle;
 
-    public bool Idle;
+    //public bool Idle;
 
 
     [HideInInspector] public new Transform transform;
@@ -45,7 +46,10 @@ public class YMovement : MonoBehaviour
         
         JarScript = GetComponentInChildren<ButterflyJar>();
         BaseOffset = transform.parent.GetComponent<NavMeshAgent>().baseOffset;
-    }
+        
+
+
+}
 
     private void FixedUpdate()
     {
@@ -57,12 +61,7 @@ public class YMovement : MonoBehaviour
             float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(xmini, xmax), ref translationVel, xsmoothTime);
             transform.localPosition = new Vector3(xPos, transform.localPosition.y, transform.localPosition.z);
 
-            //transform.localPosition = new Vector3(xPos, yPos, transform.localPosition.z);
-
-            /*float min = 0.1f;
-            float max = 2f;
-            float i;
-            float normalizedFloat; */
+          
 
             animator.speed = navMeshAgent.speed;
             //Debug.Log(navMeshAgent.speed);
@@ -97,15 +96,15 @@ public class YMovement : MonoBehaviour
         Vector3 point;
         if (RandomPoint(transform.position, range, out point))
         {
-            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z),1);
+            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z),1.5f);
             //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
             Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-
-            Idle = false;
+            SharedIsIdle = JarScript.SharedIsIdle;
+            SharedIsIdle = false;
         }
 
         JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
-        //JarScript.ButterflyinJar
+        
 
         JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
         isWander = true;

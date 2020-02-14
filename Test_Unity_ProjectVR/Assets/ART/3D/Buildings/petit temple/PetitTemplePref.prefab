@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 3443226163353110081}
   - component: {fileID: 9036054609739182513}
   - component: {fileID: 717806271127071281}
+  - component: {fileID: 1785005255895334090}
   m_Layer: 0
   m_Name: petit_temple_LOD0
   m_TagString: Untagged
@@ -295,3 +296,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1785005255895334090
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123016620126885449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 219474175817348654, guid: 3ef52ed7381e78e48bdca8ca54007b7e, type: 3}
