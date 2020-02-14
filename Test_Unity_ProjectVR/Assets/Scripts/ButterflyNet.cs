@@ -27,7 +27,7 @@ public class ButterflyNet : MonoBehaviour
 
         JarScript = GetComponentInChildren<ButterflyJar>();
 
-        SharedIsIdle = JarScript.SharedIsIdle;
+        //SharedIsIdle = JarScript.SharedIsIdle;
     }
 
     void OnTriggerEnter(Collider other)
@@ -39,6 +39,7 @@ public class ButterflyNet : MonoBehaviour
             {
                 //Old Method
                 butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
+                SharedIsIdle = JarScript.SharedIsIdle;
                 SharedIsIdle = true;
                 other.gameObject.GetComponent<YMovement>().GoToDefaultPos();
                 other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;

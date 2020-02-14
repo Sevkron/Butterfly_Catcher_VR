@@ -20,7 +20,7 @@ public class ButterflyJar : MonoBehaviour
 
     private void Start()
     {
-        SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
+       
     }
     void OnTriggerEnter(Collider other)
     {
@@ -29,6 +29,7 @@ public class ButterflyJar : MonoBehaviour
             ButterflyinJar = other.gameObject;
             hasButterfly = true;
             butterflyBehaviorTree = ButterflyinJar.GetComponentInParent<BehaviorTree>();
+            SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
             SharedIsIdle = true;
             ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = false;
             yMoveScript = ButterflyinJar.GetComponent<YMovement>();
@@ -40,6 +41,8 @@ public class ButterflyJar : MonoBehaviour
             
         }
     }
+
+   
 
     public void FreeButterfly()
     {
