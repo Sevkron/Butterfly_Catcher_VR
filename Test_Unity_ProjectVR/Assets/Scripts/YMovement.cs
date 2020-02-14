@@ -28,8 +28,9 @@ public class YMovement : MonoBehaviour
     NavMeshHit hit;
     public GameObject Paps;
     public float BaseOffset;
+    public SharedBool SharedIsIdle;
 
-    public bool Idle;
+    //public bool Idle;
 
 
     [HideInInspector] public new Transform transform;
@@ -45,7 +46,10 @@ public class YMovement : MonoBehaviour
         
         JarScript = GetComponentInChildren<ButterflyJar>();
         BaseOffset = transform.parent.GetComponent<NavMeshAgent>().baseOffset;
-    }
+        SharedIsIdle = JarScript.SharedIsIdle;
+
+
+}
 
     private void FixedUpdate()
     {
@@ -97,15 +101,15 @@ public class YMovement : MonoBehaviour
         Vector3 point;
         if (RandomPoint(transform.position, range, out point))
         {
-            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z),1);
+            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z),1.5f);
             //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
             Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
 
-            Idle = false;
+           SharedIsIdle = false;
         }
 
         JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
-        //JarScript.ButterflyinJar
+        
 
         JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
         isWander = true;

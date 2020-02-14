@@ -13,14 +13,21 @@ public class ButterflyNet : MonoBehaviour
     public Transform netTransform;
     public bool IsCaptured = true;
     public CaptureMinigamePool captureMinigamePool;
+    private ButterflyJar JarScript;
+    public SharedBool SharedIsIdle;
 
     public float scale = 0.7f;
+
 
     void Awake()
     {
         if(captureMinigamePool == null)
             captureMinigamePool = GameObject.Find("CaptureMinigamePool").GetComponent<CaptureMinigamePool>();
             Debug.Log("Please set capture minigame pool");
+
+        JarScript = GetComponentInChildren<ButterflyJar>();
+
+        SharedIsIdle = JarScript.SharedIsIdle;
     }
 
     void OnTriggerEnter(Collider other)
@@ -32,6 +39,7 @@ public class ButterflyNet : MonoBehaviour
             {
                 //Old Method
                 butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
+                SharedIsIdle = true;
                 other.gameObject.GetComponent<YMovement>().GoToDefaultPos();
                 other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
                 Destroy(other.gameObject.GetComponent<Rigidbody>()); //Necessaire
