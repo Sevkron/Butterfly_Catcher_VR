@@ -31,7 +31,7 @@ public class ButterflyJar : MonoBehaviour
             yMoveScript = ButterflyinJar.GetComponent<YMovement>();
             yMoveScript.GoToDefaultPos();
             ButterflyinJar.GetComponent<SphereCollider>().enabled = false;
-            Destroy(other.gameObject.GetComponent<Rigidbody>());
+            
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
             ButterflyinJar.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
             
