@@ -20,7 +20,7 @@ public class DirectMovement : MonoBehaviour
     public float speed = 1;    
     void Start()
     {
-        player = InteractionSystem.Player.instance;
+        //player = InteractionSystem.Player.instance;
         characterController = GetComponent<CharacterController>();
 
 		if ( player == null )
@@ -65,8 +65,8 @@ public class DirectMovement : MonoBehaviour
             wasSwitchMovePressed();
         }
 
-        Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(Input.axis.x, 0, Input.axis.y));
-        characterController.Move(speed * Time.deltaTime * Vector3.ProjectOnPlane(direction,Vector3.up));
+        //Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(Input.axis.x, 0, Input.axis.y));
+        //characterController.Move(speed * Time.deltaTime * Vector3.ProjectOnPlane(direction,Vector3.up));
     }
 
     private bool wasSwitchMovePressed()
