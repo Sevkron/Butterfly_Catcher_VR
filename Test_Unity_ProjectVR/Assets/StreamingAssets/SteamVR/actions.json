@@ -63,6 +63,10 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/MoveLocomotion",
+      "type": "vector2"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -189,7 +193,8 @@
       "/actions/default/in/SnapTurnRight": "Snap Turn (Right)",
       "/actions/default/in/Pause": "Pause",
       "/actions/default/in/SwitchMovementModes": "Switch Movement Modes",
-      "/actions/default/in/SqueezeTrigger": "Squeeze Trigger"
+      "/actions/default/in/SqueezeTrigger": "Squeeze Trigger",
+      "/actions/default/in/MoveLocomotion": "Move Locomotion"
     }
   ]
 }
