@@ -18,7 +18,7 @@ public class YMovement : MonoBehaviour
     public float xmax = 1.5f;
     private float translationVel;
 
-    private float range = 1.0f;
+    private float range = 0.5f;
 
     public bool isWander;
     public Vector3 destinationVector3;
@@ -88,34 +88,33 @@ public class YMovement : MonoBehaviour
 
     public IEnumerator Delay()
     {
-        Debug.Log("Start Delay Coroutine");
-        yield return new WaitForSeconds(2);
-
         
-
-        Vector3 point;
-        if (RandomPoint(transform.position, range, out point))
         {
-            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z),1.5f);
-            //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
-            Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-            SharedIsIdle = JarScript.SharedIsIdle;
-            SharedIsIdle = false;
+            Debug.Log("Start Delay Coroutine");
+            yield return new WaitForSeconds(2);
+
+            transform.parent.DetachChildren();
+            //ou
+            transform.parent.SetParent(null);
+
+            Vector3 point;
+            if (RandomPoint(transform.position, range, out point))
+            {
+                transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z), 1.5f);
+                //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
+                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
+                SharedIsIdle = JarScript.SharedIsIdle;
+                SharedIsIdle = false;
+            }
         }
 
         JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
-        
 
         JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
         isWander = true;
 
-
-
-
         //ajouter le collider
         //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
-
-
         JarScript.hasButterfly = false;
         
         //butterflyBehaviorTree.SendEvent<object>("IsFreeJar", false);
