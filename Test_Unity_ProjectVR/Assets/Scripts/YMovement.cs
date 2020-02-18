@@ -99,12 +99,10 @@ public class YMovement : MonoBehaviour
             transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z),1.5f);
             //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
             Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-            SharedIsIdle = JarScript.SharedIsIdle;
-            SharedIsIdle = false;
+            JarScript.SharedIsIdle = false;
         }
 
-        JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
-        
+        JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;        
 
         JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
         isWander = true;

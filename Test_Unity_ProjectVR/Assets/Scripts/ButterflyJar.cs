@@ -24,6 +24,7 @@ public class ButterflyJar : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        //changer pour faire en sorte que le papillon est desactive par net, ne peut pas etre attrape par jar
         if(other.gameObject.CompareTag("Butterfly") && hasButterfly == false)
         {
             ButterflyinJar = other.gameObject;

@@ -25,8 +25,6 @@ public class ButterflyNet : MonoBehaviour
             captureMinigamePool = GameObject.Find("CaptureMinigamePool").GetComponent<CaptureMinigamePool>();
             Debug.Log("Please set capture minigame pool");
 
-        JarScript = GetComponentInChildren<ButterflyJar>();
-
         //SharedIsIdle = JarScript.SharedIsIdle;
     }
 
@@ -39,7 +37,7 @@ public class ButterflyNet : MonoBehaviour
             {
                 //Old Method
                 butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
-                SharedIsIdle = JarScript.SharedIsIdle;
+                SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
                 SharedIsIdle = true;
                 other.gameObject.GetComponent<YMovement>().GoToDefaultPos();
                 other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
