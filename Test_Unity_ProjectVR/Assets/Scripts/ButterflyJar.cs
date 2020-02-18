@@ -13,6 +13,7 @@ public class ButterflyJar : MonoBehaviour
     //public GameObject jar;
     public bool hasButterfly;
     public GameObject ButterflyinJar;
+    public bool Butterflycatched = false;
     
     public float scale = 0.2f;
     private YMovement yMoveScript;
@@ -20,8 +21,9 @@ public class ButterflyJar : MonoBehaviour
 
     private void Start()
     {
-       
+        hasButterfly = false;
     }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Butterfly") && hasButterfly == false)

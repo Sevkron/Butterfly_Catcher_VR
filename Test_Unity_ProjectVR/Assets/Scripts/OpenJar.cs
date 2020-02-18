@@ -14,8 +14,8 @@ namespace Valve.VR.InteractionSystem.Sample
         public Interactable interactable;
 
         public Animator animator;
-         
-        public SphereCollider sphereCollider; 
+
+        public SphereCollider sphereCollider;
 
         public bool affectMaterial = false;
 
@@ -33,7 +33,7 @@ namespace Valve.VR.InteractionSystem.Sample
         private bool pressOnce;
         private YMovement YMovement;
 
-       
+
 
         public SteamVR_Action_Single pinchSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
 
@@ -48,59 +48,75 @@ namespace Valve.VR.InteractionSystem.Sample
             JarScript = GetComponentInChildren<ButterflyJar>();
 
 
-            ExitVector3 = new Vector3(ExitPoint.transform.position.x , ExitPoint.transform.position.y , ExitPoint.transform.position.z);
+            ExitVector3 = new Vector3(ExitPoint.transform.position.x, ExitPoint.transform.position.y, ExitPoint.transform.position.z);
 
-            
-
-            
-
-           
         }
 
         private void Update()
+        {
+            ButterflyCatched();
+            OpeningJar();
+        }
+
+        public void OpeningJar()
         {
             if (interactable.attachedToHand)
             {
                 float pinch = 0;
                 pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
                 animator.SetFloat("PushTrigger", pinch);
-                if(pinch > 0.5)
+                if (pinch > 0.5)
                 {
                     if (JarScript.hasButterfly == false)
                     {
                         sphereCollider.enabled = true;
                         Debug.Log("collider on" + JarOpen);
-                    }               
-                    else if (JarScript.hasButterfly == true)
+                    }
+                    else if (JarScript.Butterflycatched == true)
                     {
-                        if(pressOnce == false)
+                        if (pressOnce == false)
                         {
                             sphereCollider.enabled = false;
-                           
+
                             JarScript.FreeButterfly();
                             Debug.Log("Delay start once");
                             pressOnce = true;
                         }
                     }
-                   
-                       
+
+
                 }
-                else{
+                else
+                {
                     sphereCollider.enabled = false;
                     JarOpen = false;
-                    if(pressOnce == true)
+                    if (pressOnce == true)
                     {
                         JarScript.StopCoroutine();
                         Debug.Log("Stop Delay Coroutine");
                         pressOnce = false;
                     }
                 }
-            }else
+            }
+            else
             {
                 animator.SetFloat("PushTrigger", 0);
             }
         }
 
-      
+        public void ButterflyCatched()
+        {
+            if (interactable.attachedToHand)
+            {
+                float pinch = 0;
+                pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
+                animator.SetFloat("PushTrigger", pinch);
+
+                if (JarScript.ButterflyinJar == true && pinch == 0)
+                {
+                    JarScript.Butterflycatched = true;
+                }
+            }
+        }
     }
 }
