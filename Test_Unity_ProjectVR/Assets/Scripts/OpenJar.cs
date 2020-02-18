@@ -67,6 +67,7 @@ namespace Valve.VR.InteractionSystem.Sample
                 animator.SetFloat("PushTrigger", pinch);
                 if (pinch > 0.5)
                 {
+                    JarOpen = true;
                     if (JarScript.hasButterfly == false)
                     {
                         sphereCollider.enabled = true;
@@ -106,16 +107,9 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public void ButterflyCatched()
         {
-            if (interactable.attachedToHand)
+            if (JarScript.hasButterfly == true && JarOpen == false)
             {
-                float pinch = 0;
-                pinch = pinchSqueeze.GetAxis(interactable.attachedToHand.handType);
-                animator.SetFloat("PushTrigger", pinch);
-
-                if (JarScript.ButterflyinJar == true && pinch == 0)
-                {
-                    JarScript.Butterflycatched = true;
-                }
+                JarScript.Butterflycatched = true;
             }
         }
     }

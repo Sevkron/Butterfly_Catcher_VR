@@ -13,7 +13,7 @@ public class ButterflyJar : MonoBehaviour
     //public GameObject jar;
     public bool hasButterfly;
     public GameObject ButterflyinJar;
-    public bool Butterflycatched = false;
+    public bool Butterflycatched;
     
     public float scale = 0.2f;
     private YMovement yMoveScript;
@@ -22,6 +22,7 @@ public class ButterflyJar : MonoBehaviour
     private void Start()
     {
         hasButterfly = false;
+        Butterflycatched = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -37,6 +38,7 @@ public class ButterflyJar : MonoBehaviour
             ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = false;
             yMoveScript = ButterflyinJar.GetComponent<YMovement>();
             yMoveScript.GoToDefaultPos();
+            yMoveScript.JarScript = this;
             ButterflyinJar.GetComponent<SphereCollider>().enabled = false;
             
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
