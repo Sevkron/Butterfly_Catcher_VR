@@ -13,35 +13,47 @@ public class ButterflyNet : MonoBehaviour
     public Transform netTransform;
     public bool IsCaptured = true;
     public CaptureMinigamePool captureMinigamePool;
+    private ButterflyJar JarScript;
+    public SharedBool SharedIsIdle;
 
     public float scale = 0.7f;
+
 
     void Awake()
     {
         if(captureMinigamePool == null)
             captureMinigamePool = GameObject.Find("CaptureMinigamePool").GetComponent<CaptureMinigamePool>();
             Debug.Log("Please set capture minigame pool");
+
+        JarScript = GetComponentInChildren<ButterflyJar>();
+
+        //SharedIsIdle = JarScript.SharedIsIdle;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == exitedGameObject )
         {
-            if(exitedGameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
+            //var caughtButterfly = other.gameObject;
+            if(other.gameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
             {
                 //Old Method
-                butterflyBehaviorTree = exitedGameObject.GetComponentInParent<BehaviorTree>();
-                exitedGameObject.GetComponent<YMovement>().GoToDefaultPos();
-                exitedGameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
-                Destroy(exitedGameObject.GetComponent<Rigidbody>()); //Necessaire
+                butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
+                SharedIsIdle = JarScript.SharedIsIdle;
+                SharedIsIdle = true;
+                other.gameObject.GetComponent<YMovement>().GoToDefaultPos();
+                other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
+                Destroy(other.gameObject.GetComponent<Rigidbody>()); //Necessaire
                 butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
-                captureMinigamePool.SpawnSph(exitedGameObject);
-                exitedGameObject.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
+                captureMinigamePool.SpawnSph(other.gameObject);
+                other.gameObject.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
 
             }else
             {
-                exitedGameObject.GetComponent<SphereInt>().Caught();
+                other.gameObject.GetComponent<SphereInt>().Caught();
             }
         }
+        else
+            Debug.Log("Didn't go through first collider");
     }
 }

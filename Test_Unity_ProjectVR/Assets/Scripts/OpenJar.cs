@@ -31,10 +31,9 @@ namespace Valve.VR.InteractionSystem.Sample
 
         private Coroutine currentCoroutine;
         private bool pressOnce;
+        private YMovement YMovement;
 
-        //public bool hasButterfly;
-
-        //public SteamVR_Action_Single gripSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
+       
 
         public SteamVR_Action_Single pinchSqueeze = SteamVR_Input.GetAction<SteamVR_Action_Single>("SqueezeTrigger");
 
@@ -50,6 +49,10 @@ namespace Valve.VR.InteractionSystem.Sample
 
 
             ExitVector3 = new Vector3(ExitPoint.transform.position.x , ExitPoint.transform.position.y , ExitPoint.transform.position.z);
+
+            
+
+            
 
            
         }
@@ -73,12 +76,13 @@ namespace Valve.VR.InteractionSystem.Sample
                         if(pressOnce == false)
                         {
                             sphereCollider.enabled = false;
-                            currentCoroutine = StartCoroutine(Delay());
+                           
+                            JarScript.FreeButterfly();
                             Debug.Log("Delay start once");
                             pressOnce = true;
                         }
                     }
-                    //JarOpen = true;
+                   
                        
                 }
                 else{
@@ -86,7 +90,7 @@ namespace Valve.VR.InteractionSystem.Sample
                     JarOpen = false;
                     if(pressOnce == true)
                     {
-                        StopCoroutine(currentCoroutine);
+                        JarScript.StopCoroutine();
                         Debug.Log("Stop Delay Coroutine");
                         pressOnce = false;
                     }
@@ -97,24 +101,6 @@ namespace Valve.VR.InteractionSystem.Sample
             }
         }
 
-      
-        // a mettre dans Ymovement
-         IEnumerator Delay()
-            {
-                Debug.Log("Start Delay Coroutine");
-                yield return new WaitForSeconds(2);
-
-                JarScript.ButterflyinJar.gameObject.transform.parent.DOMove(ExitVector3, 1, false);
-
-                JarScript.ButterflyinJar.transform.parent.SetParent(null);
-                //ajouter le collider
-                butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
-                JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
-                JarScript.ButterflyinJar.AddComponent<Rigidbody>();
-                JarScript.hasButterfly = false;
-                //JarScript.ButterflyinJar.Rigidbody.mass =
-                butterflyBehaviorTree.SendEvent<object>("IsFreeJar", false);
-            }
       
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2225102742086081226}
   m_Layer: 0
   m_Name: DragonButterflyPrefab
-  m_TagString: Butterfly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +119,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3895392921572288122}
     m_Modifications:
+    - target: {fileID: 5136965079697154349, guid: f499aabc8504f1b41a8f498ec324a3c0,
+        type: 3}
+      propertyPath: m_Name
+      value: 'Dragon pivot '
+      objectReference: {fileID: 0}
     - target: {fileID: 8147420044183835454, guid: f499aabc8504f1b41a8f498ec324a3c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -174,13 +179,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5136965079697154349, guid: f499aabc8504f1b41a8f498ec324a3c0,
-        type: 3}
-      propertyPath: m_Name
-      value: 'Dragon pivot '
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9181535014282166355, guid: f499aabc8504f1b41a8f498ec324a3c0, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f499aabc8504f1b41a8f498ec324a3c0, type: 3}
 --- !u!4 &3719383430872304935 stripped
 Transform:

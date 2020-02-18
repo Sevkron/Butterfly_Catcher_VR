@@ -9,15 +9,18 @@ public class ButterflyJar : MonoBehaviour
     public BehaviorTree butterflyBehaviorTree;
 
 
+
     //public GameObject jar;
     public bool hasButterfly;
     public GameObject ButterflyinJar;
     
     public float scale = 0.2f;
+    private YMovement yMoveScript;
+    public SharedBool SharedIsIdle;
 
     private void Start()
     {
-        
+       
     }
     void OnTriggerEnter(Collider other)
     {
@@ -26,15 +29,29 @@ public class ButterflyJar : MonoBehaviour
             ButterflyinJar = other.gameObject;
             hasButterfly = true;
             butterflyBehaviorTree = ButterflyinJar.GetComponentInParent<BehaviorTree>();
+            SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
+            SharedIsIdle = true;
             ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = false;
-            ButterflyinJar.GetComponent<YMovement>().GoToDefaultPos();
+            yMoveScript = ButterflyinJar.GetComponent<YMovement>();
+            yMoveScript.GoToDefaultPos();
             ButterflyinJar.GetComponent<SphereCollider>().enabled = false;
-            Destroy(other.gameObject.GetComponent<Rigidbody>());
+            
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
             ButterflyinJar.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
             
         }
+    }
 
-        
+   
+
+    public void FreeButterfly()
+    {
+        StartCoroutine(yMoveScript.Delay());
+        Debug.Log("Delay start");
+    }
+
+    public void StopCoroutine()
+    {
+        StopCoroutine(yMoveScript.Delay());
     }
 }

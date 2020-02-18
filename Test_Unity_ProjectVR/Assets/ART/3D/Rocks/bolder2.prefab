@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 440085055140028764}
   - component: {fileID: 7868937484907182019}
   - component: {fileID: 5637218953064574346}
+  - component: {fileID: 1912095235557497873}
   m_Layer: 0
   m_Name: bolder2
   m_TagString: Untagged
@@ -77,3 +78,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!205 &1912095235557497873
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067111673923956753}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.033450603, y: 0.35252047, z: -0.0070675015}
+  m_Size: 1.7325792
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.053052995
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5637218953064574346}
+  m_Enabled: 1

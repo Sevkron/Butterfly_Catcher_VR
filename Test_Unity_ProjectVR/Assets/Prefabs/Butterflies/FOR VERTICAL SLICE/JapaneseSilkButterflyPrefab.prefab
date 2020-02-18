@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 282980263102225136}
   m_Layer: 0
   m_Name: JapaneseSilkButterflyPrefab
-  m_TagString: Butterfly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +119,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4708666253296319692}
     m_Modifications:
+    - target: {fileID: 688212229748747260, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
+        type: 3}
+      propertyPath: m_Name
+      value: Japanese silk
+      objectReference: {fileID: 0}
     - target: {fileID: 4599966016961124847, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -177,25 +182,19 @@ PrefabInstance:
     - target: {fileID: 4599966016961124847, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4599966016961124847, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4599966016961124847, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 688212229748747260, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: m_Name
-      value: Japanese silk
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3092073878544777547, guid: 0e87fe785a2af304b8ed7e4beff8c68e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e87fe785a2af304b8ed7e4beff8c68e, type: 3}
 --- !u!4 &2119842162247788197 stripped
 Transform:

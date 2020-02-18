@@ -14,12 +14,13 @@ public class SphMinigame : MonoBehaviour
 
     void Start()
     {
-        m_captureMinigamePool = GetComponentInParent<CaptureMinigamePool>();
+        if(m_captureMinigamePool == null)
+            m_captureMinigamePool = GameObject.Find("CaptureMinigamePool").GetComponent<CaptureMinigamePool>();
     }   
     void OnEnable()
     {
-        int i = 0;
-        sphMinigame[i].StartTimer(timer);
+        i = 0;
+        sphMinigame[i].StartTimer(timer, false);
         //Debug.Log("Started this thing");
     }
 
@@ -33,15 +34,23 @@ public class SphMinigame : MonoBehaviour
     {
         
         i = i + 1;
+        //Debug.Log("Array is of length : " + sphMinigame.Length);
+        //Debug.Log("i is equal to : " + i);
 
-        if(i < sphMinigame.Length)
+        if(i == sphMinigame.Length - 1)
         {
-            sphMinigame[i].StartTimer(timer);
-            Debug.Log("Caught Success");
+            sphMinigame[i].StartTimer(timer, true);
+            Debug.Log("Start final sphere");
+            
+        }else if(i < sphMinigame.Length - 1)
+        {
+            sphMinigame[i].StartTimer(timer, false);
+            Debug.Log("Caught sphere success");
         }
         else
         {
             m_captureMinigamePool.CaughtButterfly();
+            Debug.Log("That was the final sphere");
             Destroy(this.gameObject);
         }
     }
