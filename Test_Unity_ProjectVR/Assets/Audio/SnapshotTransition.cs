@@ -15,6 +15,7 @@ public class SnapshotTransition : MonoBehaviour
     public AudioSource japonAmbiance;
     public AudioSource grotteAmbiance;
     public AudioSource clairiereAmbiance;
+    public GameObject audioSourceMusic;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class SnapshotTransition : MonoBehaviour
             timeToReach[0] = timeToReach[1];
             timeToReach[1] = timeToReachTampon;
             audioMixer.TransitionToSnapshots(snapshots, timeToReach, transitionTime);
-            StartCoroutine(WaitToCutSong());  
+            StartCoroutine(WaitToCutSong());
         }
 
         if (Input.GetKeyDown("r")) // JaponGrotte
@@ -39,6 +40,7 @@ public class SnapshotTransition : MonoBehaviour
             timeToReach[2] = timeToReachTampon;
             audioMixer.TransitionToSnapshots(snapshots, timeToReach, transitionTime);
             StartCoroutine(WaitToCutSong());
+
         }
 
         if (Input.GetKeyDown("t")) // JaponClairière
@@ -48,6 +50,7 @@ public class SnapshotTransition : MonoBehaviour
             timeToReach[3] = timeToReachTampon;
             audioMixer.TransitionToSnapshots(snapshots, timeToReach, transitionTime);
             StartCoroutine(WaitToCutSong());
+
         }
         if (Input.GetKeyDown("y")) // EntrerDansPhaseCapture
         {
@@ -115,33 +118,33 @@ public class SnapshotTransition : MonoBehaviour
         IEnumerator WaitToCutSong()
         {
             yield return new WaitForSeconds(transitionTime/2);
-            if (timeToReach[0] == 0) //Plaine
+            if (timeToReach[0] == 1) //Plaine
             {
                 plaineAmbiance.Play();
                 japonAmbiance.Stop();
                 grotteAmbiance.Stop();
                 clairiereAmbiance.Stop();
             }
-            if (timeToReach[1] == 0) //Japon
+            else if (timeToReach[1] == 1) //Japon
             {
                 japonAmbiance.Play();
                 plaineAmbiance.Stop();
                 grotteAmbiance.Stop();
                 clairiereAmbiance.Stop();
             }
-            if (timeToReach[2] == 0) //Grotte
+            else if (timeToReach[2] == 1) //Grotte
             {
+                grotteAmbiance.Play();
                 japonAmbiance.Stop();
                 plaineAmbiance.Stop();
-                grotteAmbiance.Play();
                 clairiereAmbiance.Stop();
             }
-            if (timeToReach[3] == 0) //Clairiere
+            else if (timeToReach[3] == 1) //Clairiere
             {
+                clairiereAmbiance.Play();
                 japonAmbiance.Stop();
                 plaineAmbiance.Stop();
                 grotteAmbiance.Stop();
-                clairiereAmbiance.Play();
             }
         }
     }
