@@ -645,6 +645,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jar_Handposed (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1434227543113735991, guid: f654a53b96a4ca44c90721ad8f1d80ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1434227543113735984, guid: f654a53b96a4ca44c90721ad8f1d80ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3673,7 +3678,7 @@ PrefabInstance:
     - target: {fileID: 7740849243166131246, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4887022568163577259, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
@@ -3837,7 +3842,7 @@ PrefabInstance:
     - target: {fileID: 1882596859085395261, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 189527428435622526, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
@@ -4052,12 +4057,12 @@ PrefabInstance:
     - target: {fileID: 1882596859085395249, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1882596859085395263, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2273950795352952673, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
@@ -4232,17 +4237,17 @@ PrefabInstance:
     - target: {fileID: 1882596859085395251, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1882596859085395257, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1882596859085395259, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2378862526717819933, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
@@ -4347,12 +4352,12 @@ PrefabInstance:
     - target: {fileID: 1882596859085395245, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1882596859085395253, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3516768579627401407, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
@@ -4367,7 +4372,7 @@ PrefabInstance:
     - target: {fileID: 8843757610985630652, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1438401350304324214, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
@@ -4387,7 +4392,7 @@ PrefabInstance:
     - target: {fileID: 7871648257672692619, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2660185146320430817, guid: 808394c149cfe7247a3ed2db268dfb27,
         type: 3}
@@ -4620,6 +4625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jar_Handposed (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434227543113735991, guid: f654a53b96a4ca44c90721ad8f1d80ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1434227543113735984, guid: f654a53b96a4ca44c90721ad8f1d80ca,
         type: 3}
@@ -5565,6 +5575,7 @@ MonoBehaviour:
   xmax: 1.5
   isWander: 0
   destinationVector3: {x: 0, y: 0, z: 0}
+  JarScript: {fileID: 0}
   butterflyBehaviorTree: {fileID: 0}
   Paps: {fileID: 0}
   BaseOffset: 0
@@ -5576,6 +5587,7 @@ MonoBehaviour:
     mPropertyMappingOwner: {fileID: 0}
     mNetworkSync: 0
     mValue: 0
+  scale: 1
   transform: {fileID: 0}
   animator: {fileID: 0}
   navMeshAgent: {fileID: 0}
@@ -7841,7 +7853,7 @@ MonoBehaviour:
   ignoreTransforms: []
   children:
   - gameObject: {fileID: 1672649360}
-    gameObjectHash: 40406
+    gameObjectHash: 40830
     member: {fileID: 1672649361}
     renderer: {fileID: 0}
     renderHash: 0
@@ -7965,6 +7977,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jar_Handposed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434227543113735991, guid: f654a53b96a4ca44c90721ad8f1d80ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1434227543113735984, guid: f654a53b96a4ca44c90721ad8f1d80ca,
         type: 3}
@@ -9398,6 +9415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jar_Handposed (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434227543113735991, guid: f654a53b96a4ca44c90721ad8f1d80ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1434227543113735984, guid: f654a53b96a4ca44c90721ad8f1d80ca,
         type: 3}

@@ -22,13 +22,15 @@ public class YMovement : MonoBehaviour
 
     public bool isWander;
     public Vector3 destinationVector3;
-    private ButterflyJar JarScript;
+    public ButterflyJar JarScript;
     public BehaviorTree butterflyBehaviorTree;
     //protected Seek ScriptSeek;
     NavMeshHit hit;
     public GameObject Paps;
     public float BaseOffset;
     public SharedBool SharedIsIdle;
+
+    public float scale = 1;
 
     //public bool Idle;
 
@@ -42,9 +44,10 @@ public class YMovement : MonoBehaviour
         transform = GetComponent<Transform>();
         navMeshAgent = GetComponentInParent<NavMeshAgent>();
         animator = GetComponentInParent<Animator>();
+        butterflyBehaviorTree = GetComponentInParent<BehaviorTree>();
         isWander = true;
         
-        JarScript = GetComponentInChildren<ButterflyJar>();
+        //JarScript = GetComponentInChildren<ButterflyJar>();//nope
         BaseOffset = transform.parent.GetComponent<NavMeshAgent>().baseOffset;
         
 
@@ -89,26 +92,25 @@ public class YMovement : MonoBehaviour
     public IEnumerator Delay()
     {
         
-        {
-            Debug.Log("Start Delay Coroutine");
-            yield return new WaitForSeconds(2);
+        Debug.Log("Start Delay Coroutine");
+        yield return new WaitForSeconds(2);
 
-            transform.parent.DetachChildren();
+            //transform.parent.DetachChildren();
             //ou
-            transform.parent.SetParent(null);
+        transform.parent.SetParent(null);
 
-            Vector3 point;
-            if (RandomPoint(transform.position, range, out point))
-            {
-                transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z), 1.5f);
-                //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-                SharedIsIdle = JarScript.SharedIsIdle;
-                SharedIsIdle = false;
-            }
+        Vector3 point;
+        if (RandomPoint(transform.position, range, out point))
+        {  
+            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z), 1.5f);
+            transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f);
+            JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
+            SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
+            SharedIsIdle = false;
+            //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
+            Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
+            //JarScript.SharedIsIdle = false;
         }
-
-        JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
 
         JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
         isWander = true;
@@ -116,8 +118,10 @@ public class YMovement : MonoBehaviour
         //ajouter le collider
         //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
         JarScript.hasButterfly = false;
+        JarScript.Butterflycatched = false;
+        transform.parent.transform.localScale = new Vector3(scale, scale, scale);
         
-        //butterflyBehaviorTree.SendEvent<object>("IsFreeJar", false);
+        butterflyBehaviorTree.SendEvent<object>("IsFreeJar", null);
         //Destroy(JarScript.ButterflyinJar.transform.parent.gameObject);
     }
 
