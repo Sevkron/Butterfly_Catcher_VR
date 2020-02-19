@@ -70,9 +70,6 @@ public class YMovement : MonoBehaviour
             //Debug.Log(navMeshAgent.speed);
             //transform.LookAt(- transform.localPosition);
         }
-
-       
-
     }
 
     public void GoToHeight(Vector3 destinationVector3)
@@ -115,7 +112,6 @@ public class YMovement : MonoBehaviour
         JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
         isWander = true;
 
-        //ajouter le collider
         //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
         JarScript.hasButterfly = false;
         JarScript.Butterflycatched = false;
