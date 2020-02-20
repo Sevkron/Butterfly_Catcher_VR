@@ -44,7 +44,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: cf6d8c77d1065c242a065dbe467410ca, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -658,7 +658,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ec138c05c8d99a94abd3c0845343d22d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -786,7 +786,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 769fea1f12dde0b41b8915187718cfca, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -914,7 +914,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 0e0819e8f42435842bf85fe55485cf61, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1045,13 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01d624ad8b71724ca036370898c8e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: MusicMenu
-    clip: {fileID: 8300000, guid: c1233ab5f74755246be0fa0eb73e3efe, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
+  sounds: []
 --- !u!82 &571975803508493822
 AudioSource:
   m_ObjectHideFlags: 0
