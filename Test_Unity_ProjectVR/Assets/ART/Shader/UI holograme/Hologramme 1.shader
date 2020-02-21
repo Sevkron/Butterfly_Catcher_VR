@@ -69,7 +69,7 @@ Shader "Hologramme"
 			simplePerlin2D140 = simplePerlin2D140*0.5 + 0.5;
 			float Noise148 = ( simplePerlin2D140 + 0.7 );
 			float4 Emission157 = ( Noise148 * _Glowcolor );
-			o.Emission = Emission157.rgb;
+			o.Emission = ( 5.0 * Emission157 ).rgb;
 			o.Alpha = 1;
 			float4 color158 = IsGammaSpace() ? float4(1,1,1,0) : float4(1,1,1,0);
 			clip( color158.r - _Cutoff );
@@ -82,11 +82,11 @@ Shader "Hologramme"
 }
 /*ASEBEGIN
 Version=17500
-160;274;1590;669;121.5405;1231.62;1.962626;True;True
+107;187;1590;663;43.03546;1278.724;1.962626;True;True
 Node;AmplifyShaderEditor.CommentaryNode;150;-1254.083,-806.9358;Inherit;False;1949.98;715.2571;Comment;9;145;144;143;142;139;140;147;146;148;Noise;1,1,1,1;0;0
 Node;AmplifyShaderEditor.RangedFloatNode;145;-1204.083,-353.6787;Inherit;True;Constant;_Float0;Float 0;1;0;Create;True;0;0;False;0;1;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleTimeNode;144;-958.0828,-344.6787;Inherit;True;1;0;FLOAT;1;False;1;FLOAT;0
-Node;AmplifyShaderEditor.Vector2Node;142;-738.9035,-756.9358;Float;True;Property;_Tilling;Tilling;1;0;Create;True;0;0;False;0;1,1;0,100;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
+Node;AmplifyShaderEditor.Vector2Node;142;-738.9035,-756.9358;Float;True;Property;_Tilling;Tilling;1;0;Create;True;0;0;False;0;1,1;0,50;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
 Node;AmplifyShaderEditor.PannerNode;143;-705.0828,-414.6787;Inherit;True;3;0;FLOAT2;0,0;False;2;FLOAT2;0,-0.4;False;1;FLOAT;1;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.TextureCoordinatesNode;139;-395.9036,-704.9358;Inherit;True;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.NoiseGeneratorNode;140;-95.90347,-718.9358;Inherit;True;Simplex2D;True;False;2;0;FLOAT2;0,0;False;1;FLOAT;1;False;1;FLOAT;0
@@ -94,11 +94,12 @@ Node;AmplifyShaderEditor.RangedFloatNode;147;-59.80779,-477.111;Float;True;Const
 Node;AmplifyShaderEditor.SimpleAddOpNode;146;190.9326,-610.3192;Inherit;True;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;148;452.8974,-621.968;Inherit;True;Noise;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;151;926.6566,-893.8982;Inherit;True;148;Noise;1;0;OBJECT;;False;1;FLOAT;0
-Node;AmplifyShaderEditor.ColorNode;155;921.6185,-581.5416;Float;False;Property;_Glowcolor;Glow color;2;1;[HDR];Create;True;0;0;False;0;0.1287753,3.550519,3.256175,0;0.1287753,3.550519,3.256175,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;155;856.8516,-597.2427;Float;False;Property;_Glowcolor;Glow color;2;1;[HDR];Create;True;0;0;False;0;0.1287753,3.550519,3.256175,0;0.2196078,5.992157,5.521569,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;154;1244.05,-662.1499;Inherit;True;2;2;0;FLOAT;0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
-Node;AmplifyShaderEditor.ColorNode;158;1770.389,-598.5739;Inherit;False;Constant;_Color0;Color 0;3;0;Create;True;0;0;False;0;1,1,1,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RegisterLocalVarNode;157;1524.106,-666.0372;Float;False;Emission;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
-Node;AmplifyShaderEditor.GetLocalVarNode;149;1773.379,-844.5849;Inherit;True;148;Noise;1;0;OBJECT;;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;159;1550.617,-856.759;Inherit;False;Constant;_Float2;Float 2;3;0;Create;True;0;0;False;0;5;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ColorNode;158;1770.389,-598.5739;Inherit;False;Constant;_Color0;Color 0;3;0;Create;True;0;0;False;0;1,1,1,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;160;1744.917,-774.3287;Inherit;False;2;2;0;FLOAT;0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.StandardSurfaceOutputNode;137;2111.732,-851.5704;Float;False;True;-1;2;ASEMaterialInspector;0;0;Standard;Hologramme;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Custom;0.5;True;True;0;True;Transparent;;Geometry;All;14;all;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;0;0;False;-1;0;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;0;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
 WireConnection;144;0;145;0
 WireConnection;143;1;144;0
@@ -111,7 +112,9 @@ WireConnection;148;0;146;0
 WireConnection;154;0;151;0
 WireConnection;154;1;155;0
 WireConnection;157;0;154;0
-WireConnection;137;2;157;0
+WireConnection;160;0;159;0
+WireConnection;160;1;157;0
+WireConnection;137;2;160;0
 WireConnection;137;10;158;0
 ASEEND*/
-//CHKSM=6C555C54DDDC90EB72028E2A33ACC34F9E5142C3
+//CHKSM=9CDC81C8BBC1490FF2C377EB0319B7B9BDE70365
