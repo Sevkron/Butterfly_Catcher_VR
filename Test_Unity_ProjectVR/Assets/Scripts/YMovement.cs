@@ -47,7 +47,7 @@ public class YMovement : MonoBehaviour
         butterflyBehaviorTree = GetComponentInParent<BehaviorTree>();
         isWander = true;
         
-        //JarScript = GetComponentInChildren<ButterflyJar>();//nope
+      
         BaseOffset = transform.parent.GetComponent<NavMeshAgent>().baseOffset;
         
 
@@ -101,6 +101,7 @@ public class YMovement : MonoBehaviour
         {  
             transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z), 1.5f);
             transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f);
+            transform.parent.DOScale(new Vector3(scale, scale, scale), 1f);
             JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
             SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
             SharedIsIdle = false;
@@ -115,7 +116,7 @@ public class YMovement : MonoBehaviour
         //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
         JarScript.hasButterfly = false;
         JarScript.Butterflycatched = false;
-        transform.parent.transform.localScale = new Vector3(scale, scale, scale);
+        //transform.parent.transform.localScale = new Vector3(scale, scale, scale);
         
         butterflyBehaviorTree.SendEvent<object>("IsFreeJar", null);
         //Destroy(JarScript.ButterflyinJar.transform.parent.gameObject);
