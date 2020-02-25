@@ -3350,6 +3350,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 811832009, guid: 808394c149cfe7247a3ed2db268dfb27, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808394c149cfe7247a3ed2db268dfb27, type: 3}
 --- !u!1 &814727856
@@ -6804,7 +6808,7 @@ MonoBehaviour:
   ignoreTransforms: []
   children:
   - gameObject: {fileID: 1672649360}
-    gameObjectHash: 90916
+    gameObjectHash: 107616
     member: {fileID: 1672649361}
     renderer: {fileID: 0}
     renderHash: 0
