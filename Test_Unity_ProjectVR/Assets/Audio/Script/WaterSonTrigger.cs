@@ -12,6 +12,8 @@ public class WaterSonTrigger : MonoBehaviour
     public float minVector3;
     public GameObject ZonePlusProche;
     public float ValeurMaxLerp;
+    public AudioClip[] listAusioClipWater;
+         
 
     void Start()
     {
@@ -24,7 +26,7 @@ public class WaterSonTrigger : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" )
         {
             for (int i = 0; i < distantPoint.Length; i++)
             {
