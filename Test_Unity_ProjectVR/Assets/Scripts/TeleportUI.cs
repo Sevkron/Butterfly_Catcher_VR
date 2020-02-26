@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -11,6 +12,7 @@ namespace Valve.VR.InteractionSystem
         public GameObject teleportGO;
         public Teleport teleportScript;
         public Camera m_Camera;
+        private Hand tpHand;
         private GameObject CameraGO;
         //private TMP_Text textDistance;
         // Start is called before the first frame update
@@ -35,7 +37,6 @@ namespace Valve.VR.InteractionSystem
         // Update is called once per frame
         void Update()
         {
-            //if(GetComponentInParent<Hand>().in)
             float distanceFromPlayer = teleportScript.distanceFromPlayer;
             if(distanceFromPlayer <= teleportScript.arcDistance)
             {
