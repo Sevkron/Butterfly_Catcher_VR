@@ -19,7 +19,7 @@ public class DirectMovement : MonoBehaviour
     public AudioClip directMoveSound;
 
     private CharacterController characterController;
-    public float speed = 1;
+    private float speed = 1;
     private float forwardAxis;
     void Start()
     {
@@ -30,16 +30,15 @@ public class DirectMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = input.axis.y;
         forwardAxis = input.axis.y;
-        //backwards move
-        /*if(input.axis.y < 0)
+        //backwards move disable
+        if(input.axis.y < 0)
         {
             forwardAxis = 0;
-        }*/
+        }
 
         Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(0, 0, forwardAxis));
-        characterController.Move(speed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
+        characterController.Move(input.axis.y * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
         characterController.center = new Vector3(Player.instance.hmdTransform.localPosition.x, characterController.center.y, Player.instance.hmdTransform.localPosition.z);
         //truc
         //Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(Input.axis.x, 0, Input.axis.y));
