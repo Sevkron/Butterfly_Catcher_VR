@@ -15,7 +15,7 @@ public class TeleportNoiseDistance : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Physics.SphereCastAll(transform.position, radiusNoise, transform.forward, out hit);
+        Physics.SphereCastAll(transform.position, radiusNoise, transform.forward);
         
     }
 }
