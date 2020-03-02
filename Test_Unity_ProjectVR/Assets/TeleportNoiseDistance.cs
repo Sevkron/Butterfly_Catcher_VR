@@ -14,8 +14,11 @@ public class TeleportNoiseDistance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        Physics.SphereCastAll(transform.position, radiusNoise, transform.forward);
-        
+        RaycastHit[] hits;
+        hits = Physics.SphereCastAll(transform.position, radiusNoise, transform.forward);
+        for(int i = 0; i < hits.Length; i++)
+        {
+            
+        }
     }
 }
