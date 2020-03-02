@@ -809,7 +809,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownHome
         m_Mode: 0
         m_Arguments:
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownCurrentMissions
         m_Mode: 0
         m_Arguments:
@@ -1876,7 +1876,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownCaughtIndex
         m_Mode: 0
         m_Arguments:
@@ -2692,7 +2692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 0}
+  m_AnchoredPosition: {x: 12, y: 14}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &1467851366076339861
@@ -3058,7 +3058,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownHome
         m_Mode: 0
         m_Arguments:
@@ -3278,7 +3278,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownOtherInventory
         m_Mode: 0
         m_Arguments:
@@ -4306,7 +4306,6 @@ GameObject:
   - component: {fileID: 2217435920555195344}
   - component: {fileID: 2217435920555195345}
   - component: {fileID: 2217435920555195342}
-  - component: {fileID: 2217435920555195340}
   - component: {fileID: 8532826207577004706}
   - component: {fileID: 6340718159852486826}
   m_Layer: 5
@@ -4438,33 +4437,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3002.6462, y: 2017.0854, z: 228.84338}
   m_Center: {x: 6.5547924, y: 9.544309, z: -113.92101}
---- !u!114 &2217435920555195340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2217435920555195338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ce3207b092fef48bfd059e58e8b62a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Panels: []
-  m_CaughtIndexPanel: {fileID: 2217435921425697383}
-  m_ReproductionIndexPanel: {fileID: 2217435920238171514}
-  m_CompletedMissionsPanel: {fileID: 2217435921566184840}
-  m_CurrentMissionsPanel: {fileID: 2217435919968527920}
-  m_ButterflyProgressionPanel: {fileID: 2217435921986097168}
-  m_ButterflyInventoryPanel: {fileID: 2217435920704301813}
-  m_OtherInventoryPanel: {fileID: 2217435920961228431}
-  m_VivariumStatsPanel: {fileID: 2217435920674141707}
-  m_MainMenuPanel: {fileID: 2217435920830263611}
-  m_CurrentPanel: {fileID: 0}
-  m_PreviousPanel: {fileID: 0}
-  m_QuitPanel: {fileID: 6117478691538096274}
-  m_OptionsPanel: {fileID: 1451666168406024494}
-  m_ClockOtherPanel: {fileID: 6796982099026450531}
 --- !u!82 &8532826207577004706
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5788,7 +5760,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownCaughtIndex
         m_Mode: 0
         m_Arguments:
@@ -6100,7 +6072,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownOptions
         m_Mode: 0
         m_Arguments:
@@ -6718,7 +6690,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownQuit1
         m_Mode: 0
         m_Arguments:
@@ -7758,7 +7730,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownVivariumStats
         m_Mode: 0
         m_Arguments:
@@ -11467,7 +11439,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2217435920555195340}
+      - m_Target: {fileID: 0}
         m_MethodName: OnButtonDownQuit2
         m_Mode: 0
         m_Arguments:
