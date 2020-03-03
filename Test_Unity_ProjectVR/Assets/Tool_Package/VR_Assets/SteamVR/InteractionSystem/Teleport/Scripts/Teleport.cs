@@ -644,6 +644,7 @@ namespace Valve.VR.InteractionSystem
 			visible = false;
 			if ( pointerHand )
 			{
+				pointerHand.m_DistanceCanvas.enabled = false;
 				if ( ShouldOverrideHoverLock() )
 				{
 					//Restore the original hovering interactable on the hand
@@ -709,8 +710,7 @@ namespace Valve.VR.InteractionSystem
 				teleportPointerObject.SetActive( false );
 				teleportArc.Show();
 
-				//reactivate later
-				//newPointerHand.m_DistanceCanvas.gameObject.SetActive(true);
+				
 				
 
 				foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
@@ -740,6 +740,7 @@ namespace Valve.VR.InteractionSystem
 
 			if ( oldPointerHand )
 			{
+				oldPointerHand.m_DistanceCanvas.enabled = false;
 				if ( ShouldOverrideHoverLock() )
 				{
 					//Restore the original hovering interactable on the hand
@@ -763,6 +764,7 @@ namespace Valve.VR.InteractionSystem
 
 			if ( pointerHand )
 			{
+				pointerHand.m_DistanceCanvas.enabled = true;
 				pointerStartTransform = GetPointerStartTransform( pointerHand );
 
 				if ( pointerHand.currentAttachedObject != null )
