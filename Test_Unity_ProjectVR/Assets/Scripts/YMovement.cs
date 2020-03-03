@@ -99,26 +99,31 @@ public class YMovement : MonoBehaviour
         Vector3 point;
         if (RandomPoint(transform.position, range, out point))
         {  
-            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset + 0.2f, hit.position.z), 1.5f);
-            transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f);
-            transform.parent.DOScale(new Vector3(scale, scale, scale), 1f);
             
-            SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
-            SharedIsIdle = false;
+            Sequence seq = DOTween.Sequence();
+            seq.Append(transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z), 1.5f));
+            seq.Join(transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f));
+            seq.Join(transform.parent.DOScale(new Vector3(scale, scale, scale), 1f));
+            seq.Join(transform.DORotate(new Vector3(0, 180, 0), 1.5f));
+            seq.AppendCallback(() =>  {
 
-            Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
+                // SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
+                // eeSharedIsIdle = false;
 
-            JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
-            isWander = true;
+                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
 
-            //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
-            JarScript.hasButterfly = false;
-            JarScript.Butterflycatched = false;
-            //transform.parent.transform.localScale = new Vector3(scale, scale, scale);
-            //changed positions
-            JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
-            butterflyBehaviorTree.SendEvent("IsFreeJar");
+                JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
+                isWander = true;
 
+                //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
+                JarScript.hasButterfly = false;
+                JarScript.Butterflycatched = false;
+                //transform.parent.transform.localScale = new Vector3(scale, scale, scale);
+                //changed positions
+                JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
+                butterflyBehaviorTree.SendEvent("IsFreeJar");
+            });
+            
         }else
             Destroy(transform.parent.gameObject); 
     }
