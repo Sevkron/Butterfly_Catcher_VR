@@ -99,27 +99,28 @@ public class YMovement : MonoBehaviour
         Vector3 point;
         if (RandomPoint(transform.position, range, out point))
         {  
-            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z), 1.5f);
+            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset - 0.1f, hit.position.z), 1.5f);
             transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f);
             transform.parent.DOScale(new Vector3(scale, scale, scale), 1f);
-            JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
+            
             SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
             SharedIsIdle = false;
-            //Instantiate(Paps, new Vector3(hit.position.x, BaseOffset , hit.position.z), Quaternion.identity);
+
             Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-            //JarScript.SharedIsIdle = false;
-        }
 
-        JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
-        isWander = true;
+            JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
+            isWander = true;
 
-        //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
-        JarScript.hasButterfly = false;
-        JarScript.Butterflycatched = false;
-        //transform.parent.transform.localScale = new Vector3(scale, scale, scale);
-        
-        butterflyBehaviorTree.SendEvent<object>("IsFreeJar", null);
-        //Destroy(JarScript.ButterflyinJar.transform.parent.gameObject);
+            //butterflyBehaviorTree = JarScript.ButterflyinJar.GetComponent<BehaviorTree>();
+            JarScript.hasButterfly = false;
+            JarScript.Butterflycatched = false;
+            //transform.parent.transform.localScale = new Vector3(scale, scale, scale);
+            //changed positions
+            JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
+            butterflyBehaviorTree.SendEvent("IsFreeJar");
+
+        }else
+            Destroy(transform.parent.gameObject); 
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
