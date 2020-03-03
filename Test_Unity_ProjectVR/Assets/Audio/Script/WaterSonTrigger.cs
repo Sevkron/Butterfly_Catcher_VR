@@ -11,9 +11,7 @@ public class WaterSonTrigger : MonoBehaviour
     public float[] vector3Tab;
     public float minVector3;
     public GameObject ZonePlusProche;
-    public float ValeurMaxLerp;
-    public AudioClip[] listAusioClipWater;
-         
+    public float ValeurMaxLerp;         
 
     void Start()
     {
