@@ -83,7 +83,7 @@ namespace Valve.VR.InteractionSystem
 		private TeleportMarkerBase teleportingToMarker;
 		private Vector3 pointedAtPosition;
 		private Vector3 prevPointedAtPosition;
-		private bool teleporting = false;
+		public bool teleporting = false;
 		private float currentFadeTime = 0.0f;
 
 		private float meshAlphaPercent = 1.0f;
@@ -369,7 +369,8 @@ namespace Valve.VR.InteractionSystem
 #else
 					pointerLineRenderer.startColor = pointerLockedColor;
 					pointerLineRenderer.endColor = pointerLockedColor;
-#endif
+#endif	
+
 					destinationReticleTransform.gameObject.SetActive( false );
 				}
 				else

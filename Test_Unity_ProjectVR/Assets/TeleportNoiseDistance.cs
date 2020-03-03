@@ -7,12 +7,12 @@ namespace Valve.VR.InteractionSystem
 {
     public class TeleportNoiseDistance : MonoBehaviour
     {
-        public float radiusNoise = 10f;
+        //public float radiusNoise = 10f;
         private RaycastHit[] hits;
         public GameObject[] butterflyGO;
         public Teleport teleportScript;
-        private Vector3 noiseSphereScale;
-
+        private Vector3 noiseCylinderScale;
+        private bool noiseActivate = false;
         void Start()
         {
             if(teleportScript == null)
@@ -23,12 +23,20 @@ namespace Valve.VR.InteractionSystem
         void Update()
         {
             //distance
-            noiseSphereScale = new Vector3(teleportScript.distanceFromPlayer, teleportScript.distanceFromPlayer, teleportScript.distanceFromPlayer)*2;
-            transform.localScale = noiseSphereScale;
+            noiseCylinderScale = new Vector3(teleportScript.distanceFromPlayer, 3f, teleportScript.distanceFromPlayer);
+            transform.localScale = noiseCylinderScale;
+            Gizmos.color = new Color(1, 0, 0, 0.5f);
+            if(teleportScript.teleporting == true)
+            {
+                NoiseTriggerEvent(teleportScript.distanceFromPlayer);
+                Debug.Log("Activate Noise trigger event");
+            }
         }
-        public void NoiseTriggerEvent()
+        public void NoiseTriggerEvent(float radiusNoise)
         {
-            hits = Physics.SphereCastAll(transform.position, radiusNoise, transform.forward);
+            Vector3 p1 = transform.position + new Vector3(0, 0.78f, 0) + Vector3.up * -3f * 0.5f;
+            Vector3 p2 = p1 + Vector3.up * 3f;
+            hits = Physics.CapsuleCastAll(p1, p2, radiusNoise, transform.forward);
             int f = 0;
             for(int i = 0; i < hits.Length; i++)
             {

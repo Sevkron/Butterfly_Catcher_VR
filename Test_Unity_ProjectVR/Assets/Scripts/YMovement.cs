@@ -36,8 +36,8 @@ public class YMovement : MonoBehaviour
 
 
     [HideInInspector] public new Transform transform;
-    [HideInInspector] public Animator animator;
-    [HideInInspector] public NavMeshAgent navMeshAgent;
+    public Animator animator;
+    public NavMeshAgent navMeshAgent;
 
     private void Awake()
     {
