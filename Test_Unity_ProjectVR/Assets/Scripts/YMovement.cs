@@ -99,7 +99,7 @@ public class YMovement : MonoBehaviour
         Vector3 point;
         if (RandomPoint(transform.position, range, out point))
         {  
-            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset - 0.1f, hit.position.z), 1.5f);
+            transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset + 0.2f, hit.position.z), 1.5f);
             transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f);
             transform.parent.DOScale(new Vector3(scale, scale, scale), 1f);
             
