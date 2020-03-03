@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8508415172498727781}
   - component: {fileID: 2679500965008072604}
   - component: {fileID: 7332691405603550249}
+  - component: {fileID: 765162448159216691}
   m_Layer: 0
   m_Name: TroncMortBouleauPref
   m_TagString: Untagged
@@ -97,3 +98,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &765162448159216691
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401048053009443648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -8322577259182827062, guid: cda44311c080bd048869315eb3846f85, type: 3}

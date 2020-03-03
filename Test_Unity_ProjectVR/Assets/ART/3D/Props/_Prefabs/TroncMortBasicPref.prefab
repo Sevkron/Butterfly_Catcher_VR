@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9188153695141529386}
   - component: {fileID: 3224129220339923923}
   - component: {fileID: 7805833699127267430}
+  - component: {fileID: 9188860346929949781}
   m_Layer: 0
   m_Name: TroncMortBasicPref
   m_TagString: Untagged
@@ -97,3 +98,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &9188860346929949781
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3783796081792601871}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7530066214954266793, guid: f1ea2cb5e8c7d554abbd31ad71884628, type: 3}
