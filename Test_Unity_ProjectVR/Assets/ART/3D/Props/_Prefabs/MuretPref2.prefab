@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8078876625394036368}
   - component: {fileID: 7043184274465414824}
   - component: {fileID: 1804928390693986869}
+  - component: {fileID: 61167303962667012}
   m_Layer: 0
   m_Name: MuretPref2
   m_TagString: Untagged
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &61167303962667012
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088500035475983763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3603745426993494357, guid: 94b979abefc188845880394a0d6ee53c, type: 3}
