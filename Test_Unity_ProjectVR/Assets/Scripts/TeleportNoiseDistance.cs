@@ -2,34 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
+using Valve.VR.InteractionSystem;
 
-namespace Valve.VR.InteractionSystem
-{
+
     public class TeleportNoiseDistance : MonoBehaviour
     {
         //public float radiusNoise = 10f;
         private RaycastHit[] hits;
         public GameObject[] butterflyGO;
-        private Teleport teleportScript;
-        public GameObject CylinderDebug;
         private Vector3 noiseCylinderScale;
         private bool noiseActivate = false;
+        private Teleport teleportScript;
 
         void Start()
         {
-            if(teleportScript == null)
-            {
-                teleportScript = GetComponent<Teleport>();
-            }
+            teleportScript = GetComponent<Teleport>();
         }
 
         void Update()
         {
-            //distance
             noiseCylinderScale = new Vector3(teleportScript.distanceFromPlayer, 1.9f, teleportScript.distanceFromPlayer);
-            CylinderDebug.transform.localScale = noiseCylinderScale;
+            transform.localScale = noiseCylinderScale;
             Gizmos.color = new Color(1, 0, 0, 0.5f);
             NoiseTriggerEvent(teleportScript.distanceFromPlayer);
+            
             if(teleportScript.teleporting == true)
             {
                 NoiseTriggerEvent(teleportScript.distanceFromPlayer);
@@ -55,4 +51,3 @@ namespace Valve.VR.InteractionSystem
             }
         }
     }
-}
