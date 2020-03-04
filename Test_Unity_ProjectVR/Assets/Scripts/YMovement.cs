@@ -10,13 +10,9 @@ public class YMovement : MonoBehaviour
     [Tooltip("Must be set on integer between 0 and 3")]
     public int difficultyLevel;
 
-    public float ysmoothTime = .3f;
-    public float xsmoothTime = 0.5f;
-    public float ymini =  - 1 ;
-    public float ymax = 2.5f;
-    public float xmini = -1;
-    public float xmax = 1.5f;
-    private float translationVel;
+    public float _wanderSmoothTime = .3f;
+
+    private Vector2 translationVel;
 
     private float range = 0.5f;
 
@@ -32,12 +28,20 @@ public class YMovement : MonoBehaviour
 
     public float scale = 1;
 
+    public float m_MinWingVelocity = 1f;
+    public float m_speedFactor=1f;
+
     //public bool Idle;
 
 
     [HideInInspector] public new Transform transform;
     public Animator animator;
     public NavMeshAgent navMeshAgent;
+
+    private Vector2 _targetWander;
+    private Vector2 _currentWander;
+    public float m_WanderRadius = 1f;
+    public float m_WanderProbability;
 
     private void Awake()
     {
@@ -54,19 +58,23 @@ public class YMovement : MonoBehaviour
 
 }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (isWander)
         {
-            float yPos = Mathf.SmoothDamp(transform.localPosition.y, Random.Range(ymini, ymax), ref translationVel, ysmoothTime);
-            transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
+            if (Vector2.Distance(_targetWander,_currentWander)<0.1f && Random.Range(0f,100f)>(100f-m_WanderProbability))
+            {
+                _targetWander = Random.insideUnitCircle * m_WanderRadius;
+            }
 
-            float xPos = Mathf.SmoothDamp(transform.localPosition.x, Random.Range(xmini, xmax), ref translationVel, xsmoothTime);
-            transform.localPosition = new Vector3(xPos, transform.localPosition.y, transform.localPosition.z);
+            _currentWander = Vector2.SmoothDamp(_currentWander, _targetWander, ref translationVel, _wanderSmoothTime);
 
-          
 
-            animator.speed = navMeshAgent.speed;
+            transform.localPosition = _currentWander;
+
+
+
+            animator.speed = Mathf.Max(m_MinWingVelocity, Vector2.Distance(_targetWander, _currentWander) * m_speedFactor );
             //Debug.Log(navMeshAgent.speed);
             //transform.LookAt(- transform.localPosition);
         }

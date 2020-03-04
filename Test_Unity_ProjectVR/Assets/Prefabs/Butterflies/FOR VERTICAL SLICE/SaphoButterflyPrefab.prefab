@@ -152,11 +152,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009359003019215998}
     m_Modifications:
-    - target: {fileID: 455837894010994895, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: m_Name
-      value: Sapho paps pivot point modif
-      objectReference: {fileID: 0}
     - target: {fileID: 3461069084490658524, guid: c9ab2799751443a4188e567bfe9edfd6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -211,6 +206,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 455837894010994895, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: m_Name
+      value: Sapho paps pivot point modif
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: difficultyLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: _wanderSmoothTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: isWander
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: BaseOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: m_speedFactor
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: m_WanderRadius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: m_WanderProbability
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9ab2799751443a4188e567bfe9edfd6, type: 3}

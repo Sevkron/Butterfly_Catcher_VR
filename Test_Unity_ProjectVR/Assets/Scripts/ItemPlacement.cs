@@ -18,6 +18,9 @@ public class ItemPlacement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //if(other.gameObject.GetComponent<>)
+        if(other.tag == "Jar")
+        {
+            Debug.Log("Detect Jar in slot");
+        }
     }
 }
