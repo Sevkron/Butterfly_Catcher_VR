@@ -19,17 +19,20 @@ namespace Valve.VR.InteractionSystem
 		public enum TeleportPointType
 		{
 			MoveToLocation,
-			SwitchToNewScene
+			SwitchToNewScene,
+			ExitGame
 		};
 
 		//Public variables
 		public TeleportPointType teleportType = TeleportPointType.MoveToLocation;
 		public string title;
 		public string switchToScene;
+		public string exitGame;
 		public Color titleVisibleColor;
 		public Color titleHighlightedColor;
 		public Color titleLockedColor;
 		public bool playerSpawnPoint = false;
+		public GameObject ChangeSceneGO;
 
 		//Private data
 		private bool gotReleventComponents = false;
@@ -222,7 +225,8 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( !string.IsNullOrEmpty( switchToScene ) )
 			{
-				SceneManager.LoadScene("LDScene");
+				//SceneManager.LoadScene("LDScene");
+				ChangeSceneGO.SetActive(true);
 				Debug.Log("<b>[SteamVR Interaction]</b> TeleportPoint: Hook up your level loading logic to switch to new scene: " + switchToScene, this);
 			}
 			else
@@ -231,6 +235,18 @@ namespace Valve.VR.InteractionSystem
 			}
 		}
 
+		public void ExitGame()
+		{
+			if ( !string.IsNullOrEmpty( exitGame ) )
+			{
+				Application.Quit();
+				Debug.Log("Game is exited", this);
+			}
+			else
+			{
+				Debug.LogError("Didn't exit game", this);
+			}
+		}
 
 		//-------------------------------------------------
 		public void GetRelevantComponents()
