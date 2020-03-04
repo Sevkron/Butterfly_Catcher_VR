@@ -194,6 +194,61 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: difficultyLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: _wanderSmoothTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: isWander
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: butterflyBehaviorTree
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: BaseOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: m_speedFactor
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: transform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: navMeshAgent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: m_WanderRadius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325320670685792665, guid: 4c2ba7d40cb12c74dae6df0d86b3815a,
+        type: 3}
+      propertyPath: m_WanderProbability
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 459064657365218844, guid: 4c2ba7d40cb12c74dae6df0d86b3815a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c2ba7d40cb12c74dae6df0d86b3815a, type: 3}
