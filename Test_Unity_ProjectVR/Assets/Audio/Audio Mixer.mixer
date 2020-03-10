@@ -251,6 +251,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-768219489116629812
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterAmbiance
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: aaa5fe7910b3aaf46964506fc29035ef
+  m_Children: []
+  m_Volume: aee1d15356da5fe489cd9a9132d316a0
+  m_Pitch: fb359b43a957f6f4ca0564e84f300630
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 3500181920784699359}
+  m_UserColorIndex: 6
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-603541621533007516
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -309,6 +328,7 @@ AudioMixerController:
     - 7da57871496664b45ba92b82f23e79f4
     - bd82161f37eb20b44ab8c186bbb0552b
     - 4ed7d1bd5aab9604a88cb5a245308b2a
+    - aaa5fe7910b3aaf46964506fc29035ef
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 2970617532662364513}
@@ -472,6 +492,20 @@ AudioMixerSnapshotController:
     53c98c0ffabdf8f4cbe6c39a16c7cc32: -80
     a82a00cf617a3f44da8fb42f369718f6: -0.002441872
   m_TransitionOverrides: {}
+--- !u!244 &3500181920784699359
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5a361a269f2be004f900e8a24524d111
+  m_EffectName: Attenuation
+  m_MixLevel: a9f463d3334af6145b672f44726f12c4
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &4078069080255718277
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -562,6 +596,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 6fe6da375759bdf478fc0baf039c40dc
   m_Children:
+  - {fileID: -768219489116629812}
   - {fileID: 6298792577322773153}
   - {fileID: -1078814699345638371}
   - {fileID: 8654794236924568577}
