@@ -33,7 +33,7 @@ public class WaterSonTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player" )
+        /*if (other.gameObject.tag == "Player" )
         {
             GameObject closest1 = null;
             GameObject closest2 = null;
@@ -41,26 +41,7 @@ public class WaterSonTrigger : MonoBehaviour
             for (int i = 0; i < distantPoint.Length; i++)
             {
 
-                //if (!ZonesProches[0])
-                //{
-                //    ZonesProches[0] = distantPoint[i];
-                //    return;
-                //}
-
-                //if (!ZonesProches[1] && distantPoint[i] != ZonesProches[0])
-                //{
-                //    ZonesProches[1] = distantPoint[i];
-                //    return;
-                //}
-
-                //minDistance = 
-
-                //foreach(GameObject k in distantPoint)
-                //{
-                //    float
-                //}
-
-                vector3Tab[i] = Vector3.Distance(distantPoint[i].transform.position, player.transform.position);
+                vector3Tab[i] = Vector3.Distance(distantPoint[i].transform.position, other.gameObject.transform.position);
 
                 if (i == 0)
                 {
@@ -81,14 +62,6 @@ public class WaterSonTrigger : MonoBehaviour
                         float NewValues = minVector3;
                         minVector3 = minVector32;
                         minVector32 = NewValues;
-
-                        //if (distantPoint[i] != ZonePlusProche || distantPoint[i] != ZonePlusProche2)
-                        //{
-                        //    GameObject NewZone = ZonePlusProche;
-                        //    ZonePlusProche = ZonePlusProche2;
-                        //    ZonePlusProche2 = NewZone;
-                        //}
-
                     }
 
                     if (Mathf.Abs(minVector3) > Mathf.Abs(vector3Tab[i]))
@@ -107,14 +80,6 @@ public class WaterSonTrigger : MonoBehaviour
                         float NewValues = minVector3;
                         minVector3 = minVector32;
                         minVector32 = NewValues;
-
-                        //if (distantPoint[i] != ZonePlusProche || distantPoint[i] != ZonePlusProche2)
-                        //{
-                        //    GameObject NewZone = ZonePlusProche;
-                        //    ZonePlusProche = ZonePlusProche2;
-                        //    ZonePlusProche2 = NewZone;
-                        //}
-
                     }
 
                     ZonePlusProche = closest1;
@@ -128,7 +93,9 @@ public class WaterSonTrigger : MonoBehaviour
             
         }
         audioSource1.volume = Mathf.InverseLerp(0, ValeurMaxLerp , ValeurMaxLerp-minVector3);
-        audioSource2.volume = Mathf.InverseLerp(0, ValeurMaxLerp, ValeurMaxLerp - minVector32);
+        audioSource2.volume = Mathf.InverseLerp(0, ValeurMaxLerp, ValeurMaxLerp - minVector32);*/
+        
+
     }
 
 
