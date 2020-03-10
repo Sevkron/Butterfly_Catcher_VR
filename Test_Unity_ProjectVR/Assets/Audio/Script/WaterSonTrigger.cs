@@ -49,23 +49,23 @@ public class WaterSonTrigger : MonoBehaviour
                 }
 
 
-                if (i > 0)
-                {
+                //if (i > 0)
+                //{
 
 
-                    if (Mathf.Abs(minVector3) > Mathf.Abs(vector3Tab[i]))
-                    {
-                        minVector3 = vector3Tab[i];
-                        closest1 = distantPoint[i];
-                    }
-                    ZonePlusProche = closest1;
-                }
-            }          
+                //    if (Mathf.Abs(minVector3) > Mathf.Abs(vector3Tab[i]))
+                //    {
+                //        minVector3 = vector3Tab[i];
+                //        closest1 = distantPoint[i];
+                //    }
+                //    ZonePlusProche = closest1;
+                //}
+            }
         }
 
         for (int i = 0; i < audioSourceList.Length; i++)
         {
-            audioSourceList[i].volume = Mathf.InverseLerp(0, ValeurMaxLerp , ValeurMaxLerp-minVector3);
+            audioSourceList[i].volume = Mathf.InverseLerp(0, ValeurMaxLerp , ValeurMaxLerp-vector3Tab[i]);
 
         }
     }

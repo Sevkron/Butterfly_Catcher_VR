@@ -28,7 +28,7 @@ public class StartMusic : MonoBehaviour
 
     IEnumerator CoroutineMusic()
     {
-        waitBetweenMusic = Random.Range(5, 15); //Entre 3 et 6 min
+        waitBetweenMusic = Random.Range(120, 240); //Entre 3 et 6 min
         yield return new WaitForSeconds(waitBetweenMusic);
         for (int i = 0; i < 4; i++)
         {
