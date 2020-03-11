@@ -7,44 +7,49 @@ namespace Valve.VR.InteractionSystem
 {
   public class ItemPlacement : MonoBehaviour
   {
-
-    public Transform jar;
     public Hand HandScript;
 
     public GameObject ObjectinHand;
+    public string tag = "Jar";
+    public GameObject ObjectStored;
+     //   public Collider objecthandcollider;
     public bool SlotFull;
 
     void Start()
     {
         ObjectinHand = GetComponent<Hand>().currentAttachedObject;
         SlotFull = false;
-
-
-
+        HandScript = GetComponent<Hand>();
 
     }
 
 
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
+            ObjectStored = other.gameObject;
 
-    }
-
-    void OnTriggerEnter(GameObject other)
-    {
-            other = ObjectinHand;
-            HandScript = GetComponent<Hand>();
-
-        if (SlotFull = false && other.tag == "Jar" )
+        if (SlotFull = false && other.gameObject.tag == tag && other.gameObject == ObjectinHand )
         {
-                HandScript.DetachObject(other);
+                HandScript.DetachObject(other.gameObject);
 
-            
+                ObjectStored.transform.SetParent(this.transform);
+                ObjectStored.transform.position = new Vector3(0, 0, 0);
+                ObjectStored.transform.rotation = Quaternion.Euler(0, 0, 0);
+                ObjectStored.GetComponent<Rigidbody>().isKinematic = true;
+
+                SlotFull = true;
+ 
             Debug.Log("Detect Jar in slot");
         }
     }
 
-  }
+        private void OnTriggerExit(Collider other)
+        {
+            ObjectStored.GetComponent<Rigidbody>().isKinematic = false;
+            SlotFull = false;
+        }
+
+    }
 }
 
 
