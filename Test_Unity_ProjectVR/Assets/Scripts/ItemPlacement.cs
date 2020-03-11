@@ -34,9 +34,9 @@ namespace Valve.VR.InteractionSystem
             ObjectinLeftHand = GetComponent<Hand>().currentAttachedObject;
             ObjectinRightHand = GetComponent<Hand>().currentAttachedObject;
 
-            if (SlotFull = false && other.gameObject.tag == tag && other.gameObject == ObjectinLeftHand)
+            if (SlotFull = false && other.gameObject.tag == tag && ObjectStored == ObjectinLeftHand)
             {
-                HandLeftScript.DetachObject(other.gameObject);
+                HandLeftScript.DetachObject(ObjectStored);
 
                 ObjectStored.transform.SetParent(this.transform);
                 ObjectStored.transform.position = new Vector3(0, 0, 0);
