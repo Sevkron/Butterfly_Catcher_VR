@@ -60,6 +60,9 @@ public class TeleportNoiseDistance : MonoBehaviour
     public void NoiseTriggerEvent()
     {
         //listOfButterflies.GetRange(int index, int count);
-            
+        foreach(GameObject butterflyInList in listOfButterflies)
+        {
+            butterflyInList.GetComponentInParent<BehaviorTree>().SendEvent("hasHeardTP");
+        }
     }
 }
