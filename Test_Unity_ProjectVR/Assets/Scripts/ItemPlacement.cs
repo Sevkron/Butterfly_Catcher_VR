@@ -2,25 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPlacement : MonoBehaviour
+
+namespace Valve.VR.InteractionSystem 
 {
-    // Start is called before the first frame update
+  public class ItemPlacement : MonoBehaviour
+  {
+
+    public Transform jar;
+    public Hand HandScript;
+
+    public GameObject ObjectinHand;
+    public bool SlotFull;
+
     void Start()
     {
-        
+        ObjectinHand = GetComponent<Hand>().currentAttachedObject;
+        SlotFull = false;
+
+
+
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(GameObject other)
     {
-        if(other.tag == "Jar")
+            other = ObjectinHand;
+            HandScript = GetComponent<Hand>();
+
+        if (SlotFull = false && other.tag == "Jar" )
         {
+                HandScript.DetachObject(other);
+
+            
             Debug.Log("Detect Jar in slot");
         }
     }
+
+  }
 }
+
+
