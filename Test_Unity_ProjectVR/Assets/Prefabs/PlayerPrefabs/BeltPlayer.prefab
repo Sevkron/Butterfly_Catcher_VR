@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandScript: {fileID: 0}
-  ObjectinHand: {fileID: 0}
+  HandRightScript: {fileID: 0}
+  HandLeftScript: {fileID: 0}
+  ObjectinLeftHand: {fileID: 0}
+  ObjectinRightHand: {fileID: 0}
   tag: Jar
   ObjectStored: {fileID: 0}
   SlotFull: 0
@@ -106,8 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandScript: {fileID: 0}
-  ObjectinHand: {fileID: 0}
+  HandRightScript: {fileID: 0}
+  HandLeftScript: {fileID: 0}
+  ObjectinLeftHand: {fileID: 0}
+  ObjectinRightHand: {fileID: 0}
   tag: Jar
   ObjectStored: {fileID: 0}
   SlotFull: 0
@@ -168,8 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandScript: {fileID: 0}
-  ObjectinHand: {fileID: 0}
+  HandRightScript: {fileID: 0}
+  HandLeftScript: {fileID: 0}
+  ObjectinLeftHand: {fileID: 0}
+  ObjectinRightHand: {fileID: 0}
   tag: Net
   ObjectStored: {fileID: 0}
   SlotFull: 0
@@ -282,8 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandScript: {fileID: 0}
-  ObjectinHand: {fileID: 0}
+  HandRightScript: {fileID: 0}
+  HandLeftScript: {fileID: 0}
+  ObjectinLeftHand: {fileID: 0}
+  ObjectinRightHand: {fileID: 0}
   tag: Jar
   ObjectStored: {fileID: 0}
   SlotFull: 0
@@ -344,8 +352,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandScript: {fileID: 0}
-  ObjectinHand: {fileID: 0}
+  HandRightScript: {fileID: 0}
+  HandLeftScript: {fileID: 0}
+  ObjectinLeftHand: {fileID: 0}
+  ObjectinRightHand: {fileID: 0}
   tag: Jar
   ObjectStored: {fileID: 0}
   SlotFull: 0
@@ -458,11 +468,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3180262855109253188, guid: ac5d2ee2c343eda42a889d9a96231e1a,
-        type: 3}
-      propertyPath: headTransform
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3180262855109253188, guid: ac5d2ee2c343eda42a889d9a96231e1a,
         type: 3}
