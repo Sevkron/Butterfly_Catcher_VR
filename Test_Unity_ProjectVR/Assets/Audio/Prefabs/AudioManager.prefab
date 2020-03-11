@@ -128,6 +128,134 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &813600121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813600122}
+  - component: {fileID: 813600123}
+  m_Layer: 0
+  m_Name: AudioCapturePapillons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &813600122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813600121}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1882008530}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &813600123
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813600121}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4131229871733335769, guid: 0d35e43ba0df5ba4c8fdd2d2976d8556,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &838222270
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +321,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 813600122}
   m_Father: {fileID: 1489920803858765918}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1045,7 +1174,199 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01d624ad8b71724ca036370898c8e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: CabbageWhiteNote1
+    clip: {fileID: 8300000, guid: b23f1ca5c371671499eb44b84b9f4f7d, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: CabbageWhiteNote2
+    clip: {fileID: 8300000, guid: a898879bdb95acb499fb5a63b1fb7f54, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: CabbageWhiteNote3
+    clip: {fileID: 8300000, guid: cef69fd9e910b2c4983f760f47a81b13, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: '----------------------'
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: DragonTailsNote1
+    clip: {fileID: 8300000, guid: cf279892f4f59a047b518b7ca2777a3c, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: DragonTailsNote2
+    clip: {fileID: 8300000, guid: aa0cb66c2a0574845bf3a4ac1451cb78, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: DragonTailsNote3
+    clip: {fileID: 8300000, guid: fc780671d5766854fb311414109f9758, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: '----------------------'
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: SouthernBirfwingNote1
+    clip: {fileID: 8300000, guid: 56e1bd69501ebd24fbe8d0d0aa5f8053, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: SouthernBirfwingNote2
+    clip: {fileID: 8300000, guid: 09aed2834d335074aac7dabecbc594a5, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: SouthernBirfwingNote3
+    clip: {fileID: 8300000, guid: 6e058bd244db7a042bc5b36567a33062, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: '----------------------'
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: JapaneseSilkNote1
+    clip: {fileID: 8300000, guid: 8c0a67f51d841404a84a96958716cb87, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: JapaneseSilkNote2
+    clip: {fileID: 8300000, guid: 2089840d35c5bc249a207c376f651571, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: JapaneseSilkNote3
+    clip: {fileID: 8300000, guid: 5e0fa43f73f5e3b49b073b3ee80282fe, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: '----------------------'
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EmeraldSwallowtailNote1
+    clip: {fileID: 8300000, guid: 48fed122c05f22b45850cf447b5e28f9, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: EmeraldSwallowtailNote2
+    clip: {fileID: 8300000, guid: caaa6ced9b445c644864f8a6538d991c, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: EmeraldSwallowtailNote3
+    clip: {fileID: 8300000, guid: bbf40d3af72dc0a48b310ca0f266f8b1, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: EmeraldSwallowtailNote4
+    clip: {fileID: 8300000, guid: da8585d7f77f19841b9c426168bc0109, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: '----------------------'
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: DysphaniaMillitarisNote1
+    clip: {fileID: 8300000, guid: 4f2e6cd0edd328d4e8eacc24a9bfdd6f, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: DysphaniaMillitarisNote2
+    clip: {fileID: 8300000, guid: f523dba9ba9cbbf478e1c8138b2b837d, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: DysphaniaMillitarisNote3
+    clip: {fileID: 8300000, guid: 414f4874698e9e343944aabbf3723e3e, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: DysphaniaMillitarisNote4
+    clip: {fileID: 8300000, guid: c26698d0caeab2440a1faae150342bf1, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: '----------------------'
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: CeylonRoseNote1
+    clip: {fileID: 8300000, guid: c89589628ee50634ab7c4b59428d6c6b, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: CeylonRoseNote2
+    clip: {fileID: 8300000, guid: a027141635d2ea14ca4e1d1045225ae8, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: CeylonRoseNote3
+    clip: {fileID: 8300000, guid: 085b66d332946db4d89e3df86521acbc, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: CeylonRoseNote4
+    clip: {fileID: 8300000, guid: a7bf0ad9bff8f184caf7c7837c83a388, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: CeylonRoseNote5
+    clip: {fileID: 8300000, guid: c84e52c6ec778a2449b08b7c17ce3f04, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
+  - name: CeylonRoseNote6
+    clip: {fileID: 8300000, guid: 734d94d6852f95340893a828e02fdd71, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 813600123}
 --- !u!82 &571975803508493822
 AudioSource:
   m_ObjectHideFlags: 0
