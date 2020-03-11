@@ -32,8 +32,8 @@ namespace Valve.VR.InteractionSystem.Sample
             if(CanvasOpen == false)
             {
                 m_Papillodex.SetActive(true);
-                FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");
-                FindObjectOfType<AudioManager>().Play("CanvasActivate");
+                FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex", null);
+                FindObjectOfType<AudioManager>().Play("CanvasActivate", null);
                 leftHand.useHoverCapsule = false;
                 rightHand.useHoverCapsule = false;
                 leftHand.GetComponent<GrabDistance>().GrabUpdate(false, 0);
@@ -43,8 +43,8 @@ namespace Valve.VR.InteractionSystem.Sample
             }
             else
             {
-                FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex");
-                FindObjectOfType<AudioManager>().Play("CanvasDeactivate");
+                FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex", null);
+                FindObjectOfType<AudioManager>().Play("CanvasDeactivate", null);
                 m_Papillodex.SetActive(false);
                 leftHand.useHoverCapsule = true;
                 rightHand.useHoverCapsule = true;

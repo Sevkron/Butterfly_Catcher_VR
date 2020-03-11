@@ -33,15 +33,21 @@ public class AudioManager : MonoBehaviour
     public void Start()
     {
     }
-    public void Play (string name)
+    public void Play (string name, AudioSource newAudioSource)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (newAudioSource != null)
+        {
+            s.source = newAudioSource;
+        }
         s.source.clip = s.clip;
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
+
+        
         s.source.PlayOneShot(s.source.clip);
 
         /*A mettre dans le sript quand on veut lancer le son

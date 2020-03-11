@@ -6,10 +6,10 @@ public class OpenDoor1 : MonoBehaviour
 {
 
     public GameObject vivarium;
-
+    private AudioManager audioManager;
     void Start()
     {
-
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,8 @@ public class OpenDoor1 : MonoBehaviour
         {
 
             vivarium.GetComponent<Animator>().SetBool("PlayerNearDoor1", true);
-            FindObjectOfType<AudioManager>().Play("OpenVivarium");
+            //audioManager.sounds
+            audioManager.Play("OpenVivarium", GetComponentInChildren<AudioSource>());
 
         }
     }
@@ -35,7 +36,7 @@ public class OpenDoor1 : MonoBehaviour
         {
 
             vivarium.GetComponent<Animator>().SetBool("PlayerNearDoor1", false);
-            FindObjectOfType<AudioManager>().Play("CloseVivarium");
+            FindObjectOfType<AudioManager>().Play("CloseVivarium", GetComponentInChildren<AudioSource>());
 
         }
     }

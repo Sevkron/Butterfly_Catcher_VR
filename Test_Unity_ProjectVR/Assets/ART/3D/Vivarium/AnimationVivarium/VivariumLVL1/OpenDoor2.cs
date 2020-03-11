@@ -22,7 +22,7 @@ public class OpenDoor2 : MonoBehaviour
         {
 
             vivarium.GetComponent<Animator>().SetBool("PlayerNearDoor2", true);
-            FindObjectOfType<AudioManager>().Play("OpenVivarium2");
+            FindObjectOfType<AudioManager>().Play("OpenVivarium2", GetComponentInChildren<AudioSource>());
 
         }
     }
@@ -33,7 +33,7 @@ public class OpenDoor2 : MonoBehaviour
         {
 
             vivarium.GetComponent<Animator>().SetBool("PlayerNearDoor2", false);
-            FindObjectOfType<AudioManager>().Play("CloseVivarium2");
+            FindObjectOfType<AudioManager>().Play("CloseVivarium2", GetComponentInChildren<AudioSource>());
 
         }
     }
