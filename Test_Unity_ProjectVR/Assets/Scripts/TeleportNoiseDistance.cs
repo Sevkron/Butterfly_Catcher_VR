@@ -5,49 +5,64 @@ using BehaviorDesigner.Runtime;
 using Valve.VR.InteractionSystem;
 
 
-    public class TeleportNoiseDistance : MonoBehaviour
+public class TeleportNoiseDistance : MonoBehaviour
+{
+    //public float radiusNoise = 10f;
+    private RaycastHit[] hits;
+    //public GameObject[] butterflyGO;
+    private Vector3 noiseCylinderScale;
+    private bool noiseActivate = false;
+    public Teleport teleportScript;
+    private int increment = 0;
+    public List<GameObject> listOfButterflies;
+    void Start()
     {
-        //public float radiusNoise = 10f;
-        private RaycastHit[] hits;
-        public GameObject[] butterflyGO;
-        private Vector3 noiseCylinderScale;
-        private bool noiseActivate = false;
-        private Teleport teleportScript;
-
-        void Start()
+        if(teleportScript == null)
         {
-            teleportScript = GetComponent<Teleport>();
+            teleportScript = GetComponentInParent<Teleport>();
         }
+        listOfButterflies = new List<GameObject>();
+    }
 
-        void Update()
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Butterfly"))
         {
-            noiseCylinderScale = new Vector3(teleportScript.distanceFromPlayer, 1.9f, teleportScript.distanceFromPlayer);
-            transform.localScale = noiseCylinderScale;
-            Gizmos.color = new Color(1, 0, 0, 0.5f);
-            NoiseTriggerEvent(teleportScript.distanceFromPlayer);
-            
-            if(teleportScript.teleporting == true)
-            {
-                NoiseTriggerEvent(teleportScript.distanceFromPlayer);
-                Debug.Log("Activate Noise trigger event");
-            }
+            listOfButterflies.Add(other.gameObject);
+            Debug.Log("Added butterfly" + other.gameObject.transform.parent + " to list");
         }
+    }
 
-        public void NoiseTriggerEvent(float radiusNoise)
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Butterfly"))
         {
-            Vector3 p1 = transform.position + new Vector3(0, 0.78f, 0) + Vector3.up * -1.9f * 0.5f;
-            Vector3 p2 = p1 + Vector3.up * 1.9f;
-            hits = Physics.CapsuleCastAll(p1, p2, radiusNoise, transform.forward);
-            int f = 0;
-            for(int i = 0; i < hits.Length; i++)
+            if (listOfButterflies.Contains(other.gameObject))
             {
-                if(hits[i].transform.gameObject.CompareTag("Butterfly") == true)
-                {
-                    
-                    butterflyGO[f] = hits[i].transform.gameObject;
-                    butterflyGO[f].transform.parent.GetComponent<BehaviorTree>().SendEvent("hasHeardTP");
-                    f++;
-                }
+                listOfButterflies.Remove(other.gameObject);
+                Debug.Log("Removed butterfly" + other.gameObject.transform.parent + " from list");
             }
         }
     }
+    void Update()
+    {
+        noiseCylinderScale = new Vector3(teleportScript.distanceFromPlayer, 1.9f, teleportScript.distanceFromPlayer);
+        transform.localScale = noiseCylinderScale;
+        //Gizmos.color = new Color(1, 0, 0, 0.5f);
+            //NoiseTriggerEvent(teleportScript.distanceFromPlayer);
+
+        if (teleportScript.teleporting == true)
+        {
+            NoiseTriggerEvent();
+        }
+    }
+
+    public void NoiseTriggerEvent()
+    {
+        //listOfButterflies.GetRange(int index, int count);
+        foreach(GameObject butterflyInList in listOfButterflies)
+        {
+            butterflyInList.GetComponentInParent<BehaviorTree>().SendEvent("hasHeardTP");
+        }
+    }
+}

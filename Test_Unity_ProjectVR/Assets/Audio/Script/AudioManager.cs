@@ -22,10 +22,9 @@ public class AudioManager : MonoBehaviour
 //        DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
         {
-            //s.source.clip = s.clip;
+            s.source.clip = s.clip;
 
             s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
 
             s.source.loop = s.loop;
         }
@@ -33,16 +32,22 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
-        //Play("MusicPlaine");
     }
-    public void Play (string name)
+    public void Play (string name, AudioSource newAudioSource)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (newAudioSource != null)
+        {
+            s.source = newAudioSource;
+        }
+        s.source.clip = s.clip;
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
+
+        
         s.source.PlayOneShot(s.source.clip);
 
         /*A mettre dans le sript quand on veut lancer le son

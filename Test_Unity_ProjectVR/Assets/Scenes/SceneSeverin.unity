@@ -1142,36 +1142,18 @@ Transform:
   m_Father: {fileID: 668869299}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &176121234 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 153878, guid: 7a135b1a2cb9c8f488d4dd00c55ab283,
+--- !u!114 &176121238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283,
     type: 3}
   m_PrefabInstance: {fileID: 1341350819}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &176121235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176121234}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 303e715f1f45d9046b53a38d108e3bde, type: 3}
+  m_Script: {fileID: 11500000, guid: f260935093f73f241bfaa1578e5e5506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  butterflyGO:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  teleportScript: {fileID: 0}
 --- !u!1 &181807341
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,6 +3109,40 @@ Transform:
   m_Father: {fileID: 1987319607}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &691245801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 224363698, guid: 7a135b1a2cb9c8f488d4dd00c55ab283,
+    type: 3}
+  m_PrefabInstance: {fileID: 1341350819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &691245803
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691245801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &691245806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691245801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 303e715f1f45d9046b53a38d108e3bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportScript: {fileID: 176121238}
+  listOfButterflies: []
 --- !u!1 &693849347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4014,24 +4030,6 @@ PrefabInstance:
       propertyPath: ppVolume
       value: 
       objectReference: {fileID: 1357640095}
-    - target: {fileID: 792821837065508515, guid: 808394c149cfe7247a3ed2db268dfb27,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 536754684, guid: 808394c149cfe7247a3ed2db268dfb27, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439797649393004390, guid: 808394c149cfe7247a3ed2db268dfb27,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 536754686, guid: 808394c149cfe7247a3ed2db268dfb27, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808394c149cfe7247a3ed2db268dfb27, type: 3}
 --- !u!1 &814727856
@@ -5200,12 +5198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyLevel: 0
-  ysmoothTime: 0.3
-  xsmoothTime: 0.5
-  ymini: -1
-  ymax: 2.5
-  xmini: -1
-  xmax: 1.5
+  _wanderSmoothTime: 0.3
   isWander: 0
   destinationVector3: {x: 0, y: 0, z: 0}
   JarScript: {fileID: 0}
@@ -5221,9 +5214,13 @@ MonoBehaviour:
     mNetworkSync: 0
     mValue: 0
   scale: 1
+  m_MinWingVelocity: 1
+  m_speedFactor: 1
   transform: {fileID: 0}
   animator: {fileID: 0}
   navMeshAgent: {fileID: 0}
+  m_WanderRadius: 1
+  m_WanderProbability: 0
 --- !u!65 &1158164636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6526,6 +6523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporting
       objectReference: {fileID: 0}
+    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+      propertyPath: traceLayerMask.m_Bits
+      value: 1843
+      objectReference: {fileID: 0}
     - target: {fileID: 475244, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6575,8 +6576,25 @@ PrefabInstance:
       propertyPath: butterflyGO.Array.size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 176121235, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+      propertyPath: listOfButterflies.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 176121235, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+      propertyPath: butterflyGO.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176121235, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176121235, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+      propertyPath: teleportScript
+      value: 
+      objectReference: {fileID: 176121238}
     m_RemovedComponents:
     - {fileID: 1694517758645437178, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+    - {fileID: 176121235, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
 --- !u!1 &1349081226
 GameObject:
@@ -7509,7 +7527,7 @@ MonoBehaviour:
   ignoreTransforms: []
   children:
   - gameObject: {fileID: 1672649360}
-    gameObjectHash: 74234
+    gameObjectHash: 39060
     member: {fileID: 1672649361}
     renderer: {fileID: 0}
     renderHash: 0
