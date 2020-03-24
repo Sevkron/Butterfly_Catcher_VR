@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour
 
         /*A mettre dans le sript quand on veut lancer le son
          
-        FindObjectOfType<AudioManager>().Play("NomDuSon");*/
+        FindObjectOfType<AudioManager>().Play("NomDuSon", nomAudioSource);*/
         
     }
 }

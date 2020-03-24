@@ -12,7 +12,7 @@ namespace Valve.VR.InteractionSystem
 
     public GameObject ObjectinLeftHand;
     public GameObject ObjectinRightHand;
-        public string tag = "Jar";
+    public string tag = "Jar";
     public GameObject ObjectStored;
      //   public Collider objecthandcollider;
     public bool SlotFull;
@@ -21,11 +21,10 @@ namespace Valve.VR.InteractionSystem
     {
         //ObjectinLeftHand = GetComponent<Hand>().currentAttachedObject;
         //ObjectinRightHand = GetComponent<Hand>().currentAttachedObject;
-            SlotFull = false;
+        SlotFull = false;
         //HandScript = GetComponent<Hand>();
 
     }
-
 
     void OnTriggerEnter(Collider other)
     {

@@ -4,7 +4,6 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using Valve.VR.InteractionSystem;
 
-
 public class TeleportNoiseDistance : MonoBehaviour
 {
     //public float radiusNoise = 10f;
@@ -15,6 +14,7 @@ public class TeleportNoiseDistance : MonoBehaviour
     public Teleport teleportScript;
     private int increment = 0;
     public List<GameObject> listOfButterflies;
+
     void Start()
     {
         if(teleportScript == null)
@@ -54,15 +54,21 @@ public class TeleportNoiseDistance : MonoBehaviour
         if (teleportScript.teleporting == true)
         {
             NoiseTriggerEvent();
+            Debug.Log("teleport is " + teleportScript.teleporting);
         }
     }
 
     public void NoiseTriggerEvent()
     {
-        //listOfButterflies.GetRange(int index, int count);
+        /*listOfButterflies.GetRange(int index, int count);
         foreach(GameObject butterflyInList in listOfButterflies)
         {
-            butterflyInList.GetComponentInParent<BehaviorTree>().SendEvent("hasHeardTP");
+            butterflyInList.GetComponentInParent<BehaviorTree>().SendEvent("hasHeardTP"); 
+        }*/
+        for(int i = 0; i < listOfButterflies.Count; i++)
+        {
+            listOfButterflies[i].GetComponentInParent<BehaviorTree>().SendEvent("hasHeardTP");
+            Debug.Log("Sent event flee to " + listOfButterflies[i]);
         }
     }
 }
