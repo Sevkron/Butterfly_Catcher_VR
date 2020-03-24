@@ -12,12 +12,6 @@ public class OpenDoor1 : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -36,7 +30,7 @@ public class OpenDoor1 : MonoBehaviour
         {
 
             vivarium.GetComponent<Animator>().SetBool("PlayerNearDoor1", false);
-            FindObjectOfType<AudioManager>().Play("CloseVivarium", GetComponentInChildren<AudioSource>());
+            audioManager.Play("CloseVivarium", GetComponentInChildren<AudioSource>());
 
         }
     }

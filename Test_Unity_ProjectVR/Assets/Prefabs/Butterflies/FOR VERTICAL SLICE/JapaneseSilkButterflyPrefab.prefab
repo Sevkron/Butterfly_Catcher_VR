@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &487490444373688676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6076270328084028550}
+  - component: {fileID: 2855624615526620655}
+  m_Layer: 0
+  m_Name: JapaneseSilkSon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6076270328084028550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487490444373688676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4708666253296319692}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2855624615526620655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487490444373688676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e37886a13bbc3409e2738eea9d3b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SonsCapture:
+  - {fileID: 8300000, guid: 8c0a67f51d841404a84a96958716cb87, type: 3}
+  - {fileID: 8300000, guid: 2089840d35c5bc249a207c376f651571, type: 3}
+  - {fileID: 8300000, guid: 5e0fa43f73f5e3b49b073b3ee80282fe, type: 3}
 --- !u!1 &7377804001984667264
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,6 +78,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2119842162247788197}
+  - {fileID: 6076270328084028550}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,56 +226,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599966016961124847, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599966016961124847, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599966016961124847, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643249930121781065, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: difficultyLevel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643249930121781065, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: _wanderSmoothTime
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643249930121781065, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: isWander
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643249930121781065, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: BaseOffset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643249930121781065, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: m_speedFactor
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643249930121781065, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: m_WanderRadius
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643249930121781065, guid: 0e87fe785a2af304b8ed7e4beff8c68e,
-        type: 3}
-      propertyPath: m_WanderProbability
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e87fe785a2af304b8ed7e4beff8c68e, type: 3}

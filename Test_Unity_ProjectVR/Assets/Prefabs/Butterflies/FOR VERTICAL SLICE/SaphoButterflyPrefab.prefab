@@ -31,6 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6864956680779069120}
+  - {fileID: 1948084423560998991}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -145,6 +146,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &9038868578552331247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948084423560998991}
+  - component: {fileID: 5573275784994145538}
+  m_Layer: 0
+  m_Name: SaphoSon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1948084423560998991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9038868578552331247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2009359003019215998}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5573275784994145538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9038868578552331247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e37886a13bbc3409e2738eea9d3b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SonsCapture:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &8020090992870884380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,6 +200,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009359003019215998}
     m_Modifications:
+    - target: {fileID: 455837894010994895, guid: c9ab2799751443a4188e567bfe9edfd6,
+        type: 3}
+      propertyPath: m_Name
+      value: Sapho paps pivot point modif
+      objectReference: {fileID: 0}
     - target: {fileID: 3461069084490658524, guid: c9ab2799751443a4188e567bfe9edfd6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,46 +259,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455837894010994895, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: m_Name
-      value: Sapho paps pivot point modif
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: difficultyLevel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: _wanderSmoothTime
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: isWander
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: BaseOffset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: m_speedFactor
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: m_WanderRadius
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461622559178383720, guid: c9ab2799751443a4188e567bfe9edfd6,
-        type: 3}
-      propertyPath: m_WanderProbability
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9ab2799751443a4188e567bfe9edfd6, type: 3}

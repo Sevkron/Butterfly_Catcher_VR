@@ -16,12 +16,13 @@ public class CaptureMinigamePool : MonoBehaviour
     public GameObject currentButterfly;
 
     public ParticleSystem CapWinVFX;
-
     public bool isNotInMinigame = true;
 
     public Transform headTransform;
     public Transform beltTransform;
     public Transform spawnPoint;
+
+    private AudioManager audioManager;
     //test Sphere spawn
     void Update()
     {
@@ -32,8 +33,6 @@ public class CaptureMinigamePool : MonoBehaviour
 
     public void SpawnSph(GameObject butterfly)
     {
-        
-
         isNotInMinigame = false;
         int difficulty = butterfly.GetComponent<YMovement>().difficultyLevel;
         currentButterfly = butterfly;

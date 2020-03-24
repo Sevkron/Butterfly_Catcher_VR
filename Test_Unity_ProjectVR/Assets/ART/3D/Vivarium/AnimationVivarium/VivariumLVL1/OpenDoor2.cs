@@ -5,15 +5,10 @@ using UnityEngine;
 public class OpenDoor2 : MonoBehaviour
 {
     public GameObject vivarium;
+    private AudioManager audioManager;
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,7 +17,7 @@ public class OpenDoor2 : MonoBehaviour
         {
 
             vivarium.GetComponent<Animator>().SetBool("PlayerNearDoor2", true);
-            FindObjectOfType<AudioManager>().Play("OpenVivarium2", GetComponentInChildren<AudioSource>());
+            audioManager.Play("OpenVivarium2", GetComponentInChildren<AudioSource>());
 
         }
     }
@@ -33,7 +28,7 @@ public class OpenDoor2 : MonoBehaviour
         {
 
             vivarium.GetComponent<Animator>().SetBool("PlayerNearDoor2", false);
-            FindObjectOfType<AudioManager>().Play("CloseVivarium2", GetComponentInChildren<AudioSource>());
+            audioManager.Play("CloseVivarium2", GetComponentInChildren<AudioSource>());
 
         }
     }
