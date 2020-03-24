@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.UI;
+using Valve.VR.InteractionSystem;
 
-namespace Valve.VR.InteractionSystem.Sample
-{
 public class PapillodexUIButton : MonoBehaviour
 {
         public GameObject[] m_Panels;
@@ -203,4 +202,3 @@ public class PapillodexUIButton : MonoBehaviour
             FindObjectOfType<AudioManager>().Play(sound, null);
         }
     }
-}
