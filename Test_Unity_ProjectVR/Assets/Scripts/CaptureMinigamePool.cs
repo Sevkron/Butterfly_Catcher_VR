@@ -24,6 +24,11 @@ public class CaptureMinigamePool : MonoBehaviour
 
     private AudioManager audioManager;
     //test Sphere spawn
+
+    void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
     void Update()
     {
         if(testSphereSpawn)

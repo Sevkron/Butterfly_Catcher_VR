@@ -70,7 +70,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 609276732894983870}
-  - component: {fileID: 5559329092433851998}
   m_Layer: 0
   m_Name: Pontonpref
   m_TagString: Untagged
@@ -85,7 +84,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4481024648129758381}
-  m_LocalRotation: {x: -0, y: 0.20347972, z: -0, w: 0.9790792}
+  m_LocalRotation: {x: 0, y: 0.20347941, z: 0, w: 0.97907925}
   m_LocalPosition: {x: -42.92, y: -5.58, z: 15.39}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
@@ -96,20 +95,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 23.481, z: 0}
---- !u!64 &5559329092433851998
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4481024648129758381}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &4883234023940529032
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +106,7 @@ GameObject:
   - component: {fileID: 3206757007449541638}
   - component: {fileID: 148413573525900178}
   - component: {fileID: 7365403188214799696}
+  - component: {fileID: 185038427}
   m_Layer: 0
   m_Name: pCube38
   m_TagString: Untagged
@@ -187,6 +173,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &185038427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883234023940529032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1751498, y: 0.04093306, z: 0.2701438}
+  m_Center: {x: 4.5937646e-16, y: 0.040014513, z: 0.00000007152558}
 --- !u!1 &5303208753175710983
 GameObject:
   m_ObjectHideFlags: 0
