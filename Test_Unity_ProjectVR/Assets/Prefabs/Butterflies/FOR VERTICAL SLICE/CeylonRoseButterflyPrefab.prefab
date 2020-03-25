@@ -73,7 +73,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.1
-  m_BaseOffset: 1.2
+  m_BaseOffset: 2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4228595235138250080
@@ -229,41 +229,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168638989044526132, guid: 87269916fc4eb0c49a1e3700a3e6d295,
-        type: 3}
-      propertyPath: difficultyLevel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168638989044526132, guid: 87269916fc4eb0c49a1e3700a3e6d295,
-        type: 3}
-      propertyPath: m_speedFactor
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168638989044526132, guid: 87269916fc4eb0c49a1e3700a3e6d295,
-        type: 3}
-      propertyPath: _wanderSmoothTime
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168638989044526132, guid: 87269916fc4eb0c49a1e3700a3e6d295,
-        type: 3}
-      propertyPath: isWander
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168638989044526132, guid: 87269916fc4eb0c49a1e3700a3e6d295,
-        type: 3}
-      propertyPath: BaseOffset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168638989044526132, guid: 87269916fc4eb0c49a1e3700a3e6d295,
-        type: 3}
-      propertyPath: m_WanderRadius
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168638989044526132, guid: 87269916fc4eb0c49a1e3700a3e6d295,
-        type: 3}
-      propertyPath: m_WanderProbability
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87269916fc4eb0c49a1e3700a3e6d295, type: 3}

@@ -86,13 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07be557fe7250c443b0e22bd61d06855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyLevel: 0
-  ysmoothTime: 1.5
-  xsmoothTime: 1.5
-  ymini: -6
-  ymax: 6
-  xmini: -6
-  xmax: 6
+  difficultyLevel: 1
+  _wanderSmoothTime: 0.4
   isWander: 0
   destinationVector3: {x: 0, y: 0, z: 0}
   JarScript: {fileID: 0}
@@ -108,9 +103,13 @@ MonoBehaviour:
     mNetworkSync: 0
     mValue: 0
   scale: 1
+  m_MinWingVelocity: 1
+  m_speedFactor: 4.5
   transform: {fileID: 0}
   animator: {fileID: 0}
   navMeshAgent: {fileID: 0}
+  m_WanderRadius: 0.6
+  m_WanderProbability: 1.5
 --- !u!135 &5243033918901680169
 SphereCollider:
   m_ObjectHideFlags: 0

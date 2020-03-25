@@ -973,19 +973,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyLevel: 1
-  ysmoothTime: 1.5
-  xsmoothTime: 1.5
-  ymini: -6
-  ymax: 6
-  xmini: -6
-  xmax: 6
+  _wanderSmoothTime: 0.4
   isWander: 0
   destinationVector3: {x: 0, y: 0, z: 0}
+  JarScript: {fileID: 0}
   butterflyBehaviorTree: {fileID: 0}
   Paps: {fileID: 0}
+  BaseOffset: 0
+  SharedIsIdle:
+    mIsShared: 0
+    mIsGlobal: 0
+    mName: 
+    mPropertyMapping: 
+    mPropertyMappingOwner: {fileID: 0}
+    mNetworkSync: 0
+    mValue: 0
+  scale: 1
+  m_MinWingVelocity: 1
+  m_speedFactor: 4.5
   transform: {fileID: 0}
   animator: {fileID: 0}
   navMeshAgent: {fileID: 0}
+  m_WanderRadius: 0.6
+  m_WanderProbability: 1.5
 --- !u!1001 &4088706879543509691
 PrefabInstance:
   m_ObjectHideFlags: 0
