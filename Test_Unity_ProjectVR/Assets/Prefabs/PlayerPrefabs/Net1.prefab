@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035023944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.475, z: 0.1165}
+  m_LocalPosition: {x: 0, y: 0.93, z: 0.1165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6722254369331552627}
@@ -451,7 +451,7 @@ Transform:
   m_GameObject: {fileID: 191542842535772823}
   m_LocalRotation: {x: -0, y: 0.000002905726, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.878276, y: 1.878276, z: 1.878276}
   m_Children:
   - {fileID: 191542842535616181}
   - {fileID: 191542842535616179}
@@ -511,7 +511,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   butterflyNet: {fileID: 123894720}
   m_timeToCatch: 1
-  detectedButterfly: {fileID: 0}
 --- !u!1 &191542842535772825
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +844,7 @@ Transform:
   m_GameObject: {fileID: 4661544334557336532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.4761238, y: -0.24517712, z: -0.17627513}
-  m_LocalScale: {x: 1.8782759, y: 1.878276, z: 1.878276}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 2035023945}
   - {fileID: 191542842535616183}
@@ -1045,8 +1044,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07549035
-  m_Center: {x: 0, y: 0.49529055, z: 0.08694085}
+  m_Radius: 0.13440868
+  m_Center: {x: -3.8414605e-11, y: 0.9281392, z: 0.15323043}
 --- !u!114 &123894720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,10 +1060,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstCollider: {fileID: 684206596}
   secondCollider: {fileID: 6854788910655608174}
-  exitedButterfly: {fileID: 0}
+  exitedGameObject: {fileID: 0}
   butterflyBehaviorTree: {fileID: 0}
   netTransform: {fileID: 2035023945}
   IsCaptured: 1
+  captureMinigamePool: {fileID: 0}
+  SharedIsIdle:
+    mIsShared: 0
+    mIsGlobal: 0
+    mName: 
+    mPropertyMapping: 
+    mPropertyMappingOwner: {fileID: 0}
+    mNetworkSync: 0
+    mValue: 0
+  scale: 0.7
 --- !u!114 &7668778621920552325
 MonoBehaviour:
   m_ObjectHideFlags: 0
