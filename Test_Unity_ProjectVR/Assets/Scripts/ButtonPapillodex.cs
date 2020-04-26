@@ -9,17 +9,24 @@ namespace Valve.VR.InteractionSystem.Sample
     public class ButtonPapillodex : MonoBehaviour
     {
         private Canvas m_PapillodexCanvas;
+        private Animator papillodexAnimator;
         public GameObject m_Papillodex;
         private bool CanvasOpen = false;
         private AudioSource audioSource;
+        private AudioManager audioManager;
         public Hand leftHand;
         public Hand rightHand;
+        //IEnumerator ClosingSequence;
 
         void Awake()
         {
             if(leftHand == null || rightHand == null)
             {
                 Debug.Log("Setup Hands");
+            }
+            if  (audioManager == null)
+            {
+                audioManager = FindObjectOfType<AudioManager>();
             }
         }
         public void OnButtonDown(Hand fromHand)
@@ -32,8 +39,8 @@ namespace Valve.VR.InteractionSystem.Sample
             if(CanvasOpen == false)
             {
                 m_Papillodex.SetActive(true);
-                FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex", null);
-                FindObjectOfType<AudioManager>().Play("CanvasActivate", null);
+                audioManager.Play("ClickButtonPapillodex", null);
+                audioManager.Play("CanvasActivate", null);
                 leftHand.useHoverCapsule = false;
                 rightHand.useHoverCapsule = false;
                 leftHand.GetComponent<GrabDistance>().GrabUpdate(false, 0);
@@ -43,8 +50,10 @@ namespace Valve.VR.InteractionSystem.Sample
             }
             else
             {
-                FindObjectOfType<AudioManager>().Play("ClickButtonPapillodex", null);
-                FindObjectOfType<AudioManager>().Play("CanvasDeactivate", null);
+                audioManager.Play("ClickButtonPapillodex", null);
+                audioManager.Play("CanvasDeactivate", null);
+                papillodexAnimator.SetTrigger("Close");
+                //StartCoroutine(WaitForAnimation(PapillodexClosing));
                 m_Papillodex.SetActive(false);
                 leftHand.useHoverCapsule = true;
                 rightHand.useHoverCapsule = true;
@@ -56,6 +65,11 @@ namespace Valve.VR.InteractionSystem.Sample
         public void OnButtonUp(Hand fromHand)
         {
 
+        }
+
+        IEnumerator WaitForAnimation(Animation animation)
+        {
+            return null;
         }
     }
 }
