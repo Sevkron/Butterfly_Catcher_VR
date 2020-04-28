@@ -53,7 +53,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8310255802831397}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 8040496303797154603}
   - component: {fileID: 7434796590313719302}
   - component: {fileID: 5593392457745529021}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: papillon decouvert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 3803633811457732618}
   - component: {fileID: 1391358425684135006}
   - component: {fileID: 3698583457074916942}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: cadre info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 8703057791159105129}
   - component: {fileID: 7071108010746236385}
   - component: {fileID: 478011162378367442}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205339181738340302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 8275678601304229013}
   - component: {fileID: 3778114993155956398}
   - component: {fileID: 2138884542138157540}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: TMP SubMeshUI [911Fonts.com_CenturyGothicBold__-_911fonts Material + LiberationSans
     SDF Atlas]
   m_TagString: Untagged
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 1596679834223375296}
   - component: {fileID: 5289648487678797444}
   - component: {fileID: 4963760389953707369}
-  - component: {fileID: 317316509493125473}
+  - component: {fileID: 1949375589}
   m_Layer: 5
   m_Name: DysphaniaPanel
   m_TagString: Untagged
@@ -956,7 +956,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &317316509493125473
+--- !u!114 &1949375589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -965,10 +965,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 295542580142065146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &337013991865293526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1355,7 @@ GameObject:
   - component: {fileID: 416380621189721689}
   - component: {fileID: 416380621189721688}
   - component: {fileID: 416380621189721695}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1572,7 +1571,7 @@ GameObject:
   - component: {fileID: 416380621278107941}
   - component: {fileID: 416380621278107943}
   - component: {fileID: 416380621278107942}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1646,7 +1645,7 @@ GameObject:
   - component: {fileID: 416380621381152216}
   - component: {fileID: 416380621381152218}
   - component: {fileID: 416380621381152217}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1725,7 +1724,7 @@ GameObject:
   - component: {fileID: 416380621386102713}
   - component: {fileID: 416380621386102715}
   - component: {fileID: 416380621386102714}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1804,7 +1803,7 @@ GameObject:
   - component: {fileID: 416380621398929678}
   - component: {fileID: 416380621398929904}
   - component: {fileID: 416380621398929679}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1882,7 @@ GameObject:
   - component: {fileID: 416380621895871327}
   - component: {fileID: 416380621895871297}
   - component: {fileID: 416380621895871296}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1962,7 +1961,7 @@ GameObject:
   - component: {fileID: 416380621934589910}
   - component: {fileID: 416380621934589912}
   - component: {fileID: 416380621934589911}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2041,7 +2040,7 @@ GameObject:
   - component: {fileID: 416380622004516177}
   - component: {fileID: 416380622004516179}
   - component: {fileID: 416380622004516178}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2120,7 +2119,7 @@ GameObject:
   - component: {fileID: 416380622022810290}
   - component: {fileID: 416380622022810292}
   - component: {fileID: 416380622022810291}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2203,7 +2202,7 @@ GameObject:
   - component: {fileID: 416380622625562218}
   - component: {fileID: 416380622625562219}
   - component: {fileID: 416380622625562220}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2423,7 +2422,7 @@ GameObject:
   - component: {fileID: 416380622946008913}
   - component: {fileID: 416380622946008912}
   - component: {fileID: 416380622946008919}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2639,7 +2638,7 @@ GameObject:
   - component: {fileID: 416380623079827707}
   - component: {fileID: 416380623079827709}
   - component: {fileID: 416380623079827708}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3123,7 +3122,7 @@ MonoBehaviour:
 
 
 
-    The Monarch Butterfly use colors and scents to communicate.'
+    The Monarch Butterfly uses colors and scents to communicate.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04b48b100f55f5c4db68519da422e651, type: 2}
   m_sharedMaterial: {fileID: 9033033445688257906, guid: 04b48b100f55f5c4db68519da422e651,
@@ -3237,7 +3236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8589715228163071694}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3269,7 +3268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.092778064, y: 0.0042991317}
+  m_AnchoredPosition: {x: -0.000063315034, y: 0.08532187}
   m_SizeDelta: {x: 0, y: 3596.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &743841546161409311
@@ -3283,7 +3282,7 @@ GameObject:
   - component: {fileID: 6916760539221077716}
   - component: {fileID: 5171371645196178126}
   - component: {fileID: 905809794139114237}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: papillon ? (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3418,7 +3417,7 @@ MonoBehaviour:
 
 
     The Dragon-Tail butterfly is able to beat its wings much faster and can dart from
-    spot to spot very rapidly. When it is flying, its tail does a wavy movement.'
+    spot to spot very rapidly. When flying, its tail does a wave-like movement.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04b48b100f55f5c4db68519da422e651, type: 2}
   m_sharedMaterial: {fileID: 9033033445688257906, guid: 04b48b100f55f5c4db68519da422e651,
@@ -3519,7 +3518,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760780564138446427}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -3534,7 +3533,7 @@ GameObject:
   - component: {fileID: 8999559336615284028}
   - component: {fileID: 8988445278741637255}
   - component: {fileID: 7533429096980583705}
-  - component: {fileID: 346574340455857416}
+  - component: {fileID: 1381745191}
   m_Layer: 5
   m_Name: SouthernBirdwingPanel
   m_TagString: Untagged
@@ -3599,7 +3598,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &346574340455857416
+--- !u!114 &1381745191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3608,10 +3607,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 828862826057602478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &836273049847986791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,7 +3619,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2689238414281910188}
-  m_Layer: 5
+  - component: {fileID: 1321504403}
+  m_Layer: 9
   m_Name: ClockMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3650,6 +3649,25 @@ RectTransform:
   m_AnchoredPosition: {x: -0.21856976, y: -17.973}
   m_SizeDelta: {x: 3394.7, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1321504403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836273049847986791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cde39550386d9f429cb36ae49ae7878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  use24Clock: 1
+  clockTextMeshPro:
+  - {fileID: 7469624515539512512}
+  clockFill:
+  - {fileID: 3109407038942440817}
+  elapsedTime: 0
+  _hourPeriod: 0
 --- !u!1 &874963272893612922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,7 +3679,7 @@ GameObject:
   - component: {fileID: 8203977809148724712}
   - component: {fileID: 8973218020272408390}
   - component: {fileID: 7787546717719340053}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3801,13 +3819,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 843.64, z: -805.21094, w: 141.83301}
   m_textInfo:
     textComponent: {fileID: 7787546717719340053}
-    characterCount: 74
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 7
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 11
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -3910,7 +3928,7 @@ GameObject:
   - component: {fileID: 2913946125923752728}
   - component: {fileID: 7455094296369071071}
   - component: {fileID: 3247479502265681031}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: papillon ? (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4311,7 +4329,7 @@ GameObject:
   - component: {fileID: 1061963811742373419}
   - component: {fileID: 1092102984173481217}
   - component: {fileID: 748130312742198150}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PapillodexIndexUIButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4368,7 +4386,7 @@ GameObject:
   - component: {fileID: 1061963812489918224}
   - component: {fileID: 1092102983425150010}
   - component: {fileID: 2895710024587794399}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PapillodexMissionsUIButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4429,7 +4447,7 @@ GameObject:
   - component: {fileID: 7134473170406521568}
   - component: {fileID: 4586516115112873335}
   - component: {fileID: 8855033895828966688}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4703,9 +4721,9 @@ MonoBehaviour:
   m_text: 'Description
 
 
-    The silk produced by Yamamai has this unique characteristics to be elastic and
-    chemical resistant. These have led to its use in many research fields including
-    biotechnology and medical science'
+    The silk produced by the Yamamai has the unique characteristic of being elastic
+    and chemical resistant. This has led to its use in many research fields including
+    biotechnology and medical science.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04b48b100f55f5c4db68519da422e651, type: 2}
   m_sharedMaterial: {fileID: 9033033445688257906, guid: 04b48b100f55f5c4db68519da422e651,
@@ -4900,7 +4918,7 @@ GameObject:
   - component: {fileID: 1084450719267256930}
   - component: {fileID: 1084450719267256931}
   - component: {fileID: 1084450719267256932}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5454,7 +5472,7 @@ GameObject:
   - component: {fileID: 2063679654282373886}
   - component: {fileID: 972081399940682802}
   - component: {fileID: 708580932757478660}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: OptionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5590,7 +5608,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -5777,7 +5795,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -5904,7 +5922,7 @@ GameObject:
   - component: {fileID: 8894301784844514573}
   - component: {fileID: 3401900047561915178}
   - component: {fileID: 3778485293352961031}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CADRE2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5978,7 +5996,7 @@ GameObject:
   - component: {fileID: 1616141022905825376}
   - component: {fileID: 1726734804571407178}
   - component: {fileID: 5251228476496570888}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PapillodexUIOptionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6035,7 +6053,7 @@ GameObject:
   - component: {fileID: 7982531461951231556}
   - component: {fileID: 1763414088512637318}
   - component: {fileID: 3098721076299653051}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6194,7 +6212,7 @@ GameObject:
   - component: {fileID: 3160581162861805504}
   - component: {fileID: 9110143284115045812}
   - component: {fileID: 7568722991655554532}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6445,7 +6463,7 @@ GameObject:
   - component: {fileID: 1921147840760153913}
   - component: {fileID: 1959767726820965395}
   - component: {fileID: 2308589333807840193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PapillodexUIHomeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6578,7 +6596,7 @@ GameObject:
   - component: {fileID: 3284289354647864240}
   - component: {fileID: 974280412847559014}
   - component: {fileID: 128189557584244671}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6637,7 +6655,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -6764,7 +6782,7 @@ GameObject:
   - component: {fileID: 2217435919968527923}
   - component: {fileID: 2217435919968527925}
   - component: {fileID: 2217435919968527922}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CurrentMissionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6839,7 +6857,7 @@ GameObject:
   - component: {fileID: 2217435920238171517}
   - component: {fileID: 2217435920238171519}
   - component: {fileID: 2217435920238171516}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ButterflyReproductionIndexPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6918,7 +6936,7 @@ GameObject:
   - component: {fileID: 2217435920555195340}
   - component: {fileID: 8532826207577004706}
   - component: {fileID: 6340718159852486826}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: PapillodexCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7187,7 +7205,7 @@ GameObject:
   - component: {fileID: 2217435920674141706}
   - component: {fileID: 2217435920674141708}
   - component: {fileID: 2217435920674141709}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: VivariumStatsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7262,7 +7280,7 @@ GameObject:
   - component: {fileID: 2217435920704301812}
   - component: {fileID: 2217435920704301814}
   - component: {fileID: 2217435920704301815}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ButterflyInventoryPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7338,7 +7356,7 @@ GameObject:
   - component: {fileID: 2217435920830263612}
   - component: {fileID: 2217435920830263613}
   - component: {fileID: 453637024860249219}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MainMenuPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7366,7 +7384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.0904565, y: 6}
+  m_AnchoredPosition: {x: -6.052368, y: 6.1035767}
   m_SizeDelta: {x: 0.18091321, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2217435920830263612
@@ -7429,7 +7447,7 @@ GameObject:
   - component: {fileID: 2217435920961228430}
   - component: {fileID: 2217435920961228432}
   - component: {fileID: 2217435920961228433}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: OtherInventoryPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7505,7 +7523,7 @@ GameObject:
   - component: {fileID: 2217435921425697384}
   - component: {fileID: 2217435921425697385}
   - component: {fileID: 3609953261918906325}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ButterflyCaughtIndexPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7612,7 +7630,7 @@ GameObject:
   - component: {fileID: 2217435921566184843}
   - component: {fileID: 2217435921566184845}
   - component: {fileID: 2217435921566184842}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CompletedMissionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7687,7 +7705,7 @@ GameObject:
   - component: {fileID: 2217435921986097171}
   - component: {fileID: 2217435921986097173}
   - component: {fileID: 2217435921986097170}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ButterflyProgressionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7763,7 +7781,7 @@ GameObject:
   - component: {fileID: 7034176373392223842}
   - component: {fileID: 1108410447372899567}
   - component: {fileID: 8512873251680281478}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7851,7 +7869,7 @@ GameObject:
   - component: {fileID: 2266874547448853705}
   - component: {fileID: 2228923334389960675}
   - component: {fileID: 6205936993647752931}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PapillodexInventoryUIButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7968,8 +7986,8 @@ MonoBehaviour:
 
 
 
-    The Ceylon Rose is a strong flyer and visit flowers and puddle on wet ground.
-    This specie is endangered.'
+    The Ceylon Rose is a strong flyer going from flowers to puddles on wet ground.
+    Unfortunately, this species is endangered.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04b48b100f55f5c4db68519da422e651, type: 2}
   m_sharedMaterial: {fileID: 9033033445688257906, guid: 04b48b100f55f5c4db68519da422e651,
@@ -8398,7 +8416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6243027447356410089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8477,7 +8495,7 @@ GameObject:
   - component: {fileID: 3054043466624143433}
   - component: {fileID: 8490954605311588536}
   - component: {fileID: 5110410904351124840}
-  - component: {fileID: 7520775204276328760}
+  - component: {fileID: 1198025132}
   m_Layer: 5
   m_Name: EmeraldPanel
   m_TagString: Untagged
@@ -8542,7 +8560,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &7520775204276328760
+--- !u!114 &1198025132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8551,10 +8569,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2479350426846504302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &2581116935052705331
 GameObject:
   m_ObjectHideFlags: 0
@@ -8566,7 +8583,7 @@ GameObject:
   - component: {fileID: 3242789185504692198}
   - component: {fileID: 6797005813435005014}
   - component: {fileID: 7469624515539512512}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8799,7 +8816,7 @@ GameObject:
   - component: {fileID: 689238148856272649}
   - component: {fileID: 2007411152846722557}
   - component: {fileID: 9136382174652176686}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ClockEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8933,7 +8950,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -9060,7 +9077,7 @@ GameObject:
   - component: {fileID: 6612852957261819770}
   - component: {fileID: 6923473428322796962}
   - component: {fileID: 7907579642276517108}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: TMP SubMeshUI [911Fonts.com_CenturyGothicBold__-_911fonts Material + LiberationSans
     SDF Atlas]
   m_TagString: Untagged
@@ -9139,7 +9156,7 @@ GameObject:
   - component: {fileID: 5055999398699876875}
   - component: {fileID: 471201680378822167}
   - component: {fileID: 1915776381628462395}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9506,7 +9523,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -9637,7 +9654,7 @@ GameObject:
   - component: {fileID: 2954606781209090061}
   - component: {fileID: 2954606781209090060}
   - component: {fileID: 2954606781209090059}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10079,7 +10096,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Description\n\nThe Southern Birdwing is seen sailing as high as 9 to 12
+  m_text: "Description\n\nThe Southern Birdwing is seen gliding as high as 9 to 12
     m over the countryside until it descends later in the evening to feed. It is known
     to cover very large distances before settling.\r\n"
   m_isRightToLeft: 0
@@ -10337,13 +10354,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 843.64, z: -805.21094, w: 141.83301}
   m_textInfo:
     textComponent: {fileID: 2218896969961958298}
-    characterCount: 71
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 20
-    wordCount: 13
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 11
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -10383,7 +10400,7 @@ GameObject:
   - component: {fileID: 5767047858231447664}
   - component: {fileID: 2274172440832635052}
   - component: {fileID: 4037983970465044967}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: papillon ?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10595,9 +10612,9 @@ MonoBehaviour:
 
 
 
-    The Sapho Longwing defends his territory looking for receptive females to mate
-    with. This butterfly have the ability to emit a sweet smell from a special gland
-    found along their abdomen.'
+    The male Sapho Longwing defends his territory looking for receptive females to
+    mate with. This butterfly has the ability to emit a sweet smell from a special
+    gland found along their abdomen.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04b48b100f55f5c4db68519da422e651, type: 2}
   m_sharedMaterial: {fileID: 9033033445688257906, guid: 04b48b100f55f5c4db68519da422e651,
@@ -10713,7 +10730,7 @@ GameObject:
   - component: {fileID: 7746397594364851916}
   - component: {fileID: 6781311091711939274}
   - component: {fileID: 2475419541655654052}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Nom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10837,13 +10854,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: -109.013374, z: -239.5949, w: 0}
   m_textInfo:
     textComponent: {fileID: 2475419541655654052}
-    characterCount: 7
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -10946,7 +10963,7 @@ GameObject:
   - component: {fileID: 4018826945526389770}
   - component: {fileID: 221915811537866687}
   - component: {fileID: 2261862785037212317}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11024,7 +11041,7 @@ GameObject:
   - component: {fileID: 3603569053553065948}
   - component: {fileID: 3603569053553065949}
   - component: {fileID: 3603569053553065946}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11240,7 +11257,7 @@ GameObject:
   - component: {fileID: 855438534069572274}
   - component: {fileID: 1145349696770959562}
   - component: {fileID: 7604630124870876431}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ProjectionImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11315,7 +11332,7 @@ GameObject:
   - component: {fileID: 4161294859108267240}
   - component: {fileID: 3911336500829921731}
   - component: {fileID: 5627495808514291008}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ClockEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11621,7 +11638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3976688534894876821}
   - component: {fileID: 3939311234871174079}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: QuitYesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12000,7 +12017,7 @@ GameObject:
   - component: {fileID: 4667769335249897643}
   - component: {fileID: 8869755516935086707}
   - component: {fileID: 8556821740476691237}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: TMP SubMeshUI [911Fonts.com_CenturyGothicBold__-_911fonts Material + LiberationSans
     SDF Atlas]
   m_TagString: Untagged
@@ -12315,7 +12332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7960757108268666635}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12766,8 +12783,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Description\n\nThe Emerald Swallowtail uses its long proboscis to drink
-    nectar. The male usually maintain territories and actively chase other species
-    or individuals that may stray into them\r"
+    nectar. The male usually patrols its territories and actively chases other species
+    or individuals that may stray into them\r."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04b48b100f55f5c4db68519da422e651, type: 2}
   m_sharedMaterial: {fileID: 9033033445688257906, guid: 04b48b100f55f5c4db68519da422e651,
@@ -13125,7 +13142,7 @@ GameObject:
   - component: {fileID: 3309579065841371176}
   - component: {fileID: 3129795552662862089}
   - component: {fileID: 5394129655145174828}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ClockFull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13203,7 +13220,7 @@ GameObject:
   - component: {fileID: 5316503903714027812}
   - component: {fileID: 5316503903714027813}
   - component: {fileID: 5316503903714027810}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13620,13 +13637,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: -109.013374, z: -239.5949, w: 0}
   m_textInfo:
     textComponent: {fileID: 521925973218027573}
-    characterCount: 8
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -13660,7 +13677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5986745220271398104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13732,7 +13749,7 @@ GameObject:
   - component: {fileID: 7116971673342863447}
   - component: {fileID: 1371730726716032228}
   - component: {fileID: 4856895696321293324}
-  - component: {fileID: 8891427753342864130}
+  - component: {fileID: 1735401812}
   m_Layer: 5
   m_Name: SaphoPanel
   m_TagString: Untagged
@@ -13797,7 +13814,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &8891427753342864130
+--- !u!114 &1735401812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13806,10 +13823,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5537661661792661792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &5570108521223947635
 GameObject:
   m_ObjectHideFlags: 0
@@ -13821,7 +13837,7 @@ GameObject:
   - component: {fileID: 3384614684043409108}
   - component: {fileID: 4761350010137867831}
   - component: {fileID: 8001770585786116112}
-  - component: {fileID: 291531778162803811}
+  - component: {fileID: 917142027}
   m_Layer: 5
   m_Name: CabbagePanel
   m_TagString: Untagged
@@ -13886,7 +13902,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &291531778162803811
+--- !u!114 &917142027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13895,10 +13911,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5570108521223947635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &5611952037730248995
 GameObject:
   m_ObjectHideFlags: 0
@@ -14096,7 +14111,7 @@ GameObject:
   - component: {fileID: 3494246110658081048}
   - component: {fileID: 5801533296730658875}
   - component: {fileID: 7527722768413860766}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Nom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14254,7 +14269,7 @@ GameObject:
   - component: {fileID: 7346225565500311950}
   - component: {fileID: 6536337949133209762}
   - component: {fileID: 2934932979454788382}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14393,7 +14408,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -14520,7 +14535,7 @@ GameObject:
   - component: {fileID: 6474207192631264854}
   - component: {fileID: 4599089986763559793}
   - component: {fileID: 9172669545107422940}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14637,7 +14652,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5798665262092934348}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -14856,7 +14871,7 @@ GameObject:
   - component: {fileID: 1098863818730679448}
   - component: {fileID: 6340410646472306203}
   - component: {fileID: 3012906541702781764}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: TMP SubMeshUI [911Fonts.com_CenturyGothicBold__-_911fonts Material + LiberationSans
     SDF Atlas]
   m_TagString: Untagged
@@ -15006,7 +15021,7 @@ GameObject:
   - component: {fileID: 6013704390346902641}
   - component: {fileID: 6268903734073752387}
   - component: {fileID: 2042242613766992169}
-  - component: {fileID: 7502844710522176544}
+  - component: {fileID: 380476467}
   m_Layer: 5
   m_Name: CeylonPanel
   m_TagString: Untagged
@@ -15071,7 +15086,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &7502844710522176544
+--- !u!114 &380476467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15080,10 +15095,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6061302018491603740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &6111910364748217714
 GameObject:
   m_ObjectHideFlags: 0
@@ -15095,7 +15109,7 @@ GameObject:
   - component: {fileID: 4149358643941258994}
   - component: {fileID: 3618797593136344747}
   - component: {fileID: 8585972588337935595}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15253,7 +15267,7 @@ GameObject:
   - component: {fileID: 2123422843367404778}
   - component: {fileID: 2878617420600742374}
   - component: {fileID: 9057797275715031961}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: QuitAreYouSurePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15413,7 +15427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956396567127874599}
   - component: {fileID: 9123651641252970106}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15510,7 +15524,7 @@ GameObject:
   - component: {fileID: 6575450439597142610}
   - component: {fileID: 2233556742676729564}
   - component: {fileID: 6230735128929427753}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CADRE1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15584,7 +15598,7 @@ GameObject:
   - component: {fileID: 4018615013765066903}
   - component: {fileID: 2809527555596878915}
   - component: {fileID: 3619294784899735478}
-  - component: {fileID: 238344288001958419}
+  - component: {fileID: 1286849920}
   m_Layer: 5
   m_Name: JSMPanel
   m_TagString: Untagged
@@ -15609,7 +15623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19265018, y: 0.5}
   m_AnchorMax: {x: 0.19265018, y: 0.5}
-  m_AnchoredPosition: {x: -14.900024, y: -9.8}
+  m_AnchoredPosition: {x: 0.8000488, y: -9.8}
   m_SizeDelta: {x: 2277.2, y: 1147.4}
   m_Pivot: {x: 0.14362404, y: 0.49998292}
 --- !u!222 &2809527555596878915
@@ -15649,7 +15663,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &238344288001958419
+--- !u!114 &1286849920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15658,10 +15672,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6302274479969299836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &6324443485796319675
 GameObject:
   m_ObjectHideFlags: 0
@@ -15832,7 +15845,7 @@ GameObject:
   - component: {fileID: 32041028729880386}
   - component: {fileID: 5067944078773425947}
   - component: {fileID: 5945782134671497444}
-  - component: {fileID: 1288623297923066983}
+  - component: {fileID: 1387432587}
   m_Layer: 5
   m_Name: MonarchPanel
   m_TagString: Untagged
@@ -15897,7 +15910,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &1288623297923066983
+--- !u!114 &1387432587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15906,10 +15919,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6465210098034421992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &6466197169204599331
 GameObject:
   m_ObjectHideFlags: 0
@@ -15921,7 +15933,7 @@ GameObject:
   - component: {fileID: 6463004582717777807}
   - component: {fileID: 6352894594495667365}
   - component: {fileID: 6473675182352503440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PapillodexVivariumStatsUIButton (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16109,13 +16121,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 843.64, z: -805.21094, w: 141.83301}
   m_textInfo:
     textComponent: {fileID: 4260943589610153085}
-    characterCount: 107
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 19
-    wordCount: 18
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 7
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -16140,7 +16152,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6585974688344227003}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -16341,7 +16353,7 @@ GameObject:
   - component: {fileID: 2527170120599275583}
   - component: {fileID: 2036290617664207639}
   - component: {fileID: 2709877785412368462}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16425,7 +16437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8973430431135375738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16504,7 +16516,7 @@ GameObject:
   - component: {fileID: 4186675830018486845}
   - component: {fileID: 6549913276584416541}
   - component: {fileID: 8855864136555100728}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ??? (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16628,13 +16640,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: -109.013374, z: -239.5949, w: 0}
   m_textInfo:
     textComponent: {fileID: 8855864136555100728}
-    characterCount: 3
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -16660,7 +16672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5269557751128169101}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ClockOtherMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16700,7 +16712,7 @@ GameObject:
   - component: {fileID: 5608117857790842867}
   - component: {fileID: 2022364334503086693}
   - component: {fileID: 6960459164047062619}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16774,7 +16786,7 @@ GameObject:
   - component: {fileID: 8996432047303105167}
   - component: {fileID: 7100380359438693238}
   - component: {fileID: 8579963195506490910}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16795,8 +16807,8 @@ RectTransform:
   m_Father: {fileID: 7960757108268666635}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.44383147}
-  m_AnchorMax: {x: 1, y: 0.9999895}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0.1954956}
   m_SizeDelta: {x: 20, y: -0.16345}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16908,7 +16920,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -17034,7 +17046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7129398353831643432}
   - component: {fileID: 7163962100498788866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: QuitNoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17154,7 +17166,7 @@ GameObject:
   - component: {fileID: 6615228414540799031}
   - component: {fileID: 2412232092281105684}
   - component: {fileID: 1966427792055985938}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ???
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17278,13 +17290,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: -109.013374, z: -239.5949, w: 0}
   m_textInfo:
     textComponent: {fileID: 1966427792055985938}
-    characterCount: 3
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -17312,7 +17324,7 @@ GameObject:
   - component: {fileID: 3676503311182678245}
   - component: {fileID: 7173757923254540407}
   - component: {fileID: 3432686195088293017}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17451,13 +17463,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 843.64, z: -805.21094, w: 141.83301}
   m_textInfo:
     textComponent: {fileID: 3432686195088293017}
-    characterCount: 52
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 14
-    wordCount: 11
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 11
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -17731,7 +17743,7 @@ MonoBehaviour:
 
 
 
-    Period of activities :
+    Period of activity :
 
 
 
@@ -17812,13 +17824,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 843.64, z: -805.21094, w: 141.83301}
   m_textInfo:
     textComponent: {fileID: 3490366305123074492}
-    characterCount: 69
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 7
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 11
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -17942,7 +17954,7 @@ GameObject:
   - component: {fileID: 5777836419148156055}
   - component: {fileID: 400309668312923943}
   - component: {fileID: 2019835686013796985}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: cadre info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18020,7 +18032,7 @@ GameObject:
   - component: {fileID: 25863552438995002}
   - component: {fileID: 1973630459296765874}
   - component: {fileID: 8346547812365181723}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18183,7 +18195,7 @@ GameObject:
   - component: {fileID: 7691334089530333489}
   - component: {fileID: 6572637261359637379}
   - component: {fileID: 3109407038942440817}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ClockFull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18257,7 +18269,7 @@ GameObject:
   - component: {fileID: 2344652481803186531}
   - component: {fileID: 8506444379781817778}
   - component: {fileID: 5290904455421617974}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18415,7 +18427,7 @@ GameObject:
   - component: {fileID: 2469739612866080570}
   - component: {fileID: 7300169890299689562}
   - component: {fileID: 5169623679521781930}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ??? (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18539,13 +18551,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: -109.013374, z: -239.5949, w: 0}
   m_textInfo:
     textComponent: {fileID: 5169623679521781930}
-    characterCount: 3
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -18904,7 +18916,7 @@ GameObject:
   - component: {fileID: 4579819289797390708}
   - component: {fileID: 7740837541325869001}
   - component: {fileID: 7183397803588686445}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18977,7 +18989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2227377125249867878}
   - component: {fileID: 4049522889869285601}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RecenterCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19180,7 +19192,7 @@ GameObject:
   - component: {fileID: 1706009262880008830}
   - component: {fileID: 1967725966021734051}
   - component: {fileID: 4928716617428282766}
-  - component: {fileID: 135583158113692160}
+  - component: {fileID: 160316941}
   m_Layer: 5
   m_Name: DragonTailedPanel
   m_TagString: Untagged
@@ -19245,7 +19257,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &135583158113692160
+--- !u!114 &160316941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19254,10 +19266,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8130501019753836812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &8196087174043106664
 GameObject:
   m_ObjectHideFlags: 0
@@ -19269,7 +19280,7 @@ GameObject:
   - component: {fileID: 4290607469730633394}
   - component: {fileID: 7858319385410142819}
   - component: {fileID: 5940173491509428455}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19828,7 +19839,7 @@ GameObject:
   - component: {fileID: 4219281492303420035}
   - component: {fileID: 1080230316244291390}
   - component: {fileID: 2940229449779998215}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20013,7 +20024,7 @@ GameObject:
   - component: {fileID: 1970693186853728235}
   - component: {fileID: 27324730117009507}
   - component: {fileID: 7554305431018161354}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20088,7 +20099,7 @@ GameObject:
   - component: {fileID: 7982410768000386726}
   - component: {fileID: 3831743345732761098}
   - component: {fileID: 3314855390972753844}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CADRE2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20175,7 +20186,7 @@ GameObject:
   - component: {fileID: 4353194802896443381}
   - component: {fileID: 4403083930295820307}
   - component: {fileID: 8982248345880296601}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20199,7 +20210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -244, y: 0}
+  m_AnchoredPosition: {x: -0.0009765625, y: 0}
   m_SizeDelta: {x: 313, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &4353194802896443381
@@ -20301,7 +20312,7 @@ GameObject:
   - component: {fileID: 2833626137700280174}
   - component: {fileID: 2785198456751152207}
   - component: {fileID: 1974103564542183152}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CADRE1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20388,7 +20399,7 @@ GameObject:
   - component: {fileID: 8553968451585654879}
   - component: {fileID: 8588077968073292661}
   - component: {fileID: 3736829448461402199}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PapillodexUIQuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20404,7 +20415,7 @@ Transform:
   m_GameObject: {fileID: 8554715587042328051}
   m_LocalRotation: {x: -0.7071055, y: 0.00000017881393, z: 0.00000008940697, w: 0.7071081}
   m_LocalPosition: {x: -1314, y: -999.15, z: 17.286}
-  m_LocalScale: {x: 459.7341, y: 40.677425, z: 224.8264}
+  m_LocalScale: {x: 580.9066, y: 50.174618, z: 277.318}
   m_Children:
   - {fileID: 3603569053553065947}
   m_Father: {fileID: 2217435920555195341}
@@ -20449,7 +20460,7 @@ GameObject:
   - component: {fileID: 36221289719118064}
   - component: {fileID: 4501388885147236340}
   - component: {fileID: 5474513240146374193}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20665,7 +20676,7 @@ GameObject:
   - component: {fileID: 4191305581351543915}
   - component: {fileID: 3016057443298773389}
   - component: {fileID: 4551567784652021818}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ButterflyCaughtIndexPanel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
