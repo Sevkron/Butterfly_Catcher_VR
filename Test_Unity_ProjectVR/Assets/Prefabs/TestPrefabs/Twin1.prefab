@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 8158924164040098273}
   - component: {fileID: 8158924164040098275}
   - component: {fileID: 8158924164040098276}
+  - component: {fileID: 1836357582704747112}
   m_Layer: 0
   m_Name: Twin1
   m_TagString: Untagged
@@ -222,6 +223,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &1836357582704747112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916681019707800564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085bde4735421624caa8b0bc18b45d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5056656619011018757
 PrefabInstance:
   m_ObjectHideFlags: 0

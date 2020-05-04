@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3960911321433674939}
   - component: {fileID: 3896296107600551208}
   - component: {fileID: 1181276569328002876}
+  - component: {fileID: 36860273686694350}
   m_Layer: 0
   m_Name: Twin2
   m_TagString: Untagged
@@ -208,6 +209,18 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
+--- !u!114 &36860273686694350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145111095525384546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085bde4735421624caa8b0bc18b45d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &4726641540805495197
 MeshCollider:
   m_ObjectHideFlags: 0
