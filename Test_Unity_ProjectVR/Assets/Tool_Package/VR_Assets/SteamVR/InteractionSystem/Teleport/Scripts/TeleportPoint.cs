@@ -52,7 +52,8 @@ namespace Valve.VR.InteractionSystem
 		private float fullTitleAlpha = 0.0f;
 
 		//Constants
-		private const string switchSceneAnimation = "switch_scenes_idle";
+		//private const string switchSceneAnimation = "switch_scenes_idle";
+		private const string switchSceneAnimation = "switchsceness_butterfly";
 		private const string moveLocationAnimation = "move_location_idle";
 		private const string lockedAnimation = "locked_idle";
 
