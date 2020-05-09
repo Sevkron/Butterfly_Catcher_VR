@@ -158,6 +158,57 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &442620690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 442620691}
+  - component: {fileID: 442620692}
+  m_Layer: 9
+  m_Name: SteamVRSkybox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &442620691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442620690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8546761915522297050}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &442620692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442620690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a43e992568b8e48b4bd489b9d96f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front: {fileID: 2800000, guid: f8d628488317d1a47b49e7dcf7c699a3, type: 3}
+  back: {fileID: 2800000, guid: 10830ef14c560a043a430879ad5608c2, type: 3}
+  left: {fileID: 2800000, guid: 56fb674fee811224cac5a38f7f38b8ee, type: 3}
+  right: {fileID: 2800000, guid: 91fdc2bbc53fb1846ba29c068940f141, type: 3}
+  top: {fileID: 2800000, guid: 908f5e3b9e902c04ca57459f6d506266, type: 3}
+  bottom: {fileID: 2800000, guid: 1de4283c45dc2f94bb5f7f256550be28, type: 3}
+  StereoCellSize: 2
+  StereoIpdMm: 64
 --- !u!1 &473723884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +2078,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 442620691}
   m_Father: {fileID: 8546761915522231150}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4076,6 +4128,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3529231663415320744}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7871648257672692619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6757632676821803811, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+    type: 3}
+  m_PrefabInstance: {fileID: 3529231663415320744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1433376054083527358 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2530467267160654358, guid: f1a4db7fdd62eac47854ce31d14b1c51,
@@ -4088,12 +4146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f113aa3a9cb2f604d801d44eefff13d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7871648257672692619 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6757632676821803811, guid: f1a4db7fdd62eac47854ce31d14b1c51,
-    type: 3}
-  m_PrefabInstance: {fileID: 3529231663415320744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5701023590290649203
 PrefabInstance:
   m_ObjectHideFlags: 0

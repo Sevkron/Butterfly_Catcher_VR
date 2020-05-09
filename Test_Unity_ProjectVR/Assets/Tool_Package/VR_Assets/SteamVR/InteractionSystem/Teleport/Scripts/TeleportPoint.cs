@@ -22,7 +22,6 @@ namespace Valve.VR.InteractionSystem
 			SwitchToNewScene,
 			ExitGame
 		};
-
 		//Public variables
 		public TeleportPointType teleportType = TeleportPointType.MoveToLocation;
 		public string title;
@@ -32,13 +31,15 @@ namespace Valve.VR.InteractionSystem
 		public Color titleHighlightedColor;
 		public Color titleLockedColor;
 		public bool playerSpawnPoint = false;
-		public GameObject ChangeSceneGO;
+		public GameObject m_changeSceneGO;
+		public GameObject m_papillodex;
 
 		//Private data
 		private bool gotReleventComponents = false;
 		private MeshRenderer markerMesh;
 		private MeshRenderer switchSceneIcon;
 		private MeshRenderer moveLocationIcon;
+		private MeshRenderer quitIcon;
 		private MeshRenderer lockedIcon;
 		private MeshRenderer pointIcon;
 		private Transform lookAtJointTransform;
@@ -50,10 +51,11 @@ namespace Valve.VR.InteractionSystem
 		private Color tintColor = Color.clear;
 		private Color titleColor = Color.clear;
 		private float fullTitleAlpha = 0.0f;
+		private GameObject LevelLoader;
 
 		//Constants
 		//private const string switchSceneAnimation = "switch_scenes_idle";
-		private const string switchSceneAnimation = "switchsceness_butterfly";
+		private const string switchSceneAnimation = "switchsceness_butterfly_idle";
 		private const string moveLocationAnimation = "move_location_idle";
 		private const string lockedAnimation = "locked_idle";
 
@@ -200,6 +202,7 @@ namespace Valve.VR.InteractionSystem
 			markerMesh.material.SetColor( tintColorID, tintColor );
 			switchSceneIcon.material.SetColor( tintColorID, tintColor );
 			moveLocationIcon.material.SetColor( tintColorID, tintColor );
+			//quitIcon.material.SetColor(tintColorID,tintColor);
 			lockedIcon.material.SetColor( tintColorID, tintColor );
 
 			titleColor.a = fullTitleAlpha * alphaPercent;
@@ -213,6 +216,7 @@ namespace Valve.VR.InteractionSystem
 			markerMesh.material = material;
 			switchSceneIcon.material = material;
 			moveLocationIcon.material = material;
+			//quitIcon.material = material;
 			lockedIcon.material = material;
 
 			titleColor = textColor;
@@ -224,10 +228,21 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		public void TeleportToScene()
 		{
-			if ( !string.IsNullOrEmpty( switchToScene ) )
+			if(switchToScene == "EXIT") 
 			{
-				//SceneManager.LoadScene("LDScene");
-				ChangeSceneGO.SetActive(true);
+				Application.Quit();
+				Debug.Log("<b>[SteamVR Interaction]</b> TeleportPoint: application is now quitting " + switchToScene, this);
+			}
+			else if(switchToScene == "LDScene")
+			{
+				m_changeSceneGO.GetComponent<SteamVR_LoadLevel>().enabled = true;
+				m_papillodex.SetActive(true);
+			}
+			else if( !string.IsNullOrEmpty( switchToScene ) )
+			{
+				//LevelLoader = GameObject.Find("SwitchScene");
+				m_changeSceneGO.GetComponent<SteamVR_LoadLevel>().enabled = true;
+				//SteamVR_LoadLevel.Begin(switchToScene, false, 0.5f, 1.0f, 0.5f, 0, 1);
 				Debug.Log("<b>[SteamVR Interaction]</b> TeleportPoint: Hook up your level loading logic to switch to new scene: " + switchToScene, this);
 			}
 			else
@@ -255,6 +270,7 @@ namespace Valve.VR.InteractionSystem
 			markerMesh = transform.Find( "teleport_marker_mesh" ).GetComponent<MeshRenderer>();
 			switchSceneIcon = transform.Find( "teleport_marker_lookat_joint/teleport_marker_icons/switch_scenes_icon" ).GetComponent<MeshRenderer>();
 			moveLocationIcon = transform.Find( "teleport_marker_lookat_joint/teleport_marker_icons/move_location_icon" ).GetComponent<MeshRenderer>();
+			//quitIcon = transform.Find( "XMeshUv" ).GetComponent<MeshRenderer>();
 			lockedIcon = transform.Find( "teleport_marker_lookat_joint/teleport_marker_icons/locked_icon" ).GetComponent<MeshRenderer>();
 			lookAtJointTransform = transform.Find( "teleport_marker_lookat_joint" );
 
@@ -270,6 +286,7 @@ namespace Valve.VR.InteractionSystem
 			markerMesh = null;
 			switchSceneIcon = null;
 			moveLocationIcon = null;
+			//quitIcon = null;
 			lockedIcon = null;
 			lookAtJointTransform = null;
 			titleText = null;
@@ -291,6 +308,7 @@ namespace Valve.VR.InteractionSystem
 				lockedIcon.gameObject.SetActive( true );
 				moveLocationIcon.gameObject.SetActive( false );
 				switchSceneIcon.gameObject.SetActive( false );
+				//quitIcon.gameObject.SetActive(false);
 
 				markerMesh.sharedMaterial = Teleport.instance.pointLockedMaterial;
 				lockedIcon.sharedMaterial = Teleport.instance.pointLockedMaterial;
@@ -304,6 +322,7 @@ namespace Valve.VR.InteractionSystem
 				markerMesh.sharedMaterial = Teleport.instance.pointVisibleMaterial;
 				switchSceneIcon.sharedMaterial = Teleport.instance.pointVisibleMaterial;
 				moveLocationIcon.sharedMaterial = Teleport.instance.pointVisibleMaterial;
+				//quitIcon.sharedMaterial = Teleport.instance.pointVisibleMaterial;
 
 				titleText.color = titleVisibleColor;
 
@@ -313,12 +332,14 @@ namespace Valve.VR.InteractionSystem
 						{
 							moveLocationIcon.gameObject.SetActive( true );
 							switchSceneIcon.gameObject.SetActive( false );
+							//quitIcon.gameObject.SetActive(false);
 						}
 						break;
 					case TeleportPointType.SwitchToNewScene:
 						{
 							moveLocationIcon.gameObject.SetActive( false );
 							switchSceneIcon.gameObject.SetActive( true );
+							//quitIcon.gameObject.SetActive(false);
 						}
 						break;
 				}
