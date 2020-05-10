@@ -8,7 +8,7 @@ namespace Valve.VR.InteractionSystem.Sample
 {
     public class ButtonPapillodex : MonoBehaviour
     {
-        private Canvas m_PapillodexCanvas;
+        //private Canvas m_PapillodexCanvas;
         private Animator papillodexAnimator;
         public GameObject m_Papillodex;
         private bool CanvasOpen = false;
@@ -28,6 +28,9 @@ namespace Valve.VR.InteractionSystem.Sample
             {
                 audioManager = FindObjectOfType<AudioManager>();
             }
+            papillodexAnimator = m_Papillodex.GetComponent<Animator>();
+
+            audioSource = GetComponent<AudioSource>();
         }
         public void OnButtonDown(Hand fromHand)
         {
@@ -39,8 +42,8 @@ namespace Valve.VR.InteractionSystem.Sample
             if(CanvasOpen == false)
             {
                 m_Papillodex.SetActive(true);
-                audioManager.Play("ClickButtonPapillodex", null);
-                audioManager.Play("CanvasActivate", null);
+                audioManager.Play("ButtonPapillodex", audioSource);
+                audioManager.Play("OpenCanvas", null);
                 leftHand.useHoverCapsule = false;
                 rightHand.useHoverCapsule = false;
                 leftHand.GetComponent<GrabDistance>().GrabUpdate(false, 0);
@@ -50,15 +53,16 @@ namespace Valve.VR.InteractionSystem.Sample
             }
             else
             {
-                audioManager.Play("ClickButtonPapillodex", null);
-                audioManager.Play("CanvasDeactivate", null);
+                audioManager.Play("ButtonPapillodex", audioSource);
+                audioManager.Play("CloseCanvas", null);
                 papillodexAnimator.SetTrigger("Close");
                 //StartCoroutine(WaitForAnimation(PapillodexClosing));
-                m_Papillodex.SetActive(false);
+                //m_Papillodex.SetActive(false);
                 leftHand.useHoverCapsule = true;
                 rightHand.useHoverCapsule = true;
                 leftHand.GetComponent<GrabDistance>().enabled = true;
                 rightHand.GetComponent<GrabDistance>().enabled = true;
+                Debug.Log("Closing Papillodex");
             }
         }
 

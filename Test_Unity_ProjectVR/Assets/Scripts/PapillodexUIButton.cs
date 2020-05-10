@@ -27,11 +27,13 @@ public class PapillodexUIButton : MonoBehaviour
         public GameObject m_QuitPanel;
         public GameObject m_OptionsPanel;
         public GameObject m_ClockOtherPanel;
+        private AudioManager audioManager;
         //public GameObject m_PreviousPanel;
         void Awake()
         {
             m_PreviousPanel = m_MainMenuPanel;
             m_CurrentPanel = m_MainMenuPanel;
+            audioManager = FindObjectOfType<AudioManager>();
         }
         void OnEnable()
         {
@@ -46,7 +48,7 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownHome(Hand fromHand)
         {
             Feedback(fromHand);
-            FindObjectOfType<AudioManager>().Play("CanvasButtonReturn", null);
+            SoundFeedback("CanvasButtonReturn");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(false);
             m_MainMenuPanel.SetActive(true);
@@ -199,6 +201,6 @@ public class PapillodexUIButton : MonoBehaviour
 
         public void SoundFeedback(string sound)
         {
-            FindObjectOfType<AudioManager>().Play(sound, null);
+            audioManager.Play(sound, null);
         }
     }
