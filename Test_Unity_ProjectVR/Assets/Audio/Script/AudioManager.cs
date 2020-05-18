@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
+        DontDestroyOnLoad(gameObject);
     }
     public void Play (string name, AudioSource newAudioSource)
     {
