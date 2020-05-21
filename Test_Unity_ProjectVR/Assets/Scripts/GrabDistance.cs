@@ -15,6 +15,7 @@ namespace Valve.VR.InteractionSystem{
         public float maxDistance = 5.0f;
         public bool isActive = true;
         public bool addRigidBody = false;
+        private int intLayerMask;
 
     // Start is called before the first frame update
         void Start()
@@ -58,6 +59,12 @@ namespace Valve.VR.InteractionSystem{
             Material newMaterial = new Material(Shader.Find("Unlit/Color"));
             newMaterial.SetColor("_Color", color);
             pointer.GetComponent<MeshRenderer>().material = newMaterial;
+            //setup layers to ignore in raycast
+            int layer1 = 1;
+            int layer2 = 2;
+            int layer3 = 5;
+            int layer4 = 9;
+            intLayerMask = ~((1 << layer1) | (1 << layer2) | (1 << layer3) | (1 << layer4));
         }
 
         void Update()
@@ -68,13 +75,13 @@ namespace Valve.VR.InteractionSystem{
 
             GameObject selectedGameObject;
 
-            if(Physics.Raycast(priorityRaycast, out priorityHit, maxDistance) && priorityHit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
+            if(Physics.Raycast(priorityRaycast, out priorityHit, maxDistance, intLayerMask) && priorityHit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
             {
                 selectedGameObject = priorityHit.transform.gameObject;
                 GrabUpdate(true, maxDistance);
                 this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
             }
-            else if(Physics.SphereCast(raycastDirection.transform.position, radiusSphereCast, raycastDirection.transform.forward, out hit, maxDistance) && hit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
+            else if(Physics.SphereCast(raycastDirection.transform.position, radiusSphereCast, raycastDirection.transform.forward, out hit, maxDistance, intLayerMask) && hit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
             {
                 selectedGameObject = hit.transform.gameObject;
                 GrabUpdate(true, maxDistance);
