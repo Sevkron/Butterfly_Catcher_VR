@@ -8,13 +8,12 @@ using UnityEngine.Rendering.PostProcessing;
 public class DirectMovement : MonoBehaviour
 {
     public SteamVR_Action_Boolean teleportAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Teleport");
-
     public SteamVR_Action_Vector2 input;
     public SteamVR_Action_Boolean switchMoveTypeAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("SwitchMovementModes");
 
     private Hand pointerHand = null;
     private Player player;
-    public GameObject teleportGO;
+    //public GameObject teleportGO;
 
     public AudioSource directMoveSource;
     public AudioClip directMoveSound;

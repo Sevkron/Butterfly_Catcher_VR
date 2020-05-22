@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-namespace Valve.VR.InteractionSystem
-{
-    public class TeleportUI : MonoBehaviour
+using Valve.VR.InteractionSystem;
+public class TeleportUI : MonoBehaviour
 {
         public TextMeshProUGUI[] distanceText;
         public GameObject teleportGO;
@@ -37,6 +35,11 @@ namespace Valve.VR.InteractionSystem
         // Update is called once per frame
         void Update()
         {
+            if(teleportScript == null)
+            {
+                teleportGO = GameObject.Find("Teleporting");
+                teleportScript = teleportGO.GetComponent<Teleport>();
+            }
             float distanceFromPlayer = teleportScript.distanceFromPlayer;
             if(distanceFromPlayer <= teleportScript.arcDistance)
             {
@@ -51,4 +54,3 @@ namespace Valve.VR.InteractionSystem
             m_Camera.transform.rotation * Vector3.up);
         }
     }
-}

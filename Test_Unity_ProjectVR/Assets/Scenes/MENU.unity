@@ -341,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporting
       objectReference: {fileID: 0}
+    - target: {fileID: 153878, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 475244, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -467,6 +471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518195110278001523, guid: e5079166eff7c604aaf2b036de513c42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1489920803858765918, guid: e5079166eff7c604aaf2b036de513c42,
         type: 3}
@@ -1731,16 +1740,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PostProcess_Vol
-      objectReference: {fileID: 0}
-    - target: {fileID: 6765822982997952692, guid: 223b56b29ec9e1e4488db1b12f9ddcb0,
-        type: 3}
-      propertyPath: isGlobal
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6765822982997952692, guid: 223b56b29ec9e1e4488db1b12f9ddcb0,
-        type: 3}
-      propertyPath: weight
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6765822982997952693, guid: 223b56b29ec9e1e4488db1b12f9ddcb0,
         type: 3}
