@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: FAE_WaterShallow
   m_Shader: {fileID: 4800000, guid: 58f047517fd799149bfc42cb67a78e41, type: 3}
-  m_ShaderKeywords: BLEND_ENABLED FOURTH_ENABLED SECOND_ENABLED THIRD_ENABLED _CULL_BACK
-    _WORLDSPACETILIBG_ON _WORLDSPACETILING_ON
+  m_ShaderKeywords: BLEND_COLOR_ENABLED BLEND_ENABLED FOURTH_ENABLED SECOND_ENABLED
+    THIRD_ENABLED _CULL_NONE _WORLDSPACETILIBG_ON _WORLDSPACETILING_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -105,22 +105,22 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BlendBlendAlpha: 0.5400593
-    - _BlendBlendDistance: 0.6824926
+    - _BlendBlendAlpha: 0.469
+    - _BlendBlendDistance: 0.68
     - _BlendEmissionFactor: 0
-    - _BlendEnableColor: 0
+    - _BlendEnableColor: 1
     - _BlendEnableThis: 1
     - _BlendIsAdditive: 0
-    - _CubemapFresnel: 8.8
-    - _CubemapGlossiness: 1
-    - _CubemapStrength: 0.52
+    - _CubemapFresnel: 2.09
+    - _CubemapGlossiness: 0.017
+    - _CubemapStrength: 0
     - _CubemapUseCustomCubemap: 0
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.5
     - _Depth: 2.2
     - _Depthdarkness: 0.289
-    - _FirstWaveHeightStrength: -1
-    - _FirstWaveNormalStrength: 0.5
+    - _FirstWaveHeightStrength: 1
+    - _FirstWaveNormalStrength: 0
     - _FlowSpeed: 0.58
     - _FourthWaveEnableThis: 1
     - _FourthWaveHeightStrength: -1
@@ -137,7 +137,7 @@ Material:
     - _Rimfalloff: 0.07
     - _Rimtiling: 2
     - _SSRefractionDecaydistance: 50
-    - _SSRefractionRefractionFresnel: 5
+    - _SSRefractionRefractionFresnel: 2.35
     - _SSRefractionStrength: 0
     - _SecondWaveEnableThis: 1
     - _SecondWaveHeightStrength: 1
@@ -158,17 +158,17 @@ Material:
     - _Wavesspeed: 0.75
     - _Wavesstrength: 0.207
     - _Worldspacetiling: 1
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.29999995, g: 0.5, b: 0.9, a: 0.95686275}
     - _BlendColor: {r: 1, g: 1, b: 1, a: 1}
     - _BlendTextureUandVspeedZWNotused: {r: -0.05, g: -0.075, b: 0, a: 0}
     - _CubemapBaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FirstWaveUandVspeed: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _FirstWaveUandVspeed: {r: 5, g: 5, b: 0, a: 0}
     - _FourthWaveUandVspeed: {r: -0.05, g: -0.075, b: 0, a: 0}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SecondWaveUandVspeed: {r: -0.05, g: -0.075, b: 0, a: 0}
-    - _ThirdWaveUandVspeed: {r: -0.05, g: -0.075, b: 0, a: 0}
+    - _SecondWaveUandVspeed: {r: 5, g: 5, b: 0, a: 0}
+    - _ThirdWaveUandVspeed: {r: -5, g: -5, b: 0, a: 0}
     - _WaterColor: {r: 0, g: 0.503546, b: 1, a: 1}
