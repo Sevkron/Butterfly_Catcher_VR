@@ -47,6 +47,7 @@ namespace Valve.VR.InteractionSystem
 		public float activateObjectTime = 1.0f;
 		public float deactivateObjectTime = 1.0f;
 		public ParticleSystem teleportSoundVFX;
+		private ParticleSystem currentTeleportVFX;
 
 		[Header( "Audio Sources" )]
 		public AudioSource pointerAudioSource;
@@ -829,9 +830,15 @@ namespace Valve.VR.InteractionSystem
 		private void SpawnNoiseVFX(Vector3 spawnPos, float distanceMoved)
 		{
 			//Here spawn the VFX + Sound according to distance
-			ParticleSystem particleClone = Instantiate(teleportSoundVFX, spawnPos, Quaternion.identity);
-			var main  = particleClone.main;
-			main.startLifetime = distanceMoved * 10;
+			if(currentTeleportVFX != null)
+			{
+				Destroy(currentTeleportVFX.gameObject);
+			}
+			currentTeleportVFX = Instantiate(teleportSoundVFX, spawnPos, Quaternion.identity);
+			var main  = currentTeleportVFX.main;
+			main.startSize = distanceMoved * 10;
+			float totalDuration = currentTeleportVFX.main.duration + 3;
+			Destroy(currentTeleportVFX.gameObject, totalDuration);
 		}
 
 
@@ -952,7 +959,7 @@ namespace Valve.VR.InteractionSystem
 
 			Teleport.Player.Send( pointedAtTeleportMarker );
 
-			SpawnNoiseVFX(teleportPosition, distanceFromPlayer);
+			SpawnNoiseVFX(new Vector3(teleportPosition.x, teleportPosition.y + 1, teleportPosition.z), distanceFromPlayer);
 		}
 
 
