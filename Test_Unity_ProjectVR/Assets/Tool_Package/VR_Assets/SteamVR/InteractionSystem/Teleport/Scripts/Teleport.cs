@@ -818,6 +818,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void PlayAudioClip( AudioSource source, AudioClip clip, bool isTeleportDistance )
 		{
+			Debug.Log(clip + " Sound activated");
 			source.clip = clip;
 			source.Play();
 			if(isTeleportDistance)

@@ -22,7 +22,7 @@ public class DirectMovement : MonoBehaviour
     Vignette vignetteLayer = null;
 
     private CharacterController characterController;
-    private float speed = 1;
+    private float speed = 3;
     private float playerYInput;
     void Start()
     {
@@ -44,7 +44,7 @@ public class DirectMovement : MonoBehaviour
             VignetteEffect(playerYInput);
 
             Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(0, 0, playerYInput));
-            characterController.Move(playerYInput * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
+            characterController.Move(speed * playerYInput * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
             characterController.center = new Vector3(Player.instance.hmdTransform.localPosition.x, characterController.center.y, Player.instance.hmdTransform.localPosition.z);
         }
     }
