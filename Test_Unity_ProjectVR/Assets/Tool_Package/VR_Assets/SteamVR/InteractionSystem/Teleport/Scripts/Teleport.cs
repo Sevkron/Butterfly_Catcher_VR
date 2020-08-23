@@ -46,6 +46,7 @@ namespace Valve.VR.InteractionSystem
 		public Transform onDeactivateObjectTransform;
 		public float activateObjectTime = 1.0f;
 		public float deactivateObjectTime = 1.0f;
+		public ParticleSystem teleportSoundVFX;
 
 		[Header( "Audio Sources" )]
 		public AudioSource pointerAudioSource;
@@ -661,7 +662,7 @@ namespace Valve.VR.InteractionSystem
 
 				//Stop looping sound
 				loopingAudioSource.Stop();
-				PlayAudioClip( pointerAudioSource, pointerStopSound );
+				PlayAudioClip( pointerAudioSource, pointerStopSound, false );
 			}
 			teleportPointerObject.SetActive( false );
 
@@ -760,7 +761,7 @@ namespace Valve.VR.InteractionSystem
 
 			if ( visible && oldPointerHand != pointerHand )
 			{
-				PlayAudioClip( pointerAudioSource, pointerStartSound );
+				PlayAudioClip( pointerAudioSource, pointerStartSound, false );
 			}
 
 			if ( pointerHand )
@@ -814,10 +815,23 @@ namespace Valve.VR.InteractionSystem
 
 
 		//-------------------------------------------------
-		private void PlayAudioClip( AudioSource source, AudioClip clip )
+		private void PlayAudioClip( AudioSource source, AudioClip clip, bool isTeleportDistance )
 		{
 			source.clip = clip;
 			source.Play();
+			if(isTeleportDistance)
+			{
+				headAudioSource.volume = distanceFromPlayer / 10;
+			}
+		}
+
+		//-------------------------------------------------
+		private void SpawnNoiseVFX(Vector3 spawnPos, float distanceMoved)
+		{
+			//Here spawn the VFX + Sound according to distance
+			ParticleSystem particleClone = Instantiate(teleportSoundVFX, spawnPos, Quaternion.identity);
+			var main  = particleClone.main;
+			main.startLifetime = distanceMoved * 10;
 		}
 
 
@@ -877,7 +891,7 @@ namespace Valve.VR.InteractionSystem
 
 			headAudioSource.transform.SetParent( player.hmdTransform );
 			headAudioSource.transform.localPosition = Vector3.zero;
-			PlayAudioClip( headAudioSource, teleportSound );
+			PlayAudioClip( headAudioSource, teleportSound, true );
 
 			Invoke( "TeleportPlayer", currentFadeTime );
 		}
@@ -937,6 +951,8 @@ namespace Valve.VR.InteractionSystem
 			}
 
 			Teleport.Player.Send( pointedAtTeleportMarker );
+
+			SpawnNoiseVFX(teleportPosition, distanceFromPlayer);
 		}
 
 
@@ -957,13 +973,13 @@ namespace Valve.VR.InteractionSystem
 					prevPointedAtPosition = pointedAtPosition;
 					PlayPointerHaptic( !hitTeleportMarker.locked );
 
-					PlayAudioClip( reticleAudioSource, goodHighlightSound );
+					PlayAudioClip( reticleAudioSource, goodHighlightSound,  false );
 
 					loopingAudioSource.volume = loopingAudioMaxVolume;
 				}
 				else if ( pointedAtTeleportMarker != null )
 				{
-					PlayAudioClip( reticleAudioSource, badHighlightSound );
+					PlayAudioClip( reticleAudioSource, badHighlightSound, false );
 
 					loopingAudioSource.volume = 0.0f;
 				}

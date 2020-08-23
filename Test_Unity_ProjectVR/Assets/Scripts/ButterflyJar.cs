@@ -8,7 +8,7 @@ public class ButterflyJar : MonoBehaviour
 {
     public BehaviorTree butterflyBehaviorTree;
 
-
+    
 
     //public GameObject jar;
     public bool hasButterfly;

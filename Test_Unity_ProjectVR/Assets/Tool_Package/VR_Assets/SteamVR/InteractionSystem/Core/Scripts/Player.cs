@@ -44,6 +44,9 @@ namespace Valve.VR.InteractionSystem
 
 		public Vector3 endForward;
 
+		[Tooltip("Is the player letting a butterfly go in a vivarium")]
+		public bool isInVivarium;
+
 
 		//-------------------------------------------------
 		// Singleton instance of the Player. Only one can exist at a time.
