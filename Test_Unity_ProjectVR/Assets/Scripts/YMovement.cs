@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
-
+using Valve.VR.InteractionSystem;
 public class YMovement : MonoBehaviour
 {
     [Tooltip("Must be set on integer between 0 and 3")]
@@ -30,6 +30,8 @@ public class YMovement : MonoBehaviour
 
     public float m_MinWingVelocity = 1f;
     public float m_speedFactor=1f;
+
+    public static Player instancePlayer;
 
     //public bool Idle;
 
@@ -103,8 +105,8 @@ public class YMovement : MonoBehaviour
             //transform.parent.DetachChildren();
             //ou
         transform.parent.SetParent(null);
-
         Vector3 point;
+
         if (RandomPoint(transform.position, range, out point))
         {  
             
@@ -128,7 +130,12 @@ public class YMovement : MonoBehaviour
                 JarScript.Butterflycatched = false;
                 //transform.parent.transform.localScale = new Vector3(scale, scale, scale);
                 //changed positions
-                JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>().enabled = true;
+                NavMeshAgent navButterfly = JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>();
+
+                //Truy using the Warp function
+                navButterfly.enabled = true;
+                navButterfly.Warp(new Vector3(hit.position.x, BaseOffset, hit.position.z));
+
                 butterflyBehaviorTree.SendEvent("IsFreeJar");
             });
             
@@ -138,14 +145,18 @@ public class YMovement : MonoBehaviour
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
-        for (int i = 0; i < 30; i++)
-        {
-            Vector3 randomPoint = center + Random.insideUnitSphere * range;
-           
-            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        int vivariumMask = 1 << NavMesh.GetAreaFromName("Vivariums");
+
+        if(instancePlayer.isInVivarium){
+            for (int i = 0; i < 50; i++)
             {
-                result = hit.position;
-                return true;
+                Vector3 randomPoint = center + Random.insideUnitSphere * range;
+           
+                if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, vivariumMask))
+                {
+                    result = hit.position;
+                    return true;
+                }
             }
         }
         result = Vector3.zero;

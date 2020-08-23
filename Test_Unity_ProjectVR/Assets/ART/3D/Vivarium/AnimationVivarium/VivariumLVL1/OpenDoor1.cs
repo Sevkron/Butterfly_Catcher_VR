@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class OpenDoor1 : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class OpenDoor1 : MonoBehaviour
             vivarium.GetComponent<Animator>().SetBool("PlayerNearDoor1", true);
             //audioManager.sounds
             audioManager.Play("OpenVivarium", GetComponentInChildren<AudioSource>());
+            other.gameObject.GetComponentInParent<Player>().isInVivarium = false;
 
         }
     }
