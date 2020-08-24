@@ -88,24 +88,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.7315072
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!64 &5433773306557498308
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956297001427112223}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -5388095173272306667, guid: 5652b90bc21bb68469b77ec21fcd5b86, type: 3}
+  m_Center: {x: 0.016951894, y: 0, z: -0.019690879}
 --- !u!1 &6496175709812549826
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6496175709812549828}
   - component: {fileID: 6496175709812549827}
+  - component: {fileID: 453233258}
   m_Layer: 9
   m_Name: PharePref
   m_TagString: Untagged
@@ -168,6 +155,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3547207551039848186}
   m_Enabled: 1
+--- !u!208 &453233258
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496175709812549826}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.74, y: 2.9, z: 5.205}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -4.49, y: -19.95, z: -2.56}
+  m_TimeToStationary: 0.5
 --- !u!1001 &6496175708837860143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -373,12 +376,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5652b90bc21bb68469b77ec21fcd5b86, type: 3}
---- !u!1 &2956297001427112223 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5652b90bc21bb68469b77ec21fcd5b86,
-    type: 3}
-  m_PrefabInstance: {fileID: 6496175709622552598}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2260166741815157516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5652b90bc21bb68469b77ec21fcd5b86,
