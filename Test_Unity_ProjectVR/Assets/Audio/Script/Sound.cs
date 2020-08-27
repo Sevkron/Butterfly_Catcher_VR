@@ -1,4 +1,7 @@
-﻿using UnityEngine.Audio;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Audio;
+using System;
 using UnityEngine;
 
 [System.Serializable]
@@ -15,7 +18,14 @@ public class Sound
 
     public bool loop;
 
-
     public AudioSource source;
+
+    void Awake()
+    {
+        if(source == null)
+        {
+            Debug.Log("No audio source outputy for" + name);
+        }
+    }
 
 }

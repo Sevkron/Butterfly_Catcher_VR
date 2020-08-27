@@ -28,6 +28,8 @@ public class PapillodexUIButton : MonoBehaviour
         public GameObject m_OptionsPanel;
         public GameObject m_ClockOtherPanel;
         private AudioManager audioManager;
+
+        private bool isActive = false;
         //public GameObject m_PreviousPanel;
         void Awake()
         {
@@ -202,5 +204,9 @@ public class PapillodexUIButton : MonoBehaviour
         public void SoundFeedback(string sound)
         {
             audioManager.Play(sound, null);
+        }
+
+        public void DeactivationPapillodex(){
+            this.gameObject.SetActive(false);
         }
     }

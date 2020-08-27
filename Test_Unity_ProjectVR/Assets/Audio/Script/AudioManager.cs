@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
     public static AudioManager instance;
+    //public Sound s;
 
     void Awake ()
     {
@@ -18,15 +19,18 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        
 
-//        DontDestroyOnLoad(gameObject);
+//      DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
         {
+            Debug.Log("this damn BS *");
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
 
             s.source.loop = s.loop;
+            
         }
     }
 
