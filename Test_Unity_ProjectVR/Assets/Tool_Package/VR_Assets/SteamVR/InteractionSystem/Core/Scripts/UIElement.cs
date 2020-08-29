@@ -29,6 +29,7 @@ namespace Valve.VR.InteractionSystem
 				button.onClick.AddListener( OnButtonClick );
 			}
 			buttonPress = gameObject.GetComponent<BoxCollider>();
+			
 		}
 
 

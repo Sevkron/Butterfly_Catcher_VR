@@ -10,10 +10,21 @@ public class PapillodexUIButton : MonoBehaviour
 {
         //public GameObject[] m_Panels;
         //---------------------------------------
-        private CaughtIndexPanel m_ButterflyIndex;
+        public CaughtIndexPanel m_ButterflyIndex;
         //---------------------------------------
         public GameObject m_CaughtIndexPanel;
         public GameObject m_ReproductionIndexPanel;
+        //---------------------------------------
+        //Add other butterflyPanels here
+        public GameObject m_CabbagePanel;
+        public GameObject m_DragonTailedPanel;
+        public GameObject m_JSMPanel;
+        public GameObject m_EmeraldPanel;
+        public GameObject m_SaphoPanel;
+        public GameObject m_SouthernPanel;
+        public GameObject m_DysphaniaPanel;
+        public GameObject m_MonarchPanel;
+        public GameObject m_CeylonRosePanel;
 //---------------------------------------
         public GameObject m_CompletedMissionsPanel;
         public GameObject m_CurrentMissionsPanel;
@@ -33,6 +44,7 @@ public class PapillodexUIButton : MonoBehaviour
         private AudioManager audioManager;
         private bool isActive = false;
         private Animator canvasAnimator;
+        private bool isInIndex = false;
         //public GameObject m_PreviousPanel;
         void Awake()
         {
@@ -105,6 +117,7 @@ public class PapillodexUIButton : MonoBehaviour
             Feedback(fromHand);
             SoundFeedback("CanvasButtonClick");
             canvasAnimator.SetTrigger("OpenIndex");
+            m_ButterflyIndex.UpdateButterflyIndexUI();
             /*m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_CaughtIndexPanel.SetActive(true);*/
@@ -163,7 +176,7 @@ public class PapillodexUIButton : MonoBehaviour
             Feedback(fromHand);
             SoundFeedback("CanvasButtonClick");
             canvasAnimator.SetTrigger("OpenBaseTP");
-            m_ButterflyIndex.UpdateButterflyIndexUI();
+            
             /*m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
             m_VivariumPanel.SetActive(true);*/
@@ -203,6 +216,85 @@ public class PapillodexUIButton : MonoBehaviour
             m_OtherInventoryPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_OtherInventoryPanel;*/
+        }
+//---------------------------------------
+        public void OpenCabbageIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("Cabbage");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_CabbagePanel;
+        }
+        public void OpenDysphaniaIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("Dysphania");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_DysphaniaPanel;
+        }
+        public void OpenEmeraldIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("Emerald");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_EmeraldPanel;
+        }
+        public void OpenMonarchIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("Monarch");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_MonarchPanel;
+        }
+        public void OpenSaphoIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("Sapho");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_SaphoPanel;
+        }
+        public void OpenCeylonIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("Ceylon");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_CeylonRosePanel;
+        }
+        public void OpenSouthBirdwingIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("SouthBirdwing");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_SouthernPanel;
+        }
+        public void OpenDragonTailedIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("DragonTailed");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_DragonTailedPanel;
+        }
+        public void OpenJSMIndex(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("JSM");
+            m_PreviousPanel = m_CurrentPanel;
+            m_CurrentPanel = m_JSMPanel;
+        }
+
+        public void ToggleInfo(Hand fromHand){
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("CloseButterflyInfo");
         }
 //---------------------------------------
 

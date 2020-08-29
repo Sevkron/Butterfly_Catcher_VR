@@ -415,19 +415,19 @@ MonoBehaviour:
   - Japanese_Silk_Moth
   - Dysphania_Militaris_Moth
   currentButterflySpecies: []
-  MonarchSpriteRenderer: {fileID: 0}
-  CabbageSpriteRenderer: {fileID: 0}
-  SaphoSpriteRenderer: {fileID: 0}
-  TigerSwallowSpriteRenderer: {fileID: 0}
-  BuckeyeSpriteRenderer: {fileID: 0}
-  BirdwingSpriteRenderer: {fileID: 0}
-  Ceylon_RoseSpriteRenderer: {fileID: 0}
-  EmeraldSpriteRenderer: {fileID: 0}
-  DragontailSpriteRenderer: {fileID: 0}
-  Cecropia_MothSpriteRenderer: {fileID: 0}
-  Luna_MothSpriteRenderer: {fileID: 0}
-  Japanese_Silk_MothSpriteRenderer: {fileID: 0}
-  Dysphania_Militaris_MothSpriteRenderer: {fileID: 0}
+  MonarchGO: {fileID: 0}
+  CabbageGO: {fileID: 0}
+  SaphoGO: {fileID: 0}
+  TigerSwallowGO: {fileID: 0}
+  BuckeyeGO: {fileID: 0}
+  BirdwingGO: {fileID: 0}
+  Ceylon_RoseGO: {fileID: 0}
+  EmeraldGO: {fileID: 0}
+  DragontailGO: {fileID: 0}
+  Cecropia_MothGO: {fileID: 0}
+  Luna_MothGO: {fileID: 0}
+  Japanese_Silk_MothGO: {fileID: 0}
+  Dysphania_Militaris_MothGO: {fileID: 0}
   MonarchSprite: {fileID: 0}
   CabbageSprite: {fileID: 0}
   SaphoSprite: {fileID: 0}
@@ -1711,19 +1711,19 @@ MonoBehaviour:
   - Japanese_Silk_Moth
   - Dysphania_Militaris_Moth
   currentButterflySpecies: []
-  MonarchSpriteRenderer: {fileID: 2366779831995141771}
-  CabbageSpriteRenderer: {fileID: 3034584398541331670}
-  SaphoSpriteRenderer: {fileID: 1383730606697921832}
-  TigerSwallowSpriteRenderer: {fileID: 0}
-  BuckeyeSpriteRenderer: {fileID: 0}
-  BirdwingSpriteRenderer: {fileID: 2139465464698564043}
-  Ceylon_RoseSpriteRenderer: {fileID: 3437028104271197142}
-  EmeraldSpriteRenderer: {fileID: 5593635222035295700}
-  DragontailSpriteRenderer: {fileID: 933542805337339283}
-  Cecropia_MothSpriteRenderer: {fileID: 0}
-  Luna_MothSpriteRenderer: {fileID: 0}
-  Japanese_Silk_MothSpriteRenderer: {fileID: 9087958662225636616}
-  Dysphania_Militaris_MothSpriteRenderer: {fileID: 4561718756915135118}
+  MonarchGO: {fileID: 3378152442200147720}
+  CabbageGO: {fileID: 8050725740453929657}
+  SaphoGO: {fileID: 3110069213528186734}
+  TigerSwallowGO: {fileID: 0}
+  BuckeyeGO: {fileID: 0}
+  BirdwingGO: {fileID: 0}
+  Ceylon_RoseGO: {fileID: 6115342298546390950}
+  EmeraldGO: {fileID: 7394459212776881349}
+  DragontailGO: {fileID: 2559668709754557541}
+  Cecropia_MothGO: {fileID: 0}
+  Luna_MothGO: {fileID: 0}
+  Japanese_Silk_MothGO: {fileID: 7212401061645122862}
+  Dysphania_Militaris_MothGO: {fileID: 1265359864955114470}
   MonarchSprite: {fileID: 21300000, guid: 71ea14f12710fad459ca778740ac2911, type: 3}
   CabbageSprite: {fileID: 21300000, guid: 8998b5961e7452b4b8f21e5aadf8151a, type: 3}
   SaphoSprite: {fileID: 21300000, guid: f14c5f97877c9a844b3b1531c9866994, type: 3}
@@ -3941,17 +3941,17 @@ PrefabInstance:
     - target: {fileID: 8460466012540591422, guid: f1a4db7fdd62eac47854ce31d14b1c51,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.7176723
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8460466012540591422, guid: f1a4db7fdd62eac47854ce31d14b1c51,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.7176676
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8460466012540591422, guid: f1a4db7fdd62eac47854ce31d14b1c51,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.7176676
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6757632676822171395, guid: f1a4db7fdd62eac47854ce31d14b1c51,
         type: 3}
@@ -4882,9 +4882,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4be3d10e4aae774388480655e3ec7b8, type: 3}
---- !u!212 &2366779831995141771 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6216180360015030293, guid: a4be3d10e4aae774388480655e3ec7b8,
+--- !u!1 &7519279188494753108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2217435920555195338, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
@@ -4894,57 +4894,51 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7519279188494753108 stripped
+--- !u!1 &8050725740453929657 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2217435920555195338, guid: a4be3d10e4aae774388480655e3ec7b8,
+  m_CorrespondingSourceObject: {fileID: 1812099366635963431, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &3034584398541331670 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6665662539074517576, guid: a4be3d10e4aae774388480655e3ec7b8,
+--- !u!1 &2559668709754557541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6132204551971795707, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &933542805337339283 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8820491811741324045, guid: a4be3d10e4aae774388480655e3ec7b8,
+--- !u!1 &7212401061645122862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1336348771425213360, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &2139465464698564043 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7722787347192302421, guid: a4be3d10e4aae774388480655e3ec7b8,
+--- !u!1 &7394459212776881349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1153581023049259611, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &9087958662225636616 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 613291012545121174, guid: a4be3d10e4aae774388480655e3ec7b8,
+--- !u!1 &3110069213528186734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6752336017697307120, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &1383730606697921832 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7327300562339568566, guid: a4be3d10e4aae774388480655e3ec7b8,
+--- !u!1 &3378152442200147720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6376438544812007830, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &4561718756915135118 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5319395094556337168, guid: a4be3d10e4aae774388480655e3ec7b8,
+--- !u!1 &6115342298546390950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2468603468128117048, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &3437028104271197142 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6426342498025329992, guid: a4be3d10e4aae774388480655e3ec7b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8546761915241965214}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &5593635222035295700 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4268470392870619978, guid: a4be3d10e4aae774388480655e3ec7b8,
+--- !u!1 &1265359864955114470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7427355776898446712, guid: a4be3d10e4aae774388480655e3ec7b8,
     type: 3}
   m_PrefabInstance: {fileID: 8546761915241965214}
   m_PrefabAsset: {fileID: 0}

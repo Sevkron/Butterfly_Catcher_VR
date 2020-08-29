@@ -38,6 +38,7 @@ namespace Valve.VR.InteractionSystem.Sample
             papillodexAnimator = m_Papillodex.GetComponent<Animator>();
 
             audioSource = GetComponent<AudioSource>();
+            m_Papillodex.SetActive(true);
         }
 
         void Update()
@@ -55,9 +56,9 @@ namespace Valve.VR.InteractionSystem.Sample
 
             if(CanvasOpen == false && isPressed == true)
             {
-                m_Papillodex.SetActive(true);
                 audioManager.Play("ButtonPapillodex", audioSource);
                 audioManager.Play("OpenCanvas", null);
+                papillodexAnimator.SetTrigger("Open");
                 leftHand.useHoverCapsule = false;
                 rightHand.useHoverCapsule = false;
                 //leftHand.GetComponent<GrabDistance>().GrabUpdate(false, 0);
@@ -75,8 +76,8 @@ namespace Valve.VR.InteractionSystem.Sample
                 //m_Papillodex.SetActive(false);
                 leftHand.useHoverCapsule = true;
                 rightHand.useHoverCapsule = true;
-                //leftHand.GetComponent<GrabDistance>().enabled = true;
-                //rightHand.GetComponent<GrabDistance>().enabled = true;
+                leftHand.GetComponent<GrabDistance>().enabled = true;
+                rightHand.GetComponent<GrabDistance>().enabled = true;
                 Debug.Log("Closing Papillodex");
                 isPressed = false;
             }
