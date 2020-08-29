@@ -235,8 +235,12 @@ namespace Valve.VR.InteractionSystem
 				TeleportPoint teleportPoint = teleportMarker as TeleportPoint;
 				if ( teleportPoint && teleportPoint.baseTeleportPoint )
 				{
+					//Need to figure out the fade function
+					/*SteamVR_Fade.Start( Color.clear, 0 );
+					SteamVR_Fade.Start( Color.black, 2.0f );*/
 					teleportingToMarker = teleportMarker;
-					TeleportPlayer();
+					InitiateTeleportFade();
+					//TeleportPlayer();
 					break;
 				}else{
 					Debug.LogError("No TP point assigned to Base");

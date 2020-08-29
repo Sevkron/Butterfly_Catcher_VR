@@ -2,11 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.AI;
 using DG.Tweening;
 using Valve.VR.InteractionSystem;
 public class YMovement : MonoBehaviour
 {
+    public enum ButterflySpecies{Monarch, Cabbage_White_Butterfly, Sapho_Longwing, Canadian_Tiger_Swallowtail, Common_Buckeye, Southern_Birdwing, Emerald_Swallowtail, Ceylon_Rose, Dragon_Tail, Cecropia_Moth, Luna_Moth, Japanese_Silk_Moth, Dysphania_Militaris_Moth}
+    public ButterflySpecies butterflySpecies;
+    public string stringButterflySpecies;
+
     [Tooltip("Must be set on integer between 0 and 3")]
     public int difficultyLevel;
 
@@ -52,13 +57,10 @@ public class YMovement : MonoBehaviour
         animator = GetComponentInParent<Animator>();
         butterflyBehaviorTree = GetComponentInParent<BehaviorTree>();
         isWander = true;
-        
-      
+        stringButterflySpecies = butterflySpecies.ToString();
+
         BaseOffset = transform.parent.GetComponent<NavMeshAgent>().baseOffset;
-        
-
-
-}
+    }
 
     private void Update()
     {

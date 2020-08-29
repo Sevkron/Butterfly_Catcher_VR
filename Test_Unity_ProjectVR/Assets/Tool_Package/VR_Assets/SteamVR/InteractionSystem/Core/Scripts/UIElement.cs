@@ -63,22 +63,6 @@ namespace Valve.VR.InteractionSystem
 			}
 		}
 
-		void OnTriggerEnter(Collider other)
-		{
-				//InputModule.instance.HoverBegin( gameObject );
-				InputModule.instance.Click(gameObject);
-				Debug.Log("Pressed button");
-		}
-		/*void OnTriggerExit(Collider other)
-		{
-			Debug.Log(other.gameObject + "has been detected");
-			if(other.gameObject == currentHand)
-			{
-				InputModule.instance.HoverEnd( gameObject );
-				Debug.Log("Pressed button");
-			}
-		}*/
-
         //-------------------------------------------------
         protected virtual void OnButtonClick()
 		{

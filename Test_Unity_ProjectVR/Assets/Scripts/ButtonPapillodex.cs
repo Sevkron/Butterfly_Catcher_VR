@@ -11,7 +11,7 @@ namespace Valve.VR.InteractionSystem.Sample
         //private Canvas m_PapillodexCanvas;
         private Animator papillodexAnimator;
         public GameObject m_Papillodex;
-        private bool CanvasOpen = true;
+        private bool CanvasOpen = false;
         private bool isPressed;
         private AudioSource audioSource;
         private AudioManager audioManager;

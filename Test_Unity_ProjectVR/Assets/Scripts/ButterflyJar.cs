@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 using UnityEngine.AI;
+using Valve.VR.InteractionSystem;
 
 public class ButterflyJar : MonoBehaviour
 {
@@ -12,12 +13,13 @@ public class ButterflyJar : MonoBehaviour
 
     //public GameObject jar;
     public bool hasButterfly;
+    public string butterflyType;
     public GameObject ButterflyinJar;
     public bool Butterflycatched;
-    
     public float scale = 0.2f;
     private YMovement yMoveScript;
     public SharedBool SharedIsIdle;
+    private Player player;
 
     private void Start()
     {
@@ -43,7 +45,10 @@ public class ButterflyJar : MonoBehaviour
             
             butterflyBehaviorTree.SendEvent<object>("IsCapturedJar", this.gameObject);
             ButterflyinJar.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
-            
+
+            //Send Event to IndexPanel
+            player = Player.instance;
+            player.GetComponent<CaughtIndexPanel>().CheckIfSpeciesExists(yMoveScript.stringButterflySpecies);
         }
     }
 
