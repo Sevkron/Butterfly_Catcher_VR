@@ -19,7 +19,7 @@ public class PapillodexUIButton : MonoBehaviour
         public GameObject m_ButterflyInventoryPanel;
         public GameObject m_OtherInventoryPanel;
 //---------------------------------------
-        public GameObject m_VivariumStatsPanel;
+        public GameObject m_VivariumPanel;
 //---------------------------------------
         public GameObject m_MainMenuPanel;
         public GameObject m_CurrentPanel;
@@ -155,15 +155,22 @@ public class PapillodexUIButton : MonoBehaviour
             m_CurrentPanel = m_ButterflyProgressionPanel;
         }
 //---------------------------------------
-        public void OnButtonDownVivariumStats(Hand fromHand)
+        public void OnButtonDownVivarium(Hand fromHand)
         {
             Feedback(fromHand);
             SoundFeedback("CanvasButtonClick");
             m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
-            m_VivariumStatsPanel.SetActive(true);
+            m_VivariumPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
-            m_CurrentPanel = m_VivariumStatsPanel;
+            m_CurrentPanel = m_VivariumPanel;
+        }
+
+        public void OnButtonConfirmTP(Hand fromHand)
+        {
+            OnButtonDownHome(fromHand);
+            Teleport.instance.TeleportToBase();
+
         }
 //---------------------------------------
         public void OnButtonDownButterflyInventory(Hand fromHand)
@@ -196,9 +203,10 @@ public class PapillodexUIButton : MonoBehaviour
         }
         public void Feedback(Hand fromHand)
         {
-            fromHand.TriggerHapticPulse(1000);
-            fromHand.otherHand.useControllerHoverComponent = false;
-            //Debug.Log("Pressed");
+            //Reactivate for haptics
+            /*fromHand.TriggerHapticPulse(1000);
+            fromHand.otherHand.useControllerHoverComponent = false;*/
+            Debug.Log("Time for haptics Pressed");
         }
 
         public void SoundFeedback(string sound)

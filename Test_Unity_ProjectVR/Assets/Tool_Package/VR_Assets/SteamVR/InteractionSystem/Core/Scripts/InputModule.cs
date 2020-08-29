@@ -60,14 +60,23 @@ namespace Valve.VR.InteractionSystem
 		public void Submit( GameObject gameObject )
 		{
 			submitObject = gameObject;
+			//Debug.Log("Submit " + submitObject);
 		}
+		//-------------------------------------------------
 
+		public void Click(GameObject gameObject)
+		{
+			PointerEventData pointerEventData = new PointerEventData( eventSystem );
+			pointerEventData.selectedObject = gameObject;
+			ExecuteEvents.Execute( gameObject, pointerEventData, ExecuteEvents.submitHandler );
+		}
 
 		//-------------------------------------------------
 		public override void Process()
 		{
 			if ( submitObject )
 			{
+				Debug.Log("Start Prossess function");
 				BaseEventData data = GetBaseEventData();
 				data.selectedObject = submitObject;
 				ExecuteEvents.Execute( submitObject, data, ExecuteEvents.submitHandler );

@@ -76,17 +76,17 @@ namespace Valve.VR.InteractionSystem
                     && player.leftHand.currentAttachedTeleportManager.teleportAllowed);
 
 
-                bool leftHandTurnLeft = snapLeftAction.GetStateDown(SteamVR_Input_Sources.LeftHand) && leftHandValid;
+                //bool leftHandTurnLeft = snapLeftAction.GetStateDown(SteamVR_Input_Sources.LeftHand) && leftHandValid;
                 bool rightHandTurnLeft = snapLeftAction.GetStateDown(SteamVR_Input_Sources.RightHand) && rightHandValid;
 
-                bool leftHandTurnRight = snapRightAction.GetStateDown(SteamVR_Input_Sources.LeftHand) && leftHandValid;
+                //bool leftHandTurnRight = snapRightAction.GetStateDown(SteamVR_Input_Sources.LeftHand) && leftHandValid;
                 bool rightHandTurnRight = snapRightAction.GetStateDown(SteamVR_Input_Sources.RightHand) && rightHandValid;
 
-                if (leftHandTurnLeft || rightHandTurnLeft)
+                if (/*leftHandTurnLeft ||*/ rightHandTurnLeft)
                 {
                     RotatePlayer(-snapAngle);
                 }
-                else if (leftHandTurnRight || rightHandTurnRight)
+                else if (/*leftHandTurnRight ||*/ rightHandTurnRight)
                 {
                     RotatePlayer(snapAngle);
                 }

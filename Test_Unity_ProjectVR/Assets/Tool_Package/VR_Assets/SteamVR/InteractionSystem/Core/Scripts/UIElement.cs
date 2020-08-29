@@ -37,7 +37,7 @@ namespace Valve.VR.InteractionSystem
 		{
 			currentHand = hand;
 			InputModule.instance.HoverBegin( gameObject );
-			InputModule.instance.Submit( gameObject );
+			InputModule.instance.Submit(this.gameObject);
 			Debug.Log("Wrong button press");
 			//ControllerButtonHints.ShowButtonHint( hand, hand.uiInteractAction);
 		}
@@ -65,20 +65,19 @@ namespace Valve.VR.InteractionSystem
 
 		void OnTriggerEnter(Collider other)
 		{
-			if(other.gameObject == currentHand)
-			{
-				InputModule.instance.HoverBegin( gameObject );
+				//InputModule.instance.HoverBegin( gameObject );
+				InputModule.instance.Click(gameObject);
 				Debug.Log("Pressed button");
-			}
 		}
-		void OnTriggerExit(Collider other)
+		/*void OnTriggerExit(Collider other)
 		{
+			Debug.Log(other.gameObject + "has been detected");
 			if(other.gameObject == currentHand)
 			{
 				InputModule.instance.HoverEnd( gameObject );
 				Debug.Log("Pressed button");
 			}
-		}
+		}*/
 
         //-------------------------------------------------
         protected virtual void OnButtonClick()

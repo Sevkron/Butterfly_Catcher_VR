@@ -51,7 +51,7 @@ namespace Valve.VR.InteractionSystem.Sample
             fromHand.otherHand.useControllerHoverComponent = false;
             CanvasOpen = !CanvasOpen;
             isPressed = true;
-            Debug.Log("Pressed");
+            //AQDebug.Log("Pressed");
 
             if(CanvasOpen == false && isPressed == true)
             {

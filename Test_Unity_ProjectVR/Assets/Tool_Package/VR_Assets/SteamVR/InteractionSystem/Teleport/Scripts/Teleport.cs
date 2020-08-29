@@ -226,6 +226,23 @@ namespace Valve.VR.InteractionSystem
 				}
 			}
 		}
+		//-------------------------------------------------
+		public void TeleportToBase()
+		{
+			Debug.Log("TP to base finction called");
+			foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
+			{
+				TeleportPoint teleportPoint = teleportMarker as TeleportPoint;
+				if ( teleportPoint && teleportPoint.baseTeleportPoint )
+				{
+					teleportingToMarker = teleportMarker;
+					TeleportPlayer();
+					break;
+				}else{
+					Debug.LogError("No TP point assigned to Base");
+				}
+			}
+		}
 
 
 		//-------------------------------------------------

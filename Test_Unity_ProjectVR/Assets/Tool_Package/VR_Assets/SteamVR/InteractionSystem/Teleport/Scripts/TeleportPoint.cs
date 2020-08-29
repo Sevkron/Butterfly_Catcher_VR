@@ -31,6 +31,7 @@ namespace Valve.VR.InteractionSystem
 		public Color titleHighlightedColor;
 		public Color titleLockedColor;
 		public bool playerSpawnPoint = false;
+		public bool baseTeleportPoint = false;
 		public GameObject m_changeSceneGO;
 		public GameObject m_papillodex;
 
