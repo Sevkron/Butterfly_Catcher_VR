@@ -23,6 +23,7 @@ public class CaptureMinigamePool : MonoBehaviour
     public Transform spawnPoint;
 
     private AudioManager audioManager;
+    public GameObject m_CountdownCanvas;
     //test Sphere spawn
 
     void Start()
@@ -83,5 +84,11 @@ public class CaptureMinigamePool : MonoBehaviour
     {
         isNotInMinigame = true;
         CapWinVFX.Play();
+    }
+
+    public void PlaySound(string SoundToPlay)
+    {
+        audioManager.Play(SoundToPlay, null);
+        Debug.Log("Play sound" + SoundToPlay);
     }
 }

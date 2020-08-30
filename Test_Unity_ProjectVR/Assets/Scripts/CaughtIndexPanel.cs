@@ -63,7 +63,6 @@ public class CaughtIndexPanel : MonoBehaviour
             if(currentButterflyToCheck == allButterflySpecies[i])
             {
                 TryToRegisterNewButterfly();
-                return;
             }
         }
     }

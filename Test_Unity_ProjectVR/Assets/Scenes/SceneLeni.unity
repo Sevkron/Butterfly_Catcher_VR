@@ -429,12 +429,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &497510907 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 497510907, guid: b32c7a625eb10db4c94d27fd86484542,
-    type: 3}
-  m_PrefabInstance: {fileID: 1694228060}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &771272169
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,12 +971,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d33f668585a0ab46aa21082d7a94023, type: 3}
---- !u!82 &2095692607 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2095692607, guid: b32c7a625eb10db4c94d27fd86484542,
-    type: 3}
-  m_PrefabInstance: {fileID: 1694228060}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &423426375159059228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1212,6 +1200,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3518195110278001523, guid: e5079166eff7c604aaf2b036de513c42,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
     - target: {fileID: 1489920803858765918, guid: e5079166eff7c604aaf2b036de513c42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1267,31 +1260,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3518195110278001523, guid: e5079166eff7c604aaf2b036de513c42,
-        type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535417196130558217, guid: e5079166eff7c604aaf2b036de513c42,
-        type: 3}
-      propertyPath: sounds.Array.data[26].source
-      value: 
-      objectReference: {fileID: 497510907}
-    - target: {fileID: 7535417196130558217, guid: e5079166eff7c604aaf2b036de513c42,
-        type: 3}
-      propertyPath: sounds.Array.data[27].source
-      value: 
-      objectReference: {fileID: 497510907}
-    - target: {fileID: 7535417196130558217, guid: e5079166eff7c604aaf2b036de513c42,
-        type: 3}
-      propertyPath: sounds.Array.data[28].source
-      value: 
-      objectReference: {fileID: 2095692607}
-    - target: {fileID: 7535417196130558217, guid: e5079166eff7c604aaf2b036de513c42,
-        type: 3}
-      propertyPath: sounds.Array.data[29].source
-      value: 
-      objectReference: {fileID: 2095692607}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5079166eff7c604aaf2b036de513c42, type: 3}
 --- !u!1001 &5018064692506000016

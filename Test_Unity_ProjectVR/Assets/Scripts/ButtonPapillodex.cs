@@ -46,6 +46,14 @@ namespace Valve.VR.InteractionSystem.Sample
             
         }
 
+        /*private void OnTriggerEnter(Collider other)
+        {
+            if(other.gameObject.tag == "Player")
+            {
+                OnButtonDown(rightHand);
+            }
+        }*/
+
         public void OnButtonDown(Hand fromHand)
         {
             fromHand.TriggerHapticPulse(1000);

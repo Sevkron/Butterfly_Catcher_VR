@@ -18,7 +18,8 @@ public class ButterflyNet : MonoBehaviour
 
     public float scale = 0.7f;
 
-
+    public Transform m_BeltNetTransform;
+    public float m_MaxDistanceFromBelt;
     void Awake()
     {
         if(captureMinigamePool == null)
@@ -26,6 +27,21 @@ public class ButterflyNet : MonoBehaviour
             Debug.Log("Please set capture minigame pool");
 
         //SharedIsIdle = JarScript.SharedIsIdle;
+    }
+
+    void Update()
+    {
+        if(m_BeltNetTransform)
+        {
+            if(Vector3.Distance(m_BeltNetTransform.position, transform.position) >= m_MaxDistanceFromBelt)
+            {
+                Debug.Log("Net too far from player");
+                //Need to figure out how to attach to belt
+                gameObject.transform.position = m_BeltNetTransform.position;
+                gameObject.transform.rotation = m_BeltNetTransform.rotation;
+                //gameObject.transform.SetParent(m_BeltNetTransform);
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)

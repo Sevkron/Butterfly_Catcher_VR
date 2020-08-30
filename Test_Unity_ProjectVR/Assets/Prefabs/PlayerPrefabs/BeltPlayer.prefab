@@ -439,16 +439,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8776536139198833816, guid: ac5d2ee2c343eda42a889d9a96231e1a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8776536139198833816, guid: ac5d2ee2c343eda42a889d9a96231e1a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 383911802338074248, guid: ac5d2ee2c343eda42a889d9a96231e1a,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -469,11 +459,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8776536139198833816, guid: ac5d2ee2c343eda42a889d9a96231e1a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776536139198833816, guid: ac5d2ee2c343eda42a889d9a96231e1a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3180262855109253188, guid: ac5d2ee2c343eda42a889d9a96231e1a,
         type: 3}
       propertyPath: beltTransform
       value: 
       objectReference: {fileID: 6030638775614974696}
+    - target: {fileID: 3180262855109253188, guid: ac5d2ee2c343eda42a889d9a96231e1a,
+        type: 3}
+      propertyPath: m_CountdownCanvas
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5d2ee2c343eda42a889d9a96231e1a, type: 3}
 --- !u!4 &7039381872918256603 stripped

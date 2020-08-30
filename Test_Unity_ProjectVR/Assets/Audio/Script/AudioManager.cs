@@ -1,4 +1,4 @@
-﻿using UnityEngine.Audio;
+using UnityEngine.Audio;
 using System;
 using UnityEngine;
 
@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
 //      DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
         {
-            Debug.Log("this damn BS *");
+            //Debug.Log("this damn BS *");
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
@@ -44,6 +44,7 @@ public class AudioManager : MonoBehaviour
         if (newAudioSource != null)
         {
             s.source = newAudioSource;
+            Debug.Log("Play Sound");
         }
         s.source.clip = s.clip;
         if (s == null)

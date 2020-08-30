@@ -188,9 +188,8 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             SoundFeedback("CanvasButtonClick");
-            //Debug.Log("Confirmed TP");
+            //ChangingBiomes();
             canvasAnimator.SetTrigger("OpenBaseTP");
-            //OnButtonDownHome(fromHand);
             Teleport.instance.TeleportToBase();
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_MainMenuPanel;
@@ -303,7 +302,7 @@ public class PapillodexUIButton : MonoBehaviour
             UnityEngine.XR.InputTracking.Recenter();
             Debug.Log("Camera Recentered");
         }
-        public void Feedback(Hand fromHand)
+        private void Feedback(Hand fromHand)
         {
             //Reactivate for haptics
             fromHand.TriggerHapticPulse(1000);
@@ -319,4 +318,12 @@ public class PapillodexUIButton : MonoBehaviour
         public void DeactivationPapillodex(){
             this.gameObject.SetActive(false);
         }
+
+        /*private void ChangingBiomes()
+        {
+            SnapshotTransition snappy = audioManager.GetComponent<SnapshotTransition>();
+            snappy.timeToReach[biomeValue] = 0;
+            snappy.timeToReach[numberToSwitchBiome] = 1;
+            snappy.audioMixer.TransitionToSnapshots(snappy.snapshots, snappy.timeToReach, snappy.transitionTime);
+        }*/
     }
