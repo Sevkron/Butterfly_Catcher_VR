@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 7668778621920552325}
   m_Layer: 10
   m_Name: Net1
-  m_TagString: Untagged
+  m_TagString: Net
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1074,6 +1074,8 @@ MonoBehaviour:
     mNetworkSync: 0
     mValue: 0
   scale: 0.7
+  m_BeltNetTransform: {fileID: 0}
+  m_MaxDistanceFromBelt: 0
 --- !u!114 &7668778621920552325
 MonoBehaviour:
   m_ObjectHideFlags: 0
