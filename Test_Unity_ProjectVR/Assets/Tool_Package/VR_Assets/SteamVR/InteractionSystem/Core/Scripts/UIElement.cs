@@ -39,7 +39,7 @@ namespace Valve.VR.InteractionSystem
 			currentHand = hand;
 			InputModule.instance.HoverBegin( gameObject );
 			InputModule.instance.Submit(this.gameObject);
-			Debug.Log("Wrong button press");
+			//Debug.Log("Wrong button press");
 			//ControllerButtonHints.ShowButtonHint( hand, hand.uiInteractAction);
 		}
 

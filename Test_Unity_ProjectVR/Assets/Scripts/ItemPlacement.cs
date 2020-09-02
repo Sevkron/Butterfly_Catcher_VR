@@ -10,6 +10,7 @@ namespace Valve.VR.InteractionSystem
     public string m_objectTag;
     private GameObject ObjectToCheck;
     public GameObject ObjectStored;
+    private Interactable ObjectInteractibleScript;
      //   public Collider objecthandcollider;
     public bool SlotFull;
 
@@ -22,7 +23,7 @@ namespace Valve.VR.InteractionSystem
 
     }
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
             ObjectToCheck = other.gameObject;
             if(SlotFull == false && ObjectToCheck.tag == m_objectTag)
@@ -39,46 +40,45 @@ namespace Valve.VR.InteractionSystem
                 ObjectStored.transform.rotation = Quaternion.Euler(0, 0, 0);
                 ObjectStored.transform.SetParent(this.transform);
             }
+    }*/
+    void OnTriggerStay(Collider other)
+    {
+        ObjectToCheck = other.gameObject;
+        ObjectInteractibleScript = ObjectToCheck.GetComponent<Interactable>();
+        bool used = false;
 
-            /*ObjectinLeftHand = GetComponent<Hand>().currentAttachedObject;
-            ObjectinRightHand = GetComponent<Hand>().currentAttachedObject;
-
-            if (SlotFull = false && other.gameObject.tag == tag && ObjectStored == ObjectinLeftHand)
-            {
-                HandLeftScript.DetachObject(ObjectStored);
-
-                ObjectStored.transform.SetParent(this.transform);
-                ObjectStored.transform.position = new Vector3(0, 0, 0);
-                ObjectStored.transform.rotation = Quaternion.Euler(0, 0, 0);
-                ObjectStored.GetComponent<Rigidbody>().isKinematic = true;
-
-                SlotFull = true;
- 
-                Debug.Log("Detect Jar in slot");
-            }
-
-           else if (SlotFull = false && other.gameObject.tag == tag && other.gameObject == ObjectinRightHand)
-            {
-                HandRightScript.DetachObject(other.gameObject);
-
-                ObjectStored.transform.SetParent(this.transform);
-                ObjectStored.transform.position = new Vector3(0, 0, 0);
-                ObjectStored.transform.rotation = Quaternion.Euler(0, 0, 0);
-                ObjectStored.GetComponent<Rigidbody>().isKinematic = true;
-
-                SlotFull = true;
-
-                Debug.Log("Detect Jar in slot");
-            }*/
-        }
-
-        /*private void OnTriggerExit(Collider other)
+        if (ObjectInteractibleScript != null)
         {
-            ObjectStored.GetComponent<Rigidbody>().isKinematic = false;
-            SlotFull = false;
-        }*/
-
+            used = ObjectInteractibleScript.attachedToHand;
+            if(SlotFull == false && ObjectToCheck.tag == m_objectTag)
+            {
+            /*if(used)
+                ObjectToCheck.GetComponent<Rigidbody>().isKinematic = false;
+            else*/
+                ObjectToCheck.GetComponent<Rigidbody>().isKinematic = true;
+                //GetComponent<SphereCollider>().enabled = false;
+                //SlotFull = true; 
+                ObjectStored = ObjectToCheck;
+                ObjectToCheck.transform.position = transform.position;
+                ObjectToCheck.transform.rotation = transform.rotation;
+                ObjectStored.transform.SetParent(transform);
+            }
+            //Use the used bool to lock thing in place, if it is not held in hand and is in the placement collider, disable the collider then say slot is full
+            //Use on trigger exit to reac5tivate the collider and say slot is not longer full
+            //Maybe the Kinematics will figure themselves out ?
+        }
     }
+    void OnTriggerExit(Collider other){
+        if(other.gameObject == ObjectStored)
+        {
+            ObjectStored.GetComponent<Rigidbody>().isKinematic = true;
+            //ObjectStored.transform.parent = null;
+            ObjectStored = null;
+            SlotFull = false;
+
+        }
+    }
+  }
 }
 
 
