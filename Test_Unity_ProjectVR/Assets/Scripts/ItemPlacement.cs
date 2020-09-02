@@ -16,31 +16,9 @@ namespace Valve.VR.InteractionSystem
 
     void Start()
     {
-        //ObjectinLeftHand = GetComponent<Hand>().currentAttachedObject;
-        //ObjectinRightHand = GetComponent<Hand>().currentAttachedObject;
         SlotFull = false;
-        //HandScript = GetComponent<Hand>();
-
     }
 
-    /*void OnTriggerEnter(Collider other)
-    {
-            ObjectToCheck = other.gameObject;
-            if(SlotFull == false && ObjectToCheck.tag == m_objectTag)
-            {
-                Debug.Log("Detaching " + ObjectToCheck);
-                SlotFull = true;
-                ObjectStored = ObjectToCheck;
-                Hand attachedHand = ObjectToCheck.GetComponent<Interactable>().attachedToHand;
-                attachedHand.DetachObject(ObjectStored);
-                //attachedHand.AttachObject(ObjectStored, 0, 1, null);
-                ObjectStored.GetComponent<Rigidbody>().isKinematic = true;
-                
-                //ObjectStored.transform.position = new Vector3(0, 0, 0);
-                ObjectStored.transform.rotation = Quaternion.Euler(0, 0, 0);
-                ObjectStored.transform.SetParent(this.transform);
-            }
-    }*/
     void OnTriggerStay(Collider other)
     {
         ObjectToCheck = other.gameObject;
@@ -56,15 +34,13 @@ namespace Valve.VR.InteractionSystem
                 ObjectToCheck.GetComponent<Rigidbody>().isKinematic = false;
             else*/
                 ObjectToCheck.GetComponent<Rigidbody>().isKinematic = true;
-                //GetComponent<SphereCollider>().enabled = false;
-                //SlotFull = true; 
                 ObjectStored = ObjectToCheck;
                 ObjectToCheck.transform.position = transform.position;
                 ObjectToCheck.transform.rotation = transform.rotation;
                 ObjectStored.transform.SetParent(transform);
             }
             //Use the used bool to lock thing in place, if it is not held in hand and is in the placement collider, disable the collider then say slot is full
-            //Use on trigger exit to reac5tivate the collider and say slot is not longer full
+            //Use on trigger exit to reactivate the collider and say slot is not longer full
             //Maybe the Kinematics will figure themselves out ?
         }
     }
