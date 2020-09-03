@@ -6,6 +6,7 @@ using DG.Tweening;
 public class SphMinigame : MonoBehaviour
 {
     public SphereInt[] sphMinigame;
+    public GameObject m_holoButterfly;
     public float timer;
     private int i = 0;
     private List<string> SoundsToPlay;
@@ -71,17 +72,20 @@ public class SphMinigame : MonoBehaviour
     {
         m_captureMinigamePool.PlaySound(SoundsToPlay[i]);
         i = i + 1;
+        
         //Debug.Log("Array is of length : " + sphMinigame.Length);
         //Debug.Log("i is equal to : " + i);
 
         if(i == sphMinigame.Length - 1)
         {
             sphMinigame[i].StartTimer(timer, true);
+            m_holoButterfly.transform.position = sphMinigame[i].gameObject.transform.position;
             Debug.Log("Start final sphere");
             
         }else if(i < sphMinigame.Length - 1)
         {
             sphMinigame[i].StartTimer(timer, false);
+            m_holoButterfly.transform.position = sphMinigame[i].gameObject.transform.position;
             Debug.Log("Caught sphere success");
         }
         else
@@ -98,5 +102,6 @@ public class SphMinigame : MonoBehaviour
         m_captureMinigamePool.m_CountdownCanvas.SetActive(false);
         i = 0;
         sphMinigame[i].StartTimer(timer, false);
+        m_holoButterfly.transform.position = sphMinigame[i].gameObject.transform.position;
     }
 }

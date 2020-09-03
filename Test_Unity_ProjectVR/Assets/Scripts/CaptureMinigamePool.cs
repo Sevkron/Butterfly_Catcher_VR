@@ -11,11 +11,14 @@ public class CaptureMinigamePool : MonoBehaviour
 
     private GameObject[] sphDifficulty;
 
+    private MeshRenderer butterflyMeshRenderer;
+    private SkinnedMeshRenderer[] butterflySkinnedMeshRenderers;
     public bool testSphereSpawn;
     public int difficultyLevel;
     public GameObject currentButterfly;
 
-    public ParticleSystem CapWinVFX;
+    public GameObject m_captureModeSphere;
+    public ParticleSystem m_capWinVFX;
     public bool isNotInMinigame = true;
 
     public Transform headTransform;
@@ -39,6 +42,16 @@ public class CaptureMinigamePool : MonoBehaviour
 
     public void SpawnSph(GameObject butterfly)
     {
+        m_captureModeSphere.SetActive(true);
+
+        butterflyMeshRenderer = butterfly.GetComponentInChildren<MeshRenderer>();
+        butterflySkinnedMeshRenderers = butterfly.GetComponentsInChildren<SkinnedMeshRenderer>();
+        butterflyMeshRenderer.enabled = false;
+        for(int m = 0; m < butterflySkinnedMeshRenderers.Length; m++)
+        {
+            butterflySkinnedMeshRenderers[m].enabled = false;
+        }
+
         isNotInMinigame = false;
         int difficulty = butterfly.GetComponent<YMovement>().difficultyLevel;
         currentButterfly = butterfly;
@@ -72,18 +85,28 @@ public class CaptureMinigamePool : MonoBehaviour
         else
             //Instantiate(sphDifficulty[i], transform, false);
             Instantiate(sphDifficulty[i], spawnPoint.position, spawnPoint.rotation, null);
+            
     }
 
     public void FreeButterfly()
     {
+        m_captureModeSphere.GetComponent<Animator>().SetTrigger("Close");
+        m_captureModeSphere.SetActive(false); // Here too
         isNotInMinigame = true;
         Destroy(currentButterfly.transform.parent.gameObject);
     }
 
     public void CaughtButterfly()
     {
+        butterflyMeshRenderer.enabled = true;
+        for(int m = 0; m < butterflySkinnedMeshRenderers.Length; m++)
+        {
+            butterflySkinnedMeshRenderers[m].enabled = true;
+        }
         isNotInMinigame = true;
-        CapWinVFX.Play();
+        m_capWinVFX.Play();
+        m_captureModeSphere.GetComponent<Animator>().SetTrigger("Close");
+        m_captureModeSphere.SetActive(false); //Need top modify this for the animation to play out
     }
 
     public void PlaySound(string SoundToPlay)

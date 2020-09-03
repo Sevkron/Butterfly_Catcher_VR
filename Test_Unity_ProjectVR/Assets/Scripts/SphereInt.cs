@@ -12,7 +12,6 @@ public class SphereInt : MonoBehaviour
 
     [HideInInspector] 
     private SphMinigame m_sphMinigame;
-
     public ParticleSystem CapFailVFX;
     public ParticleSystem CapSuccessVFX;
     public ParticleSystem CapSpawnVFX;
