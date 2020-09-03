@@ -37,8 +37,11 @@ public class ButterflyNet : MonoBehaviour
             {
                 Debug.Log("Net too far from player");
                 //Need to figure out how to attach to belt
+                Rigidbody netRigidbody = GetComponent<Rigidbody>();
                 gameObject.transform.position = m_BeltNetTransform.position;
                 gameObject.transform.rotation = m_BeltNetTransform.rotation;
+                netRigidbody.velocity = new Vector3 (0, 0, 0);
+                netRigidbody.angularVelocity = new Vector3 (0, 0, 0);
                 //gameObject.transform.SetParent(m_BeltNetTransform);
             }
         }

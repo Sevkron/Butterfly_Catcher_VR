@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class Belt : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class Belt : MonoBehaviour
 
     private Transform head = null;
     public GameObject m_playercamera;
+    private Player player;
 
     void Start()
     {
+        player = Player.instance;
         head = m_playercamera.transform;  
     }
 
@@ -21,6 +24,7 @@ public class Belt : MonoBehaviour
     {
         PositionUnderHead();
         RotateWithHead();
+        //if(player.hmdTransform.TransformDirection(new Vector3(0, 0, playerYInput)) = )
     }
 
     private void PositionUnderHead()
@@ -39,6 +43,5 @@ public class Belt : MonoBehaviour
         adjustedRotation.z = 0;
 
         transform.localEulerAngles = adjustedRotation;
-
     }
 }

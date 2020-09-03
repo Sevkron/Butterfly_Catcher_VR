@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 684206595}
   m_Layer: 10
   m_Name: net_v2
-  m_TagString: Untagged
+  m_TagString: Net
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 549323726954575859}
   m_Layer: 10
   m_Name: polySurface5
-  m_TagString: Untagged
+  m_TagString: Net
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 2113300443}
   m_Layer: 10
   m_Name: HandGrabDown
-  m_TagString: Untagged
+  m_TagString: Net
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1044,8 +1044,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.13440868
-  m_Center: {x: -3.8414605e-11, y: 0.9281392, z: 0.15323043}
+  m_Radius: 0.20215553
+  m_Center: {x: 4.6703585e-11, y: 0.9281393, z: 0.22097723}
 --- !u!114 &123894720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,7 +1075,7 @@ MonoBehaviour:
     mValue: 0
   scale: 0.7
   m_BeltNetTransform: {fileID: 0}
-  m_MaxDistanceFromBelt: 0
+  m_MaxDistanceFromBelt: 13.67
 --- !u!114 &7668778621920552325
 MonoBehaviour:
   m_ObjectHideFlags: 0

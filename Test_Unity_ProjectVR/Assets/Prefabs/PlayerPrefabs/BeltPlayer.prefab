@@ -44,11 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandRightScript: {fileID: 0}
-  HandLeftScript: {fileID: 0}
-  ObjectinLeftHand: {fileID: 0}
-  ObjectinRightHand: {fileID: 0}
-  tag: Jar
+  m_objectTag: Jar
   ObjectStored: {fileID: 0}
   SlotFull: 0
 --- !u!135 &1649538347808147997
@@ -108,11 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandRightScript: {fileID: 0}
-  HandLeftScript: {fileID: 0}
-  ObjectinLeftHand: {fileID: 0}
-  ObjectinRightHand: {fileID: 0}
-  tag: Jar
+  m_objectTag: Jar
   ObjectStored: {fileID: 0}
   SlotFull: 0
 --- !u!135 &676022617637803595
@@ -167,16 +159,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4330288144686518131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandRightScript: {fileID: 0}
-  HandLeftScript: {fileID: 0}
-  ObjectinLeftHand: {fileID: 0}
-  ObjectinRightHand: {fileID: 0}
-  tag: Net
+  m_objectTag: Net
   ObjectStored: {fileID: 0}
   SlotFull: 0
 --- !u!135 &5691361067161371464
@@ -188,7 +176,7 @@ SphereCollider:
   m_GameObject: {fileID: 4330288144686518131}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.0133059705
   m_Center: {x: 2.953633e-11, y: 0, z: 0.0033059753}
@@ -242,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851525689d90a004d9dcf65fcc9eb83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0.5
+  height: 0.6
   m_playercamera: {fileID: 0}
 --- !u!1 &5701023590713608591
 GameObject:
@@ -288,11 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandRightScript: {fileID: 0}
-  HandLeftScript: {fileID: 0}
-  ObjectinLeftHand: {fileID: 0}
-  ObjectinRightHand: {fileID: 0}
-  tag: Jar
+  m_objectTag: Jar
   ObjectStored: {fileID: 0}
   SlotFull: 0
 --- !u!135 &5701023590713608589
@@ -352,11 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66fd6749ebb50746af51a232214ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandRightScript: {fileID: 0}
-  HandLeftScript: {fileID: 0}
-  ObjectinLeftHand: {fileID: 0}
-  ObjectinRightHand: {fileID: 0}
-  tag: Jar
+  m_objectTag: Jar
   ObjectStored: {fileID: 0}
   SlotFull: 0
 --- !u!135 &6160929858796965053

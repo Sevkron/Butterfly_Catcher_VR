@@ -474,6 +474,8 @@ namespace Valve.VR.InteractionSystem
                 }
                 else
                 {
+                    Debug.Log("Bet it's here");
+                    attachedObject.attachedRigidbody.isKinematic = false;
                     attachedObject.attachedRigidbodyWasKinematic = attachedObject.attachedRigidbody.isKinematic;
                     attachedObject.attachedRigidbodyUsedGravity = attachedObject.attachedRigidbody.useGravity;
                 }

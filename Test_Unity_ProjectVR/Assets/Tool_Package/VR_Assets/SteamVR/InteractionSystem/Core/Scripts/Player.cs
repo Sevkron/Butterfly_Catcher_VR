@@ -240,6 +240,7 @@ namespace Valve.VR.InteractionSystem
 				if ( hmd )
 				{
 					Vector3 direction = Vector3.ProjectOnPlane( hmd.forward, trackingOriginTransform.up );
+					//Debug.Log("Player is looking at direction" + direction);
 					if ( Vector3.Dot( hmd.up, trackingOriginTransform.up ) < 0.0f )
 					{
 						// The HMD is upside-down. Either

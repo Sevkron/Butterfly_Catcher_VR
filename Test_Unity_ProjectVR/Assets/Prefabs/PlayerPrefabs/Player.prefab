@@ -3994,16 +3994,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7887475860845416620, guid: 4f72d09caaf29e04b95d6dc4aeb15f6b,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7887475860845416620, guid: 4f72d09caaf29e04b95d6dc4aeb15f6b,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4447895915379722961, guid: 4f72d09caaf29e04b95d6dc4aeb15f6b,
         type: 3}
       propertyPath: m_ReferencePixelsPerUnit
@@ -4013,6 +4003,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ScaleFactor
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887475860845416620, guid: 4f72d09caaf29e04b95d6dc4aeb15f6b,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887475860845416620, guid: 4f72d09caaf29e04b95d6dc4aeb15f6b,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f72d09caaf29e04b95d6dc4aeb15f6b, type: 3}
@@ -4185,6 +4185,11 @@ PrefabInstance:
       propertyPath: rightHand
       value: 
       objectReference: {fileID: 8546761915515295310}
+    - target: {fileID: 7186349986869846929, guid: f1a4db7fdd62eac47854ce31d14b1c51,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2585117608014870095, guid: f1a4db7fdd62eac47854ce31d14b1c51,
         type: 3}
       propertyPath: m_Convex
@@ -4287,21 +4292,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.1186
       objectReference: {fileID: 0}
-    - target: {fileID: 5701023590713608591, guid: c3b32ac9a26f93a4b9f8ce962b500979,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5701023591649413599, guid: c3b32ac9a26f93a4b9f8ce962b500979,
         type: 3}
       propertyPath: m_playercamera
       value: 
       objectReference: {fileID: 8546761915522370836}
-    - target: {fileID: 6443315451723518857, guid: c3b32ac9a26f93a4b9f8ce962b500979,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7766545060867216449, guid: c3b32ac9a26f93a4b9f8ce962b500979,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4316,16 +4311,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.714
-      objectReference: {fileID: 0}
-    - target: {fileID: 688663122326107240, guid: c3b32ac9a26f93a4b9f8ce962b500979,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2003389067455637000, guid: c3b32ac9a26f93a4b9f8ce962b500979,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1681856189478858321, guid: c3b32ac9a26f93a4b9f8ce962b500979,
         type: 3}
@@ -4342,11 +4327,6 @@ PrefabInstance:
       propertyPath: HandLeftScript
       value: 
       objectReference: {fileID: 8546761915515475664}
-    - target: {fileID: 5691361067161371464, guid: c3b32ac9a26f93a4b9f8ce962b500979,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5691361067161371464, guid: c3b32ac9a26f93a4b9f8ce962b500979,
         type: 3}
       propertyPath: m_Center.y
@@ -4382,11 +4362,6 @@ PrefabInstance:
       propertyPath: HandLeftScript
       value: 
       objectReference: {fileID: 8546761915515475664}
-    - target: {fileID: 4568474839149617313, guid: c3b32ac9a26f93a4b9f8ce962b500979,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4568474839149617313, guid: c3b32ac9a26f93a4b9f8ce962b500979,
         type: 3}
       propertyPath: HandRightScript
