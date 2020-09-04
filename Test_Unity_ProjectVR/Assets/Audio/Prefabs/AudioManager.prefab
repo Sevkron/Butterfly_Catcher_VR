@@ -1337,25 +1337,25 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-    source: {fileID: 0}
+    source: {fileID: 7877357236276065996}
   - name: CloseVivarium
     clip: {fileID: 8300000, guid: b3778250a74fa784882d6b20ea7320cc, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    source: {fileID: 0}
+    source: {fileID: 7877357236276065996}
   - name: OpenVivarium2
     clip: {fileID: 8300000, guid: 50eedb16ae9dd52498f84a0cbd1e7e11, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    source: {fileID: 0}
+    source: {fileID: 7877357236276065996}
   - name: CloseVivarium2
     clip: {fileID: 8300000, guid: b3778250a74fa784882d6b20ea7320cc, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    source: {fileID: 0}
+    source: {fileID: 7877357236276065996}
   - name: OpenCanvas
     clip: {fileID: 8300000, guid: fe83b5613c058c246b3f1ffe9c5a9634, type: 3}
     volume: 1
@@ -1373,7 +1373,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-    source: {fileID: 0}
+    source: {fileID: 7877357236276065996}
   - name: CanvasButtonClick
     clip: {fileID: 8300000, guid: 0df6640901eb7084faf6558517c7377f, type: 3}
     volume: 1
@@ -1392,6 +1392,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 813600123}
+  - name: CaptureChallengeStart
+    clip: {fileID: 8300000, guid: 191d65f288cad4f419be0871c9886d77, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 7877357236276065996}
 --- !u!82 &571975803508493822
 AudioSource:
   m_ObjectHideFlags: 0

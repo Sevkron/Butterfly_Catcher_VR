@@ -38,7 +38,7 @@ namespace Valve.VR.InteractionSystem.Sample
             papillodexAnimator = m_Papillodex.GetComponent<Animator>();
 
             audioSource = GetComponent<AudioSource>();
-            m_Papillodex.SetActive(true);
+            //m_Papillodex.SetActive(true);
         }
 
         void Update()

@@ -74,7 +74,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 0.1
   m_BaseOffset: 2
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 24
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4807959897693661266
 MonoBehaviour:
@@ -228,6 +228,51 @@ PrefabInstance:
       value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 7978984946855807124, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563175932712444215, guid: 015ff87256be44b438bf5b9264c05af1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0

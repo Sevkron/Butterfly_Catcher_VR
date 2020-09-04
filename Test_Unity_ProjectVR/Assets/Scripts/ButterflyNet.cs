@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 using UnityEngine.AI;
+using Valve.VR.InteractionSystem;
 
 public class ButterflyNet : MonoBehaviour
 {
@@ -15,17 +16,19 @@ public class ButterflyNet : MonoBehaviour
     public CaptureMinigamePool captureMinigamePool;
     private ButterflyJar JarScript;
     public SharedBool SharedIsIdle;
-
+    public bool m_hasButterfly;
     public float scale = 0.7f;
-
-    public Transform m_BeltNetTransform;
+    private GameObject belt;
+    private Transform m_BeltNetTransform;
     public float m_MaxDistanceFromBelt;
+    private AudioManager audioManager;
     void Awake()
     {
-        if(captureMinigamePool == null)
-            captureMinigamePool = GameObject.Find("CaptureMinigamePool").GetComponent<CaptureMinigamePool>();
+        if(captureMinigamePool == null && m_BeltNetTransform == null)
+            belt = GameObject.Find("BeltPlayer");
+            captureMinigamePool = belt.GetComponentInChildren<CaptureMinigamePool>();
+            m_BeltNetTransform = belt.transform.GetChild(1);
             Debug.Log("Please set capture minigame pool");
-
         //SharedIsIdle = JarScript.SharedIsIdle;
     }
 
@@ -55,6 +58,12 @@ public class ButterflyNet : MonoBehaviour
             if(other.gameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
             {
                 //Old Method
+                if(audioManager == null)
+                {
+                    audioManager = FindObjectOfType<AudioManager>();
+                }
+                audioManager.Play("CaptureChallengeStart", null);
+                m_hasButterfly = true;
                 butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
                 SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
                 SharedIsIdle = true;

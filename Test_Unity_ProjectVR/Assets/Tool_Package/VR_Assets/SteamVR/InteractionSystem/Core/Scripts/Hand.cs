@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine.Events;
 using System.Threading;
+//using UnityEngine.Audio;
 
 
 
@@ -103,6 +104,7 @@ namespace Valve.VR.InteractionSystem
         public Canvas m_DistanceCanvas;
         private bool isPaused = false;
 
+        //private AudioManager audioManager;
         public struct AttachedObject
         {
             public GameObject attachedObject;
@@ -380,6 +382,8 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         public void AttachObject(GameObject objectToAttach, GrabTypes grabbedWithType, AttachmentFlags flags = defaultAttachmentFlags, Transform attachmentOffset = null)
         {
+            /*audioManager = FindObjectOfType<AudioManager>();
+            audioManager.Play("fdfs", null);*/
             AttachedObject attachedObject = new AttachedObject();
             attachedObject.attachmentFlags = flags;
             attachedObject.attachedOffsetTransform = attachmentOffset;

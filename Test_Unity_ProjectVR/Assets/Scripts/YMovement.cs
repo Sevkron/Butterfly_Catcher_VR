@@ -14,6 +14,8 @@ public class YMovement : MonoBehaviour
 
     [Tooltip("Must be set on integer between 0 and 3")]
     public int difficultyLevel;
+    [Tooltip("Credit value of the butterfly")]
+    public int m_value;
 
     public float _wanderSmoothTime = .3f;
 

@@ -17,21 +17,29 @@ public class ButterflyJar : MonoBehaviour
     public GameObject ButterflyinJar;
     public bool Butterflycatched;
     public float scale = 0.2f;
-    private YMovement yMoveScript;
+    public YMovement yMoveScript;
     public SharedBool SharedIsIdle;
     private Player player;
-
+    private AudioManager audioManager;
+    public ParticleSystem m_newJarCaptureVFX;
+    public ParticleSystem m_jarCaptureVFX;
     private void Start()
     {
         hasButterfly = false;
         Butterflycatched = false;
+        
     }
 
     void OnTriggerEnter(Collider other)
     {
         //changer pour faire en sorte que le papillon est desactive par net, ne peut pas etre attrape par jar
-        if(other.gameObject.CompareTag("Butterfly") && hasButterfly == false)
+        if(other.gameObject.CompareTag("Butterfly") && hasButterfly == false && other.gameObject.GetComponent<YMovement>().isWander == false)
         {
+            if(audioManager == null)
+            {
+                audioManager = FindObjectOfType<AudioManager>();
+            }
+            audioManager.Play("CanvasButtonClick", null);
             ButterflyinJar = other.gameObject;
             hasButterfly = true;
             butterflyBehaviorTree = ButterflyinJar.GetComponentInParent<BehaviorTree>();
@@ -48,7 +56,7 @@ public class ButterflyJar : MonoBehaviour
 
             //Send Event to IndexPanel
             player = Player.instance;
-            player.GetComponent<CaughtIndexPanel>().CheckIfSpeciesExists(yMoveScript.stringButterflySpecies);
+            player.GetComponent<CaughtIndexPanel>().CheckIfSpeciesExists(yMoveScript.stringButterflySpecies, this);
         }
     }
 

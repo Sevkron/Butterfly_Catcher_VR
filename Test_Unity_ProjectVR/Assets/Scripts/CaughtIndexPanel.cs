@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class CaughtIndexPanel : MonoBehaviour
@@ -41,7 +42,7 @@ public class CaughtIndexPanel : MonoBehaviour
     public Sprite Luna_MothSprite;
     public Sprite Japanese_Silk_MothSprite;
     public Sprite Dysphania_Militaris_MothSprite;
-
+    public int m_butterflyCreditsAmount = 0;
     private string currentButterflyToCheck;
     // Start is called before the first frame update
     void Start()
@@ -55,25 +56,28 @@ public class CaughtIndexPanel : MonoBehaviour
         
     }
 
-    public void CheckIfSpeciesExists(string butterflyToCheck)
+    public void CheckIfSpeciesExists(string butterflyToCheck, ButterflyJar butterflyJar)
     {
         currentButterflyToCheck = butterflyToCheck;
+        m_butterflyCreditsAmount = m_butterflyCreditsAmount + butterflyJar.yMoveScript.m_value;
         for(int i = 0; i < allButterflySpecies.Length; i++)
         {
             if(currentButterflyToCheck == allButterflySpecies[i])
             {
-                TryToRegisterNewButterfly();
+                TryToRegisterNewButterfly(butterflyJar);
             }
         }
     }
 
-    private void TryToRegisterNewButterfly()
+    private void TryToRegisterNewButterfly(ButterflyJar butterflyJar)
     {
         if(newButterflySpeciesList.Contains(currentButterflyToCheck))
         {
+            butterflyJar.m_jarCaptureVFX.Play();
             Debug.Log(currentButterflyToCheck + " is already registered");
         }else
         {
+            butterflyJar.m_newJarCaptureVFX.Play();
             newButterflySpeciesList.Add(currentButterflyToCheck);
         }
     }
@@ -149,5 +153,10 @@ public class CaughtIndexPanel : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void UpdateCreditsUI(TextMeshProUGUI textToUpdate)
+    {
+        textToUpdate.text = m_butterflyCreditsAmount + " Butterfly Credits";
     }
 }

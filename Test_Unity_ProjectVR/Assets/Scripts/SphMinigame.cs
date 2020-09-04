@@ -14,6 +14,7 @@ public class SphMinigame : MonoBehaviour
 
     [HideInInspector] 
     private CaptureMinigamePool m_captureMinigamePool;
+    Tween MyTween;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class SphMinigame : MonoBehaviour
             SoundsToPlay = new List<string>(){"JapaneseSilkNote1","JapaneseSilkNote2","JapaneseSilkNote3"};
         }else if(butterflyType == "Ceylon_Rose")
         {
-            SoundsToPlay = new List<string>(){"CeylonRose1","CeylonRose2","CeylonRose3","CeylonRose4","CeylonRose5","CeylonRose6"};
+            SoundsToPlay = new List<string>(){"CeylonRoseNote1","CeylonRoseNote2","CeylonRoseNote3","CeylonRoseNote4","CeylonRoseNote5","CeylonRoseNote6"};
         }else if(butterflyType == "Dysphania_Militaris_Moth")
         {
             SoundsToPlay = new List<string>(){"DysphaniaMillitarisNote1","DysphaniaMillitarisNote2","DysphaniaMillitarisNote3","DysphaniaMillitarisNote4"};
@@ -71,6 +72,7 @@ public class SphMinigame : MonoBehaviour
     public void CaughtSuccess()
     {
         m_captureMinigamePool.PlaySound(SoundsToPlay[i]);
+        Destroy(sphMinigame[i].gameObject);
         i = i + 1;
         
         //Debug.Log("Array is of length : " + sphMinigame.Length);
@@ -79,13 +81,14 @@ public class SphMinigame : MonoBehaviour
         if(i == sphMinigame.Length - 1)
         {
             sphMinigame[i].StartTimer(timer, true);
-            m_holoButterfly.transform.position = sphMinigame[i].gameObject.transform.position;
+            //MyTween =
+            StartCoroutine(WaitForHoloButterfly(sphMinigame[i].gameObject.transform.position));
             Debug.Log("Start final sphere");
             
         }else if(i < sphMinigame.Length - 1)
         {
             sphMinigame[i].StartTimer(timer, false);
-            m_holoButterfly.transform.position = sphMinigame[i].gameObject.transform.position;
+            StartCoroutine(WaitForHoloButterfly(sphMinigame[i].gameObject.transform.position));
             Debug.Log("Caught sphere success");
         }
         else
@@ -103,5 +106,12 @@ public class SphMinigame : MonoBehaviour
         i = 0;
         sphMinigame[i].StartTimer(timer, false);
         m_holoButterfly.transform.position = sphMinigame[i].gameObject.transform.position;
+    }
+
+    private IEnumerator WaitForHoloButterfly(Vector3 newPos)
+    {
+        MyTween = m_holoButterfly.transform.DOMove(newPos, 0.3f, false);
+        m_holoButterfly.transform.DOLookAt(newPos, 0.3f);
+        yield return MyTween.WaitForCompletion();
     }
 }

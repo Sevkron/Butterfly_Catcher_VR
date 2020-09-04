@@ -85,12 +85,12 @@ public class CaptureMinigamePool : MonoBehaviour
         else
             //Instantiate(sphDifficulty[i], transform, false);
             Instantiate(sphDifficulty[i], spawnPoint.position, spawnPoint.rotation, null);
-            
+
     }
 
     public void FreeButterfly()
     {
-        m_captureModeSphere.GetComponent<Animator>().SetTrigger("Close");
+        //m_captureModeSphere.GetComponent<Animator>().SetTrigger("Close");
         m_captureModeSphere.SetActive(false); // Here too
         isNotInMinigame = true;
         Destroy(currentButterfly.transform.parent.gameObject);
@@ -104,8 +104,8 @@ public class CaptureMinigamePool : MonoBehaviour
             butterflySkinnedMeshRenderers[m].enabled = true;
         }
         isNotInMinigame = true;
-        m_capWinVFX.Play();
-        m_captureModeSphere.GetComponent<Animator>().SetTrigger("Close");
+        currentButterfly.GetComponentInChildren<ParticleSystem>().Play();
+        //m_captureModeSphere.GetComponent<Animator>().SetTrigger("Close");
         m_captureModeSphere.SetActive(false); //Need top modify this for the animation to play out
     }
 

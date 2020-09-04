@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.UI;
+using TMPro;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class PapillodexUIButton : MonoBehaviour
@@ -45,6 +47,7 @@ public class PapillodexUIButton : MonoBehaviour
         private bool isActive = false;
         private Animator canvasAnimator;
         private bool isInIndex = false;
+        public TextMeshProUGUI m_creditsText;
         //public GameObject m_PreviousPanel;
         void Awake()
         {
@@ -53,6 +56,10 @@ public class PapillodexUIButton : MonoBehaviour
             audioManager = FindObjectOfType<AudioManager>();
             canvasAnimator = GetComponent<Animator>();
             m_ButterflyIndex = Player.instance.GetComponent<CaughtIndexPanel>();
+        }
+        void FixedUpdate()
+        {
+            m_ButterflyIndex.UpdateCreditsUI(m_creditsText);
         }
         void OnEnable()
         {
@@ -97,9 +104,10 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             SoundFeedback("CanvasButtonClick");
-            m_CurrentPanel.SetActive(false);
+            canvasAnimator.SetTrigger("OpenQuitMenu");
+            /*m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(false);
-            m_QuitPanel.SetActive(true);
+            m_QuitPanel.SetActive(true);*/
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_QuitPanel;
         }
@@ -107,6 +115,8 @@ public class PapillodexUIButton : MonoBehaviour
         public void OnButtonDownQuit2(Hand fromHand)
         {
             Feedback(fromHand);
+            SteamVR_Fade.Start(Color.black, 0);
+			SteamVR_Fade.Start(Color.clear, 1);
             SoundFeedback("CanvasButtonClick");
             Debug.Log("Quitting App");
             Application.Quit();

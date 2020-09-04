@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -6.9, y: 8.8}
+  m_AnchoredPosition: {x: -6.899994, y: 8.799988}
   m_SizeDelta: {x: 85.2, y: 46.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2402584566519195631
@@ -190,7 +190,6 @@ GameObject:
   - component: {fileID: 2402584568287008394}
   - component: {fileID: 2402584568287008392}
   - component: {fileID: 2402584568287008393}
-  - component: {fileID: 2402584568287008399}
   m_Layer: 5
   m_Name: ImageTimer
   m_TagString: Untagged
@@ -254,17 +253,3 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
---- !u!114 &2402584568287008399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402584568287008395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae7e13b9f09e184aba8c807c3bb66c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 10
-  timeText: {fileID: 2402584567238634359}

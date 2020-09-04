@@ -256,6 +256,8 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( !string.IsNullOrEmpty( exitGame ) )
 			{
+				SteamVR_Fade.Start(Color.black, 0);
+				SteamVR_Fade.Start(Color.clear, 1);
 				Application.Quit();
 				Debug.Log("Game is exited", this);
 			}

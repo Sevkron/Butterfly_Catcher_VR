@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class SphereInt : MonoBehaviour
 {
@@ -17,28 +19,44 @@ public class SphereInt : MonoBehaviour
     public ParticleSystem CapSpawnVFX;
     private bool isLastSphere;
 
+    public Text timeText;
+    public Image fillImg;
+    float timeElapsed;
+    float tweenDuration;
     void Start()
     {
         m_sphMinigame = transform.parent.GetComponent<SphMinigame>();
+    }
+
+    void Update()
+    {
+        if(myTween != null)
+        {
+            if(timeElapsed < tweenDuration)
+            {
+                float totalTime = myTween.Duration();
+                float currentTime = Mathf.Lerp(tweenDuration, 0, timeElapsed / totalTime);
+                timeText.text = Math.Round(currentTime, 1).ToString() + " s";
+                timeElapsed += Time.deltaTime;
+            }
+        }
     }
     public void StartTimer(float timer, bool isFinal)
     {
         isLastSphere = isFinal;
         if(activeOnce == true)
         {
-            //Debug.Log("Started Timer");
-            transform.GetChild(0).gameObject.SetActive(true);
             GetComponent<SphereCollider>().enabled = true;
             activeOnce = false;
             delay = StartCoroutine(Delay(timer));
-            VFXDelay = StartCoroutine(VFXTime(CapSpawnVFX));
         }
 
     }
 
     public IEnumerator Delay(float timer)
     {
-        myTween = transform.GetChild(0).transform.DOScale(new Vector3(0,0,0), timer);
+        myTween = fillImg.DOFillAmount(0, timer);
+        tweenDuration = myTween.Duration();
         yield return myTween.WaitForCompletion();
         VFXDelay = StartCoroutine(VFXTime(CapFailVFX));
         
@@ -49,19 +67,18 @@ public class SphereInt : MonoBehaviour
         myTween.Kill(false);
         StopCoroutine(delay);
         GetComponent<SphereCollider>().enabled = false;
-        CapSuccessVFX.Play();
+
+        //VFX = StartCoroutine(CapSuccessVFX.Play();
+        //CapSuccessVFX.Play(); //WHAT
+
         if(isLastSphere == false)
         {
-            m_sphMinigame.CaughtSuccess();
+            VFXDelay = StartCoroutine(VFXTime(CapSuccessVFX));
+            //m_sphMinigame.CaughtSuccess();
         }else
         {
             VFXDelay = StartCoroutine(VFXTime(CapSuccessVFX));
         }
-    }
-
-    public void FinalCaught()
-    {
-        VFXDelay = StartCoroutine(VFXTime(CapFailVFX));
     }
 
     public IEnumerator VFXTime(ParticleSystem particleSystem)
@@ -75,7 +92,7 @@ public class SphereInt : MonoBehaviour
         if(particleSystem == CapFailVFX)
         {
             m_sphMinigame.MinigameFail();
-        }else if(particleSystem == CapSuccessVFX)
+        }else
         {
             m_sphMinigame.CaughtSuccess();
         }

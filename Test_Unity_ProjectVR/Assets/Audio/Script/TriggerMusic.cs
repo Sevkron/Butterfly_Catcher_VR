@@ -12,6 +12,10 @@ public class TriggerMusic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(AudioManager == null)
+        {
+            AudioManager = FindObjectOfType<AudioManager>().gameObject;
+        }
         for (int i =0; i < 4; i ++ )
         {
             if (AudioManager.GetComponent<SnapshotTransition>().timeToReach[i] == 1)

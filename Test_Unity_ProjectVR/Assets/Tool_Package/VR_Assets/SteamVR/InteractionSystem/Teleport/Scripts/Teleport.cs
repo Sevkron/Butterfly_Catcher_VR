@@ -240,6 +240,7 @@ namespace Valve.VR.InteractionSystem
 					SteamVR_Fade.Start( Color.black, 2.0f );*/
 					teleportingToMarker = teleportMarker;
 					InitiateTeleportFade();
+					player.isInVivarium = false;
 					//TeleportPlayer();
 					break;
 				}else{
