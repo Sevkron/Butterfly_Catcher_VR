@@ -16,6 +16,7 @@ namespace Valve.VR.InteractionSystem
 		public float speed = 4.0f;
 		public float shiftSpeed = 16.0f;
 		public bool showInstructions = true;
+		public GameObject m_toggleModeUI;
 
 		private Vector3 startEulerAngles;
 		private Vector3 startMousePosition;
@@ -32,7 +33,7 @@ namespace Valve.VR.InteractionSystem
 		void Update()
 		{
 			float forward = 0.0f;
-			if ( Input.GetKey( KeyCode.W ) || Input.GetKey( KeyCode.UpArrow ) )
+			if ( Input.GetKey( KeyCode.Z ) || Input.GetKey( KeyCode.UpArrow ) )
 			{
 				forward += 1.0f;
 			}
@@ -46,7 +47,7 @@ namespace Valve.VR.InteractionSystem
             {
                 up += 1.0f;
             }
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.A))
             {
                 up -= 1.0f;
             }
@@ -56,7 +57,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				right += 1.0f;
 			}
-			if ( Input.GetKey( KeyCode.A ) || Input.GetKey( KeyCode.LeftArrow ) )
+			if ( Input.GetKey( KeyCode.Q ) || Input.GetKey( KeyCode.LeftArrow ) )
 			{
 				right -= 1.0f;
 			}
@@ -76,6 +77,13 @@ namespace Valve.VR.InteractionSystem
 			transform.position += transform.TransformDirection( delta );
 
 			Vector3 mousePosition = Input.mousePosition;
+
+			if(Input.GetMouseButtonDown( 0 ))
+			{
+				showInstructions = !showInstructions;
+				Cursor.visible = !Cursor.visible;
+				m_toggleModeUI.SetActive(showInstructions);
+			}
 
 			if ( Input.GetMouseButtonDown( 1 ) /* right mouse */)
 			{
@@ -97,9 +105,10 @@ namespace Valve.VR.InteractionSystem
 			if ( showInstructions )
 			{
 				GUI.Label( new Rect( 10.0f, 10.0f, 600.0f, 400.0f ),
-					"WASD EQ/Arrow Keys to translate the camera\n" +
-					"Right mouse click to rotate the camera\n" +
-					"Left mouse click for standard interactions.\n" );
+					"ZQSD AE/Fleches pour bouger camera\n" +
+					"Maintenit Maj Gauche pour augmenter vitesse de mouvement\n" +
+					"Click droit pour tourner camera\n" +
+					"Click gauche pour faire disparaitre ce message.\n" );
 			}
 		}
 	}

@@ -371,6 +371,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		public void Draw2DDebug()
 		{
+
 			if ( !allowToggleTo2D )
 				return;
 

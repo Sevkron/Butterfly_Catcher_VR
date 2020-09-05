@@ -219,6 +219,7 @@ namespace Valve.VR
 
             var clipRenderer = clipQuad.GetComponent<MeshRenderer>();
             clipRenderer.material = clipMaterial;
+            clipRenderer.material.color = new Color(255, 0, 255);
             clipRenderer.shadowCastingMode = ShadowCastingMode.Off;
             clipRenderer.receiveShadows = false;
             clipRenderer.lightProbeUsage = LightProbeUsage.Off;
