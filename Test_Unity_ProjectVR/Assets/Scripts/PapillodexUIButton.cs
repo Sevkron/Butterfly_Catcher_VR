@@ -161,13 +161,14 @@ public class PapillodexUIButton : MonoBehaviour
 
         public void OnButtonDownCurrentMissions(Hand fromHand)
         {
-            /*Feedback(fromHand);
+            Feedback(fromHand);
             SoundFeedback("CanvasButtonClick");
-            m_CurrentPanel.SetActive(false);
+            canvasAnimator.SetTrigger("OpenIdleMissions");
+            /*m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(true);
-            m_CurrentMissionsPanel.SetActive(true);
+            m_CurrentMissionsPanel.SetActive(true);*/
             m_PreviousPanel = m_CurrentPanel;
-            m_CurrentPanel = m_CurrentMissionsPanel;*/
+            m_CurrentPanel = m_CurrentMissionsPanel;
         }
 
         public void OnButtonDownButterflyProgression(Hand fromHand)

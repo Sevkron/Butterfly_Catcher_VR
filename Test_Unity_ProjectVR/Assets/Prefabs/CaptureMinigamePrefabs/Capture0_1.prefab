@@ -120,10 +120,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6362464620406762943, guid: f6403381dc61b554d8ce26fbdcc241a4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362464620406762943, guid: f6403381dc61b554d8ce26fbdcc241a4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362464620406762943, guid: f6403381dc61b554d8ce26fbdcc241a4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362464619240935489, guid: f6403381dc61b554d8ce26fbdcc241a4,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7245132691778631001, guid: f6403381dc61b554d8ce26fbdcc241a4,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362464619240935495, guid: f6403381dc61b554d8ce26fbdcc241a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6688882901869014534, guid: f6403381dc61b554d8ce26fbdcc241a4,
         type: 3}
@@ -189,26 +214,6 @@ PrefabInstance:
         type: 3}
       propertyPath: TriggerModule.inside
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362464619240935495, guid: f6403381dc61b554d8ce26fbdcc241a4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362464620406762943, guid: f6403381dc61b554d8ce26fbdcc241a4,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362464620406762943, guid: f6403381dc61b554d8ce26fbdcc241a4,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362464620406762943, guid: f6403381dc61b554d8ce26fbdcc241a4,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6403381dc61b554d8ce26fbdcc241a4, type: 3}
