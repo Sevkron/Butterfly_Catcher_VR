@@ -46,13 +46,14 @@ namespace Valve.VR.InteractionSystem
             if(SlotFull == false && ObjectToCheck.tag == m_objectTag)
             {
                 ObjectToCheckRigidbody.isKinematic = true;
-                ObjectStored = ObjectToCheck;
                 ObjectToCheck.transform.position = transform.position;
                 ObjectToCheck.transform.rotation = transform.rotation;
-                ObjectStored.transform.SetParent(transform);
+                
+                ObjectToCheck.transform.SetParent(transform);
 
                 if(used == false)
                 {
+                    ObjectStored = ObjectToCheck;
                     //Debug.Log("Player placed Object" + ObjectStored);
                     GetComponent<SphereCollider>().enabled = false;
                     SlotFull = true;

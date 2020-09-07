@@ -178,7 +178,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 8
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -354,6 +354,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 43395bb33356ed849a6c58e4974ee598, type: 3}
   - {fileID: 8300000, guid: d47bdb24c65e1374aa7a0f7076fecdf1, type: 3}
   - {fileID: 8300000, guid: 1b26d608ac92ab94888dfc8aefb8d1f4, type: 3}
+  - {fileID: 8300000, guid: 7eef12bc0a26d1b498f471dfff4562d4, type: 3}
   startCoroutineMusic: 0
 --- !u!82 &1882008531
 AudioSource:
@@ -915,7 +916,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 769fea1f12dde0b41b8915187718cfca, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1625,7 +1626,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 7
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

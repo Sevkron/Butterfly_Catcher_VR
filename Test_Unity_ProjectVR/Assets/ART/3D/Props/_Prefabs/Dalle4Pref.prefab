@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8065216613814397603}
   - component: {fileID: 773367472674395283}
   - component: {fileID: 2978589455022114153}
-  - component: {fileID: 3618011939964433853}
   m_Layer: 0
   m_Name: Dalle4Pref
   m_TagString: Untagged
@@ -78,17 +77,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3618011939964433853
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80450529224200657}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 1497577240294265419, guid: 09c92d00111bd614ebb8c293e92882f0, type: 3}

@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 995917940887291990}
   - component: {fileID: 8919459517222724938}
   - component: {fileID: 6692147142549236367}
+  - component: {fileID: 1513925692768396005}
   m_Layer: 0
   m_Name: foun
   m_TagString: Untagged
@@ -231,6 +232,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1513925692768396005
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548827376565147757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2992075189172546623, guid: 85d0f471ecf773941a1192cf0d0d303d, type: 3}
 --- !u!1 &5554128953777918099
 GameObject:
   m_ObjectHideFlags: 0

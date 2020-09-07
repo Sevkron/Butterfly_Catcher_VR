@@ -27,8 +27,12 @@ public class SpecialRockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_itemPlacement1.ObjectStored != null && m_itemPlacement2 != null && hasActivatedOnce == false)
+        if(m_itemPlacement1.ObjectStored != null && m_itemPlacement2.ObjectStored != null && hasActivatedOnce == false)
         {
+            if(audioManager == null)
+            {
+                audioManager = FindObjectOfType<AudioManager>();
+            }
             hasActivatedOnce = true;
             m_monsterButterflyGO.SetActive(true);
             audioManager.Play("FullMusic", GetComponent<AudioSource>());

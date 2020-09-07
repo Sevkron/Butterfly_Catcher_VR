@@ -22,7 +22,7 @@ public class ButterflyNet : MonoBehaviour
     private Transform m_BeltNetTransform;
     public float m_MaxDistanceFromBelt;
     private AudioManager audioManager;
-    void Awake()
+    void Start()
     {
         if(captureMinigamePool == null && m_BeltNetTransform == null)
             belt = GameObject.Find("BeltPlayer");

@@ -63,4 +63,10 @@ public class StartMusic : MonoBehaviour
         yield return new WaitForSeconds(musicAudioSource[biome].clip.length);
         startCoroutineMusic = true;
     }
+
+    public void SecretMusic()
+    {
+        musicAudioSource[biome].clip = listAudioClipMusic[6];
+        musicAudioSource[biome].Play();
+    }
 }
