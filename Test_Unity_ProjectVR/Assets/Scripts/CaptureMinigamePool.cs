@@ -93,7 +93,14 @@ public class CaptureMinigamePool : MonoBehaviour
         //m_captureModeSphere.GetComponent<Animator>().SetTrigger("Close");
         m_captureModeSphere.SetActive(false); // Here too
         isNotInMinigame = true;
-        Destroy(currentButterfly.transform.parent.gameObject);
+
+        butterflyMeshRenderer.enabled = true;
+        for(int m = 0; m < butterflySkinnedMeshRenderers.Length; m++)
+        {
+            butterflySkinnedMeshRenderers[m].enabled = true;
+        }
+        //Destroy(currentButterfly.transform.parent.gameObject);
+        currentButterfly.GetComponent<YMovement>().GoBackToWander(false, 0.5f);
     }
 
     public void CaughtButterfly()
@@ -107,6 +114,8 @@ public class CaptureMinigamePool : MonoBehaviour
         currentButterfly.GetComponentInChildren<ParticleSystem>().Play();
         //m_captureModeSphere.GetComponent<Animator>().SetTrigger("Close");
         m_captureModeSphere.SetActive(false); //Need top modify this for the animation to play out
+        //Start Timer for butterfly to leave net
+        currentButterfly.GetComponent<YMovement>().GoBackToWander(false, 15.0f);
     }
 
     public void PlaySound(string SoundToPlay)

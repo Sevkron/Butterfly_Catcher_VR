@@ -39,6 +39,7 @@ public class ButterflyJar : MonoBehaviour
             {
                 audioManager = FindObjectOfType<AudioManager>();
             }
+            StopCoroutine();
             audioManager.Play("CanvasButtonClick", null);
             ButterflyinJar = other.gameObject;
             hasButterfly = true;
@@ -64,12 +65,13 @@ public class ButterflyJar : MonoBehaviour
 
     public void FreeButterfly()
     {
-        StartCoroutine(yMoveScript.Delay());
+        yMoveScript.GoBackToWander(true, 2.0f);
         Debug.Log("Delay start");
     }
 
     public void StopCoroutine()
     {
-        StopCoroutine(yMoveScript.Delay());
+        StopCoroutine(yMoveScript.m_DelayCoroutine);
+        Debug.Log("Delay stop");
     }
 }

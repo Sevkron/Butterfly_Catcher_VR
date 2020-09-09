@@ -52,7 +52,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             ButterflyCatched();
             OpeningJar();
@@ -80,7 +80,7 @@ namespace Valve.VR.InteractionSystem.Sample
                             sphereCollider.enabled = false;
 
                             JarScript.FreeButterfly();
-                            Debug.Log("Delay start once");
+                            //Debug.Log("Delay start once");
                             pressOnce = true;
                         }
                     }
@@ -94,7 +94,7 @@ namespace Valve.VR.InteractionSystem.Sample
                     if (pressOnce == true)
                     {
                         JarScript.StopCoroutine();
-                        Debug.Log("Stop Delay Coroutine");
+                        //Debug.Log("Stop Delay Coroutine");
                         pressOnce = false;
                     }
                 }

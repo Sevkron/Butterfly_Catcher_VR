@@ -50,7 +50,7 @@ public class ButterflyNet : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if(other.gameObject == exitedGameObject )
         {
@@ -58,6 +58,7 @@ public class ButterflyNet : MonoBehaviour
             if(other.gameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
             {
                 //Old Method
+                GameObject butterflyCaught = other.gameObject;
                 if(audioManager == null)
                 {
                     audioManager = FindObjectOfType<AudioManager>();
@@ -67,12 +68,12 @@ public class ButterflyNet : MonoBehaviour
                 butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
                 SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
                 SharedIsIdle = true;
-                other.gameObject.GetComponent<YMovement>().GoToDefaultPos();
-                other.gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
-                Destroy(other.gameObject.GetComponent<Rigidbody>()); //Necessaire
+                butterflyCaught.GetComponent<YMovement>().GoToDefaultPos();
+                butterflyCaught.GetComponentInParent<NavMeshAgent>().enabled = false;
+                //Destroy(other.gameObject.GetComponent<Rigidbody>()); //Necessaire
                 butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
                 captureMinigamePool.SpawnSph(other.gameObject);
-                other.gameObject.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
+                butterflyCaught.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
 
             }else
             {

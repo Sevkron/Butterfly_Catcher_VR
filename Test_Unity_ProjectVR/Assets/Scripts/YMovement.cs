@@ -28,9 +28,10 @@ public class YMovement : MonoBehaviour
     public ButterflyJar JarScript;
     public BehaviorTree butterflyBehaviorTree;
     //protected Seek ScriptSeek;
-    NavMeshHit hit;
+    private NavMeshHit hit;
     public GameObject Paps;
     public float BaseOffset;
+    public Coroutine m_DelayCoroutine;
     public SharedBool SharedIsIdle;
 
     public float scale = 1;
@@ -100,46 +101,53 @@ public class YMovement : MonoBehaviour
         //enabled = false;
     }
 
-    public IEnumerator Delay()
+    public void GoBackToWander(bool isJar, float timer)
     {
-        
+        //m_DelayCoroutine = Delay(isJar);
+        m_DelayCoroutine = StartCoroutine(Delay(isJar, timer));
+    }
+    private IEnumerator Delay(bool isJar, float timer)
+    {
         Debug.Log("Start Delay Coroutine");
         
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(timer);
 
             //transform.parent.DetachChildren();
             //ou
         transform.parent.SetParent(null);
         Vector3 point;
 
-        if (RandomPoint(transform.position, range, out point))
+        if (RandomPoint(transform.position, range, out point) == true)
         {  
-            
+            Debug.Log("" + point);
             /*Sequence seq = DOTween.Sequence();
             //seq.Append(transform.parent.DOMove(new Vector3(hit.position.x, BaseOffset, hit.position.z), 1.5f));
             seq.Append(transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f));
             seq.Join(transform.parent.DOScale(new Vector3(scale, scale, scale), 1f));
             seq.Join(transform.DORotate(new Vector3(0, 180, 0), 1.5f));
             seq.AppendCallback(() =>  {*/
-                NavMeshAgent navButterfly = JarScript.ButterflyinJar.GetComponentInParent<NavMeshAgent>();
-                navButterfly.enabled = true;
-                navButterfly.Warp(new Vector3(hit.position.x, BaseOffset, hit.position.z));
+            NavMeshAgent navButterfly = GetComponentInParent<NavMeshAgent>();
+            navButterfly.enabled = true;
+            navButterfly.Warp(new Vector3(hit.position.x, BaseOffset, hit.position.z));
 
-                transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f);
-                transform.parent.DOScale(new Vector3(scale, scale, scale), 1f);
-                transform.DORotate(new Vector3(0, 180, 0), 1.5f);
+            transform.parent.DORotate(new Vector3(0, 0, 0), 1.5f);
+            transform.parent.DOScale(new Vector3(scale, scale, scale), 1f);
+            transform.DORotate(new Vector3(0, 180, 0), 1.5f);
 
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
+            Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
 
-                JarScript.ButterflyinJar.GetComponent<SphereCollider>().enabled = true;
-                isWander = true;
-
+            GetComponent<SphereCollider>().enabled = true;
+            isWander = true;
+            
+            if(isJar == true)
+            {
                 JarScript.hasButterfly = false;
                 JarScript.Butterflycatched = false;
+            }
                 
-                //Try using the Warp function
+            //Try using the Warp function
                 
-                butterflyBehaviorTree.SendEvent("IsFreeJar");
+            butterflyBehaviorTree.SendEvent("IsFreeJar");
             /*})*/;
             
         }else
@@ -160,10 +168,9 @@ public class YMovement : MonoBehaviour
 
          if(player.isInVivarium == true)
          {
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 30; i++)
             {
                 Vector3 randomPoint = center + Random.insideUnitSphere * range;
-           
                 if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, vivariumMask)) //switch back to vivariumMask
                 {
                     result = hit.position;
@@ -172,10 +179,10 @@ public class YMovement : MonoBehaviour
             }
         }else
         {
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 30; i++)
             {
+                Debug.Log("How many times you doing this ?");
                 Vector3 randomPoint = center + Random.insideUnitSphere * range;
-           
                 if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, flyingMask)) //switch back to vivariumMask
                 {
                     result = hit.position;

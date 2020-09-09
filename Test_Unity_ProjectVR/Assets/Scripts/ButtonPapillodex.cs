@@ -71,8 +71,8 @@ namespace Valve.VR.InteractionSystem.Sample
                 rightHand.useHoverCapsule = false;
                 //leftHand.GetComponent<GrabDistance>().GrabUpdate(false, 0);
                 //rightHand.GetComponent<GrabDistance>().GrabUpdate(false, 0);
-                leftHand.GetComponent<GrabDistance>().enabled = false;
-                rightHand.GetComponent<GrabDistance>().enabled = false;
+                leftHand.GetComponent<GrabDistance>().isActive = false;
+                rightHand.GetComponent<GrabDistance>().isActive = false;
                 isPressed = false;
             }
             else if (CanvasOpen == true && isPressed == true)
@@ -84,8 +84,8 @@ namespace Valve.VR.InteractionSystem.Sample
                 //m_Papillodex.SetActive(false);
                 leftHand.useHoverCapsule = true;
                 rightHand.useHoverCapsule = true;
-                leftHand.GetComponent<GrabDistance>().enabled = true;
-                rightHand.GetComponent<GrabDistance>().enabled = true;
+                leftHand.GetComponent<GrabDistance>().isActive = true;
+                rightHand.GetComponent<GrabDistance>().isActive = true;
                 Debug.Log("Closing Papillodex");
                 isPressed = false;
             }

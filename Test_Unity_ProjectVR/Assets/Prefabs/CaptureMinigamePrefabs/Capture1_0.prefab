@@ -51,6 +51,10 @@ MonoBehaviour:
   - {fileID: 3062351058537210593}
   - {fileID: 6834683412807617701}
   - {fileID: 6875497532910006180}
+  m_OriginalSpheres:
+  - {fileID: 3062351058537210593}
+  - {fileID: 6834683412807617701}
+  - {fileID: 6875497532910006180}
   m_holoButterfly: {fileID: 886905272837396846}
   timer: 1.5
 --- !u!1001 &1077838355209350604
@@ -349,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 4487347763043808194, guid: 558d343f1799d024184bc99719d66355,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.159
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487347763043808194, guid: 558d343f1799d024184bc99719d66355,
         type: 3}

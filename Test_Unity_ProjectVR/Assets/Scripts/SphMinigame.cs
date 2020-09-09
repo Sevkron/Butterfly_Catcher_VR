@@ -6,10 +6,12 @@ using DG.Tweening;
 public class SphMinigame : MonoBehaviour
 {
     public SphereInt[] sphMinigame;
+    public List<SphereInt> m_OriginalSpheres;
     public GameObject m_holoButterfly;
     public float timer;
     private int i = 0;
     private List<string> SoundsToPlay;
+    private List<SphereInt> RandomizedSpheres;
     private string butterflyType;
 
     [HideInInspector] 
@@ -26,7 +28,10 @@ public class SphMinigame : MonoBehaviour
             m_captureMinigamePool = GameObject.Find("CaptureMinigamePool").GetComponent<CaptureMinigamePool>();
 
         m_captureMinigamePool.m_CountdownCanvas.SetActive(true);
-        StartCoroutine(WaitForAnimation());
+
+        
+
+        StartCoroutine(WaitForCountdown());
         
         butterflyType = m_captureMinigamePool.currentButterfly.GetComponent<YMovement>().stringButterflySpecies;
         
@@ -72,40 +77,55 @@ public class SphMinigame : MonoBehaviour
     public void CaughtSuccess()
     {
         m_captureMinigamePool.PlaySound(SoundsToPlay[i]);
-        Destroy(sphMinigame[i].gameObject);
+        Destroy(RandomizedSpheres[i].gameObject);
         i = i + 1;
         
         //Debug.Log("Array is of length : " + sphMinigame.Length);
         //Debug.Log("i is equal to : " + i);
 
-        if(i == sphMinigame.Length - 1)
+        if(i == RandomizedSpheres.Count - 1)
         {
-            sphMinigame[i].StartTimer(timer, true);
+            RandomizedSpheres[i].StartTimer(timer, true);
             //MyTween =
-            StartCoroutine(WaitForHoloButterfly(sphMinigame[i].gameObject.transform.position));
+            StartCoroutine(WaitForHoloButterfly(RandomizedSpheres[i].gameObject.transform.position));
             Debug.Log("Start final sphere");
             
-        }else if(i < sphMinigame.Length - 1)
+        }else if(i < RandomizedSpheres.Count - 1)
         {
-            sphMinigame[i].StartTimer(timer, false);
-            StartCoroutine(WaitForHoloButterfly(sphMinigame[i].gameObject.transform.position));
-            Debug.Log("Caught sphere success");
+            RandomizedSpheres[i].StartTimer(timer, false);
+            StartCoroutine(WaitForHoloButterfly(RandomizedSpheres[i].gameObject.transform.position));
+            //Debug.Log("Caught sphere success");
         }
         else
         {
             m_captureMinigamePool.CaughtButterfly();
-            Debug.Log("That was the final sphere");
+            //Debug.Log("That was the final sphere");
             Destroy(this.gameObject);
         }
     }
 
-    private IEnumerator WaitForAnimation()
+    private IEnumerator WaitForCountdown()
     {
+        int indexLength = m_OriginalSpheres.Count;
+        int newIndexLength = indexLength;
+        RandomizedSpheres = new List<SphereInt>();
+        for(int s = 0; s < indexLength; s++)
+        {
+            int randomNumber = Random.Range(0, newIndexLength);
+            //Debug.Log("Drawing spheres from range " + randomNumber);
+
+            RandomizedSpheres.Add(m_OriginalSpheres[randomNumber]);
+            m_OriginalSpheres.RemoveAt(randomNumber);
+            
+            newIndexLength = newIndexLength - 1;
+        }
         yield return new WaitForSeconds(3f);
         m_captureMinigamePool.m_CountdownCanvas.SetActive(false);
         i = 0;
-        sphMinigame[i].StartTimer(timer, false);
-        m_holoButterfly.transform.position = sphMinigame[i].gameObject.transform.position;
+        RandomizedSpheres[i].StartTimer(timer, false);
+        //m_holoButterfly.transform.position = sphMinigame[i].gameObject.transform.position;
+        MyTween = m_holoButterfly.transform.DOMove(RandomizedSpheres[i].gameObject.transform.position, 0.3f, false);
+        m_holoButterfly.transform.DOLookAt(RandomizedSpheres[i].gameObject.transform.position, 0.3f);
     }
 
     private IEnumerator WaitForHoloButterfly(Vector3 newPos)

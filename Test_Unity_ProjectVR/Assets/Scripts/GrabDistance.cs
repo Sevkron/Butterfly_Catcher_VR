@@ -69,25 +69,30 @@ namespace Valve.VR.InteractionSystem{
 
         void Update()
         {
-            RaycastHit hit;
-            RaycastHit priorityHit;
-            Ray priorityRaycast = new Ray(raycastDirection.transform.position, raycastDirection.transform.forward);
+            if(isActive == true){
+                RaycastHit hit;
+                RaycastHit priorityHit;
+                Ray priorityRaycast = new Ray(raycastDirection.transform.position, raycastDirection.transform.forward);
 
-            GameObject selectedGameObject;
+                GameObject selectedGameObject;
 
-            if(Physics.Raycast(priorityRaycast, out priorityHit, maxDistance, intLayerMask) && priorityHit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
-            {
-                selectedGameObject = priorityHit.transform.gameObject;
-                GrabUpdate(true, maxDistance);
-                this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
-            }
-            else if(Physics.SphereCast(raycastDirection.transform.position, radiusSphereCast, raycastDirection.transform.forward, out hit, maxDistance, intLayerMask) && hit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
-            {
-                selectedGameObject = hit.transform.gameObject;
-                GrabUpdate(true, maxDistance);
-                this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
-            }
-            else
+                if(Physics.Raycast(priorityRaycast, out priorityHit, maxDistance, intLayerMask) && priorityHit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
+                {
+                    selectedGameObject = priorityHit.transform.gameObject;
+                    GrabUpdate(true, maxDistance);
+                    this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
+                }
+                else if(Physics.SphereCast(raycastDirection.transform.position, radiusSphereCast, raycastDirection.transform.forward, out hit, maxDistance, intLayerMask) && hit.transform.gameObject.GetComponent<Interactable>() != null && GetComponent<Hand>().currentAttachedObject == null)
+                {
+                    selectedGameObject = hit.transform.gameObject;
+                    GrabUpdate(true, maxDistance);
+                    this.GetComponentInParent<Hand>().hoveringInteractable = selectedGameObject.GetComponent<Interactable>();
+                }
+                else
+                {
+                    pointer.SetActive(false);
+                }
+            }else
             {
                 pointer.SetActive(false);
             }
@@ -95,12 +100,8 @@ namespace Valve.VR.InteractionSystem{
 
         public void GrabUpdate(bool set, float distance)
         {
-            if(isActive == true)
-            {
-                pointer.SetActive(set);
-                pointer.transform.localScale = new Vector3(thickness, thickness, distance);
-            }
-            
+            pointer.SetActive(set);
+            pointer.transform.localScale = new Vector3(thickness, thickness, distance);
         }
     }
 }
