@@ -39,7 +39,7 @@ public class ButterflyJar : MonoBehaviour
             {
                 audioManager = FindObjectOfType<AudioManager>();
             }
-            StopCoroutine();
+            
             audioManager.Play("CanvasButtonClick", null);
             ButterflyinJar = other.gameObject;
             hasButterfly = true;
@@ -56,6 +56,7 @@ public class ButterflyJar : MonoBehaviour
             ButterflyinJar.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
 
             //Send Event to IndexPanel
+            StopCoroutine();
             player = Player.instance;
             player.GetComponent<CaughtIndexPanel>().CheckIfSpeciesExists(yMoveScript.stringButterflySpecies, this);
         }

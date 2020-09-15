@@ -81,9 +81,10 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             SoundFeedback("CanvasButtonClick");
-            m_CurrentPanel.SetActive(false);
-            m_ClockOtherPanel.SetActive(false);
-            m_OptionsPanel.SetActive(true);
+            canvasAnimator.SetTrigger("OpenOptions");
+            //m_CurrentPanel.SetActive(false);
+            //m_ClockOtherPanel.SetActive(false);
+            //m_OptionsPanel.SetActive(true);
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_OptionsPanel;
         }
@@ -93,9 +94,9 @@ public class PapillodexUIButton : MonoBehaviour
         {
             Feedback(fromHand);
             SoundFeedback("CanvasButtonReturn");
-            m_CurrentPanel.SetActive(false);
+            /*m_CurrentPanel.SetActive(false);
             m_ClockOtherPanel.SetActive(false);
-            m_PreviousPanel.SetActive(true);
+            m_PreviousPanel.SetActive(true);*/
             m_PreviousPanel = m_CurrentPanel;
             m_CurrentPanel = m_PreviousPanel;
         }
@@ -121,6 +122,20 @@ public class PapillodexUIButton : MonoBehaviour
             Debug.Log("Quitting App");
             Application.Quit();
         }
+//---------------------------------------
+        public void OnButtonCredits1(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("OpenCredits1");
+        }
+        public void OnButtonCredits2(Hand fromHand)
+        {
+            Feedback(fromHand);
+            SoundFeedback("CanvasButtonClick");
+            canvasAnimator.SetTrigger("OpenCredits2");
+        }
+
 //---------------------------------------
         public void OnButtonDownCaughtIndex(Hand fromHand)
         {

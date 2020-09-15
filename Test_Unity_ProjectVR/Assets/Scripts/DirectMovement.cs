@@ -38,27 +38,29 @@ public class DirectMovement : MonoBehaviour
     void Update()
     {   
         Vector2 leftHandMove = directMoveAction.GetAxis(SteamVR_Input_Sources.LeftHand);
-        
+        if(teleportAction.state == false)
+        {
         //Move, change to == 0 to allow backwards
-        if(leftHandMove.y > 0)
-        {
-            Debug.Log("Move froaweaerd");
-            playerYInput = leftHandMove.y;
-            VignetteEffect(playerYInput);
-            //deactivate the teleport
-            Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(0, 0, playerYInput));
-            characterController.Move(speed * playerYInput * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
-            characterController.center = new Vector3(Player.instance.hmdTransform.localPosition.x, characterController.center.y, Player.instance.hmdTransform.localPosition.z);
-        }
-        if(leftHandMove.y < 0)
-        {
-            Debug.Log("Move backwards");
-            playerYInput = leftHandMove.y;
-            VignetteEffect(-playerYInput);
-            //deactivate the teleport
-            Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(0, 0, playerYInput));
-            characterController.Move(-speed * 0.5f * playerYInput * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
-            characterController.center = new Vector3(Player.instance.hmdTransform.localPosition.x, characterController.center.y, Player.instance.hmdTransform.localPosition.z);
+            if(leftHandMove.y > 0)
+            {
+                //Debug.Log("Move froaweaerd");
+                playerYInput = leftHandMove.y;
+                VignetteEffect(playerYInput);
+                //deactivate the teleport
+                Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(0, 0, playerYInput));
+                characterController.Move(speed * playerYInput * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
+                characterController.center = new Vector3(Player.instance.hmdTransform.localPosition.x, characterController.center.y, Player.instance.hmdTransform.localPosition.z);
+            }
+            if(leftHandMove.y < 0)
+            {
+                //Debug.Log("Move backwards");
+                playerYInput = leftHandMove.y;
+                VignetteEffect(-playerYInput);
+                //deactivate the teleport
+                Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(0, 0, playerYInput));
+                characterController.Move(-speed * 0.5f * playerYInput * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
+                characterController.center = new Vector3(Player.instance.hmdTransform.localPosition.x, characterController.center.y, Player.instance.hmdTransform.localPosition.z);
+            }
         }
     }
 

@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5338005830131743406}
   - component: {fileID: 5167652193407908815}
   - component: {fileID: 3339865475558860787}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Twin1
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -374,6 +374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Twin1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 9fcac52a7598bfe418bd4c0699b1f715,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9fcac52a7598bfe418bd4c0699b1f715,
         type: 3}
