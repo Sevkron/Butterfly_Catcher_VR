@@ -64,7 +64,8 @@ namespace Valve.VR.InteractionSystem{
             int layer2 = 2;
             int layer3 = 5;
             int layer4 = 9;
-            intLayerMask = ~((1 << layer1) | (1 << layer2) | (1 << layer3) | (1 << layer4));
+            int layer5 = 13;
+            intLayerMask = ~((1 << layer1) | (1 << layer2) | (1 << layer3) | (1 << layer4)) | (1 << layer5);
         }
 
         void Update()
