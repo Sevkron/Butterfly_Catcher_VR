@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2915965676091044243}
   - component: {fileID: 6636746277227746692}
   m_Layer: 0
-  m_Name: Capture0_0
+  m_Name: CaptureTEst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 5916300591134439630}
   - {fileID: 5068151516355501790}
   - {fileID: 4922633667197079858}
-  - {fileID: 5925778992719782365}
+  - {fileID: 6560668813797127559}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   - {fileID: 7589615278792225455}
   m_holoButterfly: {fileID: 2103591593654252682}
   timer: 3.5
---- !u!1 &8668970232802742656
+--- !u!1 &8159322457395898329
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5925778992719782365}
+  - component: {fileID: 6560668813797127559}
   m_Layer: 0
   m_Name: PlayerBeltPOS
   m_TagString: Untagged
@@ -76,16 +76,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5925778992719782365
+--- !u!4 &6560668813797127559
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8668970232802742656}
+  m_GameObject: {fileID: 8159322457395898329}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.063209996, y: -0.49987173, z: -1.0819199}
-  m_LocalScale: {x: 4.249313, y: 4.249313, z: 4.249313}
+  m_LocalPosition: {x: -0.114209995, y: -0.49987173, z: -1.0819199}
+  m_LocalScale: {x: 4.24931, y: 4.24931, z: 4.24931}
   m_Children: []
   m_Father: {fileID: 2915965676091044243}
   m_RootOrder: 6

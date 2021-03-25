@@ -33,6 +33,7 @@ Transform:
   - {fileID: 8417595565465826027}
   - {fileID: 3937549404145216262}
   - {fileID: 8537766943040094417}
+  - {fileID: 3355856481363022089}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60,6 +61,36 @@ MonoBehaviour:
   - {fileID: 2066059973774349640}
   m_holoButterfly: {fileID: 4131952253147303061}
   timer: 2.6
+--- !u!1 &7941568551315893911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3355856481363022089}
+  m_Layer: 0
+  m_Name: PlayerBeltPOS
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3355856481363022089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941568551315893911}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.114209995, y: -0.49987173, z: -1.0819199}
+  m_LocalScale: {x: 4.24931, y: 4.24931, z: 4.24931}
+  m_Children: []
+  m_Father: {fileID: 2915965676091044243}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1077838355209350604
 PrefabInstance:
   m_ObjectHideFlags: 0
