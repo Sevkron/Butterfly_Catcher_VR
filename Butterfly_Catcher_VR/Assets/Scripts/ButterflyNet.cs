@@ -7,8 +7,8 @@ using Valve.VR.InteractionSystem;
 
 public class ButterflyNet : MonoBehaviour
 {
-    public BoxCollider firstCollider;
-    public SphereCollider secondCollider;
+    /*public BoxCollider firstCollider;
+    public SphereCollider secondCollider;*/
     public GameObject exitedGameObject;
     public BehaviorTree butterflyBehaviorTree;
     public Transform netTransform;
@@ -50,7 +50,7 @@ public class ButterflyNet : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == exitedGameObject )
         {

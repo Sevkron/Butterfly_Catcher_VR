@@ -26,7 +26,7 @@ public class FirstNetDetect : MonoBehaviour
         if(other.gameObject.CompareTag("Butterfly"))
         {
             butterflyNet.exitedGameObject = other.gameObject;
-            Debug.Log("Butterfly Exit");
+            Debug.Log("Butterfly Enter");
             StartCoroutine(butterflyCounter);
         }else if(other.gameObject.CompareTag("Sphere"))
         {

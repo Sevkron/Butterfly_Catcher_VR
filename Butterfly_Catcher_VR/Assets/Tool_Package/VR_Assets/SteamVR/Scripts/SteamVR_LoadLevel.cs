@@ -39,6 +39,9 @@ namespace Valve.VR
         // Async load causes crashes in some apps.
         public bool loadAsync = true;
 
+        //Optional 2D loading screen
+        public Canvas loadingScreen2DCanvas;
+
         // Optional logo texture.
         public Texture loadingScreen;
 
@@ -100,6 +103,12 @@ namespace Valve.VR
         {
             if (!loading && !string.IsNullOrEmpty(levelName))
                 StartCoroutine(LoadLevel());
+
+            //Optionally show 2D Loading screen on monitor
+            if(loadingScreen2DCanvas != null)
+            {
+                loadingScreen2DCanvas.enabled = true;
+            }
         }
 
         // Helper function to quickly and simply load a level from script.
@@ -279,6 +288,7 @@ namespace Valve.VR
                     overlay.SetOverlayTexture(loadingScreenOverlayHandle, ref texture);
                 }
             }
+            
 
             bool fadedForeground = false;
 

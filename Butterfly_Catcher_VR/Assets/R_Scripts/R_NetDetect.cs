@@ -15,7 +15,7 @@ public class R_NetDetect : MonoBehaviour
         }
     }
 
-    void OnColliderEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Butterfly")
         {
