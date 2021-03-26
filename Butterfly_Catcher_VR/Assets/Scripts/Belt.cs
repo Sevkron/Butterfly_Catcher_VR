@@ -11,6 +11,7 @@ public class Belt : MonoBehaviour
 
     private Transform head = null;
     public GameObject m_playercamera;
+    public Plane m_detectLookPlane;
     private Player player;
 
     void Start()
@@ -24,6 +25,11 @@ public class Belt : MonoBehaviour
     {
         PositionUnderHead();
         RotateWithHead();
+        Ray ray = new Ray(player.hmdTransform.position, player.hmdTransform.forward);
+        if(m_detectLookPlane.Raycast(ray, out float distance))
+        {
+            Debug.DrawRay(player.hmdTransform.position, ray.direction * distance, Color.red);
+        }
         //if(player.hmdTransform.TransformDirection(new Vector3(0, 0, playerYInput)) = )
     }
 
