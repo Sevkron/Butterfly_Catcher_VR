@@ -58,7 +58,7 @@ public class ButterflyJar : MonoBehaviour
             //Send Event to IndexPanel
             StopCoroutine();
             player = Player.instance;
-            player.GetComponent<CaughtIndexPanel>().CheckIfSpeciesExists(yMoveScript.stringButterflySpecies, this);
+            player.GetComponent<CaughtIndexPanel>().CheckIfSpeciesExists(yMoveScript.GetSpeciesName(), this);
         }
     }
 

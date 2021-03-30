@@ -33,38 +33,42 @@ public class SphMinigame : MonoBehaviour
 
         StartCoroutine(WaitForCountdown());
         
-        butterflyType = m_captureMinigamePool.currentButterfly.GetComponent<YMovement>().stringButterflySpecies;
-        
-        if(butterflyType == "Dragon_Tail")
-        {
-            SoundsToPlay = new List<string>(){"DragonTailsNote1","DragonTailsNote2","DragonTailsNote3"};
-            Debug.Log("You Got a Dragon tail");
-        }else if(butterflyType == "Cabbage_White_Butterfly")
-        {
-            SoundsToPlay = new List<string>(){"CabbageWhiteNote1","CabbageWhiteNote2","CabbageWhiteNote3"};
-        }else if(butterflyType == "Sapho_Longwing")
-        {
-            SoundsToPlay = new List<string>(){"CabbageWhiteNote1","CabbageWhiteNote2","CabbageWhiteNote3"};
-        }else if(butterflyType == "Japanese_Silk_Moth")
-        {
-            SoundsToPlay = new List<string>(){"JapaneseSilkNote1","JapaneseSilkNote2","JapaneseSilkNote3"};
-        }else if(butterflyType == "Ceylon_Rose")
-        {
-            SoundsToPlay = new List<string>(){"CeylonRoseNote1","CeylonRoseNote2","CeylonRoseNote3","CeylonRoseNote4","CeylonRoseNote5","CeylonRoseNote6"};
-        }else if(butterflyType == "Dysphania_Militaris_Moth")
-        {
-            SoundsToPlay = new List<string>(){"DysphaniaMillitarisNote1","DysphaniaMillitarisNote2","DysphaniaMillitarisNote3","DysphaniaMillitarisNote4"};
-        }else if(butterflyType == "Emerald_Swallowtail" || butterflyType == "Monarch")
-        {
-            SoundsToPlay = new List<string>(){"EmeraldSwallowtailNote1","EmeraldSwallowtailNote2","EmeraldSwallowtailNote3","EmeraldSwallowtailNote4"};
-        }else if(butterflyType == "Southern_Birdwing")
-        {
-            SoundsToPlay = new List<string>(){"SouthernBirfwingNote1","SouthernBirfwingNote2","SouthernBirfwingNote3"};
-        }else{
-            SoundsToPlay = new List<string>(){"DragonTailsNote1","DragonTailsNote2","DragonTailsNote3"};
-            Debug.LogError("Butterfly Not Identifies");
+        butterflyType = m_captureMinigamePool.currentButterfly.GetComponent<YMovement>().GetSpeciesName();
+
+        switch(butterflyType)
+        {   
+            case "Dragon_Tail":
+                SoundsToPlay = new List<string>(){"DragonTailsNote1","DragonTailsNote2","DragonTailsNote3"};
+            break;
+            case "Cabbage_White_Butterfly":
+                SoundsToPlay = new List<string>(){"CabbageWhiteNote1","CabbageWhiteNote2","CabbageWhiteNote3"};
+            break;
+            case "Sapho_Longwing":
+                SoundsToPlay = new List<string>(){"CabbageWhiteNote1","CabbageWhiteNote2","CabbageWhiteNote3"};
+            break;
+            case "Japanese_Silk_Moth":
+                SoundsToPlay = new List<string>(){"JapaneseSilkNote1","JapaneseSilkNote2","JapaneseSilkNote3"};
+            break;
+            case "Ceylon_Rose":
+                SoundsToPlay = new List<string>(){"CeylonRoseNote1","CeylonRoseNote2","CeylonRoseNote3","CeylonRoseNote4","CeylonRoseNote5","CeylonRoseNote6"};
+            break;
+            case "Dysphania_Militaris_Moth":
+                SoundsToPlay = new List<string>(){"DysphaniaMillitarisNote1","DysphaniaMillitarisNote2","DysphaniaMillitarisNote3","DysphaniaMillitarisNote4"};
+            break;
+            case "Emerald_Swallowtail":
+                SoundsToPlay = new List<string>(){"EmeraldSwallowtailNote1","EmeraldSwallowtailNote2","EmeraldSwallowtailNote3","EmeraldSwallowtailNote4"};
+            break;
+            case "Monarch":
+                SoundsToPlay = new List<string>(){"EmeraldSwallowtailNote1","EmeraldSwallowtailNote2","EmeraldSwallowtailNote3","EmeraldSwallowtailNote4"};
+            break;
+            case "Southern_Birdwing":
+                SoundsToPlay = new List<string>(){"SouthernBirfwingNote1","SouthernBirfwingNote2","SouthernBirfwingNote3"};
+            break;
+            default:
+                SoundsToPlay = new List<string>(){"DragonTailsNote1","DragonTailsNote2","DragonTailsNote3"};
+                Debug.LogError("Butterfly Not Identified");
+            break;
         }
-        //Debug.Log("Started this thing");
     }
 
     public void MinigameFail()
