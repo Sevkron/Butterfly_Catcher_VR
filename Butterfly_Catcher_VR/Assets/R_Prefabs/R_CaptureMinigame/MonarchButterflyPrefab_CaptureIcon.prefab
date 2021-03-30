@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1004367307589916859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109301710413776459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541a76f9c03874323b5154b14ac00427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spline: {fileID: 0}
+  duration: 20
+  lookForward: 1
+  mode: 0
 --- !u!1001 &550976229799054101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +23,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6893319654226002008, guid: 73f230b42a3e0a2489692855e02cf08b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 280649125400918109, guid: 73f230b42a3e0a2489692855e02cf08b,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -182,6 +203,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.9750857
       objectReference: {fileID: 0}
+    - target: {fileID: 2639357722730645339, guid: 73f230b42a3e0a2489692855e02cf08b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2762242667678949100, guid: 73f230b42a3e0a2489692855e02cf08b,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -201,6 +227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99325365
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261119068614240026, guid: 73f230b42a3e0a2489692855e02cf08b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3862321392134458568, guid: 73f230b42a3e0a2489692855e02cf08b,
         type: 3}
@@ -285,7 +316,7 @@ PrefabInstance:
     - target: {fileID: 4702487141322132830, guid: 73f230b42a3e0a2489692855e02cf08b,
         type: 3}
       propertyPath: m_Name
-      value: MonarchButterflyPrefab
+      value: MonarchButterflyPrefab_CaptureIcon
       objectReference: {fileID: 0}
     - target: {fileID: 5007173320543140540, guid: 73f230b42a3e0a2489692855e02cf08b,
         type: 3}
@@ -306,6 +337,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99325365
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342125803810826137, guid: 73f230b42a3e0a2489692855e02cf08b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613993869839021240, guid: 73f230b42a3e0a2489692855e02cf08b,
         type: 3}
@@ -389,3 +425,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f230b42a3e0a2489692855e02cf08b, type: 3}
+--- !u!1 &5109301710413776459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4702487141322132830, guid: 73f230b42a3e0a2489692855e02cf08b,
+    type: 3}
+  m_PrefabInstance: {fileID: 550976229799054101}
+  m_PrefabAsset: {fileID: 0}
