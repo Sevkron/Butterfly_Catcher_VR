@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
 public class CaughtIndexPanel : MonoBehaviour
 {
     [Tooltip("All new butterflies to be registered")]
@@ -15,8 +14,11 @@ public class CaughtIndexPanel : MonoBehaviour
 
     [Tooltip("All butterflies already registered")]
     public List<string> currentButterflySpecies;
+
     [Tooltip("All UI for Butterfles")]
-    public GameObject MonarchImage;
+    //Find way of serializing all variables below
+    [SerializeField]
+    private GameObject MonarchImage;
     public GameObject CabbageGO;
     public GameObject SaphoGO;
     public GameObject TigerSwallowGO;
@@ -44,17 +46,6 @@ public class CaughtIndexPanel : MonoBehaviour
     public Sprite Dysphania_Militaris_MothSprite;
     public int m_butterflyCreditsAmount = 0;
     private string currentButterflyToCheck;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void CheckIfSpeciesExists(string butterflyToCheck, ButterflyJar butterflyJar)
     {
@@ -90,86 +81,66 @@ public class CaughtIndexPanel : MonoBehaviour
             //Update with all other species + put function to get rid elements to update
             for(int i = 0; i < newButterflySpeciesList.Count; i++)
             {
-                if(newButterflySpeciesList[i] == "Monarch")
+                switch(newButterflySpeciesList[i])
                 {
-                    MonarchImage.GetComponent<SpriteRenderer>().sprite = MonarchSprite;
-                    MonarchImage.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Monarch");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
+                    case "Monarch":
+                        MonarchImage.GetComponent<SpriteRenderer>().sprite = MonarchSprite;
+                        MonarchImage.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Monarch");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    case "Cabbage_White_Butterfly":
+                        CabbageGO.GetComponent<SpriteRenderer>().sprite = CabbageSprite;
+                        CabbageGO.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Cabbage_White_Butterfly");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    case "Sapho_Longwing":
+                        SaphoGO.GetComponent<SpriteRenderer>().sprite = SaphoSprite;
+                        SaphoGO.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Sapho_Longwing");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    case "Dragon_Tail":
+                        DragontailGO.GetComponent<SpriteRenderer>().sprite = DragontailSprite;
+                        DragontailGO.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Dragon_Tail");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    case "Japanese_Silk_Moth":
+                        Japanese_Silk_MothGO.GetComponent<SpriteRenderer>().sprite = Japanese_Silk_MothSprite;
+                        Japanese_Silk_MothGO.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Japanese_Silk_Moth");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    case "Ceylon_Rose":
+                        Ceylon_RoseGO.GetComponent<SpriteRenderer>().sprite = Ceylon_RoseSprite;
+                        Ceylon_RoseGO.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Ceylon_Rose");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    case "Dysphania_Militaris_Moth":
+                        Dysphania_Militaris_MothGO.GetComponent<SpriteRenderer>().sprite = Dysphania_Militaris_MothSprite;
+                        Dysphania_Militaris_MothGO.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Dysphania_Militaris_Moth");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    case "Emerald_Swallowtail":
+                        EmeraldGO.GetComponent<SpriteRenderer>().sprite = EmeraldSprite;
+                        EmeraldGO.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Emerald_Swallowtail");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    case "Southern_Birdwing":
+                        BirdwingGO.GetComponent<SpriteRenderer>().sprite = BirdwingSprite;
+                        BirdwingGO.GetComponent<BoxCollider>().enabled = true;
+                        currentButterflySpecies.Add("Southern_Birdwing");
+                        newButterflySpeciesList.RemoveAt(i);
+                    break;
+                    default:
+                        Debug.LogError("Error while updating index UI");
+                    break;
                 }
-                if(newButterflySpeciesList[i] == "Cabbage_White_Butterfly")
-                {
-                    CabbageGO.GetComponent<SpriteRenderer>().sprite = CabbageSprite;
-                    CabbageGO.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Cabbage_White_Butterfly");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
-                }
-                if(newButterflySpeciesList[i] == "Sapho_Longwing")
-                {
-                    SaphoGO.GetComponent<SpriteRenderer>().sprite = SaphoSprite;
-                    SaphoGO.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Sapho_Longwing");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
-
-                }
-                if(newButterflySpeciesList[i] == "Dragon_Tail")
-                {
-                    DragontailGO.GetComponent<SpriteRenderer>().sprite = DragontailSprite;
-                    DragontailGO.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Dragon_Tail");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
-
-                }
-                if(newButterflySpeciesList[i] == "Japanese_Silk_Moth")
-                {
-                    Japanese_Silk_MothGO.GetComponent<SpriteRenderer>().sprite = Japanese_Silk_MothSprite;
-                    Japanese_Silk_MothGO.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Japanese_Silk_Moth");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
-
-                }
-                if(newButterflySpeciesList[i] == "Ceylon_Rose")
-                {
-                    Ceylon_RoseGO.GetComponent<SpriteRenderer>().sprite = Ceylon_RoseSprite;
-                    Ceylon_RoseGO.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Ceylon_Rose");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
-
-                }
-                if(newButterflySpeciesList[i] == "Dysphania_Militaris_Moth")
-                {
-                    Dysphania_Militaris_MothGO.GetComponent<SpriteRenderer>().sprite = Dysphania_Militaris_MothSprite;
-                    Dysphania_Militaris_MothGO.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Dysphania_Militaris_Moth");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
-
-                }
-                if(newButterflySpeciesList[i] == "Emerald_Swallowtail")
-                {
-                    EmeraldGO.GetComponent<SpriteRenderer>().sprite = EmeraldSprite;
-                    EmeraldGO.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Emerald_Swallowtail");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
-
-                }
-                if(newButterflySpeciesList[i] == "Southern_Birdwing")
-                {
-                    BirdwingGO.GetComponent<SpriteRenderer>().sprite = BirdwingSprite;
-                    BirdwingGO.GetComponent<BoxCollider>().enabled = true;
-                    currentButterflySpecies.Add("Southern_Birdwing");
-                    newButterflySpeciesList.RemoveAt(i);
-                    //return;
-
-                }
-                
             }
         }
     }

@@ -1,9 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BehaviorDesigner.Runtime;
+using UnityEngine.AI;
 
 public class R_NetDetect : MonoBehaviour
 {
+    [SerializeField]
+    private AudioManager audioManager;
+    [SerializeField]
+    private R_CaptureMinigame captureMinigameScript;
+    public SharedBool SharedIsIdle;
+    public bool IsCaptured = true;
+    public BehaviorTree butterflyBehaviorTree;
+    void Awake()
+    {
+        if(audioManager == null)
+            {
+                audioManager = FindObjectOfType<AudioManager>();
+            }
+        if(captureMinigameScript == null)
+        {
+            GameObject belt = GameObject.Find("BeltPlayer");
+            captureMinigameScript = belt.GetComponentInChildren<R_CaptureMinigame>();
+        }
+    }
     void OnCollisionStay(Collision collision)
     {
         Debug.Log("collided");
@@ -17,9 +38,17 @@ public class R_NetDetect : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Butterfly")
+        if(other.gameObject.CompareTag("Butterfly"))
         {
-            Debug.Log("Caught a butterfly");
+            GameObject butterflyCaught = other.gameObject;
+            audioManager.Play("CaptureChallengeStart", null);
+            butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
+            SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
+            SharedIsIdle = true;
+            butterflyCaught.GetComponent<YMovement>().GoToDefaultPos();
+            butterflyCaught.GetComponentInParent<NavMeshAgent>().enabled = false;
+            butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
+            captureMinigameScript.SpawnChallenge(butterflyCaught.transform.parent.transform, butterflyCaught.GetComponent<YMovement>());
         }
     }
 }

@@ -16,7 +16,6 @@ public class CaptureMinigamePool : MonoBehaviour
     public bool testSphereSpawn;
     public int difficultyLevel;
     public GameObject currentButterfly;
-
     public GameObject m_captureModeSphere;
     public ParticleSystem m_capWinVFX;
     public bool isNotInMinigame = true;
@@ -27,7 +26,6 @@ public class CaptureMinigamePool : MonoBehaviour
 
     private AudioManager audioManager;
     public GameObject m_CountdownCanvas;
-    //test Sphere spawn
 
     void Start()
     {

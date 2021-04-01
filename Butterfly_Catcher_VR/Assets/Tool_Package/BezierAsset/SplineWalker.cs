@@ -4,6 +4,7 @@ public class SplineWalker : MonoBehaviour {
 
 	public BezierSpline spline;
 
+	[Tooltip("Time in seconds it takes the walker to run the curve")]
 	public float duration;
 
 	public bool lookForward;
