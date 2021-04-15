@@ -36,7 +36,7 @@ public class ButterflyNet : MonoBehaviour
             m_CaptureMinigamePool = captureMinigameGO.GetComponent<R_CaptureMinigame>();
             Debug.Log("Please set capture minigame pool");
         if(audioManager == null)
-            audioManager = AudioManager.instance;
+            audioManager = FindObjectOfType<AudioManager>();
             Debug.Log("Please set Audio manager");
         if(cloth == null)
             cloth = transform.Find("Net1/net_v2/NetCloth").gameObject;

@@ -18,7 +18,7 @@ public class R_CaptureMinigame : MonoBehaviour
     {
         if(audioManager == null)
         {
-            audioManager = AudioManager.instance;
+            audioManager = FindObjectOfType<AudioManager>();
         }
     }
 
