@@ -9,11 +9,14 @@ public class ButterflyNet : MonoBehaviour
 {
     /*public BoxCollider firstCollider;
     public SphereCollider secondCollider;*/
+    private YMovement capturedButterflyYMoveScript;
     public GameObject exitedGameObject;
     public BehaviorTree butterflyBehaviorTree;
     public Transform netTransform;
+    private GameObject cloth;
     public bool IsCaptured = true;
-    public CaptureMinigamePool captureMinigamePool;
+    public R_CaptureMinigame m_CaptureMinigamePool;
+    private GameObject captureMinigameGO;
     private ButterflyJar JarScript;
     public SharedBool SharedIsIdle;
     public bool m_hasButterfly;
@@ -22,31 +25,35 @@ public class ButterflyNet : MonoBehaviour
     private Transform m_BeltNetTransform;
     public float m_MaxDistanceFromBelt;
     private AudioManager audioManager;
-    void Start()
+    void Awake()
     {
-        if(captureMinigamePool == null && m_BeltNetTransform == null)
+        if(m_BeltNetTransform == null)
             belt = GameObject.Find("BeltPlayer");
-            captureMinigamePool = belt.GetComponentInChildren<CaptureMinigamePool>();
             m_BeltNetTransform = belt.transform.GetChild(1);
+            Debug.Log("Please set belt");
+        if(m_CaptureMinigamePool == null)
+            captureMinigameGO = GameObject.Find("CaptureMinigame_V2");
+            m_CaptureMinigamePool = captureMinigameGO.GetComponent<R_CaptureMinigame>();
             Debug.Log("Please set capture minigame pool");
-        //SharedIsIdle = JarScript.SharedIsIdle;
+        if(audioManager == null)
+            audioManager = AudioManager.instance;
+            Debug.Log("Please set Audio manager");
+        if(cloth == null)
+            cloth = transform.Find("Net1/net_v2/NetCloth").gameObject;
     }
 
     void Update()
     {
-        if(m_BeltNetTransform)
+        if(Vector3.Distance(m_BeltNetTransform.position, transform.position) >= m_MaxDistanceFromBelt)
         {
-            if(Vector3.Distance(m_BeltNetTransform.position, transform.position) >= m_MaxDistanceFromBelt)
-            {
-                Debug.Log("Net too far from player");
-                //Need to figure out how to attach to belt
-                Rigidbody netRigidbody = GetComponent<Rigidbody>();
-                gameObject.transform.position = m_BeltNetTransform.position;
-                gameObject.transform.rotation = m_BeltNetTransform.rotation;
-                netRigidbody.velocity = new Vector3 (0, 0, 0);
-                netRigidbody.angularVelocity = new Vector3 (0, 0, 0);
-                //gameObject.transform.SetParent(m_BeltNetTransform);
-            }
+            Debug.Log("Net too far from player");
+            //Need to figure out how to attach to belt
+            Rigidbody netRigidbody = GetComponent<Rigidbody>();
+            gameObject.transform.position = m_BeltNetTransform.position;
+            gameObject.transform.rotation = m_BeltNetTransform.rotation;
+            netRigidbody.velocity = new Vector3 (0, 0, 0);
+            netRigidbody.angularVelocity = new Vector3 (0, 0, 0);
+            //gameObject.transform.SetParent(m_BeltNetTransform);
         }
     }
 
@@ -55,26 +62,23 @@ public class ButterflyNet : MonoBehaviour
         if(other.gameObject == exitedGameObject )
         {
             //var caughtButterfly = other.gameObject;
-            if(other.gameObject.CompareTag("Butterfly") && captureMinigamePool.isNotInMinigame == true)
+            if(other.gameObject.CompareTag("Butterfly") && m_CaptureMinigamePool.isNotInMinigame == true)
             {
                 //Old Method
                 GameObject butterflyCaught = other.gameObject;
-                if(audioManager == null)
-                {
-                    audioManager = FindObjectOfType<AudioManager>();
-                }
+                
                 audioManager.Play("CaptureChallengeStart", null);
                 m_hasButterfly = true;
+                capturedButterflyYMoveScript = butterflyCaught.GetComponent<YMovement>();
+                m_CaptureMinigamePool.SpawnChallenge(butterflyCaught.transform, capturedButterflyYMoveScript);
                 butterflyBehaviorTree = other.gameObject.GetComponentInParent<BehaviorTree>();
                 SharedIsIdle = (SharedBool)butterflyBehaviorTree.GetVariable("IsIdle");
                 SharedIsIdle = true;
-                butterflyCaught.GetComponent<YMovement>().GoToDefaultPos();
+                capturedButterflyYMoveScript.GoToDefaultPos();
                 butterflyCaught.GetComponentInParent<NavMeshAgent>().enabled = false;
                 //Destroy(other.gameObject.GetComponent<Rigidbody>()); //Necessaire
                 butterflyBehaviorTree.SendEvent<object>("IsCapturedNet", IsCaptured);
-                captureMinigamePool.SpawnSph(other.gameObject);
-                butterflyCaught.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
-
+                //butterflyCaught.transform.parent.transform.localScale = new Vector3(scale, scale, scale);
             }else
             {
                 other.gameObject.GetComponent<SphereInt>().Caught();
@@ -82,5 +86,12 @@ public class ButterflyNet : MonoBehaviour
         }
         else
             Debug.Log("Didn't go through first collider");
+    }
+    void UpdateNetColor(bool isOverButterfly)
+    {
+        if(isOverButterfly == true)
+        {
+
+        }
     }
 }

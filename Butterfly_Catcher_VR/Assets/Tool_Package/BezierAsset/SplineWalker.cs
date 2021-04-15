@@ -44,4 +44,11 @@ public class SplineWalker : MonoBehaviour {
 			transform.LookAt(position + spline.GetDirection(progress));
 		}
 	}
+	void OnTriggerStay(Collider other)
+	{
+		if(other.CompareTag("Net"))
+		{
+
+		}
+	}
 }
