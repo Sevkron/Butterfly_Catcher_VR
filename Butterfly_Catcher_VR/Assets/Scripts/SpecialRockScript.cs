@@ -12,7 +12,6 @@ public class SpecialRockScript : MonoBehaviour
     private AudioManager audioManager;
     public List<Transform> m_spawnPositions;
     public GameObject[] m_theTwins;
-    // Start is called before the first frame update
     void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
